@@ -25,8 +25,35 @@
         "response": {
             "output": {
                 "CustomerID": "{{body.CustomerID}}",
-                "Person": "{{temp.Person}}",
-                "Company": "{{temp.Company}}"
+                //TODO: IntegrationID
+                "CustomerHash": "{{body.CustomerHash}}",
+                "CreatedDate": "{{parseDate(substring(body.CreatedDate; indexOf(body.CreatedDate; decodeURL('%28')) + 1; indexOf(body.CreatedDate; if(contains(body.CreatedDate; decodeURL('%2D')); decodeURL('%2D'); decodeURL('%29')))) / 1000; 'X')}}",
+                "CustomerStatusID": "{{body.CustomerStatusID}}",
+                "CustomerType": "{{body.CustomerType}}",
+                "Name": "{{body.Name}}",
+                "TradingName": "{{switch(body.CustomerType;80;body.Name + ' ' + temp.Person.Surname;67;temp.Company.TradingName;71;)}}",
+                //TODO: DocumentNumber
+                "Password": "{{body.Password}}",
+                "Email": "{{body.Email}}",
+                "Groups": "{{body.Groups}}",
+                "Contact": "{{body.Contact}}",
+                "Address": "{{body.Address}}",
+                "WebSiteID": "{{body.WebSiteID}}",
+                "Person": {
+                    "Surname": "{{temp.Person.Surname}}",
+                    "Cpf": "{{temp.Person.Cpf}}",
+                    "RG": "{{temp.Person.RG}}",
+                    "BirthDate": "{{if(body.CustomerType = 80;(parseDate(formatDate(parseDate(substring(temp.Person.BirthDate; indexOf(temp.Person.BirthDate; decodeURL('%28')) + 1; indexOf(temp.Person.BirthDate; if(contains(temp.Person.BirthDate; decodeURL('%2D')); decodeURL('%2D'); decodeURL('%29')))) / 1000; 'X'); 'DD/MM/YYYY');'DD/MM/YYYY');emptystring)}}",
+                    "Gender": "{{temp.Person.Gender}}",
+                    "SystemProperties": "{{temp.Person.SystemProperties}}",
+                    "ExtendedProperties": "{{temp.Person.ExtendedProperties}}"
+                },
+                "Company": {
+                    "Cnpj": "{{temp.Company.Cnpj}}",
+                    "TradingName": "{{temp.Company.TradingName}}",
+                    "SystemProperties": "{{temp.Company.SystemProperties}}",
+                    "ExtendedProperties": "{{temp.Company.ExtendedProperties}}"
+                }
             }
         }
     }

@@ -2,7 +2,641 @@
     {
         "name": "CustomerID",
         "type": "uinteger",
-        "label": "CustomerID",
-        "required": true
+        "sequence": true
+    },
+    {
+        "name": "CustomerHash",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "CreatedDate",
+        "type": "date",
+        "time": true,
+        "sequence": true
+    },
+    {
+        "name": "CustomerStatusID",
+        "type": "uinteger",
+        "sequence": true
+    },
+    {
+        "name": "CustomerType",
+        "type": "uinteger",
+        "sequence": true,
+        "help": "Can be 67 (Company), 71 (Guest) or 80 (Person)"
+    },
+    {
+        "name": "TradingName",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "Name",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "Password",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "Email",
+        "type": "email",
+        "sequence": true
+    },
+    {
+        "name": "Groups",
+        "type": "array",
+        "spec": [
+            {
+                "name": "CustomerGroupID",
+                "type": "uinteger",
+                "sequence": true
+            },
+            {
+                "name": "Title",
+                "type": "text",
+                "sequence": true
+            }
+        ],
+        "sequence": true
+    },
+    {
+        "name": "Contact",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "CellPhone",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "Phone",
+                "type": "text",
+                "sequence": true
+            }
+        ]
+    },
+    {
+        "name": "Address",
+        "type": "array",
+        "sequence": true,
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "ID",
+                    "type": "number",
+                    "sequence": true
+                },
+                {
+                    "name": "MainAddress",
+                    "type": "boolean",
+                    "sequence": true
+                },
+                {
+                    "name": "Name",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "ContactName",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "AddressLine",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "Number",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "AddressNotes",
+                    "type": "text",
+                    "help": "Complemento",
+                    "sequence": true
+                },
+                {
+                    "name": "Neighbourhood",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "City",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "State",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "PostalCode",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "Landmark",
+                    "type": "text",
+                    "help": "Ponto de Referência",
+                    "sequence": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "WebSiteID",
+        "type": "uinteger",
+        "sequence": true
+    },
+    {
+        "name": "Person",
+        "type": "collection",
+        "sequence": true,
+        "spec": [
+            {
+                "name": "Surname",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "Cpf",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "RG",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "BirthDate",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "Gender",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "SystemProperties",
+                "type": "array",
+                "sequence": true,
+                "spec": {
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "PropertyMetadataID",
+                            "type": "number",
+                            "sequence": true
+                        },
+                        {
+                            "name": "PropertyName",
+                            "type": "text",
+                            "sequence": true
+                        },
+                        {
+                            "name": "DisplayName",
+                            "type": "text",
+                            "sequence": true
+                        },
+                        {
+                            "name": "InputMask",
+                            "type": "text",
+                            "sequence": true
+                        },
+                        {
+                            "name": "InputType",
+                            "type": "number",
+                            "sequence": true
+                        },
+                        {
+                            "name": "IsRequired",
+                            "type": "boolean",
+                            "sequence": true
+                        },
+                        {
+                            "name": "IsStoreVisible",
+                            "type": "boolean",
+                            "sequence": true
+                        },
+                        {
+                            "name": "MaxLength",
+                            "type": "number",
+                            "sequence": true
+                        },
+                        {
+                            "name": "ShortDisplayName",
+                            "type": "text",
+                            "sequence": true
+                        },
+                        {
+                            "name": "SystemMaxLength",
+                            "type": "number",
+                            "sequence": true
+                        },
+                        {
+                            "name": "TemplateHint",
+                            "type": "text",
+                            "sequence": true
+                        },
+                        {
+                            "name": "Watermark",
+                            "type": "text",
+                            "sequence": true
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "ExtendedProperties",
+                "type": "array",
+                "sequence": true,
+                "spec": {
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "PropertyMetadataID",
+                            "type": "number",
+                            "sequence": true
+                        },
+                        {
+                            "name": "PropertyName",
+                            "type": "text",
+                            "sequence": true
+                        },
+                        {
+                            "name": "DisplayName",
+                            "type": "text",
+                            "sequence": true
+                        },
+                        {
+                            "name": "InputMask",
+                            "type": "text",
+                            "sequence": true
+                        },
+                        {
+                            "name": "InputType",
+                            "type": "number",
+                            "sequence": true
+                        },
+                        {
+                            "name": "IsRequired",
+                            "type": "boolean",
+                            "sequence": true
+                        },
+                        {
+                            "name": "IsStoreVisible",
+                            "type": "boolean",
+                            "sequence": true
+                        },
+                        {
+                            "name": "MaxLength",
+                            "type": "number",
+                            "sequence": true
+                        },
+                        {
+                            "name": "ShortDisplayName",
+                            "type": "text",
+                            "sequence": true
+                        },
+                        {
+                            "name": "SystemMaxLength",
+                            "type": "text",
+                            "sequence": true
+                        },
+                        {
+                            "name": "TemplateHint",
+                            "type": "text",
+                            "sequence": true
+                        },
+                        {
+                            "name": "Watermark",
+                            "type": "text",
+                            "sequence": true
+                        },
+                        {
+                            "name": "Value",
+                            "type": "text",
+                            "sequence": true
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "name": "Company",
+        "type": "collection",
+        "sequence": true,
+        "spec": [
+            {
+                "name": "Cnpj",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "TradingName",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "SystemProperties",
+                "type": "array",
+                "sequence": true,
+                "spec": {
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "PropertyMetadataID",
+                            "type": "number",
+                            "sequence": true
+                        },
+                        {
+                            "name": "PropertyName",
+                            "type": "text",
+                            "sequence": true
+                        },
+                        {
+                            "name": "DisplayName",
+                            "type": "text",
+                            "sequence": true
+                        },
+                        {
+                            "name": "InputMask",
+                            "type": "text",
+                            "sequence": true
+                        },
+                        {
+                            "name": "InputType",
+                            "type": "number",
+                            "sequence": true
+                        },
+                        {
+                            "name": "IsRequired",
+                            "type": "boolean",
+                            "sequence": true
+                        },
+                        {
+                            "name": "IsStoreVisible",
+                            "type": "boolean",
+                            "sequence": true
+                        },
+                        {
+                            "name": "MaxLength",
+                            "type": "number",
+                            "sequence": true
+                        },
+                        {
+                            "name": "ShortDisplayName",
+                            "type": "text",
+                            "sequence": true
+                        },
+                        {
+                            "name": "SystemMaxLength",
+                            "type": "number",
+                            "sequence": true
+                        },
+                        {
+                            "name": "TemplateHint",
+                            "type": "text",
+                            "sequence": true
+                        },
+                        {
+                            "name": "Watermark",
+                            "type": "text",
+                            "sequence": true
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "ExtendedProperties",
+                "type": "array",
+                "sequence": true,
+                "spec": {
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "PropertyMetadataID",
+                            "type": "number",
+                            "sequence": true
+                        },
+                        {
+                            "name": "PropertyName",
+                            "type": "text",
+                            "sequence": true
+                        },
+                        {
+                            "name": "DisplayName",
+                            "type": "text",
+                            "sequence": true
+                        },
+                        {
+                            "name": "InputMask",
+                            "type": "text",
+                            "sequence": true
+                        },
+                        {
+                            "name": "InputType",
+                            "type": "number",
+                            "sequence": true
+                        },
+                        {
+                            "name": "IsRequired",
+                            "type": "boolean",
+                            "sequence": true
+                        },
+                        {
+                            "name": "IsStoreVisible",
+                            "type": "boolean",
+                            "sequence": true
+                        },
+                        {
+                            "name": "MaxLength",
+                            "type": "number",
+                            "sequence": true
+                        },
+                        {
+                            "name": "ShortDisplayName",
+                            "type": "text",
+                            "sequence": true
+                        },
+                        {
+                            "name": "SystemMaxLength",
+                            "type": "text",
+                            "sequence": true
+                        },
+                        {
+                            "name": "TemplateHint",
+                            "type": "text",
+                            "sequence": true
+                        },
+                        {
+                            "name": "Watermark",
+                            "type": "text",
+                            "sequence": true
+                        },
+                        {
+                            "name": "Value",
+                            "type": "text",
+                            "sequence": true
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "name": "SystemProperties",
+        "type": "array",
+        "sequence": true,
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "PropertyMetadataID",
+                    "type": "number"
+                },
+                {
+                    "name": "PropertyName",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "DisplayName",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "InputMask",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "InputType",
+                    "type": "number",
+                    "sequence": true
+                },
+                {
+                    "name": "IsRequired",
+                    "type": "boolean",
+                    "sequence": true
+                },
+                {
+                    "name": "IsStoreVisible",
+                    "type": "boolean",
+                    "sequence": true
+                },
+                {
+                    "name": "MaxLength",
+                    "type": "number",
+                    "sequence": true
+                },
+                {
+                    "name": "ShortDisplayName",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "SystemMaxLength",
+                    "type": "number",
+                    "sequence": true
+                },
+                {
+                    "name": "TemplateHint",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "Watermark",
+                    "type": "text",
+                    "sequence": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "ExtendedProperties",
+        "type": "array",
+        "sequence": true,
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "PropertyMetadataID",
+                    "type": "number",
+                    "sequence": true
+                },
+                {
+                    "name": "PropertyName",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "DisplayName",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "InputMask",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "InputType",
+                    "type": "number",
+                    "sequence": true
+                },
+                {
+                    "name": "IsRequired",
+                    "type": "boolean",
+                    "sequence": true
+                },
+                {
+                    "name": "IsStoreVisible",
+                    "type": "boolean",
+                    "sequence": true
+                },
+                {
+                    "name": "MaxLength",
+                    "type": "number",
+                    "sequence": true
+                },
+                {
+                    "name": "ShortDisplayName",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "SystemMaxLength",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "TemplateHint",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "Watermark",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "Value",
+                    "type": "text",
+                    "sequence": true
+                }
+            ]
+        }
     }
 ]
