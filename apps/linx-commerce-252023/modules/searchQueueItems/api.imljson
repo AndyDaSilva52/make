@@ -1,9 +1,7 @@
 {
     "url": "/v1/Queue/API.svc/web/SearchQueueItems",
-    "method": "POST",
     "qs": {},
     "body": "{{parameters.filters}}",
-    "headers": {},
     "response": {
         "iterate": "{{body.Result}}",
         "output": {
