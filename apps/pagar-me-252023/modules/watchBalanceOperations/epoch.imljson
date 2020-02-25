@@ -1,0 +1,9 @@
+{
+    "response": {
+        "limit": "{{parameters.limit}}",
+        "output": {
+            "date": "{{item.date_created}}",
+            "label": "{{item.id}}"
+        }
+    }
+}

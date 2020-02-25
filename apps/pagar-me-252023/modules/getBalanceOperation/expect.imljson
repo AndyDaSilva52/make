@@ -1,0 +1,8 @@
+[
+    {
+        "name": "balance_operation_id",
+        "type": "text",
+        //"label": "balance_operation_id",
+        "required": true
+    }
+]

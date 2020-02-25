@@ -1,0 +1,31 @@
+[
+    {
+        "help": "Maximum number of results Integromat will work with during one execution cycle.",
+        "name": "limit",
+        "type": "uinteger",
+        "label": "Limit",
+        "default": 2,
+        "required": true
+    },
+    {
+        "name": "status",
+        "type": "select",
+        "label": "Status",
+        "options": [
+            {
+                "label": "Available",
+                "value": "available"
+            },
+            {
+                "label": "Waitings Funds",
+                "value": "waiting_funds"
+            },
+            {
+                "label": "Transferred",
+                "value": "transferred"
+            }
+        ],
+        "default": "available",
+        "required": false
+    }
+]

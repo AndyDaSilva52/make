@@ -1,0 +1,38 @@
+[
+    {
+        "name": "apiKey",
+        "type": "text",
+        "label": "API Key",
+        "required": true
+    },
+    {
+        "name": "apiVersion",
+        "type": "select",
+        "label": "API Version",
+        "advanced": true,
+        "editable": {
+            "enabled": false,
+            "help": "Version of the API. Ex of value to use: \"2019-09-01\""
+        },
+        "mode": "choose",
+        "options": [
+            {
+                "label": "v4 (2019-09-01)",
+                "value": "2019-09-01"
+            },
+            {
+                "label": "v3 (2017-08-28)",
+                "value": "2017-08-28"
+            },
+            {
+                "label": "v2 (2017-07-17)",
+                "value": "2017-07-17"
+            },
+            {
+                "label": "v1 (2013-03-01)",
+                "value": "2013-03-01"
+            }
+        ],
+        "default": "2019-09-01"
+    }
+]

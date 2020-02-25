@@ -1,0 +1,13 @@
+{
+    "url": "/recipients",
+    "method": "GET",
+    "qs": {
+        "name": "{{parameters.name}}"
+    },
+    "body": {},
+    "headers": {},
+    "response": {
+        "output": "{{item}}",
+        "iterate": "{{body}}"
+    }
+}

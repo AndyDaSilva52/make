@@ -1,0 +1,5 @@
+{
+    "name": "rGetTransaction",
+    "label": "Get Transaction",
+    "connection": "pagar-me-252023"
+}

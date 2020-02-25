@@ -1,0 +1,7 @@
+[
+    {
+        "name": "transaction_id",
+        "type": "text",
+        "required": true
+    }
+]

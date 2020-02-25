@@ -1,0 +1,25 @@
+{
+    "baseUrl": "https://api.pagar.me/1",
+    "headers": {
+        "Accept": "application/json",
+        "Authorization": "Basic {{base64(connection.apiKey + ':' + 'x')}}"
+    },
+    "log": {
+        "sanitize": [
+            "request.headers.authorization"
+        ]
+    },
+    "response": {
+        "error": {
+            //400 - Algum parâmetro obrigatório não foi passado, ou os parâmetros passados não estão corretos.
+            "400": {
+                "type": "InvalidConfigurationError",
+                "message": "{{body.errors.message}} - parameter_name[{{body.erros.parameter_name}}]type[{{body.erros.type}}]"
+            },
+            //401 - Falta de autorização para acessar este endpoint.
+            //404 - Endpoint não encontrado, revise a URL passada.
+            //500 - Erro interno do Pagar.me, tente sua requisição novamente. Caso o erro continue, entre em contato com suporte@pagar.me
+            "message": "{{body.errors.message}} - parameter_name[{{body.erros.parameter_name}}]type[{{body.erros.type}}]"
+        }
+    }
+}

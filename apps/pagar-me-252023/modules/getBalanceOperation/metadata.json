@@ -1,0 +1,8 @@
+{
+    "name": "getBalanceOperation",
+    "label": "Get Balance Operation (Operação de Saldo)",
+    "description": "Specific Balance Operation",
+    "connection": "pagar-me-252023",
+    "webhook": null,
+    "type": "action"
+}

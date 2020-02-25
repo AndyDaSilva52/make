@@ -1,0 +1,10 @@
+[
+    {
+        "name": "recipient_id",
+        "type": "text",
+        "label": "Recipient ID",
+        "help": "Id de um recebedor específico, caso queira obter o saldo específico dele",
+        "required": false,
+        "advanced": true
+    }
+]

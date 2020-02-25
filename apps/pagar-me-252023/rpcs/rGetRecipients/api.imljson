@@ -1,0 +1,19 @@
+{
+	// rGetRecipients
+    "url": "/recipients",
+    "method": "GET",
+    "qs": {
+        "count": "{{parameters.count}}",
+        "page": "{{parameters.page}}"
+    },
+    "body": {},
+    "headers": {},
+    "response": {
+        "iterate": "{{body}}",
+        "output": {
+            // TODO: Choose a better label, maybe using the details of bank_account
+            "label": "{{item.id}}",
+            "value": "{{item.id}}"
+        }
+    }
+}

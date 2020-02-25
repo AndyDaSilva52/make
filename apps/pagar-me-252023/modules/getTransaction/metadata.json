@@ -1,0 +1,8 @@
+{
+    "name": "getTransaction",
+    "label": "Get Transaction",
+    "description": "Specific Transaction",
+    "connection": "pagar-me-252023",
+    "webhook": null,
+    "type": "action"
+}

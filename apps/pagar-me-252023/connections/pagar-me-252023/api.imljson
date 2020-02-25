@@ -1,0 +1,12 @@
+{
+    "url": "https://api.pagar.me/1/balance",
+    "headers": {
+        "Authorization": "Basic {{base64(parameters.apiKey + ':' + 'x')}}",
+        "X-Pagarme-Version": "{{parameters.apiVersion}}"
+    },
+    "log": {
+        "sanitize": [
+            "request.headers.authorization"
+        ]
+    }
+}

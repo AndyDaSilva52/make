@@ -1,0 +1,13 @@
+{
+	// rGetTransaction
+    "url": "/transactions/{{temp.transaction_id}}",
+    "method": "GET",
+    "qs": {},
+    "body": {},
+    "headers": {},
+    "response": {
+        "output": {
+            "amount": "{{body.amount}}"
+        }
+    }
+}

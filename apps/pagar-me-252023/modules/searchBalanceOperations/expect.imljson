@@ -1,0 +1,42 @@
+[
+    {
+        "name": "limit",
+        "type": "uinteger",
+        "label": "Count",
+        "default": 100
+    },
+    {
+        "name": "status",
+        "type": "select",
+        "label": "Status",
+        "options": [
+            {
+                "label": "Available",
+                "value": "available"
+            },
+            {
+                "label": "Waitings Funds",
+                "value": "waiting_funds"
+            },
+            {
+                "label": "Transferred",
+                "value": "transferred"
+            }
+        ],
+        "required": false
+    },
+    {
+        "name": "start_date",
+        "type": "date",
+        "label": "Start Date",
+        "help": "Specific the day that will be filtered.\nTime will be set as 00:00:00.\nExample using formula for Yesterday: {{addDays(now;-1)}}",
+        "time": false
+    },
+    {
+        "name": "end_date",
+        "type": "date",
+        "label": "End Date",
+        "help": "Specific the day that will be filtered.\nTime will be set as 23:59:59.\nExample using formula for Yesterday: {{addDays(now;-1)}}",
+        "time": false
+    }
+]

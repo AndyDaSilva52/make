@@ -1,0 +1,8 @@
+{
+    "name": "watchBalanceOperations",
+    "label": "Watch Balance Operations",
+    "description": "Watch Balance Operations using Date. Default status equals \"available\"",
+    "connection": "pagar-me-252023",
+    "webhook": null,
+    "type": "trigger"
+}

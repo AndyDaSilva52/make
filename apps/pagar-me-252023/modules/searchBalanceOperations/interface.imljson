@@ -1,0 +1,363 @@
+[
+    {
+        "name": "id",
+        "type": "text",
+        "sort": "1"
+    },
+    {
+        "name": "status",
+        "type": "text",
+        "sort": "2"
+    },
+    {
+        "name": "type",
+        "type": "text",
+        "sort": "3"
+    },
+    {
+        "name": "amount",
+        "type": "number",
+        "sort": "4"
+    },
+    {
+        "name": "fee",
+        "type": "number",
+        "sort": "8"
+    },
+    {
+        "name": "balance_amount",
+        "type": "number",
+        "sort": "9"
+    },
+    {
+        "name": "balance_old_amount",
+        "type": "number",
+        "sort": "10"
+    },
+    {
+        "name": "date_created",
+        "type": "date",
+        "sort": "11"
+    },
+    {
+        "label": "movement_object",
+        "type": "collection",
+        "sort": "12",
+        "spec": [
+            {
+                "name": "object",
+                "type": "text",
+                "sort": "1"
+            },
+            {
+                "name": "id",
+                "type": "text",
+                "sort": "2"
+            },
+            {
+                "name": "status",
+                "type": "text",
+                "sort": "3"
+            },
+            {
+                "name": "type",
+                "type": "text",
+                "sort": "4"
+            },
+            {
+                "name": "description",
+                "type": "text",
+                "sort": "5"
+            },
+            {
+                "name": "transaction_id",
+                "type": "text",
+                "sort": "10"
+            },
+            {
+                "name": "amount",
+                "type": "number",
+                "sort": "11"
+            },
+            {
+                "name": "fee",
+                "type": "number",
+                "sort": "12"
+            },
+            {
+                "name": "anticipation_fee",
+                "type": "number",
+                "sort": "13"
+            },
+            {
+                "name": "fraud_coverage_fee",
+                "type": "number",
+                "sort": "14"
+            },
+            {
+                "name": "accrual_date",
+                "type": "date",
+                "time": true,
+                "sort": "20"
+            },
+            {
+                "name": "date_created",
+                "type": "date",
+                "time": true,
+                "sort": "21"
+            },
+            {
+                "name": "date_updated",
+                "type": "date",
+                "time": true,
+                "sort": "22"
+            },
+            {
+                "name": "payment_date",
+                "type": "date",
+                "time": false,
+                "sort": "23"
+            },
+            {
+                "name": "funding_date",
+                "type": "date",
+                "time": false,
+                "sort": "24"
+            },
+            {
+                "name": "funding_estimated_date",
+                "type": "date",
+                "time": false,
+                "sort": "25"
+            },
+            {
+                "name": "installment",
+                "type": "number",
+                "sort": "30"
+            },
+            {
+                "name": "payment_method",
+                "type": "text",
+                "sort": "31"
+            },
+            {
+                "name": "recipient_id",
+                "type": "text",
+                "sort": "32"
+            },
+            {
+                "name": "object_id",
+                "type": "text",
+                "sort": "33"
+            },
+            {
+                "name": "object_type",
+                "type": "text",
+                "sort": "34"
+            },
+            {
+                "name": "source_type",
+                "type": "text",
+                "sort": "35"
+            },
+            {
+                "name": "source_id",
+                "type": "text",
+                "sort": "36"
+            },
+            {
+                "name": "target_type",
+                "type": "text",
+                "sort": "37"
+            },
+            {
+                "name": "target_id",
+                "type": "text",
+                "sort": "38"
+            },
+            {
+                "name": "split_rule_id",
+                "type": "text",
+                "sort": "39"
+            },
+            {
+                "name": "bulk_anticipation_id",
+                "type": "text",
+                "sort": "40"
+            },
+            {
+                "name": "originator_model",
+                "type": "text",
+                "sort": "41"
+            },
+            {
+                "name": "originator_model_id",
+                "type": "text",
+                "sort": "42"
+            },
+            {
+                "name": "original_payment_date",
+                "type": "date",
+                "time": true,
+                "sort": "43"
+            },
+            {
+                "name": "metadata",
+                "type": "collection",
+                "sort": "50",
+                "spec": []
+            },
+            {
+                "name": "bank_account",
+                "type": "collection",
+                "sort": "60",
+                "spec": [
+                    {
+                        "name": "object",
+                        "type": "text"
+                    },
+                    {
+                        "name": "id",
+                        "type": "text"
+                    },
+                    {
+                        "name": "bank_code",
+                        "type": "text"
+                    },
+                    {
+                        "name": "agencia",
+                        "type": "text"
+                    },
+                    {
+                        "name": "agencia_dv",
+                        "type": "text"
+                    },
+                    {
+                        "name": "conta",
+                        "type": "text"
+                    },
+                    {
+                        "name": "conta_dv",
+                        "type": "text"
+                    },
+                    {
+                        "name": "type",
+                        "type": "text"
+                    },
+                    {
+                        "name": "document_type",
+                        "type": "text"
+                    },
+                    {
+                        "name": "document_number",
+                        "type": "text"
+                    },
+                    {
+                        "name": "legal_name",
+                        "type": "text"
+                    },
+                    {
+                        "name": "charge_transfer_fees",
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "date_created",
+                        "type": "date",
+                        "time": true
+                    }
+                ]
+            },
+            {
+                "name": "movement_object",
+                "type": "collection",
+                "sort": "80",
+                "spec": [
+                    {
+                        "name": "object",
+                        "type": "text",
+                        "sort": "1"
+                    },
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "sort": "2"
+                    },
+                    {
+                        "name": "serial_number",
+                        "type": "text",
+                        "sort": "3"
+                    },
+                    {
+                        "name": "amount",
+                        "type": "number",
+                        "sort": "4"
+                    },
+                    {
+                        "name": "status",
+                        "type": "text",
+                        "sort": "5"
+                    },
+                    {
+                        "name": "payment_method",
+                        "type": "text",
+                        "sort": "6"
+                    },
+                    {
+                        "name": "type",
+                        "type": "text",
+                        "sort": "7"
+                    },
+                    {
+                        "name": "period_start_date",
+                        "type": "date",
+                        "time": true,
+                        "sort": "8"
+                    },
+                    {
+                        "name": "period_end_date",
+                        "type": "date",
+                        "time": true,
+                        "sort": "9"
+                    },
+                    {
+                        "name": "movement_object",
+                        "type": "collection",
+                        "sort": "50",
+                        "spec": [
+                            {
+                                "name": "company_minimum_monthly_payment",
+                                "type": "number",
+                                "sort": "1"
+                            },
+                            {
+                                "name": "company_production_date",
+                                "type": "date",
+                                "sort": "2"
+                            },
+                            {
+                                "name": "proportional_minimum_monthly_payment",
+                                "type": "number",
+                                "sort": "3"
+                            },
+                            {
+                                "name": "gateway_fee",
+                                "type": "number",
+                                "sort": "4"
+                            },
+                            {
+                                "name": "consumed_fee",
+                                "type": "number",
+                                "sort": "5"
+                            },
+                            {
+                                "name": "fee_collection_id",
+                                "type": "text",
+                                "sort": "6"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

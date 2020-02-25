@@ -1,0 +1,18 @@
+[
+    {
+        "label": "object",
+        "type": "text"
+    },
+    {
+        "label": "waiting_funds_amount",
+        "type": "number"
+    },
+    {
+        "label": "transferred_amount",
+        "type": "number"
+    },
+    {
+        "label": "available_amount",
+        "type": "number"
+    }
+]

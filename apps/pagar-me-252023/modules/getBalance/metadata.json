@@ -1,0 +1,8 @@
+{
+    "name": "getBalance",
+    "label": "Get Balance (Saldo)",
+    "description": "Balance",
+    "connection": "pagar-me-252023",
+    "webhook": null,
+    "type": "action"
+}

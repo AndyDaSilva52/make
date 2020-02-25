@@ -1,0 +1,32 @@
+{
+    //TODO: It's not working right
+    "url": "/balance/operations",
+    "method": "GET",
+    "qs": {
+        "count": "{{parameters.limit}}",
+        "status": "{{parameters.status}}",
+        "page": "1"
+        //,
+        //"start_date": "",
+        //"end_date": ""
+    },
+    "body": {},
+    "headers": {},
+    "response": {
+        "iterate": "{{body}}",
+        "trigger": {
+            "id": "{{item.id}}",
+            "date": "{{item.date_created}}",
+            "type": "date",
+            "order": "desc"
+        },
+        "output": "{{item}}",
+        "limit": "{{parameters.limit}}"
+    },
+    "pagination": {
+        "mergeWithParent": true,
+        "qs": {
+            "page": "{{pagination.page}}"
+        }
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "name": "searchBalanceOperations",
+    "label": "Search Balance Operations (Operações de Saldo)",
+    "description": "List of Balance Operations",
+    "connection": "pagar-me-252023",
+    "webhook": null,
+    "type": "search"
+}

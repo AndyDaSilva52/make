@@ -1,0 +1,8 @@
+{
+    "name": "getRecipients",
+    "label": "List Recipients",
+    "description": "Recipients",
+    "connection": "pagar-me-252023",
+    "webhook": null,
+    "type": "search"
+}

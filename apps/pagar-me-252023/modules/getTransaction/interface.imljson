@@ -1,0 +1,589 @@
+[
+    {
+        "name": "object",
+        "type": "text"
+    },
+    {
+        "name": "status",
+        "type": "text"
+    },
+    {
+        "name": "refuse_reason",
+        "type": "text"
+    },
+    {
+        "name": "status_reason",
+        "type": "text"
+    },
+    {
+        "name": "acquirer_response_code",
+        "type": "text"
+    },
+    {
+        "name": "acquirer_name",
+        "type": "text"
+    },
+    {
+        "name": "acquirer_id",
+        "type": "text"
+    },
+    {
+        "name": "authorization_code",
+        "type": "text"
+    },
+    {
+        "name": "soft_descriptor",
+        "type": "text"
+    },
+    {
+        "name": "tid",
+        "type": "text"
+    },
+    {
+        "name": "nsu",
+        "type": "text"
+    },
+    {
+        "name": "date_created",
+        "type": "date",
+        "time": true
+    },
+    {
+        "name": "date_updated",
+        "type": "date",
+        "time": true
+    },
+    {
+        "name": "amount",
+        "type": "number"
+    },
+    {
+        "name": "authorized_amount",
+        "type": "number"
+    },
+    {
+        "name": "paid_amount",
+        "type": "number"
+    },
+    {
+        "name": "refunded_amount",
+        "type": "number"
+    },
+    {
+        "name": "installments",
+        "type": "uinteger"
+    },
+    {
+        "name": "id",
+        "type": "uinteger"
+    },
+    {
+        "name": "cost",
+        "type": "number"
+    },
+    {
+        "name": "card_holder_name",
+        "type": "text"
+    },
+    {
+        "name": "card_last_digits",
+        "type": "text"
+    },
+    {
+        "name": "card_first_digits",
+        "type": "text"
+    },
+    {
+        "name": "card_brand",
+        "type": "text"
+    },
+    {
+        "name": "card_pin_mode",
+        "type": "text"
+    },
+    {
+        "name": "card_magstripe_fallback",
+        "type": "boolean"
+    },
+    {
+        "name": "cvm_pin",
+        "type": "boolean"
+    },
+    {
+        "name": "postback_url",
+        "type": "text"
+    },
+    {
+        "name": "payment_method",
+        "type": "text"
+    },
+    {
+        "name": "capture_method",
+        "type": "text"
+    },
+    {
+        "name": "antifraud_score",
+        "type": "text"
+    },
+    {
+        "name": "boleto_url",
+        "type": "text"
+    },
+    {
+        "name": "boleto_barcode",
+        "type": "text"
+    },
+    {
+        "name": "boleto_expiration_date",
+        "type": "text"
+    },
+    {
+        "name": "referer",
+        "type": "text"
+    },
+    {
+        "name": "ip",
+        "type": "text"
+    },
+    {
+        "name": "subscription_id",
+        "type": "text"
+    },
+    {
+        "name": "phone",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "object",
+                "type": "text"
+            },
+            {
+                "name": "ddi",
+                "type": "text"
+            },
+            {
+                "name": "ddd",
+                "type": "text"
+            },
+            {
+                "name": "number",
+                "type": "text"
+            },
+            {
+                "name": "id",
+                "type": "uinteger"
+            }
+        ]
+    },
+    {
+        "name": "address",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "object",
+                "type": "text"
+            },
+            {
+                "name": "street",
+                "type": "text"
+            },
+            {
+                "name": "complementary",
+                "type": "text"
+            },
+            {
+                "name": "street_number",
+                "type": "text"
+            },
+            {
+                "name": "neighborhood",
+                "type": "text"
+            },
+            {
+                "name": "city",
+                "type": "text"
+            },
+            {
+                "name": "state",
+                "type": "text"
+            },
+            {
+                "name": "zipcode",
+                "type": "text"
+            },
+            {
+                "name": "country",
+                "type": "text"
+            },
+            {
+                "name": "id",
+                "type": "uinteger"
+            }
+        ]
+    },
+    {
+        "name": "customer",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "object",
+                "type": "text"
+            },
+            {
+                "name": "id",
+                "type": "uinteger"
+            },
+            {
+                "name": "external_id",
+                "type": "text"
+            },
+            {
+                "name": "type",
+                "type": "text"
+            },
+            {
+                "name": "country",
+                "type": "text"
+            },
+            {
+                "name": "document_number",
+                "type": "text"
+            },
+            {
+                "name": "document_type",
+                "type": "text"
+            },
+            {
+                "name": "name",
+                "type": "text"
+            },
+            {
+                "name": "email",
+                "type": "text"
+            },
+            {
+                "name": "phone_numbers",
+                "type": "array"
+            },
+            {
+                "name": "born_at",
+                "type": "text"
+            },
+            {
+                "name": "birthday",
+                "type": "text"
+            },
+            {
+                "name": "gender",
+                "type": "text"
+            },
+            {
+                "name": "date_created",
+                "type": "date",
+                "time": true
+            },
+            {
+                "name": "documents",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "type",
+                        "type": "text"
+                    },
+                    {
+                        "name": "number",
+                        "type": "text"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "billing",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "name",
+                "type": "text"
+            },
+            {
+                "name": "address",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "object",
+                        "type": "text"
+                    },
+                    {
+                        "name": "street",
+                        "type": "text"
+                    },
+                    {
+                        "name": "complementary",
+                        "type": "text"
+                    },
+                    {
+                        "name": "street_number",
+                        "type": "text"
+                    },
+                    {
+                        "name": "neighborhood",
+                        "type": "text"
+                    },
+                    {
+                        "name": "city",
+                        "type": "text"
+                    },
+                    {
+                        "name": "state",
+                        "type": "text"
+                    },
+                    {
+                        "name": "zipcode",
+                        "type": "text"
+                    },
+                    {
+                        "name": "country",
+                        "type": "text"
+                    },
+                    {
+                        "name": "id",
+                        "type": "uinteger"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "shipping",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "name",
+                "type": "text",
+                "required": true
+            },
+            {
+                "name": "fee",
+                "type": "number",
+                "required": true
+            },
+            {
+                "name": "delivery_date",
+                "type": "text",
+                "help": "Data de entrega. Estimativa fornecida no formato AAAA-MM-DD"
+            },
+            {
+                "name": "expedited",
+                "type": "boolean",
+                "help": "Entrega expressa. Se for entrega expressa, deve conter 'true' (sim). Caso contrário, deve conter 'false' (não)"
+            },
+            {
+                "name": "address",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "object",
+                        "type": "text"
+                    },
+                    {
+                        "name": "street",
+                        "type": "text"
+                    },
+                    {
+                        "name": "complementary",
+                        "type": "text"
+                    },
+                    {
+                        "name": "street_number",
+                        "type": "text"
+                    },
+                    {
+                        "name": "neighborhood",
+                        "type": "text"
+                    },
+                    {
+                        "name": "city",
+                        "type": "text"
+                    },
+                    {
+                        "name": "state",
+                        "type": "text"
+                    },
+                    {
+                        "name": "zipcode",
+                        "type": "text"
+                    },
+                    {
+                        "name": "country",
+                        "type": "text"
+                    },
+                    {
+                        "name": "id",
+                        "type": "uinteger"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "items",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "id",
+                "type": "text"
+            },
+            {
+                "name": "title",
+                "type": "text"
+            },
+            {
+                "name": "unit_price",
+                "type": "number"
+            },
+            {
+                "name": "quantity",
+                "type": "number"
+            },
+            {
+                "name": "tangible",
+                "type": "boolean"
+            },
+            {
+                "name": "category",
+                "type": "text"
+            },
+            {
+                "name": "venue",
+                "type": "text",
+                "help": "Local (se evento)."
+            },
+            {
+                "name": "date",
+                "type": "text",
+                "help": "Data (se evento). Estimativa fornecida no formato AAAA-MM-DD"
+            }
+        ]
+    },
+    {
+        "name": "card",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "object",
+                "type": "text"
+            },
+            {
+                "name": "id",
+                "type": "text"
+            },
+            {
+                "name": "date_created",
+                "type": "date"
+            },
+            {
+                "name": "date_updated",
+                "type": "date"
+            },
+            {
+                "name": "brand",
+                "type": "text"
+            },
+            {
+                "name": "holder_name",
+                "type": "text"
+            },
+            {
+                "name": "first_digits",
+                "type": "text"
+            },
+            {
+                "name": "last_digits",
+                "type": "text"
+            },
+            {
+                "name": "country",
+                "type": "text"
+            },
+            {
+                "name": "fingerprint",
+                "type": "text"
+            },
+            {
+                "name": "valid",
+                "type": "boolean"
+            },
+            {
+                "name": "expiration_date",
+                "type": "text"
+            }
+        ]
+    },
+    {
+        "name": "split_rules",
+        "type": "text"
+    },
+    {
+        "name": "metadata",
+        "type": "collection",
+        "spec": []
+    },
+    {
+        "name": "antifraud_metadata",
+        "type": "collection",
+        "spec": []
+    },
+    {
+        "name": "reference_key",
+        "type": "text"
+    },
+    {
+        "name": "device",
+        "type": "text"
+    },
+    {
+        "name": "local_transaction_id",
+        "type": "text"
+    },
+    {
+        "name": "local_time",
+        "type": "text"
+    },
+    {
+        "name": "fraud_covered",
+        "type": "boolean"
+    },
+    {
+        "name": "fraud_reimbursed",
+        "type": "text"
+    },
+    {
+        "name": "order_id",
+        "type": "text"
+    },
+    {
+        "name": "risk_level",
+        "type": "text"
+    },
+    {
+        "name": "receipt_url",
+        "type": "text"
+    },
+    {
+        "name": "payment",
+        "type": "text"
+    },
+    {
+        "name": "addition",
+        "type": "text"
+    },
+    {
+        "name": "discount",
+        "type": "text"
+    },
+    {
+        "name": "private_label",
+        "type": "text"
+    }
+]
