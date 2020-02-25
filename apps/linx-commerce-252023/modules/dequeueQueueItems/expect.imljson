@@ -1,0 +1,13 @@
+[
+    {
+        "name": "QueueItems",
+        "label": "QueueItems",
+        "type": "array",
+        "spec": [
+            {
+                "name": "QueueItemID",
+                "type": "text"
+            }
+        ]
+    }
+]

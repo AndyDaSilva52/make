@@ -1,0 +1,11 @@
+{
+    "url": "/v1/Queue/API.svc/web/DequeueQueueItems",
+    "qs": {},
+    "body": {
+        "QueueItems": "{{parameters.QueueItems}}"
+    },
+    "headers": {},
+    "response": {
+        "output": "{{body}}"
+    }
+}
