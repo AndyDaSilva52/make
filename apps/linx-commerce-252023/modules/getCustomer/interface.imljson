@@ -1,0 +1,8 @@
+[
+    {
+        "name": "CustomerID",
+        "type": "uinteger",
+        "label": "CustomerID",
+        "required": true
+    }
+]

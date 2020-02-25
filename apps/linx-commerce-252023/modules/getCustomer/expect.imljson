@@ -1,0 +1,7 @@
+[
+    {
+        "name": "CustomerID",
+        "type": "uinteger",
+        "required": true
+    }
+]

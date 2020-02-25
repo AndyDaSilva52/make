@@ -1,0 +1,33 @@
+[
+    {
+        "url": "/v1/Profile/API.svc/web/GetPerson",
+        "body": "{{parameters.CustomerID}}",
+        "response": {
+            "temp": {
+                "Person": "{{body}}"
+            }
+        },
+        "condition": true
+    },
+    {
+        "url": "/v1/Profile/API.svc/web/GetCompany",
+        "body": "{{parameters.CustomerID}}",
+        "response": {
+            "temp": {
+                "Company": "{{body}}"
+            }
+        },
+        "condition": true
+    },
+    {
+        "url": "/v1/Profile/API.svc/web/GetCustomer",
+        "body": "{{parameters.CustomerID}}",
+        "response": {
+            "output": {
+                "CustomerID": "{{body.CustomerID}}",
+                "Person": "{{temp.Person}}",
+                "Company": "{{temp.Company}}"
+            }
+        }
+    }
+]
