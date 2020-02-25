@@ -1,0 +1,14 @@
+{
+    "baseUrl": "{{connection.apiUrl}}",
+    "method": "POST",
+    "headers": {
+        "authorization": "Basic {{base64(connection.username + ':' + connection.password)}}",
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+    },
+    "log": {
+        "sanitize": [
+            "request.headers.authorization"
+        ]
+    }
+}

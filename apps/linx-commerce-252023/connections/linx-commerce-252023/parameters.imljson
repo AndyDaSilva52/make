@@ -1,0 +1,23 @@
+[
+    {
+        "name": "apiUrl",
+        "type": "url",
+        "label": "Endereço da API",
+        "help": "Endereço da API, consulte https://docs.linxcommerce.com.br/docs/api-integracao-com-erps",
+        "default": "https://demo.layer.core.dcg.com.br"
+    },
+    {
+        "name": "username",
+        "type": "text",
+        "label": "Username",
+        "required": true,
+        "default": "layer.demo"
+    },
+    {
+        "name": "password",
+        "type": "text",
+        "label": "Password",
+        "required": true,
+        "default": "demo123"
+    }
+]

@@ -1,0 +1,5 @@
+{
+    "name": "rQueueGetQueue",
+    "label": "Get Queue",
+    "connection": "linx-commerce-252023"
+}

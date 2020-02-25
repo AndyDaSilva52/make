@@ -1,0 +1,15 @@
+{
+    "url": "{{parameters.apiUrl}}/v1/Configuration/API.svc/web/GetMasterStatus",
+    "method": "POST",
+    "body": {},
+    "headers": {
+        "authorization": "Basic {{base64(parameters.username + ':' + parameters.password)}}",
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+    },
+    "log": {
+        "sanitize": [
+            "request.headers.authorization"
+        ]
+    }
+}

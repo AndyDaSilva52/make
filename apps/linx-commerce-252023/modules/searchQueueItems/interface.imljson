@@ -1,0 +1,48 @@
+[
+    {
+        "name": "Attempts",
+        "type": "number"
+    },
+    {
+        "name": "CreatedDate",
+        "type": "date",
+        "time": true
+    },
+    {
+        "name": "DomainEventTypeName",
+        "type": "text"
+    },
+    {
+        "name": "EntityKeyName",
+        "type": "text"
+    },
+    {
+        "name": "EntityKeyValue",
+        "type": "text"
+    },
+    {
+        "name": "EntityTypeName",
+        "type": "text"
+    },
+    {
+        "name": "LockDate",
+        "type": "date",
+        "time": true
+    },
+    {
+        "name": "Operation",
+        "type": "text"
+    },
+    {
+        "name": "QueueID",
+        "type": "number"
+    },
+    {
+        "name": "QueueItemID",
+        "type": "text"
+    },
+    {
+        "name": "QueueSubscriptionID",
+        "type": "number"
+    }
+]

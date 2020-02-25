@@ -1,0 +1,17 @@
+{
+    "url": "/v1/Queue/API.svc/web/SearchQueues",
+    "method": "POST",
+    "body": {
+        "Page": {
+            "PageIndex": 0,
+            "PageSize": 10
+        }
+    },
+    "response": {
+        "iterate": "{{body.Result}}",
+        "output": {
+            "label": "{{item.QueueID}} ({{item.Name}})",
+            "value": "{{item.QueueID}}"
+        }
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "name": "searchQueueItems",
+    "label": "Search Queue Items",
+    "description": "Método usado para pesquisar filas",
+    "connection": "linx-commerce-252023",
+    "webhook": null,
+    "type": "search"
+}

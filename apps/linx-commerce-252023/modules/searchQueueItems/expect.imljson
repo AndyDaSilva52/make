@@ -1,0 +1,80 @@
+[
+    {
+        "name": "filters",
+        "label": "Body",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "QueueID",
+                "type": "select",
+                "help": "Lista de identificadores de transações de pedidos.",
+                "required": false,
+                "options": "rpc://rQueueGetQueue",
+                "sort": "1"
+            },
+            {
+                "name": "QueueAlias",
+                "type": "hidden",
+                "help": "Alias da fila.",
+                "required": false,
+                "sort": "2"
+            },
+            {
+                "name": "LockItems",
+                "type": "number",
+                "advanced": true
+                //TODO:
+            },
+            {
+                "name": "LockSpan",
+                "type": "text",
+                "default": null,
+                "help": "Representa um período de tempo onde podemos manipular",
+                "required": false,
+                "advanced": true
+            },
+            {
+                "name": "Attempts",
+                "type": "number",
+                "help": "Recebe quantidade de tentativas.",
+                "required": false,
+                "advanced": true
+            },
+            {
+                "name": "Page",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "PageIndex",
+                        "type": "hidden",
+                        "default": 0,
+                        "required": true
+                    },
+                    {
+                        "name": "PageSize",
+                        "type": "number",
+                        "default": 10,
+                        "required": true
+                    }
+                ]
+            },
+            {
+                "name": "Where",
+                "type": "text",
+                "required": false,
+                "help": "Ex: \n\nEntityTypeName == \"EZ.Store.Model.Sales.PurchaseOrder\" && (EntityKeyValue != \"167531\" || EntityKeyValue != \"167445\")\n\nEntityTypeName != \"EZ.Store.Model.Profile.Guest\" && EntityTypeName != \"EZ.Store.Model.Profile.Customer\" && EntityTypeName != \"EZ.Store.Model.Profile.Person\" && EntityTypeName != \"EZ.Store.Model.Profile.Company\" \n\nEntityTypeName == \"EZ.Store.Model.Sales.PurchaseOrder\" && CreatedDate <= \"2020-02-20T03:00:00.073Z\""
+            },
+            {
+                "name": "WhereMetadata",
+                "type": "text",
+                "required": false
+            },
+            {
+                "name": "OrderBy",
+                "type": "text",
+                "required": true,
+                "default": "CreatedDate"
+            }
+        ]
+    }
+]

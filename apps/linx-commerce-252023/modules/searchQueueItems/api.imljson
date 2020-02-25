@@ -1,0 +1,31 @@
+{
+    "url": "/v1/Queue/API.svc/web/SearchQueueItems",
+    "method": "POST",
+    "qs": {},
+    "body": "{{parameters.filters}}",
+    "headers": {},
+    "response": {
+        "iterate": "{{body.Result}}",
+        "output": {
+            "Attempts": "{{item.Attempts}}",
+            "CreatedDate": "{{parseDate(substring(item.CreatedDate; indexOf(item.CreatedDate; decodeURL('%28')) + 1; indexOf(item.CreatedDate; if(contains(item.CreatedDate; decodeURL('%2D')); decodeURL('%2D'); decodeURL('%29')))) / 1000; 'X')}}",
+            "DomainEventTypeName": "{{item.DomainEventTypeName}}",
+            "EntityKeyName": "{{item.EntityKeyName}}",
+            "EntityKeyValue": "{{item.EntityKeyValue}}",
+            "EntityTypeName": "{{item.EntityTypeName}}",
+            "LockDate": "{{parseDate(substring(item.LockDate; indexOf(item.LockDate; decodeURL('%28')) + 1; indexOf(item.LockDate; if(contains(item.LockDate; decodeURL('%2D')); decodeURL('%2D'); decodeURL('%29')))) / 1000; 'X')}}",
+            "Operation": "{{item.Operation}}",
+            "QueueID": "{{item.QueueID}}",
+            "QueueItemID": "{{item.QueueItemID}}",
+            "QueueSubscriptionID": "{{item.QueueSubscriptionID}}"
+        }
+    },
+    "pagination": {
+        "body": {
+            "Page": {
+                "PageIndex": "{{(pagination.page - 1)}}"
+            }
+        },
+        "condition": "{{(body.Page.PageCount) > (body.Page.Index)}}"
+    }
+}
