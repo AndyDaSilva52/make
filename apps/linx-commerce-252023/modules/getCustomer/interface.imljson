@@ -5,6 +5,11 @@
         "sequence": true
     },
     {
+        "name": "IntegrationID",
+        "type": "text",
+        "sequence": true
+    },
+    {
         "name": "CustomerHash",
         "type": "text",
         "sequence": true
@@ -28,6 +33,11 @@
     },
     {
         "name": "TradingName",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "DocumentNumber",
         "type": "text",
         "sequence": true
     },

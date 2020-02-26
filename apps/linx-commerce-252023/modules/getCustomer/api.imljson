@@ -1,5 +1,21 @@
 [
     {
+        "url": "/v1/Profile/API.svc/web/SearchCustomer",
+        "body": {
+            "Page": {
+                "PageIndex": 0,
+                "PageSize": 1
+            },
+            "Where": "CustomerID == {{parameters.CustomerID}} ",
+            "OrderBy": "CreatedDate,CustomerID"
+        },
+        "response": {
+            "temp": {
+                "Customer": "{{body.Result[1]}}"
+            }
+        }
+    },
+    {
         "url": "/v1/Profile/API.svc/web/GetPerson",
         "body": "{{parameters.CustomerID}}",
         "response": {
@@ -7,7 +23,7 @@
                 "Person": "{{body}}"
             }
         },
-        "condition": true
+        "condition": "{{temp.Customer.CustomerType == 'P'}}"
     },
     {
         "url": "/v1/Profile/API.svc/web/GetCompany",
@@ -17,7 +33,7 @@
                 "Company": "{{body}}"
             }
         },
-        "condition": true
+        "condition": "{{temp.Customer.CustomerType == 'C'}}"
     },
     {
         "url": "/v1/Profile/API.svc/web/GetCustomer",
@@ -25,14 +41,14 @@
         "response": {
             "output": {
                 "CustomerID": "{{body.CustomerID}}",
-                //TODO: IntegrationID
+                "IntegrationID": "{{temp.Customer.IntegrationID}}",
                 "CustomerHash": "{{body.CustomerHash}}",
                 "CreatedDate": "{{parseDate(substring(body.CreatedDate; indexOf(body.CreatedDate; decodeURL('%28')) + 1; indexOf(body.CreatedDate; if(contains(body.CreatedDate; decodeURL('%2D')); decodeURL('%2D'); decodeURL('%29')))) / 1000; 'X')}}",
                 "CustomerStatusID": "{{body.CustomerStatusID}}",
                 "CustomerType": "{{body.CustomerType}}",
                 "Name": "{{body.Name}}",
                 "TradingName": "{{switch(body.CustomerType;80;body.Name + ' ' + temp.Person.Surname;67;temp.Company.TradingName;71;)}}",
-                //TODO: DocumentNumber
+                "DocumentNumber": "{{temp.Customer.DocumentNumber}}",
                 "Password": "{{body.Password}}",
                 "Email": "{{body.Email}}",
                 "Groups": "{{body.Groups}}",

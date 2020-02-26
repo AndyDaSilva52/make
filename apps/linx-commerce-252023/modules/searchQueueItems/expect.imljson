@@ -10,6 +10,7 @@
                 "help": "Lista de identificadores de transações de pedidos.",
                 "required": false,
                 "options": "rpc://rQueueGetQueue",
+                "mode": "edit",
                 "sort": "1"
             },
             {
@@ -23,7 +24,6 @@
                 "name": "LockItems",
                 "type": "number",
                 "advanced": true
-                //TODO:
             },
             {
                 "name": "LockSpan",
