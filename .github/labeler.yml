@@ -1,0 +1,9 @@
+# Reference: https://github.com/actions/labeler/blob/master/README.md
+  
+# Add 'linx-commerce' label to any change within the 'linx-commerce' app
+linx-commerce:
+  - apps/linx-commerce*/**/*
+
+# Add 'pagarme' label to any change within the 'pagar-me' app
+pagarme:
+  - apps/pagar-me*/**/*
