@@ -2,8 +2,11 @@
     "baseUrl": "https://api.pagar.me/1",
     "headers": {
         "Accept": "application/json",
+        "Content-Type": "application/json",
         "Authorization": "Basic {{base64(connection.apiKey + ':' + 'x')}}"
     },
+    "qs": {},
+    "body": {},
     "log": {
         "sanitize": [
             "request.headers.authorization"
