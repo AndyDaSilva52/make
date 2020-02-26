@@ -404,6 +404,69 @@
         "spec": {
             "type": "collection",
             "spec": [
+                //{"name": "OrderID","type": "text"},
+                {
+                    "name": "OrderItemID",
+                    "type": "number",
+                    "sequence": true
+                },
+                {
+                    "name": "ParentItemID",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "ProductID",
+                    "type": "number",
+                    "sequence": true
+                },
+                {
+                    "name": "ProductIntegrationID",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "ProductName",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "ProductDetails",
+                    "type": "collection",
+                    "sequence": true,
+                    "spec": []
+                },
+                {
+                    "name": "SkuID",
+                    "type": "number",
+                    "sequence": true
+                },
+                {
+                    "name": "SKUIntegrationID",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "SKU",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "SkuName",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "SkuDetails",
+                    "type": "collection",
+                    "sequence": true,
+                    "spec": []
+                },
+                {
+                    "name": "IsFreeOffer",
+                    "type": "boolean",
+                    "sequence": true
+                },
                 {
                     "name": "BundleKitDiscount",
                     "type": "text"
@@ -445,10 +508,6 @@
                     "type": "boolean"
                 },
                 {
-                    "name": "IsFreeOffer",
-                    "type": "boolean"
-                },
-                {
                     "name": "IsFreeShipping",
                     "type": "boolean"
                 },
@@ -461,40 +520,12 @@
                     "type": "boolean"
                 },
                 {
-                    "name": "OrderID",
-                    "type": "text"
-                },
-                {
-                    "name": "OrderItemID",
-                    "type": "number"
-                },
-                {
-                    "name": "OutStockHandlingDays",
-                    "type": "number"
-                },
-                {
-                    "name": "ParentItemID",
-                    "type": "text"
-                },
-                {
                     "name": "Price",
                     "type": "number"
                 },
                 {
                     "name": "PriceListID",
                     "type": "number"
-                },
-                {
-                    "name": "ProductID",
-                    "type": "number"
-                },
-                {
-                    "name": "ProductIntegrationID",
-                    "type": "text"
-                },
-                {
-                    "name": "ProductName",
-                    "type": "text"
                 },
                 {
                     "name": "Properties",
@@ -505,27 +536,11 @@
                     "type": "number"
                 },
                 {
-                    "name": "SKU",
-                    "type": "text"
-                },
-                {
-                    "name": "SKUIntegrationID",
-                    "type": "text"
-                },
-                {
                     "name": "SellerSKU",
                     "type": "text"
                 },
                 {
                     "name": "SerialKey",
-                    "type": "text"
-                },
-                {
-                    "name": "SkuID",
-                    "type": "number"
-                },
-                {
-                    "name": "SkuName",
                     "type": "text"
                 },
                 {
@@ -549,17 +564,18 @@
                     "type": "number"
                 },
                 {
+                    "name": "OutStockHandlingDays",
+                    "type": "number"
+                },
+                {
                     "name": "WareHouseID",
                     "type": "number"
                 },
                 {
                     "name": "Warehouses",
                     "type": "array"
-                },
-                {
-                    "name": "WebSiteID",
-                    "type": "number"
                 }
+                //,{"name": "WebSiteID","type": "number"}
             ]
         }
     },
