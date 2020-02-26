@@ -1,0 +1,26 @@
+[
+    {
+        "name": "EntityKeyName",
+        "label": "EntityKeyName",
+        "type": "select",
+        "help": "Choose one to determine the respective endpoint that will be used. Default is OrderID",
+        "default": "OrderID",
+        "options": [
+            {
+                "label": "OrderID",
+                "value": "OrderID"
+            },
+            {
+                "label": "OrderNumber",
+                "value": "OrderNumber"
+            }
+        ]
+    },
+    {
+        "name": "EntityKeyValue",
+        "label": "EntityKeyValue",
+        "type": "text",
+        "help": "Value of OrderID or OrderNumber",
+        "required": true
+    }
+]

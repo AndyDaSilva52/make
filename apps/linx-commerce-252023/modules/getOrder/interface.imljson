@@ -1,0 +1,1118 @@
+[
+    {
+        "name": "OrderID",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "OrderNumber",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "OrderStatusID",
+        "type": "number",
+        "sequence": true
+    },
+    //{"name": "OriginalOrderID","type": "text", "help": "Id de identificação do pedido original"},
+    {
+        "name": "ExternalInfo",
+        "type": "collection",
+        "sequence": true,
+        "spec": [
+            {
+                "name": "IntegrationOrderID",
+                "type": "text",
+                "sequence": true,
+                "help": "Identificador do pedido no sistema externo."
+            },
+            {
+                "name": "OrderStatus",
+                "type": "number",
+                "sequence": true,
+                "help": "Representa os status de pedidos do marketplace"
+            },
+            {
+                "name": "DeliveryLogisticType",
+                "type": "number",
+                "sequence": true
+            },
+            {
+                "name": "ShippingLabelStatus",
+                "type": "number",
+                "sequence": true
+            },
+            {
+                "name": "IsProcessing",
+                "type": "boolean",
+                "sequence": true
+            }
+        ]
+    },
+    {
+        "name": "CustomerID",
+        "type": "number",
+        "sequence": true
+    },
+    {
+        "name": "CustomerType",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "MarketPlaceBrand",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "WebSiteID",
+        "type": "number",
+        "sequence": true
+    },
+    {
+        "name": "WebSiteIntegrationID",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "Addresses",
+        "type": "array",
+        "spec": []
+    },
+    {
+        "name": "BillingAddress",
+        "type": "collection",
+        "sequence": true,
+        "spec": [
+            {
+                "name": "AddressType",
+                "type": "number",
+                "help": "Can be 66 (Billing), 68 (Delivery) or 82 (Return)",
+                "sequence": true
+            },
+            {
+                "name": "OrderAddressID",
+                "type": "number",
+                "sequence": true
+            },
+            //{"name": "OrderID","type": "text"},
+            {
+                "name": "Name",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "AddressLine",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "Number",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "Neighbourhood",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "City",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "State",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "PostalCode",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "AddressNotes",
+                "type": "text",
+                "help": "Complemento",
+                "sequence": true
+            },
+            {
+                "name": "Landmark",
+                "type": "text",
+                "help": "Ponto de Referência",
+                "sequence": true
+            },
+            {
+                "name": "ContactName",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "ContactDocumentNumber",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "ContactPhone",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "PointOfSaleID",
+                "type": "text",
+                "sequence": true
+            }
+        ]
+    },
+    {
+        "name": "DeliveryAddress",
+        "type": "collection",
+        "sequence": true,
+        "spec": [
+            {
+                "name": "AddressType",
+                "type": "number",
+                "help": "Can be 66 (Billing), 68 (Delivery) or 82 (Return)",
+                "sequence": true
+            },
+            {
+                "name": "OrderAddressID",
+                "type": "number",
+                "sequence": true
+            },
+            //{"name": "OrderID","type": "text"},
+            {
+                "name": "Name",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "AddressLine",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "Number",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "Neighbourhood",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "City",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "State",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "PostalCode",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "AddressNotes",
+                "type": "text",
+                "help": "Complemento",
+                "sequence": true
+            },
+            {
+                "name": "Landmark",
+                "type": "text",
+                "help": "Ponto de Referência",
+                "sequence": true
+            },
+            {
+                "name": "ContactName",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "ContactDocumentNumber",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "ContactPhone",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "PointOfSaleID",
+                "type": "text",
+                "sequence": true
+            }
+        ]
+    },
+    {
+        "name": "DeliveryMethods",
+        "type": "array",
+        "sequence": true,
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "OrderDeliveryMethodID",
+                    "type": "number",
+                    "sequence": true
+                },
+                //{"name": "OrderID","type": "text"},
+                {
+                    "name": "DeliveryMethodID",
+                    "type": "number",
+                    "sequence": true
+                },
+                {
+                    "name": "IntegrationID",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "DeliveryGroupID",
+                    "type": "number",
+                    "sequence": true
+                },
+                {
+                    "name": "Amount",
+                    "type": "number",
+                    "sequence": true
+                },
+                {
+                    "name": "ETA",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "ETADays",
+                    "type": "number",
+                    "sequence": true
+                },
+                {
+                    "name": "ScheduleShiftID",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "ScheduleDisplayName",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "ScheduleTax",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "ScheduleStartTime",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "ScheduleEndTime",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "ScheduleDate",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "DeliveryMethodAlias",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "PointOfSaleID",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "PointOfSaleIntegrationID",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "PointOfSaleName",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "DeliveryMethodType",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "ExternalID",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "WarehouseID",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "DockID",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "ExtendedProperties",
+                    "type": "array",
+                    "sequence": true
+                },
+                {
+                    "name": "CarrierName",
+                    "type": "text",
+                    "sequence": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "DeliveryPostalCode",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "DeliveryAmount",
+        "type": "number",
+        "sequence": true
+    },
+    {
+        "name": "DiscountAmount",
+        "type": "number",
+        "sequence": true
+    },
+    {
+        "name": "Fulfillments",
+        "type": "array",
+        "sequence": true
+    },
+    {
+        "name": "Items",
+        "type": "array",
+        "sequence": true,
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "BundleKitDiscount",
+                    "type": "text"
+                },
+                {
+                    "name": "BundleKitDiscountValue",
+                    "type": "text"
+                },
+                {
+                    "name": "BundlePriceType",
+                    "type": "text"
+                },
+                {
+                    "name": "CatalogID",
+                    "type": "number"
+                },
+                {
+                    "name": "CatalogItemType",
+                    "type": "number"
+                },
+                {
+                    "name": "DiscountAmount",
+                    "type": "number"
+                },
+                {
+                    "name": "FormData",
+                    "type": "array"
+                },
+                {
+                    "name": "InStockHandlingDays",
+                    "type": "number"
+                },
+                {
+                    "name": "IsDeleted",
+                    "type": "boolean"
+                },
+                {
+                    "name": "IsDeliverable",
+                    "type": "boolean"
+                },
+                {
+                    "name": "IsFreeOffer",
+                    "type": "boolean"
+                },
+                {
+                    "name": "IsFreeShipping",
+                    "type": "boolean"
+                },
+                {
+                    "name": "IsGiftWrapping",
+                    "type": "boolean"
+                },
+                {
+                    "name": "IsService",
+                    "type": "boolean"
+                },
+                {
+                    "name": "OrderID",
+                    "type": "text"
+                },
+                {
+                    "name": "OrderItemID",
+                    "type": "number"
+                },
+                {
+                    "name": "OutStockHandlingDays",
+                    "type": "number"
+                },
+                {
+                    "name": "ParentItemID",
+                    "type": "text"
+                },
+                {
+                    "name": "Price",
+                    "type": "number"
+                },
+                {
+                    "name": "PriceListID",
+                    "type": "number"
+                },
+                {
+                    "name": "ProductID",
+                    "type": "number"
+                },
+                {
+                    "name": "ProductIntegrationID",
+                    "type": "text"
+                },
+                {
+                    "name": "ProductName",
+                    "type": "text"
+                },
+                {
+                    "name": "Properties",
+                    "type": "array"
+                },
+                {
+                    "name": "Qty",
+                    "type": "number"
+                },
+                {
+                    "name": "SKU",
+                    "type": "text"
+                },
+                {
+                    "name": "SKUIntegrationID",
+                    "type": "text"
+                },
+                {
+                    "name": "SellerSKU",
+                    "type": "text"
+                },
+                {
+                    "name": "SerialKey",
+                    "type": "text"
+                },
+                {
+                    "name": "SkuID",
+                    "type": "number"
+                },
+                {
+                    "name": "SkuName",
+                    "type": "text"
+                },
+                {
+                    "name": "SpecialType",
+                    "type": "number"
+                },
+                {
+                    "name": "Status",
+                    "type": "text"
+                },
+                {
+                    "name": "Subtotal",
+                    "type": "number"
+                },
+                {
+                    "name": "TaxationAmount",
+                    "type": "number"
+                },
+                {
+                    "name": "Total",
+                    "type": "number"
+                },
+                {
+                    "name": "WareHouseID",
+                    "type": "number"
+                },
+                {
+                    "name": "Warehouses",
+                    "type": "array"
+                },
+                {
+                    "name": "WebSiteID",
+                    "type": "number"
+                }
+            ]
+        }
+    },
+    {
+        "name": "ItemsCount",
+        "type": "number",
+        "sequence": true
+    },
+    {
+        "name": "ItemsQty",
+        "type": "number",
+        "sequence": true
+    },
+    {
+        "name": "PaymentMethods",
+        "type": "array",
+        "sequence": true,
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "Amount",
+                    "type": "number"
+                },
+                {
+                    "name": "InstallmentAmount",
+                    "type": "number"
+                },
+                {
+                    "name": "Installments",
+                    "type": "number"
+                },
+                {
+                    "name": "IntegrationID",
+                    "type": "text"
+                },
+                {
+                    "name": "OrderID",
+                    "type": "text"
+                },
+                {
+                    "name": "OrderPaymentMethodID",
+                    "type": "number"
+                },
+                {
+                    "name": "PaidAmount",
+                    "type": "number"
+                },
+                {
+                    "name": "PaymentDate",
+                    "type": "text"
+                },
+                {
+                    "name": "PaymentInfo",
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "Alias",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AuthorizationCode",
+                            "type": "text"
+                        },
+                        {
+                            "name": "ConfirmationNumber",
+                            "type": "text"
+                        },
+                        {
+                            "name": "ExpirationDate",
+                            "type": "text"
+                        },
+                        {
+                            "name": "Holder",
+                            "type": "text"
+                        },
+                        {
+                            "name": "Identifier",
+                            "type": "text"
+                        },
+                        {
+                            "name": "Month",
+                            "type": "number"
+                        },
+                        {
+                            "name": "NumberHint",
+                            "type": "text"
+                        },
+                        {
+                            "name": "PaymentDate",
+                            "type": "text"
+                        },
+                        {
+                            "name": "PaymentType",
+                            "type": "number"
+                        },
+                        {
+                            "name": "ReceiptCode",
+                            "type": "text"
+                        },
+                        {
+                            "name": "ReconciliationNumber",
+                            "type": "text"
+                        },
+                        {
+                            "name": "SecurityCodeHint",
+                            "type": "text"
+                        },
+                        {
+                            "name": "TransactionNumber",
+                            "type": "text"
+                        },
+                        {
+                            "name": "Year",
+                            "type": "number"
+                        }
+                    ]
+                },
+                {
+                    "name": "PaymentMethodID",
+                    "type": "number"
+                },
+                {
+                    "name": "PaymentNumber",
+                    "type": "text"
+                },
+                {
+                    "name": "Properties",
+                    "type": "array"
+                },
+                {
+                    "name": "RefundAmount",
+                    "type": "number"
+                },
+                {
+                    "name": "Status",
+                    "type": "text"
+                },
+                {
+                    "name": "TaxAmount",
+                    "type": "number"
+                },
+                {
+                    "name": "TransactionID",
+                    "type": "text"
+                }
+            ]
+        }
+    },
+    {
+        "name": "CommissionAmount",
+        "type": "number"
+    },
+    {
+        "name": "Discounts",
+        "type": "array"
+    },
+    {
+        "name": "GlobalStatus",
+        "type": "number"
+    },
+    {
+        "name": "HasConflicts",
+        "type": "boolean"
+    },
+    {
+        "name": "AcquiredDate",
+        "type": "text"
+    },
+    {
+        "name": "CancelledDate",
+        "type": "text"
+    },
+    {
+        "name": "CreatedBy",
+        "type": "text"
+    },
+    {
+        "name": "CreatedChannel",
+        "type": "text"
+    },
+    {
+        "name": "CreatedDate",
+        "type": "text"
+    },
+    {
+        "name": "ModifiedBy",
+        "type": "text"
+    },
+    {
+        "name": "ModifiedDate",
+        "type": "text"
+    },
+    {
+        "name": "MultiSiteTenant",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "BrandId",
+                "type": "text"
+            },
+            {
+                "name": "BrandType",
+                "type": "text"
+            },
+            {
+                "name": "CompanyId",
+                "type": "text"
+            },
+            {
+                "name": "DeviceType",
+                "type": "text"
+            }
+        ]
+    },
+    {
+        "name": "OrderGroupID",
+        "type": "text"
+    },
+    {
+        "name": "OrderGroupNumber",
+        "type": "text"
+    },
+    {
+        "name": "OrderInvoice",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "Code",
+                "type": "text"
+            },
+            {
+                "name": "OrderInvoiceID",
+                "type": "text"
+            },
+            {
+                "name": "Url",
+                "type": "text"
+            }
+        ]
+    },
+    {
+        "name": "OrderType",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "AllowMultiPayment",
+                "type": "boolean"
+            },
+            {
+                "name": "EmitFiscalTicket",
+                "type": "boolean"
+            },
+            {
+                "name": "IntegrationID",
+                "type": "text"
+            },
+            {
+                "name": "Name",
+                "type": "text"
+            },
+            {
+                "name": "OrderTypeID",
+                "type": "number"
+            },
+            {
+                "name": "RequireInventory",
+                "type": "boolean"
+            },
+            {
+                "name": "RequirePayment",
+                "type": "boolean"
+            }
+        ]
+    },
+    {
+        //TODO: Function to replace value when BOLETO using regex
+        "name": "PaymentDate",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "PaymentStatus",
+        "type": "number",
+        "sequence": true
+    },
+    {
+        "name": "PaymentTaxAmount",
+        "type": "number",
+        "sequence": true
+    },
+    {
+        "name": "SubTotal",
+        "type": "number",
+        "sequence": true
+    },
+    {
+        "name": "TaxAmount",
+        "type": "number",
+        "sequence": true
+    },
+    {
+        "name": "Total",
+        "type": "number",
+        "sequence": true
+    },
+    {
+        "name": "TotalPaid",
+        "type": "number",
+        "sequence": true
+    },
+    {
+        "name": "TotalDue",
+        "type": "number",
+        "sequence": true
+    },
+    {
+        "name": "TotalRefunded",
+        "type": "number",
+        "sequence": true
+    },
+    {
+        "name": "Remarks",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "SalesRepresentative",
+        "type": "collection",
+        "sequence": true,
+        "spec": [
+            {
+                "name": "CellPhone",
+                "type": "text"
+            },
+            {
+                "name": "Email",
+                "type": "text"
+            },
+            {
+                "name": "FriendlyCode",
+                "type": "text"
+            },
+            {
+                "name": "ImageTimestamp",
+                "type": "text"
+            },
+            {
+                "name": "IntegrationID",
+                "type": "text"
+            },
+            {
+                "name": "MaxDiscountAmount",
+                "type": "number"
+            },
+            {
+                "name": "Name",
+                "type": "text"
+            },
+            {
+                "name": "Phone",
+                "type": "text"
+            },
+            {
+                "name": "SalesRepresentativeID",
+                "type": "number"
+            }
+        ]
+    },
+    {
+        "name": "Seller",
+        "type": "collection",
+        "sequence": true,
+        "spec": [
+            {
+                "name": "EMail",
+                "type": "text"
+            },
+            {
+                "name": "IntegrationID",
+                "type": "text"
+            },
+            {
+                "name": "Name",
+                "type": "text"
+            },
+            {
+                "name": "Phone",
+                "type": "text"
+            },
+            {
+                "name": "SellerID",
+                "type": "number"
+            }
+        ]
+    },
+    {
+        "name": "SellerCommissionAmount",
+        "type": "number"
+    },
+    {
+        "name": "ShipmentDate",
+        "type": "text"
+    },
+    {
+        "name": "ShipmentStatus",
+        "type": "number"
+    },
+    {
+        "name": "Shipments",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "AssignUserId",
+                    "type": "text"
+                },
+                {
+                    "name": "AssignUserName",
+                    "type": "text"
+                },
+                {
+                    "name": "DeliveryMethodID",
+                    "type": "number"
+                },
+                {
+                    "name": "DockID",
+                    "type": "text"
+                },
+                {
+                    "name": "OrderID",
+                    "type": "text"
+                },
+                {
+                    "name": "OrderShipmentID",
+                    "type": "text"
+                },
+                {
+                    "name": "Packages",
+                    "type": "text"
+                },
+                {
+                    "name": "ShipmentNumber",
+                    "type": "text"
+                },
+                {
+                    "name": "ShipmentStatus",
+                    "type": "text"
+                }
+            ]
+        }
+    },
+    {
+        "name": "ShopperTicketID",
+        "type": "text"
+    },
+    {
+        "name": "Tags",
+        "type": "array"
+    },
+    {
+        "name": "TrafficSourceID",
+        "type": "text"
+    },
+    {
+        "name": "Properties",
+        "type": "array"
+    },
+    {
+        "name": "ReturnAddress",
+        "type": "collection",
+        "sequence": true,
+        "spec": [
+            {
+                "name": "AddressType",
+                "type": "number",
+                "help": "Can be 66 (Billing), 68 (Delivery) or 82 (Return)",
+                "sequence": true
+            },
+            {
+                "name": "OrderAddressID",
+                "type": "number",
+                "sequence": true
+            },
+            //{"name": "OrderID","type": "text"},
+            {
+                "name": "Name",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "AddressLine",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "Number",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "Neighbourhood",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "City",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "State",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "PostalCode",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "AddressNotes",
+                "type": "text",
+                "help": "Complemento",
+                "sequence": true
+            },
+            {
+                "name": "Landmark",
+                "type": "text",
+                "help": "Ponto de Referência",
+                "sequence": true
+            },
+            {
+                "name": "ContactName",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "ContactDocumentNumber",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "ContactPhone",
+                "type": "text",
+                "sequence": true
+            },
+            {
+                "name": "PointOfSaleID",
+                "type": "text",
+                "sequence": true
+            }
+        ]
+    }
+]

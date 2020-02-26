@@ -1,0 +1,102 @@
+[
+    {
+        "url": "/v1/Sales/API.svc/web/{{if(parameters.EntityKeyName == 'OrderNumber' ; 'GetOrderByNumber' ; 'GetOrder' )}}",
+        //TODO: Handle the error when choose OrderID and the KeyValue is OrderNumber
+        "body": "{{parameters.EntityKeyValue}}",
+        "response": {
+            "output": {
+                "OrderID": "{{body.OrderID}}",
+                "OrderNumber": "{{body.OrderNumber}}",
+                "OrderStatusID": "{{body.OrderStatusID}}",
+                //"OriginalOrderID": "{{body.OriginalOrderID}}"
+                "ExternalInfo": "{{body.ExternalInfo}}",
+                "CustomerID": "{{body.CustomerID}}",
+                "CustomerType": "{{body.CustomerType}}",
+                "MarketPlaceBrand": "{{body.MarketPlaceBrand}}",
+                "WebSiteID": "{{body.WebSiteID}}",
+                "WebSiteIntegrationID": "{{body.WebSiteIntegrationID}}",
+                // Address
+                "Addresses": "{{body.Addresses}}",
+                "BillingAddress": {
+                    "AddressType": "{{get(map(body.Addresses; 'AddressType'; 'AddressType'; 66);1)}}",
+                    "OrderAddressID": "{{get(map(body.Addresses; 'OrderAddressID'; 'AddressType'; 66);1)}}",
+                    //"OrderID": "{{get(map(body.Addresses; 'OrderID'; 'AddressType'; 66);1)}}",
+                    "Name": "{{get(map(body.Addresses; 'Name'; 'AddressType'; 66);1)}}",
+                    "AddressLine": "{{get(map(body.Addresses; 'AddressLine'; 'AddressType'; 66);1)}}",
+                    "Number": "{{get(map(body.Addresses; 'Number'; 'AddressType'; 66)}}",
+                    "Neighbourhood": "{{get(map(body.Addresses; 'Neighbourhood'; 'AddressType'; 66);1)}}",
+                    "City": "{{get(map(body.Addresses; 'City'; 'AddressType'; 66);1)}}",
+                    "State": "{{get(map(body.Addresses; 'State'; 'AddressType'; 66);1)}}",
+                    "PostalCode": "{{get(map(body.Addresses; 'PostalCode'; 'AddressType'; 66);1)}}",
+                    "AddressNotes": "{{get(map(body.Addresses; 'AddressNotes'; 'AddressType'; 66);1)}}",
+                    "Landmark": "{{get(map(body.Addresses; 'Landmark'; 'AddressType'; 66);1)}}",
+                    "ContactName": "{{get(map(body.Addresses; 'ContactName'; 'AddressType'; 66);1)}}",
+                    "ContactDocumentNumber": "{{get(map(body.Addresses; 'ContactDocumentNumber'; 'AddressType'; 66);1)}}",
+                    "ContactPhone": "{{get(map(body.Addresses; 'ContactPhone'; 'AddressType'; 66);1)}}",
+                    "PointOfSaleID": "{{get(map(body.Addresses; 'PointOfSaleID'; 'AddressType'; 66);1)}}"
+                },
+                "DeliveryAddress": {
+                    "AddressType": "{{get(map(body.Addresses; 'AddressType'; 'AddressType'; 68);1)}}",
+                    "OrderAddressID": "{{get(map(body.Addresses; 'OrderAddressID'; 'AddressType'; 68);1)}}",
+                    //"OrderID": "{{get(map(body.Addresses; 'OrderID'; 'AddressType'; 68);1)}}",
+                    "Name": "{{get(map(body.Addresses; 'Name'; 'AddressType'; 68);1)}}",
+                    "AddressLine": "{{get(map(body.Addresses; 'AddressLine'; 'AddressType'; 68);1)}}",
+                    "Number": "{{get(map(body.Addresses; 'Number'; 'AddressType'; 66)}}",
+                    "Neighbourhood": "{{get(map(body.Addresses; 'Neighbourhood'; 'AddressType'; 68);1)}}",
+                    "City": "{{get(map(body.Addresses; 'City'; 'AddressType'; 68);1)}}",
+                    "State": "{{get(map(body.Addresses; 'State'; 'AddressType'; 68);1)}}",
+                    "PostalCode": "{{get(map(body.Addresses; 'PostalCode'; 'AddressType'; 68);1)}}",
+                    "AddressNotes": "{{get(map(body.Addresses; 'AddressNotes'; 'AddressType'; 68);1)}}",
+                    "Landmark": "{{get(map(body.Addresses; 'Landmark'; 'AddressType'; 68);1)}}",
+                    "ContactName": "{{get(map(body.Addresses; 'ContactName'; 'AddressType'; 68);1)}}",
+                    "ContactDocumentNumber": "{{get(map(body.Addresses; 'ContactDocumentNumber'; 'AddressType'; 68);1)}}",
+                    "ContactPhone": "{{get(map(body.Addresses; 'ContactPhone'; 'AddressType'; 68);1)}}",
+                    "PointOfSaleID": "{{get(map(body.Addresses; 'PointOfSaleID'; 'AddressType'; 68);1)}}"
+                },
+                "DeliveryMethods": "{{body.DeliveryMethods}}",
+                "DeliveryPostalCode": "{{body.DeliveryPostalCode}}",
+                "DeliveryAmount": "{{body.DeliveryAmount}}",
+                "Fulfillments": "{{body.Fulfillments}}",
+                //TODO: Incluir no Item (/v1/Catalog/API.svc/web/GetProductByIntegrationID)
+                // Avaliar questão de Amostra Grátis inserida manualmente
+                // Incluir o campo UPC do método GetSKU
+                "Items": "{{body.Items}}",
+                "ItemsCount": "{{body.ItemsCount}}",
+                "ItemsQty": "{{body.ItemsQty}}",
+                "PaymentMethods": "{{body.PaymentMethods}}",
+                "PaymentDate": "{{body.PaymentDate}}",
+                "PaymentStatus": "{{body.PaymentStatus}}",
+                "PaymentTaxAmount": "{{body.PaymentTaxAmount}}",
+                "SubTotal": "{{body.SubTotal}}",
+                "TaxAmount": "{{body.TaxAmount}}",
+                "Total": "{{body.Total}}",
+                "TotalPaid": "{{body.TotalPaid}}",
+                "TotalDue": "{{body.TotalDue}}",
+                "TotalRefunded": "{{body.TotalRefunded}}",
+                "Remarks": "{{body.Remarks}}",
+                "SalesRepresentative": "{{body.SalesRepresentative}}",
+                "Seller": "{{body.Seller}}"
+                //,"": "{{body.}}"
+                ,
+                "ReturnAddress": {
+                    "AddressType": "{{get(map(body.Addresses; 'AddressType'; 'AddressType'; 82);1)}}",
+                    "OrderAddressID": "{{get(map(body.Addresses; 'OrderAddressID'; 'AddressType'; 82);1)}}",
+                    //"OrderID": "{{get(map(body.Addresses; 'OrderID'; 'AddressType'; 82);1)}}",
+                    "Name": "{{get(map(body.Addresses; 'Name'; 'AddressType'; 82);1)}}",
+                    "AddressLine": "{{get(map(body.Addresses; 'AddressLine'; 'AddressType'; 82);1)}}",
+                    "Number": "{{get(map(body.Addresses; 'Number'; 'AddressType'; 66)}}",
+                    "Neighbourhood": "{{get(map(body.Addresses; 'Neighbourhood'; 'AddressType'; 82);1)}}",
+                    "City": "{{get(map(body.Addresses; 'City'; 'AddressType'; 82);1)}}",
+                    "State": "{{get(map(body.Addresses; 'State'; 'AddressType'; 82);1)}}",
+                    "PostalCode": "{{get(map(body.Addresses; 'PostalCode'; 'AddressType'; 82);1)}}",
+                    "AddressNotes": "{{get(map(body.Addresses; 'AddressNotes'; 'AddressType'; 82);1)}}",
+                    "Landmark": "{{get(map(body.Addresses; 'Landmark'; 'AddressType'; 82);1)}}",
+                    "ContactName": "{{get(map(body.Addresses; 'ContactName'; 'AddressType'; 82);1)}}",
+                    "ContactDocumentNumber": "{{get(map(body.Addresses; 'ContactDocumentNumber'; 'AddressType'; 82);1)}}",
+                    "ContactPhone": "{{get(map(body.Addresses; 'ContactPhone'; 'AddressType'; 82);1)}}",
+                    "PointOfSaleID": "{{get(map(body.Addresses; 'PointOfSaleID'; 'AddressType'; 82);1)}}"
+                }
+            }
+        }
+    }
+]
