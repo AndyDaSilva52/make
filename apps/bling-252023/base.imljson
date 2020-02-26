@@ -1,0 +1,15 @@
+{
+    "baseUrl": "https://bling.com.br/Api/v2",
+    "headers": {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+    },
+    "qs": {
+        "apiKey": "{{connection.apiKey}}"
+    },
+    "log": {
+        "sanitize": [
+            "request.headers.authorization"
+        ]
+    }
+}

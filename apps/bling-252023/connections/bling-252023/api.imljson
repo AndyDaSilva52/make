@@ -1,0 +1,16 @@
+{
+    "url": "https://bling.com.br/Api/v2/situacao/Vendas/json",
+    "method": "GET",
+    "headers": {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+    },
+    "qs": {
+        "apiKey": "{{parameters.apiKey}}"
+    },
+    "log": {
+        "sanitize": [
+            "request.qs.apiKey"
+        ]
+    }
+}
