@@ -1,0 +1,11 @@
+{
+    "name": "megaerp-252023",
+    "label": "MegaERP - SOAP",
+    "version": 1,
+    "theme": "#cccccc",
+    "language": "pt",
+    "countries": [
+        "br",
+        "us"
+    ]
+}

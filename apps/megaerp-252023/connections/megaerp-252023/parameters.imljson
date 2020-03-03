@@ -1,0 +1,8 @@
+[
+    {
+        "name": "apiUrl",
+        "type": "url",
+        "help": "Exemplo: https://srv-mega:8101 (*Não deve ser informado /Integrador)"
+        //TODO: Add validation to not allow /Integrador
+    }
+]

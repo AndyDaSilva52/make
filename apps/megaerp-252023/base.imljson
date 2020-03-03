@@ -1,0 +1,20 @@
+{
+    "baseUrl": "{{connection.apiUrl}}",
+    "qs": {
+        "wsdl": null
+    },
+    "type": "raw",
+    "headers": {
+        "Accept": "text/xml"
+    },
+    "response": {
+        "type": {
+            "*": "text"
+            //"400-408": "text", // parse all 400-408 responses as text, overrides "*",
+            //"406": "xml" // parse the 406 response as XML, overrides above definitions
+        }
+    },
+    "log": {
+        "sanitize": []
+    }
+}

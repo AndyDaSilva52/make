@@ -1,0 +1,8 @@
+{
+    "name": "int000AllServices",
+    "label": "000 - Integrador (Todos os Serviços)",
+    "description": "Serviço Genérico usado para todos os serviços do Mega Integrador",
+    "connection": "megaerp-252023",
+    "webhook": null,
+    "type": "action"
+}
