@@ -73,12 +73,12 @@
         "name": "WebSiteIntegrationID",
         "type": "text",
         "sequence": true
-    },
+    } /**,
     {
         "name": "Addresses",
         "type": "array",
         "spec": []
-    },
+    } */,
     {
         "name": "BillingAddress",
         "type": "collection",
@@ -455,13 +455,13 @@
                     "name": "SkuName",
                     "type": "text",
                     "sequence": true
-                },
+                } /**,
                 {
                     "name": "SkuDetails",
                     "type": "collection",
                     "sequence": true,
                     "spec": []
-                },
+                } */,
                 {
                     "name": "IsFreeOffer",
                     "type": "boolean",
@@ -490,10 +490,6 @@
                 {
                     "name": "DiscountAmount",
                     "type": "number"
-                },
-                {
-                    "name": "FormData",
-                    "type": "array"
                 },
                 {
                     "name": "InStockHandlingDays",
@@ -529,7 +525,40 @@
                 },
                 {
                     "name": "Properties",
-                    "type": "array"
+                    "type": "array",
+                    "spec": {
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "Amount",
+                                "type": "number"
+                            },
+                            {
+                                "name": "Message",
+                                "type": "text"
+                            },
+                            {
+                                "name": "OrderPropertyID",
+                                "type": "number"
+                            },
+                            {
+                                "name": "Reference",
+                                "type": "text"
+                            },
+                            {
+                                "name": "Source",
+                                "type": "text"
+                            },
+                            {
+                                "name": "Type",
+                                "type": "text"
+                            },
+                            {
+                                "name": "XmlExtended",
+                                "type": "text"
+                            }
+                        ]
+                    }
                 },
                 {
                     "name": "Qty",

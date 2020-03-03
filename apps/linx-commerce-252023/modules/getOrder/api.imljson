@@ -5,46 +5,47 @@
         "body": "{{parameters.EntityKeyValue}}",
         "response": {
             "temp": {
-                "Order": "{{body}}"
-                //"ItemProductID": "{{item.ProductID}}",
-                //"ItemSkuID": "{{item.SkuID}}"
+                "Order": "{{body}}",
+                "Items": "{{body.Items}}",
+                "WhereItemProductID": "{{textAgg(body.Items,'ProductID', 'ProductID = ', ' || ')}}",
+                "WhereItemSkuID": "{{textAgg(body.Items, 'SkuID', 'SkuID = ', ' = ')}}"
             }
         }
     },
     {
-        "url": "/v1/Catalog/API.svc/web/GetProduct",
-        "body": "{{item.ProductID}}",
-        "iterate": "{{temp.Order.Items}}",
+        "url": "/v1/Catalog/API.svc/web/SearchProduct",
+        "body": {
+            "Page": {
+                "PageIndex": 0,
+                "PageSize": 0
+            },
+            "Where": "{{temp.WhereItemProductID}}",
+            "WhereMetadata": "",
+            "OrderBy": ""
+        },
         "response": {
             "temp": {
-                "ItemsProductDetails": [
-                    {
-                        "OrderItemID": "{{item.OrderItemID}}",
-                        "ProductID": "{{item.ProductID}}",
-                        "SkuID": "{{item.SkuID}}",
-                        "ProductDetails": "{{body}}"
-                    }
-                ]
+                "ItemsProductDetails": "{{body.Result}}"
             }
         }
-    },
+    } /**,
     {
-        "url": "/v1/Catalog/API.svc/web/GetSKU",
-        "body": "{{item.SkuID}}",
-        "iterate": "{{temp.Order.Items}}",
+        "url": "/v1/Catalog/API.svc/web/SearchSKU",
+        "body": {
+            "Page": {
+                "PageIndex": 0,
+                "PageSize": 0
+            },
+            "Where": "{{temp.WhereItemSkuID}}",
+            "WhereMetadata": "",
+            "OrderBy": ""
+        },
         "response": {
             "temp": {
-                "ItemsSkuDetails": [
-                    {
-                        "OrderItemID": "{{item.OrderItemID}}",
-                        "ProductID": "{{item.ProductID}}",
-                        "SkuID": "{{item.SkuID}}",
-                        "ProductDetails": "{{body}}"
-                    }
-                ]
+                "ItemsSkuDetails": "{{body.Result}}"
             }
         }
-    },
+    } */,
     {
         "response": {
             "output": {
@@ -100,23 +101,30 @@
                 "DeliveryPostalCode": "{{temp.Order.DeliveryPostalCode}}",
                 "DeliveryAmount": "{{temp.Order.DeliveryAmount}}",
                 "Fulfillments": "{{temp.Order.Fulfillments}}",
+                //"WhereItemProductID": "{{temp.WhereItemProductID}}",
+                //"Items": "{{temp.Order.Items}}",
                 "Items": {
                     // TODO: Avaliar questão de Amostra Grátis inserida manualmente
-                    // TODO: Incluir o campo UPC do método GetSK 
-                    "OrderItemID": "{{temp.Order.Items.OrderItemID}}",
-                    "ParentItemID": "{{temp.Order.Items.ParentItemID}}",
-                    "ProductID": "{{temp.Order.Items.ProductID}}",
-                    "ProductIntegrationID": "{{temp.Order.Items.ProductIntegrationID}}",
-                    "ProductName": "{{temp.Order.Items.ProductName}}",
+                    // TODO: Incluir o campo UPC do método GetSKU
+                    "OrderItemID": "{{temp.Items.OrderItemID}}",
+                    "ParentItemID": "{{temp.Items.ParentItemID}}",
+                    "ProductID": "{{temp.Items.ProductID}}",
+                    "ProductIntegrationID": "{{temp.Items.ProductIntegrationID}}",
+                    "ProductName": "{{temp.Items.ProductName}}",
                     // GetProduct
-                    "ProductDetails": "{{temp.ProductDetails}}",
-                    "SkuID": "{{temp.Order.Items.SkuID}}",
-                    "SKUIntegrationID": "{{temp.Order.Items.SKUIntegrationID}}",
-                    "SKU": "{{temp.Order.Items.SKU}}",
-                    "SkuName": "{{temp.Order.Items.SkuName}}",
+                    //"ProductDetails": {
+                    //    "ProductID": "{{map(temp.ItemsProductDetails; 'ProductID'; 'ProductID'; temp.Orders.Items.ProductID)}}",
+                    //    "Name": "{{map(temp.ItemsProductDetails; 'Name'; 'ProductID'; temp.Orders.Items.ProductID)}}"
+                    //,
+                    //"MetadataValues": "{{map(temp.ItemsProductDetails; 'External')}}"
+                    //},
+                    "SkuID": "{{temp.Items.SkuID}}",
+                    "SKUIntegrationID": "{{temp.Items.SKUIntegrationID}}",
+                    "SKU": "{{temp.Items.SKU}}",
+                    "SkuName": "{{temp.Items.SkuName}}",
                     // GetSKU
-                    "SkuDetails": "{{temp.SkuDetails}}",
-                    "IsFreeOffer": "{{temp.Order.Items.IsFreeOffer}}"
+                    //"SkuDetails": "{{temp.SkuDetails}}",
+                    "IsFreeOffer": "{{temp.Items.IsFreeOffer}}"
                 },
                 "ItemsCount": "{{temp.Order.ItemsCount}}",
                 "ItemsQty": "{{temp.Order.ItemsQty}}",
