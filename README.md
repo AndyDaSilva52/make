@@ -8,6 +8,6 @@ The documentation is available at:
 
 [Integromat Apps - Read the docs](https://docs.integromat.com/apps/)
 
-For more information:
+For more information and to receive the URL that give access for each one of the apps:
 
 [AndyDaSilva52.github.io/integromat apps](https://andydasilva52.github.io/integromat_apps/)
