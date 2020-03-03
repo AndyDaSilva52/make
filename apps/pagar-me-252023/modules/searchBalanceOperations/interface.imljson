@@ -40,7 +40,7 @@
         "sort": "11"
     },
     {
-        "label": "movement_object",
+        "name": "movement_object",
         "type": "collection",
         "sort": "12",
         "spec": [
