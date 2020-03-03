@@ -1,8 +1,26 @@
 [
     {
-        "name": "CustomerID",
-        "type": "uinteger",
-        "label": "CustomerID",
+        "name": "EntityKeyName",
+        "label": "EntityKeyName",
+        "type": "select",
+        "help": "Choose one to determine the respective endpoint that will be used. Default is CustomerID",
+        "default": "CustomerID",
+        "options": [
+            {
+                "label": "CustomerID",
+                "value": "CustomerID"
+            },
+            {
+                "label": "IntegrationID",
+                "value": "IntegrationID"
+            }
+        ]
+    },
+    {
+        "name": "EntityKeyValue",
+        "label": "EntityKeyValue",
+        "type": "text",
+        "help": "Value of CustomerID or IntegrationID",
         "required": true
     }
 ]

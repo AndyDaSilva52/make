@@ -6,18 +6,19 @@
                 "PageIndex": 0,
                 "PageSize": 1
             },
-            "Where": "CustomerID == {{parameters.CustomerID}} ",
+            "Where": "{{if(parameters.EntityKeyName == 'CustomerID'; 'CustomerID == ' + parameters.EntityKeyValue; 'IntegrationID == \"' + parameters.EntityKeyValue + '\"'}}",
             "OrderBy": "CreatedDate,CustomerID"
         },
         "response": {
             "temp": {
-                "Customer": "{{body.Result[1]}}"
+                "Customer": "{{body.Result[1]}}",
+                "CustomerID": "{{body.Result[1].CustomerID}}"
             }
         }
     },
     {
         "url": "/v1/Profile/API.svc/web/GetPerson",
-        "body": "{{parameters.CustomerID}}",
+        "body": "{{temp.CustomerID}}",
         "response": {
             "temp": {
                 "Person": "{{body}}"
@@ -27,7 +28,7 @@
     },
     {
         "url": "/v1/Profile/API.svc/web/GetCompany",
-        "body": "{{parameters.CustomerID}}",
+        "body": "{{temp.CustomerID}}",
         "response": {
             "temp": {
                 "Company": "{{body}}"
@@ -37,7 +38,7 @@
     },
     {
         "url": "/v1/Profile/API.svc/web/GetCustomer",
-        "body": "{{parameters.CustomerID}}",
+        "body": "{{temp.CustomerID}}",
         "response": {
             "output": {
                 "CustomerID": "{{body.CustomerID}}",
