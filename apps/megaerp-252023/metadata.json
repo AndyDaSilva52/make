@@ -1,11 +1,10 @@
 {
     "name": "megaerp-252023",
-    "label": "MegaERP - SOAP",
+    "label": "MegaERP - MegaIntegrador",
     "version": 1,
-    "theme": "#cccccc",
+    "theme": "#3c91c5",
     "language": "pt",
     "countries": [
-        "br",
-        "us"
+        "br"
     ]
 }
