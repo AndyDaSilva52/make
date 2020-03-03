@@ -1,0 +1,8 @@
+{
+    "name": "getSku",
+    "label": "Get Sku",
+    "description": "Get Sku by ID or IntegrationID",
+    "connection": "linx-commerce-252023",
+    "webhook": null,
+    "type": "action"
+}
