@@ -1,0 +1,8 @@
+[
+    {
+        "name": "search",
+        "type": "text",
+        "label": "Search",
+        "required": true
+    }
+]

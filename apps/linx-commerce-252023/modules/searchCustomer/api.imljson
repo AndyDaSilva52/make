@@ -1,0 +1,8 @@
+{
+    "url": "/v1/Profile/API.svc/web/SearchCustomer",
+    "body": {},
+    "response": {
+        "output": "{{item}}",
+        "iterate": "{{body.users}}"
+    }
+}

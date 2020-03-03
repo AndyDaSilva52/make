@@ -1,0 +1,8 @@
+{
+    "name": "searchCustomer",
+    "label": "Search Customer",
+    "description": "Search Customer",
+    "connection": "linx-commerce-252023",
+    "webhook": null,
+    "type": "search"
+}
