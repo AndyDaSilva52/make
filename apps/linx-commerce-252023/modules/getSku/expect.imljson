@@ -1,14 +1,26 @@
 [
     {
-        "name": "email",
-        "type": "email",
-        "label": "Email address",
-        "required": true
+        "name": "EntityKeyName",
+        "label": "EntityKeyName",
+        "type": "select",
+        "help": "Choose one to determine the respective endpoint that will be used. Default is SkuID",
+        "default": "SkuID",
+        "options": [
+            {
+                "label": "SkuID",
+                "value": "SkuID"
+            },
+            {
+                "label": "IntegrationID",
+                "value": "IntegrationID"
+            }
+        ]
     },
     {
-        "name": "name",
+        "name": "EntityKeyValue",
+        "label": "EntityKeyValue",
         "type": "text",
-        "label": "Name",
+        "help": "Value of SkuID or IntegrationID",
         "required": true
     }
 ]

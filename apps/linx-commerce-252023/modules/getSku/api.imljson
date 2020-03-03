@@ -1,12 +1,6 @@
 {
-    "url": "/api/users/create",
-    "method": "POST",
-    "qs": {},
-    "body": {
-        "name": "{{parameters.name}}",
-        "email": "{{lower(parameters.email)}}"
-    },
-    "headers": {},
+    "url": "/v1/Catalog/API.svc/web/{{if(parameters.EntityKeyName == 'IntegrationID' ; 'GetSKUByIntegrationID'; 'GetSKU')}}",
+    "body": "{{if( parameters.EntityKeyName == 'SkuID'; parameters.EntityKeyValue; parameters.EntityKeyValue }}",
     "response": {
         "output": "{{body}}"
     }
