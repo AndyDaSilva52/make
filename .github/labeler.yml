@@ -7,3 +7,11 @@ linx-commerce:
 # Add 'pagarme' label to any change within the 'pagar-me' app
 pagarme:
   - apps/pagar-me*/**/*
+
+# Add 'megaerp' label to any change within the 'megaerp' app
+megaerp:
+    - apps/megaerp*/**/*
+
+# Add 'bling' label to any change within the 'bling' app
+bling:
+    - apps/bling*/**/*
