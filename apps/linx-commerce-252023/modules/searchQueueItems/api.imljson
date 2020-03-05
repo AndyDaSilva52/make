@@ -3,7 +3,6 @@
     "qs": {},
     "body": "{{parameters.filters}}",
     "response": {
-        "iterate": "{{body.Result}}",
         "output": {
             "Attempts": "{{item.Attempts}}",
             "CreatedDate": "{{parseDate(substring(item.CreatedDate; indexOf(item.CreatedDate; decodeURL('%28')) + 1; indexOf(item.CreatedDate; if(contains(item.CreatedDate; decodeURL('%2D')); decodeURL('%2D'); decodeURL('%29')))) / 1000; 'X')}}",
@@ -16,7 +15,8 @@
             "QueueID": "{{item.QueueID}}",
             "QueueItemID": "{{item.QueueItemID}}",
             "QueueSubscriptionID": "{{item.QueueSubscriptionID}}"
-        }
+        },
+        "iterate": "{{body.Result}}"
     },
     "pagination": {
         "body": {

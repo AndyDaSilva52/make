@@ -1,8 +1,38 @@
 [
     {
-        "name": "search",
+        "name": "Page",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "PageIndex",
+                "type": "hidden",
+                "default": 0,
+                "required": true
+            },
+            {
+                "name": "PageSize",
+                "type": "number",
+                "default": 100,
+                "required": true
+            }
+        ]
+    },
+    {
+        "name": "Where",
         "type": "text",
-        "label": "Search",
-        "required": true
+        "required": false,
+        "help": "Ex: \n\n(IntegrationID != \"1\" || IntegrationID == \"\" || IntegrationID == null) && CreatedDate <= \"2019-03-11T00:00:00.000Z\""
+    },
+    {
+        "name": "OrderBy",
+        "type": "text",
+        "required": false,
+        "default": "CreatedDate,CustomerID",
+        "help": "Ex: CreatedDate,CustomerID"
+    },
+    {
+        "name": "LimitResponse",
+        "type": "hidden",
+        "default": "100"
     }
 ]

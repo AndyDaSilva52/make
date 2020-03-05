@@ -62,7 +62,7 @@
                 "name": "Where",
                 "type": "text",
                 "required": false,
-                "help": "Ex: \n\nEntityTypeName == \"EZ.Store.Model.Sales.PurchaseOrder\" && (EntityKeyValue != \"167531\" || EntityKeyValue != \"167445\")\n\nEntityTypeName != \"EZ.Store.Model.Profile.Guest\" && EntityTypeName != \"EZ.Store.Model.Profile.Customer\" && EntityTypeName != \"EZ.Store.Model.Profile.Person\" && EntityTypeName != \"EZ.Store.Model.Profile.Company\" \n\nEntityTypeName == \"EZ.Store.Model.Sales.PurchaseOrder\" && CreatedDate <= \"2020-02-20T03:00:00.073Z\""
+                "help": "Ex: \n\nEntityTypeName == \"EZ.Store.Model.Sales.PurchaseOrder\" && (EntityKeyValue != \"167531\" || EntityKeyValue != \"167445\")\n\nEntityTypeName != \"EZ.Store.Model.Profile.Guest\" && EntityTypeName != \"EZ.Store.Model.Profile.Customer\" && EntityTypeName != \"EZ.Store.Model.Profile.Person\" && EntityTypeName != \"EZ.Store.Model.Profile.Company\" \n\nEntityTypeName == \"EZ.Store.Model.Sales.PurchaseOrder\" && CreatedDate <= \"{{toString(now)}}\""
             },
             {
                 "name": "WhereMetadata",

@@ -1,8 +1,33 @@
 {
     "url": "/v1/Profile/API.svc/web/SearchCustomer",
-    "body": {},
+    "body": {
+        "Page": {
+            "PageIndex": "{{parameters.Page.PageIndex}}",
+            "PageSize": "{{parameters.Page.PageSize}}"
+        },
+        "Where": "{{parameters.Where}}",
+        "OrderBy": "{{parameters.OrderBy}}"
+    },
     "response": {
-        "output": "{{item}}",
-        "iterate": "{{body.users}}"
+        "limit": "{{parameters.LimitResponse}}",
+        "output": {
+            "CreatedDate": "{{linxParseDate(item.CreatedDate)}}",
+            "CustomerID": "{{item.CustomerID}}",
+            "CustomerType": "{{item.CustomerType}}",
+            "DocumentNumber": "{{item.DocumentNumber}}",
+            "Email": "{{item.Email}}",
+            "IntegrationID": "{{item.IntegrationID}}",
+            "Name": "{{item.Name}}",
+            "WebSiteID": "{{item.WebSiteID}}"
+        },
+        "iterate": "{{body.Result}}"
+    },
+    "pagination": {
+        "body": {
+            "Page": {
+                "PageIndex": "{{(pagination.page - 1)}}"
+            }
+        },
+        "condition": "{{(body.Page.PageCount) > (body.Page.Index)}}"
     }
 }

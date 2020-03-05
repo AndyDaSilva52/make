@@ -1,22 +1,35 @@
 [
     {
-        "name": "id",
-        "type": "uinteger",
-        "label": "User ID"
-    },
-    {
-        "name": "email",
-        "type": "email",
-        "label": "Email address"
-    },
-    {
-        "name": "name",
-        "type": "text",
-        "label": "Name"
-    },
-    {
-        "name": "created",
+        "name": "CreatedDate",
         "type": "date",
-        "label": "Date created"
+        "time": true
+    },
+    {
+        "name": "CustomerID",
+        "type": "uinteger"
+    },
+    {
+        "name": "CustomerType",
+        "type": "text"
+    },
+    {
+        "name": "DocumentNumber",
+        "type": "text"
+    },
+    {
+        "name": "Email",
+        "type": "email"
+    },
+    {
+        "name": "IntegrationID",
+        "type": "text"
+    },
+    {
+        "name": "Name",
+        "type": "text"
+    },
+    {
+        "name": "WebSiteID",
+        "type": "uinteger"
     }
 ]
