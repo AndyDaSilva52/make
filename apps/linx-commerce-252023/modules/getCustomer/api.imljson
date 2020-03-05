@@ -10,9 +10,11 @@
             "OrderBy": "CreatedDate,CustomerID"
         },
         "response": {
+            "output": null,
             "temp": {
                 "Customer": "{{body.Result[1]}}",
-                "CustomerID": "{{body.Result[1].CustomerID}}"
+                "CustomerID": "{{body.Result[1].CustomerID}}",
+                "RecordCount": "{{body.Page.RecordCount}}"
             }
         }
     },
@@ -24,7 +26,7 @@
                 "Person": "{{body}}"
             }
         },
-        "condition": "{{temp.Customer.CustomerType == 'P'}}"
+        "condition": "{{temp.RecordCount >= 1 && temp.Customer.CustomerType == 'P'}}"
     },
     {
         "url": "/v1/Profile/API.svc/web/GetCompany",
@@ -34,7 +36,13 @@
                 "Company": "{{body}}"
             }
         },
-        "condition": "{{temp.Customer.CustomerType == 'C'}}"
+        "condition": "{{temp.RecordCount >= 1 && temp.Customer.CustomerType == 'C'}}"
+    },
+    {
+        "response": {
+            "output": null
+        },
+        "condition": "{{temp.RecordCount == 0}}"
     },
     {
         "url": "/v1/Profile/API.svc/web/GetCustomer",
@@ -72,6 +80,7 @@
                     "ExtendedProperties": "{{temp.Company.ExtendedProperties}}"
                 }
             }
-        }
+        },
+        "condition": "{{temp.RecordCount >= 1}}"
     }
 ]
