@@ -1,148 +1,18 @@
-[]
-/**
+[
     {
-        "name": "SOAP-ENV:Envelope",
-        "type": "collection",
-        "spec": [
-            {
-                "name": "_attributes",
-                "type": "collection",
-                "spec": [
-                    {
-                        "name": "xmlns:xsd",
-                        "type": "text",
-                        "default": "http://www.w3.org/2001/XMLSchema"
-                    },
-                    {
-                        "name": "xmlns:xsi",
-                        "type": "text",
-                        "default": "http://www.w3.org/2001/XMLSchema-instance"
-                    },
-                    {
-                        "name": "xmlns:HNS",
-                        "type": "text",
-                        "default": "http://tempuri.org/"
-                    },
-                    {
-                        "name": "xmlns:SOAP-ENV",
-                        "type": "text",
-                        "default": "http://schemas.xmlsoap.org/soap/envelope/"
-                    },
-                    {
-                        "name": "xmlns:v1",
-                        "type": "text",
-                        "default": "http://tempuri.org/"
-                    }
-                ],
-                "sequence": true
-            },
-            {
-                "name": "SOAP-ENV:Header",
-                "type": "array",
-                "spec": {
-                    "type": "collection",
-                    "sequence": true,
-                    "spec": [
-                        {
-                            "name": "ROClientIDHeader",
-                            "type": "array",
-                            "spec": {
-                                "type": "collection",
-                                "sequence": true,
-                                "spec": [
-                                    {
-                                        "name": "_attributes",
-                                        "type": "collection",
-                                        "spec": [
-                                            {
-                                                "name": "SOAP-ENV:mustUnderstand",
-                                                "type": "text"
-                                            },
-                                            {
-                                                "name": "xmlns",
-                                                "type": "text",
-                                                "default": "urn:MegaIntegradorLibrary"
-                                            }
-                                        ],
-                                        "sequence": true
-                                    },
-                                    {
-                                        "name": "ID",
-                                        "type": "array",
-                                        "spec": {
-                                            "type": "text"
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                }
-            },
-            {
-                "name": "SOAP-ENV:Body",
-                "type": "array",
-                "spec": {
-                    "type": "collection",
-                    "sequence": true,
-                    "spec": [
-                        {
-                            "name": "_attributes",
-                            "type": "collection",
-                            "spec": [
-                                {
-                                    "name": "xmlns:ro",
-                                    "type": "text",
-                                    "default": "http://tempuri.org/"
-                                }
-                            ],
-                            "sequence": true
-                        },
-                        {
-                            "name": "v1:MegaIntegradorService___IntegraXMLResponse",
-                            "type": "array",
-                            "spec": {
-                                "type": "collection",
-                                "sequence": true,
-                                "spec": [
-                                    {
-                                        "name": "v1:Result",
-                                        "type": "array",
-                                        "spec": {
-                                            "type": "collection",
-                                            "sequence": true,
-                                            "spec": [
-                                                {
-                                                    "name": "v1:Erro",
-                                                    "type": "array",
-                                                    "spec": {
-                                                        "type": "boolean"
-                                                    }
-                                                },
-                                                {
-                                                    "name": "v1:Mensagem",
-                                                    "type": "array",
-                                                    "spec": {
-                                                        "type": "text"
-                                                    }
-                                                },
-                                                {
-                                                    "name": "v1:CodTransacao",
-                                                    "type": "array"
-                                                },
-                                                {
-                                                    "name": "v1:PKMega",
-                                                    "type": "array"
-                                                }
-                                            ]
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                }
-            }
-        ],
-        "sequence": true
-    } */
+        "name": "Erro",
+        "type": "boolean"
+    },
+    {
+        "name": "CodTransacao",
+        "type": "uinteger"
+    },
+    {
+        "name": "Mensagem",
+        "type": "text"
+    },
+    {
+        "name": "PKMega",
+        "type": "text"
+    }
+]

@@ -28,6 +28,16 @@
             "Mensagem": "{{body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:Mensagem`[]}}",
             "CodTransacao": "{{body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:CodTransacao`[]}}",
             "PKMega": "{{body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:PKMega`[]}}"
+            /** 
+            TODO: PKMegaArray ou PKMegaCollection ou PKMegaSplit
+                Array ou Collection de Chave e Valor
+                Ex:
+                PKMega = 1;474
+                PKMegaArray = {
+                    "AGN_PAD_IN_CODIGO": 1
+                    "AGN_IN_CODIGO": 474
+                }
+            */
         }
     }
 }
