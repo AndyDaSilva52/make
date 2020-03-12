@@ -38,11 +38,5 @@
         "label": "End Date",
         "help": "Specific the day that will be filtered.\nTime will be set as 23:59:59.\nExample using formula for Yesterday: {{addDays(now;-1)}}",
         "time": false
-    },
-    {
-        "name": "limitResponse",
-        "type": "uinteger",
-        "label": "Count",
-        "default": 100
     }
 ]

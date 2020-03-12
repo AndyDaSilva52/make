@@ -11,7 +11,6 @@
     "body": {},
     "headers": {},
     "response": {
-        "limit": "{{parameters.limitResponse}}",
         "output": {
             "id": "{{item.id}}",
             "status": "{{item.status}}",
