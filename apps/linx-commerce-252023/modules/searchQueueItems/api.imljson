@@ -5,12 +5,12 @@
     "response": {
         "output": {
             "Attempts": "{{item.Attempts}}",
-            "CreatedDate": "{{parseDate(substring(item.CreatedDate; indexOf(item.CreatedDate; decodeURL('%28')) + 1; indexOf(item.CreatedDate; if(contains(item.CreatedDate; decodeURL('%2D')); decodeURL('%2D'); decodeURL('%29')))) / 1000; 'X')}}",
+            "CreatedDate": "{{linxParseDate(item.CreatedDate)}}",
             "DomainEventTypeName": "{{item.DomainEventTypeName}}",
             "EntityKeyName": "{{item.EntityKeyName}}",
             "EntityKeyValue": "{{item.EntityKeyValue}}",
             "EntityTypeName": "{{item.EntityTypeName}}",
-            "LockDate": "{{parseDate(substring(item.LockDate; indexOf(item.LockDate; decodeURL('%28')) + 1; indexOf(item.LockDate; if(contains(item.LockDate; decodeURL('%2D')); decodeURL('%2D'); decodeURL('%29')))) / 1000; 'X')}}",
+            "LockDate": "{{linxParseDate(item.LockDate)}}",
             "Operation": "{{item.Operation}}",
             "QueueID": "{{item.QueueID}}",
             "QueueItemID": "{{item.QueueItemID}}",

@@ -1,0 +1,54 @@
+{
+    "ExtendedProperties": [
+        {
+            "Name": "String content",
+            "Value": "String content"
+        }
+    ],
+    "Addresses": [
+        {
+            "AddressLine": "String content",
+            "AddressNotes": "String content",
+            "City": "String content",
+            "ContactName": "String content",
+            "CurrentUserIPs": "String content",
+            "CurrentUserName": "String content",
+            "CustomerID": 2147483647,
+            "ID": 2147483647,
+            "IsDeleted": true,
+            "IsMainAddress": true,
+            "Landmark": "String content",
+            "Name": "String content",
+            "Neighbourhood": "String content",
+            "Number": "String content",
+            "PostalCode": "String content",
+            "State": "String content"
+        }
+    ],
+    "BirthDate": "/Date(928160400000-0300)/",
+    "Cnpj": "String content",
+    "Contact": {
+        "CellPhone": "String content",
+        "Fax": "String content",
+        "Phone": "String content",
+        "Phone2": "String content"
+    },
+    "Cpf": "String content",
+    "CustomerGroupIDs": [
+        2147483647,
+        1,
+        2
+    ],
+    "CustomerID": 2147483647,
+    "CustomerStatusID": 2147483647,
+    "CustomerType": 0,
+    "Email": "String content",
+    "Gender": "String content",
+    "Name": "String content",
+    "Password": "String content",
+    "Password_Check": "String content",
+    "RG": "String content",
+    "Surname": "String content",
+    "TradingName": "String content",
+    "WebSiteID": 2147483647
+}

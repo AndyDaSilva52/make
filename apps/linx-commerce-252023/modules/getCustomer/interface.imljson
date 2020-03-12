@@ -26,10 +26,16 @@
         "sequence": true
     },
     {
-        "name": "CustomerType",
+        "name": "CustomerTypeID",
         "type": "uinteger",
         "sequence": true,
-        "help": "Can be 67 (Company), 71 (Guest) or 80 (Person)"
+        "help": "Can be 80 (Person), 67 (Company) or 71 (Guest)"
+    },
+    {
+        "name": "CustomerType",
+        "type": "text",
+        "sequence": true,
+        "help": "Can be \"P\" (Person), \"C\" (Company). \nChanged the value to follow the same as SearchCustomer. \nThe GetCustomer returns 67 (Person), 80 (Company) or 71 (Guest)\n Guest is not confirmed from the documentation"
     },
     {
         "name": "TradingName",

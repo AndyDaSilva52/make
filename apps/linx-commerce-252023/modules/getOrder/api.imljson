@@ -8,7 +8,7 @@
                 "Order": "{{body}}",
                 "Items": "{{body.Items}}",
                 "WhereItemProductID": "{{textAgg(body.Items,'ProductID', 'ProductID = ', ' || ')}}",
-                "WhereItemSkuID": "{{textAgg(body.Items, 'SkuID', 'SkuID = ', ' = ')}}"
+                "WhereItemSkuID": "{{textAgg(body.Items, 'SkuID', 'ProductID = ', ' || ')}}"
             }
         }
     },
@@ -28,7 +28,16 @@
                 "ItemsProductDetails": "{{body.Result}}"
             }
         }
-    } /**,
+    },
+    {
+        "response": {
+            "temp": {
+                "Items": "{{setPropertyBetweenTwoArrays(temp.Items,temp.ItemsProductDetails,'ProductDetails','ProductID')}}"
+            }
+        }
+    },
+    /**
+    // Não existe maneira de retornar os dados do Sku sem que precise usar um loop de requisições
     {
         "url": "/v1/Catalog/API.svc/web/SearchSKU",
         "body": {
@@ -45,13 +54,40 @@
                 "ItemsSkuDetails": "{{body.Result}}"
             }
         }
-    } */,
+    },
+    {
+        "response": {
+            "temp": {
+                "Items": "{{setPropertyBetweenTwoArrays(temp.Items,temp.ItemsSkuDetails,'SkuDetails','SkuID')}}"
+            }
+        }
+    }, 
+    */
+    {
+        "url": "/v1/Sales/API.svc/web/SearchOrderStatus",
+        "body": {
+            "Page": {
+                "PageIndex": 0,
+                "PageSize": 0
+            },
+            "Where": "",
+            "WhereMetadata": "",
+            "OrderBy": ""
+        },
+        "response": {
+            "temp": {
+                "OrderStatus": "{{body.Result[]}}"
+            }
+        }
+    },
     {
         "response": {
             "output": {
                 "OrderID": "{{temp.Order.OrderID}}",
                 "OrderNumber": "{{temp.Order.OrderNumber}}",
                 "OrderStatusID": "{{temp.Order.OrderStatusID}}",
+                "OrderStatus": "{{get(map(temp.OrderStatus; 'Status'; 'OrderStatusID'; temp.Order.OrderStatusID);1)}}",
+                "OrderStatusColor": "{{get(map(temp.OrderStatus; 'Color'; 'OrderStatusID'; temp.Order.OrderStatusID);1)}}",
                 //"OriginalOrderID": "{{temp.Order.OriginalOrderID}}"
                 "ExternalInfo": "{{temp.Order.ExternalInfo}}",
                 "CustomerID": "{{temp.Order.CustomerID}}",
@@ -60,14 +96,13 @@
                 "WebSiteID": "{{temp.Order.WebSiteID}}",
                 "WebSiteIntegrationID": "{{temp.Order.WebSiteIntegrationID}}",
                 // Address
-                //"Addresses": "{{temp.Order.Addresses}}",
                 "BillingAddress": {
                     "AddressType": "{{get(map(temp.Order.Addresses; 'AddressType'; 'AddressType'; 66);1)}}",
                     "OrderAddressID": "{{get(map(temp.Order.Addresses; 'OrderAddressID'; 'AddressType'; 66);1)}}",
                     //"OrderID": "{{get(map(temp.Order.Addresses; 'OrderID'; 'AddressType'; 66);1)}}",
                     "Name": "{{get(map(temp.Order.Addresses; 'Name'; 'AddressType'; 66);1)}}",
                     "AddressLine": "{{get(map(temp.Order.Addresses; 'AddressLine'; 'AddressType'; 66);1)}}",
-                    "Number": "{{get(map(temp.Order.Addresses; 'Number'; 'AddressType'; 66)}}",
+                    "Number": "{{get(map(temp.Order.Addresses; 'Number'; 'AddressType'; 66);1)}}",
                     "Neighbourhood": "{{get(map(temp.Order.Addresses; 'Neighbourhood'; 'AddressType'; 66);1)}}",
                     "City": "{{get(map(temp.Order.Addresses; 'City'; 'AddressType'; 66);1)}}",
                     "State": "{{get(map(temp.Order.Addresses; 'State'; 'AddressType'; 66);1)}}",
@@ -85,7 +120,7 @@
                     //"OrderID": "{{get(map(temp.Order.Addresses; 'OrderID'; 'AddressType'; 68);1)}}",
                     "Name": "{{get(map(temp.Order.Addresses; 'Name'; 'AddressType'; 68);1)}}",
                     "AddressLine": "{{get(map(temp.Order.Addresses; 'AddressLine'; 'AddressType'; 68);1)}}",
-                    "Number": "{{get(map(temp.Order.Addresses; 'Number'; 'AddressType'; 66)}}",
+                    "Number": "{{get(map(temp.Order.Addresses; 'Number'; 'AddressType'; 68);1)}}",
                     "Neighbourhood": "{{get(map(temp.Order.Addresses; 'Neighbourhood'; 'AddressType'; 68);1)}}",
                     "City": "{{get(map(temp.Order.Addresses; 'City'; 'AddressType'; 68);1)}}",
                     "State": "{{get(map(temp.Order.Addresses; 'State'; 'AddressType'; 68);1)}}",
@@ -103,7 +138,8 @@
                 "Fulfillments": "{{temp.Order.Fulfillments}}",
                 //"WhereItemProductID": "{{temp.WhereItemProductID}}",
                 //"Items": "{{temp.Order.Items}}",
-                "Items": {
+                "Items": "{{temp.Items}}",
+                "ItemsMapped": {
                     // TODO: Avaliar questão de Amostra Grátis inserida manualmente
                     // TODO: Incluir o campo UPC do método GetSKU
                     "OrderItemID": "{{temp.Items.OrderItemID}}",
@@ -112,12 +148,11 @@
                     "ProductIntegrationID": "{{temp.Items.ProductIntegrationID}}",
                     "ProductName": "{{temp.Items.ProductName}}",
                     // GetProduct
-                    //"ProductDetails": {
-                    //    "ProductID": "{{map(temp.ItemsProductDetails; 'ProductID'; 'ProductID'; temp.Orders.Items.ProductID)}}",
-                    //    "Name": "{{map(temp.ItemsProductDetails; 'Name'; 'ProductID'; temp.Orders.Items.ProductID)}}"
-                    //,
-                    //"MetadataValues": "{{map(temp.ItemsProductDetails; 'External')}}"
-                    //},
+                    "ProductDetails": {
+                        "ProductID": "{{temp.Items.ProductDetails.ProductID}}",
+                        "Name": "{{temp.Items.ProductDetails.Name}}",
+                        "MetadataValues": "{{temp.Items.ProductDetails.MetadataValues}}"
+                    },
                     "SkuID": "{{temp.Items.SkuID}}",
                     "SKUIntegrationID": "{{temp.Items.SKUIntegrationID}}",
                     "SKU": "{{temp.Items.SKU}}",
@@ -129,7 +164,10 @@
                 "ItemsCount": "{{temp.Order.ItemsCount}}",
                 "ItemsQty": "{{temp.Order.ItemsQty}}",
                 "PaymentMethods": "{{temp.Order.PaymentMethods}}",
-                "PaymentDate": "{{temp.Order.PaymentDate}}",
+                "PaymentMethods2": {
+                    "Amount": "{{temp.Order.PaymentMethods.Amount}}"
+                },
+                "PaymentDate": "{{linxParseDate(temp.Order.PaymentDate)}}",
                 "PaymentStatus": "{{temp.Order.PaymentStatus}}",
                 "PaymentTaxAmount": "{{temp.Order.PaymentTaxAmount}}",
                 "SubTotal": "{{temp.Order.SubTotal}}",

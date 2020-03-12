@@ -1,3 +1,15 @@
 function linxParseDate(date) {
-    return iml.parseDate(iml.substring(date, iml.indexOf(date, iml.decodeURL('%28')) + 1, iml.indexOf(date, iml.if(iml.contains(date, iml.decodeURL('%2D')), iml.decodeURL('%2D'), iml.decodeURL('%29')))) / 1000, 'X');
+
+    var strDate = new String(date);
+
+    var strDate = strDate.substring(
+        strDate.indexOf('Date(') + 5,
+        strDate.indexOf(')/') - 5
+    );
+
+    return iml.parseDate(
+        strDate
+        / 1000
+        , 'X');
+
 }

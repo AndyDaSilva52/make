@@ -1,0 +1,183 @@
+[
+    {
+        "name": "RG",
+        "type": "text"
+    },
+    {
+        "name": "Cpf",
+        "type": "text"
+    },
+    {
+        "name": "Cnpj",
+        "type": "text"
+    },
+    {
+        "name": "Name",
+        "type": "text"
+    },
+    {
+        "name": "Email",
+        "type": "text"
+    },
+    {
+        "name": "Gender",
+        "type": "select",
+        "options": [
+            {
+                "label": "F",
+                "value": "F"
+            },
+            {
+                "label": "M",
+                "value": "M"
+            }
+        ]
+    },
+    {
+        "name": "Contact",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "Fax",
+                "type": "text"
+            },
+            {
+                "name": "Phone",
+                "type": "text"
+            },
+            {
+                "name": "Phone2",
+                "type": "text"
+            },
+            {
+                "name": "CellPhone",
+                "type": "text"
+            }
+        ]
+    },
+    {
+        "name": "Surname",
+        "type": "text"
+    },
+    {
+        "name": "Password",
+        "type": "text"
+    },
+    {
+        "name": "Addresses",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "AddressLine",
+                    "type": "text"
+                },
+                {
+                    "name": "AddressNotes",
+                    "type": "text"
+                },
+                {
+                    "name": "City",
+                    "type": "text"
+                },
+                {
+                    "name": "ContactName",
+                    "type": "text"
+                },
+                {
+                    "name": "ID",
+                    "type": "number"
+                },
+                {
+                    "name": "Landmark",
+                    "type": "text"
+                },
+                {
+                    "name": "MainAddress",
+                    "type": "boolean"
+                },
+                {
+                    "name": "Name",
+                    "type": "text"
+                },
+                {
+                    "name": "Neighbourhood",
+                    "type": "text"
+                },
+                {
+                    "name": "Number",
+                    "type": "text"
+                },
+                {
+                    "name": "PostalCode",
+                    "type": "text"
+                },
+                {
+                    "name": "State",
+                    "type": "text"
+                }
+            ]
+        }
+    },
+    {
+        "name": "BirthDate",
+        "type": "text"
+    },
+    {
+        "name": "WebSiteID",
+        "type": "number"
+    },
+    {
+        "name": "CustomerID",
+        "type": "number"
+    },
+    {
+        "name": "TradingName",
+        "type": "text"
+    },
+    {
+        "name": "CustomerType",
+        "type": "text"
+    },
+    {
+        "name": "CurrentUserIPs",
+        "type": "text"
+    },
+    {
+        "name": "Password_Check",
+        "type": "text"
+    },
+    {
+        "name": "CurrentUserName",
+        "type": "text"
+    },
+    {
+        "name": "CustomerGroupIDs",
+        "type": "array",
+        "spec": {
+            "type": "number"
+        }
+    },
+    {
+        "name": "CustomerStatusID",
+        "type": "number"
+    },
+    {
+        "name": "ExtendedProperties",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "Name",
+                    "type": "text"
+                },
+                {
+                    "name": "Value",
+                    "type": "text"
+                }
+            ]
+        }
+    }
+]

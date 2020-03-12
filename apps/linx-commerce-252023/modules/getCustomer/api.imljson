@@ -52,9 +52,11 @@
                 "CustomerID": "{{body.CustomerID}}",
                 "IntegrationID": "{{temp.Customer.IntegrationID}}",
                 "CustomerHash": "{{body.CustomerHash}}",
-                "CreatedDate": "{{parseDate(substring(body.CreatedDate; indexOf(body.CreatedDate; decodeURL('%28')) + 1; indexOf(body.CreatedDate; if(contains(body.CreatedDate; decodeURL('%2D')); decodeURL('%2D'); decodeURL('%29')))) / 1000; 'X')}}",
+                "CreatedDate": "{{linxParseDate(body.CreatedDate)}}",
                 "CustomerStatusID": "{{body.CustomerStatusID}}",
-                "CustomerType": "{{body.CustomerType}}",
+                // TODO: Description of CustomerStatusID
+                "CustomerTypeID": "{{body.CustomerType}}",
+                "CustomerType": "{{switch(body.CustomerType; 80; 'P'; 67;'C'; 71;'G'; 'N'}}",
                 "Name": "{{body.Name}}",
                 "TradingName": "{{switch(body.CustomerType;80;body.Name + ' ' + temp.Person.Surname;67;temp.Company.TradingName;71;)}}",
                 "DocumentNumber": "{{temp.Customer.DocumentNumber}}",
@@ -68,7 +70,7 @@
                     "Surname": "{{temp.Person.Surname}}",
                     "Cpf": "{{temp.Person.Cpf}}",
                     "RG": "{{temp.Person.RG}}",
-                    "BirthDate": "{{if(body.CustomerType = 80;(parseDate(formatDate(parseDate(substring(temp.Person.BirthDate; indexOf(temp.Person.BirthDate; decodeURL('%28')) + 1; indexOf(temp.Person.BirthDate; if(contains(temp.Person.BirthDate; decodeURL('%2D')); decodeURL('%2D'); decodeURL('%29')))) / 1000; 'X'); 'DD/MM/YYYY');'DD/MM/YYYY');emptystring)}}",
+                    "BirthDate": "{{if(body.CustomerType = 80;(linxParseDate(temp.Person.BirthDate));emptystring)}}",
                     "Gender": "{{temp.Person.Gender}}",
                     "SystemProperties": "{{temp.Person.SystemProperties}}",
                     "ExtendedProperties": "{{temp.Person.ExtendedProperties}}"

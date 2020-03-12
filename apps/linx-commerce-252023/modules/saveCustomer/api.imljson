@@ -1,0 +1,93 @@
+[
+    {
+        "condition": "{{if(parameters.CustomerID == emptystring || parameters.CustomerID == 0; false; true)}}",
+        "url": "/v1/Profile/API.svc/web/GetCustomer",
+        "body": "{{parameters.CustomerID}}",
+        "response": {
+            "temp": {
+                "Method": "{{if(parameters.CustomerID == emptystring || parameters.CustomerID == 0; 'POST'; 'PUT')}}",
+                "Customer": "{{body}}",
+                "CustomerTypeID": "{{body.CustomerType}}", // Return 80 (Person) 67 (Company) or 71 (Guest)
+                "CustomerType": "{{switch(body.CustomerType;80;'P';67;'C';'G')}}"
+            }
+        }
+    },
+    {
+        // Person (80)
+        "condition": "{{temp.Method == 'PUT' && (temp.CustomerTypeID == 80)}}",
+        "url": "/v1/Profile/API.svc/web/GetPerson",
+        "body": "{{parameters.CustomerID}}",
+        "response": {
+            "temp": {
+                "Person": "{{body}}"
+            }
+        }
+    },
+    {
+        // Company (67)
+        "condition": "{{temp.Method == 'PUT' && (temp.CustomerTypeID == 67)}}",
+        "url": "/v1/Profile/API.svc/web/GetCompany",
+        "body": "{{parameters.CustomerID}}",
+        "response": {
+            "temp": {
+                "Company": "{{body}}"
+            }
+        }
+    },
+    {
+        "url": "/v1/Profile/API.svc/web/SaveCustomer",
+        "body": {
+            "RG": "{{if(temp.Method == 'POST'; parameters.RG; if(temp.CustomerType == 'P'; if(parameters.RG == emptystring || parameters.RG == null; temp.Person.RG ; parameters.RG ) ;emptystring))}}",
+            "Cpf": "{{if(temp.Method == 'POST'; parameters.Cpf; if(temp.CustomerType == 'P'; if(parameters.Cpf == emptystring || parameters.Cpf == null; temp.Person.Cpf ; parameters.Cpf ) ;emptystring))}}",
+            "Cnpj": "{{if(temp.Method == 'POST'; parameters.Cnpj; if(temp.CustomerType == 'P'; if(parameters.Cnpj == emptystring || parameters.Cnpj == null; temp.Person.Cnpj ; parameters.Cnpj ) ;emptystring))}}",
+            "Name": "{{if(temp.Method == 'POST'; parameters.Name; if(temp.CustomerType == 'P'; if(parameters.Name == emptystring || parameters.Name == null; temp.Person.Name ; parameters.Name ) ;emptystring))}}",
+            "Email": "{{if(temp.Method == 'POST'; parameters.Email; if(temp.CustomerType == 'P'; if(parameters.Email == emptystring || parameters.Email == null; temp.Person.Email ; parameters.Email ) ;emptystring))}}",
+            "Gender": "F",
+            "Contact": {
+                "Fax": null,
+                "Phone": null,
+                "Phone2": null,
+                "CellPhone": "11940214481"
+            },
+            "Surname": "ANTUNES",
+            "Password": null,
+            "Addresses": [
+                {
+                    "AddressLine": "Avenida Engenheiro Caetano Álvares",
+                    "AddressNotes": null,
+                    "City": "São Paulo",
+                    "ContactName": "ROSI ANTUNES",
+                    "ID": 154983,
+                    "Landmark": null,
+                    "MainAddress": true,
+                    "Name": "comercio",
+                    "Neighbourhood": "Limão",
+                    "Number": "3520",
+                    "PostalCode": "02546000",
+                    "State": "SP"
+                }
+            ],
+            "BirthDate": "/Date(-70059600000-0300)/",
+            "WebSiteID": 129,
+            "CustomerID": 312240,
+            "TradingName": null,
+            "CustomerType": "80",
+            "CurrentUserIPs": null,
+            "Password_Check": null,
+            "CurrentUserName": null,
+            "CustomerGroupIDs": [
+                1
+            ],
+            "CustomerStatusID": 2,
+            "ExtendedProperties": [
+                {
+                    "Name": "IntegrationID_MegaERP",
+                    "Value": "107121"
+                }
+            ]
+        },
+        "response": {
+            "output": "{{body}}"
+        }
+    }
+]

@@ -1,0 +1,8 @@
+{
+    "name": "saveCustomer",
+    "label": "Save Customer",
+    "description": "Save Customer",
+    "connection": "linx-commerce-252023",
+    "webhook": null,
+    "type": "action"
+}

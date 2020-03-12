@@ -14,6 +14,16 @@
         "type": "number",
         "sequence": true
     },
+    {
+        "name": "OrderStatus",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "OrderStatusColor",
+        "type": "color",
+        "sequence": true
+    },
     //{"name": "OriginalOrderID","type": "text", "help": "Id de identificação do pedido original"},
     {
         "name": "ExternalInfo",
@@ -469,140 +479,173 @@
                 },
                 {
                     "name": "BundleKitDiscount",
-                    "type": "text"
+                    "type": "text",
+                    "sequence": true
                 },
                 {
                     "name": "BundleKitDiscountValue",
-                    "type": "text"
+                    "type": "text",
+                    "sequence": true
                 },
                 {
                     "name": "BundlePriceType",
-                    "type": "text"
+                    "type": "text",
+                    "sequence": true
                 },
                 {
                     "name": "CatalogID",
-                    "type": "number"
+                    "type": "number",
+                    "sequence": true
                 },
                 {
                     "name": "CatalogItemType",
-                    "type": "number"
+                    "type": "number",
+                    "sequence": true
                 },
                 {
                     "name": "DiscountAmount",
-                    "type": "number"
+                    "type": "number",
+                    "sequence": true
                 },
                 {
                     "name": "InStockHandlingDays",
-                    "type": "number"
+                    "type": "number",
+                    "sequence": true
                 },
                 {
                     "name": "IsDeleted",
-                    "type": "boolean"
+                    "type": "boolean",
+                    "sequence": true
                 },
                 {
                     "name": "IsDeliverable",
-                    "type": "boolean"
+                    "type": "boolean",
+                    "sequence": true
                 },
                 {
                     "name": "IsFreeShipping",
-                    "type": "boolean"
+                    "type": "boolean",
+                    "sequence": true
                 },
                 {
                     "name": "IsGiftWrapping",
-                    "type": "boolean"
+                    "type": "boolean",
+                    "sequence": true
                 },
                 {
                     "name": "IsService",
-                    "type": "boolean"
+                    "type": "boolean",
+                    "sequence": true
                 },
                 {
                     "name": "Price",
-                    "type": "number"
+                    "type": "number",
+                    "sequence": true
                 },
                 {
                     "name": "PriceListID",
-                    "type": "number"
+                    "type": "number",
+                    "sequence": true
                 },
                 {
                     "name": "Properties",
                     "type": "array",
+                    "sequence": true,
                     "spec": {
                         "type": "collection",
                         "spec": [
                             {
                                 "name": "Amount",
-                                "type": "number"
+                                "type": "number",
+                                "sequence": true
                             },
                             {
                                 "name": "Message",
-                                "type": "text"
+                                "type": "text",
+                                "sequence": true
                             },
                             {
                                 "name": "OrderPropertyID",
-                                "type": "number"
+                                "type": "number",
+                                "sequence": true
                             },
                             {
                                 "name": "Reference",
-                                "type": "text"
+                                "type": "text",
+                                "sequence": true
                             },
                             {
                                 "name": "Source",
-                                "type": "text"
+                                "type": "text",
+                                "sequence": true
                             },
                             {
                                 "name": "Type",
-                                "type": "text"
+                                "type": "text",
+                                "sequence": true
                             },
                             {
                                 "name": "XmlExtended",
-                                "type": "text"
+                                "type": "text",
+                                "sequence": true
                             }
                         ]
                     }
                 },
                 {
                     "name": "Qty",
-                    "type": "number"
+                    "type": "number",
+                    "sequence": true
                 },
                 {
                     "name": "SellerSKU",
-                    "type": "text"
+                    "type": "text",
+                    "sequence": true
                 },
                 {
                     "name": "SerialKey",
-                    "type": "text"
+                    "type": "text",
+                    "sequence": true
                 },
                 {
                     "name": "SpecialType",
-                    "type": "number"
+                    "type": "number",
+                    "sequence": true
                 },
                 {
                     "name": "Status",
-                    "type": "text"
+                    "type": "text",
+                    "sequence": true
                 },
                 {
                     "name": "Subtotal",
-                    "type": "number"
+                    "type": "number",
+                    "sequence": true
                 },
                 {
                     "name": "TaxationAmount",
-                    "type": "number"
+                    "type": "number",
+                    "sequence": true
                 },
                 {
                     "name": "Total",
-                    "type": "number"
+                    "type": "number",
+                    "sequence": true
                 },
                 {
                     "name": "OutStockHandlingDays",
-                    "type": "number"
+                    "type": "number",
+                    "sequence": true
                 },
                 {
                     "name": "WareHouseID",
-                    "type": "number"
+                    "type": "number",
+                    "sequence": true
                 },
                 {
                     "name": "Warehouses",
-                    "type": "array"
+                    "type": "array",
+                    "sequence": true
                 }
                 //,{"name": "WebSiteID","type": "number"}
             ]
@@ -627,256 +670,318 @@
             "spec": [
                 {
                     "name": "Amount",
-                    "type": "number"
+                    "type": "number",
+                    "sequence": true
                 },
                 {
                     "name": "InstallmentAmount",
-                    "type": "number"
+                    "type": "number",
+                    "sequence": true
                 },
                 {
                     "name": "Installments",
-                    "type": "number"
+                    "type": "number",
+                    "sequence": true
                 },
                 {
                     "name": "IntegrationID",
-                    "type": "text"
+                    "type": "text",
+                    "sequence": true
                 },
                 {
                     "name": "OrderID",
-                    "type": "text"
+                    "type": "text",
+                    "sequence": true
                 },
                 {
                     "name": "OrderPaymentMethodID",
-                    "type": "number"
+                    "type": "number",
+                    "sequence": true
                 },
                 {
                     "name": "PaidAmount",
-                    "type": "number"
+                    "type": "number",
+                    "sequence": true
                 },
                 {
                     "name": "PaymentDate",
-                    "type": "text"
+                    "type": "date",
+                    "time": true,
+                    "sequence": true
                 },
                 {
                     "name": "PaymentInfo",
                     "type": "collection",
+                    "sequence": true,
                     "spec": [
                         {
                             "name": "Alias",
-                            "type": "text"
+                            "type": "text",
+                            "sequence": true
                         },
                         {
                             "name": "AuthorizationCode",
-                            "type": "text"
+                            "type": "text",
+                            "sequence": true
                         },
                         {
                             "name": "ConfirmationNumber",
-                            "type": "text"
+                            "type": "text",
+                            "sequence": true
                         },
                         {
                             "name": "ExpirationDate",
-                            "type": "text"
+                            "type": "text",
+                            "sequence": true
                         },
                         {
                             "name": "Holder",
-                            "type": "text"
+                            "type": "text",
+                            "sequence": true
                         },
                         {
                             "name": "Identifier",
-                            "type": "text"
+                            "type": "text",
+                            "sequence": true
                         },
                         {
                             "name": "Month",
-                            "type": "number"
+                            "type": "number",
+                            "sequence": true
                         },
                         {
                             "name": "NumberHint",
-                            "type": "text"
+                            "type": "text",
+                            "sequence": true
                         },
                         {
                             "name": "PaymentDate",
-                            "type": "text"
+                            "type": "text",
+                            "sequence": true
                         },
                         {
                             "name": "PaymentType",
-                            "type": "number"
+                            "type": "number",
+                            "sequence": true
                         },
                         {
                             "name": "ReceiptCode",
-                            "type": "text"
+                            "type": "text",
+                            "sequence": true
                         },
                         {
                             "name": "ReconciliationNumber",
-                            "type": "text"
+                            "type": "text",
+                            "sequence": true
                         },
                         {
                             "name": "SecurityCodeHint",
-                            "type": "text"
+                            "type": "text",
+                            "sequence": true
                         },
                         {
                             "name": "TransactionNumber",
-                            "type": "text"
+                            "type": "text",
+                            "sequence": true
                         },
                         {
                             "name": "Year",
-                            "type": "number"
+                            "type": "number",
+                            "sequence": true
                         }
                     ]
                 },
                 {
                     "name": "PaymentMethodID",
-                    "type": "number"
+                    "type": "number",
+                    "sequence": true
                 },
                 {
                     "name": "PaymentNumber",
-                    "type": "text"
+                    "type": "text",
+                    "sequence": true
                 },
                 {
                     "name": "Properties",
-                    "type": "array"
+                    "type": "array",
+                    "sequence": true
                 },
                 {
                     "name": "RefundAmount",
-                    "type": "number"
+                    "type": "number",
+                    "sequence": true
                 },
                 {
                     "name": "Status",
-                    "type": "text"
+                    "type": "text",
+                    "sequence": true
                 },
                 {
                     "name": "TaxAmount",
-                    "type": "number"
+                    "type": "number",
+                    "sequence": true
                 },
                 {
                     "name": "TransactionID",
-                    "type": "text"
+                    "type": "text",
+                    "sequence": true
                 }
             ]
         }
     },
     {
         "name": "CommissionAmount",
-        "type": "number"
+        "type": "number",
+        "sequence": true
     },
     {
         "name": "Discounts",
-        "type": "array"
+        "type": "array",
+        "sequence": true
     },
     {
         "name": "GlobalStatus",
-        "type": "number"
+        "type": "number",
+        "sequence": true
     },
     {
         "name": "HasConflicts",
-        "type": "boolean"
+        "type": "boolean",
+        "sequence": true
     },
     {
         "name": "AcquiredDate",
-        "type": "text"
+        "type": "text",
+        "sequence": true
     },
     {
         "name": "CancelledDate",
-        "type": "text"
+        "type": "text",
+        "sequence": true
     },
     {
         "name": "CreatedBy",
-        "type": "text"
+        "type": "text",
+        "sequence": true
     },
     {
         "name": "CreatedChannel",
-        "type": "text"
+        "type": "text",
+        "sequence": true
     },
     {
         "name": "CreatedDate",
-        "type": "text"
+        "type": "text",
+        "sequence": true
     },
     {
         "name": "ModifiedBy",
-        "type": "text"
+        "type": "text",
+        "sequence": true
     },
     {
         "name": "ModifiedDate",
-        "type": "text"
+        "type": "text",
+        "sequence": true
     },
     {
         "name": "MultiSiteTenant",
         "type": "collection",
+        "sequence": true,
         "spec": [
             {
                 "name": "BrandId",
-                "type": "text"
+                "type": "text",
+                "sequence": true
             },
             {
                 "name": "BrandType",
-                "type": "text"
+                "type": "text",
+                "sequence": true
             },
             {
                 "name": "CompanyId",
-                "type": "text"
+                "type": "text",
+                "sequence": true
             },
             {
                 "name": "DeviceType",
-                "type": "text"
+                "type": "text",
+                "sequence": true
             }
         ]
     },
     {
         "name": "OrderGroupID",
-        "type": "text"
+        "type": "text",
+        "sequence": true
     },
     {
         "name": "OrderGroupNumber",
-        "type": "text"
+        "type": "text",
+        "sequence": true
     },
     {
         "name": "OrderInvoice",
         "type": "collection",
+        "sequence": true,
         "spec": [
             {
                 "name": "Code",
-                "type": "text"
+                "type": "text",
+                "sequence": true
             },
             {
                 "name": "OrderInvoiceID",
-                "type": "text"
+                "type": "text",
+                "sequence": true
             },
             {
                 "name": "Url",
-                "type": "text"
+                "type": "text",
+                "sequence": true
             }
         ]
     },
     {
         "name": "OrderType",
         "type": "collection",
+        "sequence": true,
         "spec": [
             {
                 "name": "AllowMultiPayment",
-                "type": "boolean"
+                "type": "boolean",
+                "sequence": true
             },
             {
                 "name": "EmitFiscalTicket",
-                "type": "boolean"
+                "type": "boolean",
+                "sequence": true
             },
             {
                 "name": "IntegrationID",
-                "type": "text"
+                "type": "text",
+                "sequence": true
             },
             {
                 "name": "Name",
-                "type": "text"
+                "type": "text",
+                "sequence": true
             },
             {
                 "name": "OrderTypeID",
-                "type": "number"
+                "type": "number",
+                "sequence": true
             },
             {
                 "name": "RequireInventory",
-                "type": "boolean"
+                "type": "boolean",
+                "sequence": true
             },
             {
                 "name": "RequirePayment",
-                "type": "boolean"
+                "type": "boolean",
+                "sequence": true
             }
         ]
     },
@@ -1003,19 +1108,23 @@
     },
     {
         "name": "SellerCommissionAmount",
-        "type": "number"
+        "type": "number",
+        "sequence": true
     },
     {
         "name": "ShipmentDate",
-        "type": "text"
+        "type": "text",
+        "sequence": true
     },
     {
         "name": "ShipmentStatus",
-        "type": "number"
+        "type": "number",
+        "sequence": true
     },
     {
         "name": "Shipments",
         "type": "array",
+        "sequence": true,
         "spec": {
             "type": "collection",
             "spec": [
@@ -1060,19 +1169,23 @@
     },
     {
         "name": "ShopperTicketID",
-        "type": "text"
+        "type": "text",
+        "sequence": true
     },
     {
         "name": "Tags",
-        "type": "array"
+        "type": "array",
+        "sequence": true
     },
     {
         "name": "TrafficSourceID",
-        "type": "text"
+        "type": "text",
+        "sequence": true
     },
     {
         "name": "Properties",
-        "type": "array"
+        "type": "array",
+        "sequence": true
     },
     {
         "name": "ReturnAddress",
