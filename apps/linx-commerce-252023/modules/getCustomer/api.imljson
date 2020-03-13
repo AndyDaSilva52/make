@@ -23,7 +23,8 @@
         "body": "{{temp.CustomerID}}",
         "response": {
             "temp": {
-                "Person": "{{body}}"
+                "Person": "{{body}}",
+                "CustomerStatusID": "{{body.CustomerStatusID}}"
             }
         },
         "condition": "{{temp.RecordCount >= 1 && temp.Customer.CustomerType == 'P'}}"
@@ -33,18 +34,30 @@
         "body": "{{temp.CustomerID}}",
         "response": {
             "temp": {
-                "Company": "{{body}}"
+                "Company": "{{body}}",
+                "CustomerStatusID": "{{body.CustomerStatusID}}"
             }
         },
         "condition": "{{temp.RecordCount >= 1 && temp.Customer.CustomerType == 'C'}}"
     },
     {
+        "condition": true,
+        "url": "/v1/Profile/API.svc/web/GetCustomerStatus",
+        "body": "{{temp.CustomerStatusID}}",
         "response": {
-            "output": null
-        },
-        "condition": "{{temp.RecordCount == 0}}"
+            "temp": {
+                "CustomerStatus": "{{body}}"
+            }
+        }
     },
     {
+        "condition": "{{temp.RecordCount == 0}}",
+        "response": {
+            "output": null
+        }
+    },
+    {
+        "condition": "{{temp.RecordCount >= 1}}",
         "url": "/v1/Profile/API.svc/web/GetCustomer",
         "body": "{{temp.CustomerID}}",
         "response": {
@@ -54,7 +67,7 @@
                 "CustomerHash": "{{body.CustomerHash}}",
                 "CreatedDate": "{{linxParseDate(body.CreatedDate)}}",
                 "CustomerStatusID": "{{body.CustomerStatusID}}",
-                // TODO: Description of CustomerStatusID
+                "CustomerStatus": "{{temp.CustomerStatus.Status}}",
                 "CustomerTypeID": "{{body.CustomerType}}",
                 "CustomerType": "{{switch(body.CustomerType; 80; 'P'; 67;'C'; 71;'G'; 'N'}}",
                 "Name": "{{body.Name}}",
@@ -82,7 +95,6 @@
                     "ExtendedProperties": "{{temp.Company.ExtendedProperties}}"
                 }
             }
-        },
-        "condition": "{{temp.RecordCount >= 1}}"
+        }
     }
 ]

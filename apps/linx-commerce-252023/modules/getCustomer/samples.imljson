@@ -337,7 +337,10 @@
     "CustomerHash": "52ef65bf4740a030b1e68ca10eef44d5",
     "CustomerID": 252661,
     "CustomerStatusID": 2,
-    "CustomerType": 67,
+    "CustomerStatus": "Cliente Ativo",
+    "DocumentNumber": "00000000000191",
+    "CustomerTypeID": 67,
+    "CustomerType": "C",
     "Email": "example@example.com",
     "Groups": [
         {

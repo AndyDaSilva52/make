@@ -26,6 +26,11 @@
         "sequence": true
     },
     {
+        "name": "CustomerStatus",
+        "type": "text",
+        "sequence": true
+    },
+    {
         "name": "CustomerTypeID",
         "type": "uinteger",
         "sequence": true,
