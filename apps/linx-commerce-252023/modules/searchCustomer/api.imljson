@@ -10,6 +10,7 @@
     },
     "response": {
         "limit": "{{parameters.LimitResponse}}",
+        "iterate": "{{body.Result}}",
         "output": {
             "CreatedDate": "{{linxParseDate(item.CreatedDate)}}",
             "CustomerID": "{{item.CustomerID}}",
@@ -19,8 +20,7 @@
             "IntegrationID": "{{item.IntegrationID}}",
             "Name": "{{item.Name}}",
             "WebSiteID": "{{item.WebSiteID}}"
-        },
-        "iterate": "{{body.Result}}"
+        }
     },
     "pagination": {
         "body": {
