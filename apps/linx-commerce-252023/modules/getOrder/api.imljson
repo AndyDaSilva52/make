@@ -36,47 +36,28 @@
             }
         }
     },
-    /**
-    // Não existe maneira de retornar os dados do Sku sem que precise usar um loop de requisições
     {
-        "url": "/v1/Catalog/API.svc/web/SearchSKU",
-        "body": {
-            "Page": {
-                "PageIndex": 0,
-                "PageSize": 0
-            },
-            "Where": "{{temp.WhereItemSkuID}}",
-            "WhereMetadata": "",
-            "OrderBy": ""
-        },
+        "url": "/v1/Sales/API.svc/web/GetOrderStatus",
+        "body": "{{temp.Order.OrderStatusID}}",
         "response": {
             "temp": {
-                "ItemsSkuDetails": "{{body.Result}}"
+                "OrderStatus": "{{body}}"
+            }
+        }
+    },
+    {
+        "url": "/v1/Configuration/API.svc/web/GetWebSite",
+        "body": "{{temp.Order.WebSiteID}}",
+        "response": {
+            "temp": {
+                "WebSite": "{{body}}"
             }
         }
     },
     {
         "response": {
             "temp": {
-                "Items": "{{setPropertyBetweenTwoArrays(temp.Items,temp.ItemsSkuDetails,'SkuDetails','SkuID')}}"
-            }
-        }
-    }, 
-    */
-    {
-        "url": "/v1/Sales/API.svc/web/SearchOrderStatus",
-        "body": {
-            "Page": {
-                "PageIndex": 0,
-                "PageSize": 0
-            },
-            "Where": "",
-            "WhereMetadata": "",
-            "OrderBy": ""
-        },
-        "response": {
-            "temp": {
-                "OrderStatus": "{{body.Result[]}}"
+                "PaymentMethods": "{{linxParseDateArrayKey( temp.Order.PaymentMethods, 'PaymentDate,PaymentInfo.ExpirationDate,PaymentInfo.PaymentDate' )}}"
             }
         }
     },
@@ -86,14 +67,14 @@
                 "OrderID": "{{temp.Order.OrderID}}",
                 "OrderNumber": "{{temp.Order.OrderNumber}}",
                 "OrderStatusID": "{{temp.Order.OrderStatusID}}",
-                "OrderStatus": "{{get(map(temp.OrderStatus; 'Status'; 'OrderStatusID'; temp.Order.OrderStatusID);1)}}",
-                "OrderStatusColor": "{{get(map(temp.OrderStatus; 'Color'; 'OrderStatusID'; temp.Order.OrderStatusID);1)}}",
+                "OrderStatus": "{{temp.OrderStatus.Status}}",
                 //"OriginalOrderID": "{{temp.Order.OriginalOrderID}}"
                 "ExternalInfo": "{{temp.Order.ExternalInfo}}",
                 "CustomerID": "{{temp.Order.CustomerID}}",
                 "CustomerType": "{{temp.Order.CustomerType}}",
                 "MarketPlaceBrand": "{{temp.Order.MarketPlaceBrand}}",
                 "WebSiteID": "{{temp.Order.WebSiteID}}",
+                "WebSiteName": "{{temp.WebSite.Name}}",
                 "WebSiteIntegrationID": "{{temp.Order.WebSiteIntegrationID}}",
                 // Address
                 "BillingAddress": {
@@ -137,36 +118,13 @@
                 "DeliveryAmount": "{{temp.Order.DeliveryAmount}}",
                 "Fulfillments": "{{temp.Order.Fulfillments}}",
                 //"WhereItemProductID": "{{temp.WhereItemProductID}}",
-                //"Items": "{{temp.Order.Items}}",
+                // TODO: Avaliar questão de Amostra Grátis inserida manualmente
+                // TODO: Incluir o campo UPC do método GetSKU
                 "Items": "{{temp.Items}}",
-                "ItemsMapped": {
-                    // TODO: Avaliar questão de Amostra Grátis inserida manualmente
-                    // TODO: Incluir o campo UPC do método GetSKU
-                    "OrderItemID": "{{temp.Items.OrderItemID}}",
-                    "ParentItemID": "{{temp.Items.ParentItemID}}",
-                    "ProductID": "{{temp.Items.ProductID}}",
-                    "ProductIntegrationID": "{{temp.Items.ProductIntegrationID}}",
-                    "ProductName": "{{temp.Items.ProductName}}",
-                    // GetProduct
-                    "ProductDetails": {
-                        "ProductID": "{{temp.Items.ProductDetails.ProductID}}",
-                        "Name": "{{temp.Items.ProductDetails.Name}}",
-                        "MetadataValues": "{{temp.Items.ProductDetails.MetadataValues}}"
-                    },
-                    "SkuID": "{{temp.Items.SkuID}}",
-                    "SKUIntegrationID": "{{temp.Items.SKUIntegrationID}}",
-                    "SKU": "{{temp.Items.SKU}}",
-                    "SkuName": "{{temp.Items.SkuName}}",
-                    // GetSKU
-                    //"SkuDetails": "{{temp.SkuDetails}}",
-                    "IsFreeOffer": "{{temp.Items.IsFreeOffer}}"
-                },
                 "ItemsCount": "{{temp.Order.ItemsCount}}",
                 "ItemsQty": "{{temp.Order.ItemsQty}}",
                 "PaymentMethods": "{{temp.Order.PaymentMethods}}",
-                "PaymentMethods2": {
-                    "Amount": "{{temp.Order.PaymentMethods.Amount}}"
-                },
+                "PaymentMethodsFormated": "{{temp.PaymentMethods}}",
                 "PaymentDate": "{{linxParseDate(temp.Order.PaymentDate)}}",
                 "PaymentStatus": "{{temp.Order.PaymentStatus}}",
                 "PaymentTaxAmount": "{{temp.Order.PaymentTaxAmount}}",
@@ -178,9 +136,7 @@
                 "TotalRefunded": "{{temp.Order.TotalRefunded}}",
                 "Remarks": "{{temp.Order.Remarks}}",
                 "SalesRepresentative": "{{temp.Order.SalesRepresentative}}",
-                "Seller": "{{temp.Order.Seller}}"
-                //,"": "{{temp.Order.}}"
-                ,
+                "Seller": "{{temp.Order.Seller}}",
                 "ReturnAddress": {
                     "AddressType": "{{get(map(temp.Order.Addresses; 'AddressType'; 'AddressType'; 82);1)}}",
                     "OrderAddressID": "{{get(map(temp.Order.Addresses; 'OrderAddressID'; 'AddressType'; 82);1)}}",

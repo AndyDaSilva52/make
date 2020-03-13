@@ -19,11 +19,6 @@
         "type": "text",
         "sequence": true
     },
-    {
-        "name": "OrderStatusColor",
-        "type": "color",
-        "sequence": true
-    },
     //{"name": "OriginalOrderID","type": "text", "help": "Id de identificação do pedido original"},
     {
         "name": "ExternalInfo",

@@ -2,7 +2,7 @@ function linxParseDate(date) {
 
     var strDate = new String(date);
 
-    var strDate = strDate.substring(
+    strDate = strDate.substring(
         strDate.indexOf('Date(') + 5,
         strDate.indexOf(')/') - 5
     );

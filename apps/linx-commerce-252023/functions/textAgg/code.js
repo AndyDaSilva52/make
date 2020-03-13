@@ -1,6 +1,11 @@
 function textAgg(arrayItems, property, prefix, sufix) {
     /**
      * Aggregate into String an Array with preffix and suffix
+     * Ex: 
+     *     textAgg(
+     *          [{"ProductID": 98152},{"ProductID": 98153}]
+     *          ,'ProductID', 'ProductID = ', ' || ')
+     *     Result: ProductID = 98152 || ProductID = 98153
      * @param {Array} arrayItems 
      * @param {strin} property
      * @param {string} prefix
