@@ -1,0 +1,11 @@
+{
+    "url": "/v1/Sales/API.svc/web/RunOrderWorkflow",
+    "body": {
+        "OrderNumber": "{{parameters.OrderNumber}}",
+        "Params": "{{parameters.Params}}",
+        "WorkFlowID": "{{parameters.WorkflowID}}"
+    },
+    "response": {
+        "output": "{{body}}"
+    }
+}

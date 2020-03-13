@@ -1,0 +1,31 @@
+[
+    {
+        "name": "OrderNumber",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "Params",
+        "type": "array",
+        "sequence": true,
+        "spec": {
+            "type": "collection",
+            "sequence": true,
+            "spec": [
+                {
+                    "name": "Key",
+                    "type": "text"
+                },
+                {
+                    "name": "Value",
+                    "type": "text"
+                }
+            ]
+        }
+    },
+    {
+        "name": "WorkFlowID",
+        "type": "number",
+        "sequence": true
+    }
+]

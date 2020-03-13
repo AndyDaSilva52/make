@@ -1,0 +1,8 @@
+{
+    "name": "runOrderWorkflow",
+    "label": "Run Order Workflow",
+    "description": "Run Order Workflow",
+    "connection": "linx-commerce-252023",
+    "webhook": null,
+    "type": "action"
+}

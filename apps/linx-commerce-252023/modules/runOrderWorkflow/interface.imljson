@@ -1,0 +1,14 @@
+[
+    {
+        "name": "IsValid",
+        "type": "boolean"
+    },
+    {
+        "name": "OrderID",
+        "type": "text"
+    },
+    {
+        "name": "OrderNumber",
+        "type": "text"
+    }
+]
