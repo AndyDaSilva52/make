@@ -1,0 +1,8 @@
+{
+    "name": "searchTransactions",
+    "label": "Search Transactions",
+    "description": "Search Transactions",
+    "connection": "linx-commerce-252023",
+    "webhook": null,
+    "type": "search"
+}

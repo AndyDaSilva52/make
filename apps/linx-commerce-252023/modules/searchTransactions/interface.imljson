@@ -1,0 +1,169 @@
+[
+    {
+        "name": "Identifier",
+        "type": "text"
+    },
+    {
+        "name": "IsValid",
+        "type": "boolean"
+    },
+    {
+        "name": "OrderID",
+        "type": "text"
+    },
+    {
+        "name": "Payment",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "Alias",
+                "type": "text"
+            },
+            {
+                "name": "Amount",
+                "type": "number"
+            },
+            {
+                "name": "AuthorizationCode",
+                "type": "text"
+            },
+            {
+                "name": "ExpirationDate",
+                "type": "text"
+            },
+            {
+                "name": "Holder",
+                "type": "text"
+            },
+            {
+                "name": "InstallmentAmount",
+                "type": "number"
+            },
+            {
+                "name": "Installments",
+                "type": "number"
+            },
+            {
+                "name": "InterestRate",
+                "type": "number"
+            },
+            {
+                "name": "InterestType",
+                "type": "number"
+            },
+            {
+                "name": "Month",
+                "type": "number"
+            },
+            {
+                "name": "NumberHint",
+                "type": "text"
+            },
+            {
+                "name": "PaidAmount",
+                "type": "number"
+            },
+            {
+                "name": "PaymentMethodIntegrationID",
+                "type": "text"
+            },
+            {
+                "name": "PaymentType",
+                "type": "number"
+            },
+            {
+                "name": "Provider",
+                "type": "number"
+            },
+            {
+                "name": "ReceiptCode",
+                "type": "text"
+            },
+            {
+                "name": "RefundAmount",
+                "type": "number"
+            },
+            {
+                "name": "SecurityCodeHint",
+                "type": "text"
+            },
+            {
+                "name": "Status",
+                "type": "text"
+            },
+            {
+                "name": "TransactionNumber",
+                "type": "text"
+            },
+            {
+                "name": "Year",
+                "type": "number"
+            }
+        ]
+    },
+    {
+        "name": "PaymentLogs",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "AttemptedAmount",
+                    "type": "text"
+                },
+                {
+                    "name": "AvsFinancialValidation",
+                    "type": "text"
+                },
+                {
+                    "name": "AvsValidation",
+                    "type": "text"
+                },
+                {
+                    "name": "CreatedBy",
+                    "type": "text"
+                },
+                {
+                    "name": "CreatedDate",
+                    "type": "text"
+                },
+                {
+                    "name": "CscFinancialValidation",
+                    "type": "text"
+                },
+                {
+                    "name": "CscValidation",
+                    "type": "text"
+                },
+                {
+                    "name": "OperationType",
+                    "type": "text"
+                },
+                {
+                    "name": "QsiFinancialValidation",
+                    "type": "text"
+                },
+                {
+                    "name": "QsiValidation",
+                    "type": "text"
+                },
+                {
+                    "name": "Request",
+                    "type": "text"
+                },
+                {
+                    "name": "Response",
+                    "type": "text"
+                }
+            ]
+        }
+    },
+    {
+        "name": "TransactionID",
+        "type": "text"
+    },
+    {
+        "name": "TransactionStatus",
+        "type": "number"
+    }
+]

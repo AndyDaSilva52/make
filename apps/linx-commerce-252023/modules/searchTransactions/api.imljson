@@ -1,0 +1,64 @@
+[
+    {
+        "url": "/v1/Payment/API.svc/web/SearchTransactions",
+        "body": {
+            "Page": {
+                "PageIndex": "{{parameters.Page.PageIndex}}",
+                "PageSize": "{{parameters.Page.PageSize}}"
+            },
+            "Where": "{{parameters.Where}}",
+            "OrderBy": "{{parameters.OrderBy}}"
+        },
+        "response": {
+            "limit": "{{parameters.LimitResponse}}",
+            "temp": {
+                "Items": "{{body.Result}}"
+            }
+        },
+        "pagination": {
+            "body": {
+                "Page": {
+                    "PageIndex": "{{(pagination.page - 1)}}"
+                }
+            },
+            "condition": "{{(body.Page.PageCount) > (body.Page.Index)}}"
+        }
+    },
+    {
+        "response": {
+            "iterate": "{{temp.Items}}",
+            "output": {
+                "Identifier": "{{item.Identifier}}",
+                "IsValid": "{{item.IsValid}}",
+                "OrderID": "{{item.OrderID}}",
+                "Payment": {
+                    "Alias": "{{item.Payment.Alias}}",
+                    "Amount": "{{item.Payment.Amount}}",
+                    "AuthorizationCode": "{{item.Payment.AuthorizationCode}}",
+                    //"ExpirationDate": "{{formatDate(linxParseDate(item.Payment.ExpirationDate), 'MM/YYYY' )}}",
+                    "ExpirationDate": "{{linxParseDate(item.Payment.ExpirationDate)}}",
+                    "Holder": "{{item.Payment.Holder}}",
+                    "InstallmentAmount": "{{item.Payment.InstallmentAmount}}",
+                    "Installments": "{{item.Payment.Installments}}",
+                    "InterestRate": "{{item.Payment.InterestRate}}",
+                    "InterestType": "{{item.Payment.InterestType}}",
+                    "Month": "{{item.Payment.Month}}",
+                    "NumberHint": "{{item.Payment.NumberHint}}",
+                    "PaidAmount": "{{item.Payment.PaidAmount}}",
+                    "PaymentMethodIntegrationID": "{{item.Payment.PaymentMethodIntegrationID}}",
+                    "PaymentType": "{{item.Payment.PaymentType}}",
+                    "Provider": "{{item.Payment.Provider}}",
+                    "ReceiptCode": "{{item.Payment.ReceiptCode}}",
+                    "RefundAmount": "{{item.Payment.RefundAmount}}",
+                    "SecurityCodeHint": "{{item.Payment.SecurityCodeHint}}",
+                    "Status": "{{item.Payment.Status}}",
+                    "TransactionNumber": "{{item.Payment.TransactionNumber}}",
+                    "Year": "{{item.Payment.Year}}"
+                },
+                "PaymentLogs": "{{linxParseDateArrayKey( item.PaymentLogs, 'CreatedDate' )}}",
+                "TransactionID": "{{item.TransactionID}}",
+                "TransactionStatus": "{{item.TransactionStatus}}"
+            }
+        }
+    }
+]
