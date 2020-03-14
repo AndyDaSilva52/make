@@ -124,28 +124,14 @@
         }
     },
     {
-        "condition": "{{if( temp.CustomerType == 'P'; true; false )}}",
-        "url": "/v1/Profile/API.svc/web/SavePerson",
+        "url": "/v1/Profile/API.svc/web/{{if( temp.CustomerType == 'P'; 'SavePerson'; 'SaveCompany' )}}",
         "body": "{{temp.Body}}",
         "response": {
             "output": "{{body}}",
             "valid": {
                 "condition": "{{body.IsValid}}",
                 "type": "DataError",
-                "message": "{{ ifempty(body.Errors[].Key, '') + ' ' + body.Errors[].ErrorMessage }}"
-            }
-        }
-    },
-    {
-        "condition": "{{if( temp.CustomerType == 'C'; true; false )}}",
-        "url": "/v1/Profile/API.svc/web/SaveCompany",
-        "body": "{{temp.Body}}",
-        "response": {
-            "output": "{{body}}",
-            "valid": {
-                "condition": "{{body.IsValid}}",
-                "type": "DataError",
-                "message": "{{ ifempty(body.Errors[].Key, '') + ' ' + body.Errors[].ErrorMessage }}"
+                "message": "{{ ifempty(body.Errors[].Key + ': ', '') + body.Errors[].ErrorMessage }}"
             }
         }
     }
