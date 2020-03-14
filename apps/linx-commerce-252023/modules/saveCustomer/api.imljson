@@ -1,14 +1,46 @@
 [
     {
+        "response": {
+            "temp": {
+                "Method": "{{if(parameters.CustomerID == emptystring || parameters.CustomerID == 0; 'POST'; 'PUT')}}"
+            }
+        }
+    },
+    {
         "condition": "{{if(parameters.CustomerID == emptystring || parameters.CustomerID == 0; false; true)}}",
         "url": "/v1/Profile/API.svc/web/GetCustomer",
         "body": "{{parameters.CustomerID}}",
         "response": {
             "temp": {
-                "Method": "{{if(parameters.CustomerID == emptystring || parameters.CustomerID == 0; 'POST'; 'PUT')}}",
                 "Customer": "{{body}}",
                 "CustomerTypeID": "{{body.CustomerType}}", // Return 80 (Person) 67 (Company) or 71 (Guest)
                 "CustomerType": "{{switch(body.CustomerType;80;'P';67;'C';'G')}}"
+            }
+        }
+    },
+    {
+        "condition": "{{if(parameters.CustomerID == emptystring || parameters.CustomerID == 0; false; true)}}",
+        "url": "/v1/Profile/API.svc/web/SearchCustomer",
+        "body": {
+            "Page": {
+                "PageIndex": 0,
+                "PageSize": 1
+            },
+            "Where": "{{'CustomerID == ' + parameters.CustomerID}}",
+            "OrderBy": "CreatedDate,CustomerID"
+        },
+        "response": {
+            "temp": {
+                "IntegrationID": "{{body.Result[1].IntegrationID}}"
+            }
+        }
+    },
+    {
+        "condition": "{{if(parameters.CustomerID == emptystring || parameters.CustomerID == 0; true; false)}}",
+        "response": {
+            "temp": {
+                "CustomerTypeID": "{{switch(parameters.CustomerType;'P';80;'C';67;parameters.CustomerType)}}",
+                "CustomerType": "{{switch(parameters.CustomerType;80;'P';67;'C';parameters.CustomerType)}}"
             }
         }
     },
@@ -35,57 +67,74 @@
         }
     },
     {
-        "url": "/v1/Profile/API.svc/web/SaveCustomer",
-        "body": {
-            "RG": "{{if(temp.Method == 'POST'; parameters.RG; if(temp.CustomerType == 'P'; if(parameters.RG == emptystring || parameters.RG == null; temp.Person.RG ; parameters.RG ) ;emptystring))}}",
-            "Cpf": "{{if(temp.Method == 'POST'; parameters.Cpf; if(temp.CustomerType == 'P'; if(parameters.Cpf == emptystring || parameters.Cpf == null; temp.Person.Cpf ; parameters.Cpf ) ;emptystring))}}",
-            "Cnpj": "{{if(temp.Method == 'POST'; parameters.Cnpj; if(temp.CustomerType == 'P'; if(parameters.Cnpj == emptystring || parameters.Cnpj == null; temp.Person.Cnpj ; parameters.Cnpj ) ;emptystring))}}",
-            "Name": "{{if(temp.Method == 'POST'; parameters.Name; if(temp.CustomerType == 'P'; if(parameters.Name == emptystring || parameters.Name == null; temp.Person.Name ; parameters.Name ) ;emptystring))}}",
-            "Email": "{{if(temp.Method == 'POST'; parameters.Email; if(temp.CustomerType == 'P'; if(parameters.Email == emptystring || parameters.Email == null; temp.Person.Email ; parameters.Email ) ;emptystring))}}",
-            "Gender": "F",
-            "Contact": {
-                "Fax": null,
-                "Phone": null,
-                "Phone2": null,
-                "CellPhone": "11940214481"
-            },
-            "Surname": "ANTUNES",
-            "Password": null,
-            "Addresses": [
-                {
-                    "AddressLine": "Avenida Engenheiro Caetano Álvares",
-                    "AddressNotes": null,
-                    "City": "São Paulo",
-                    "ContactName": "ROSI ANTUNES",
-                    "ID": 154983,
-                    "Landmark": null,
-                    "MainAddress": true,
-                    "Name": "comercio",
-                    "Neighbourhood": "Limão",
-                    "Number": "3520",
-                    "PostalCode": "02546000",
-                    "State": "SP"
+        // Customer
+        "response": {
+            "temp": {
+                "Body": {
+                    // Customer
+                    "CustomerID": "{{       if(temp.Method == 'POST'; 0 ;                               temp.Customer.CustomerID )}}",
+                    "IntegrationID": "{{    if(temp.Method == 'POST'; parameters.IntegrationID ;        temp.IntegrationID )}}",
+                    "CustomerType": "{{     if(temp.Method == 'POST'; temp.CustomerTypeID ;             temp.CustomerTypeID )}}",
+                    "CustomerStatusID": "{{ if(temp.Method == 'POST'; parameters.CustomerStatusID ;     temp.Customer.CustomerStatusID )}}",
+                    "Email": "{{            if(temp.Method == 'POST'; parameters.Email ;                temp.Customer.Email )}}",
+                    "Name": "{{             if(temp.Method == 'POST'; parameters.Name ;                 temp.Customer.Name )}}",
+                    "WebSiteID": "{{        if(temp.Method == 'POST'; parameters.WebSiteID ;            temp.Customer.WebSiteID )}}",
+                    "Password": "{{         if(temp.Method == 'POST'; parameters.Password ;             null )}}",
+                    "Password_Check": "{{   if(temp.Method == 'POST'; parameters.Password_Check ;       null )}}",
+                    "CurrentUserName": "{{  if(temp.Method == 'POST'; parameters.CurrentUserName ;      null )}}",
+                    "CurrentUserIPs": "{{   if(temp.Method == 'POST'; parameters.CurrentUserIPs ;       emnullptystring )}}",
+                    "Contact": {
+                        "Fax": "{{          if(temp.Method == 'POST'; parameters.Contact.Fax ;          temp.Customer.Contact.Fax )}}",
+                        "Phone": "{{        if(temp.Method == 'POST'; parameters.Contact.Phone ;        temp.Customer.Contact.Phone )}}",
+                        "Phone2": "{{       if(temp.Method == 'POST'; parameters.Contact.Phone2 ;       temp.Customer.Contact.Phone2 )}}",
+                        "CellPhone": "{{    if(temp.Method == 'POST'; parameters.Contact.CellPhone ;    temp.Customer.Contact.CellPhone )}}"
+                    },
+                    // TODO: CustomerGroupIDs if not an array of numbers, get the values of CustomerGroupID
+                    "CustomerGroupIDs": "{{     parameters.CustomerGroupIDs }}",
+                    "Addresses": "{{            parameters.Addresses }}",
+                    "ExtendedProperties": "{{   parameters.ExtendedProperties }}"
                 }
-            ],
-            "BirthDate": "/Date(-70059600000-0300)/",
-            "WebSiteID": 129,
-            "CustomerID": 312240,
-            "TradingName": null,
-            "CustomerType": "80",
-            "CurrentUserIPs": null,
-            "Password_Check": null,
-            "CurrentUserName": null,
-            "CustomerGroupIDs": [
-                1
-            ],
-            "CustomerStatusID": 2,
-            "ExtendedProperties": [
-                {
-                    "Name": "IntegrationID_MegaERP",
-                    "Value": "107121"
+            }
+        }
+    },
+    {
+        // Person
+        "response": {
+            "temp": {
+                "Body": {
+                    // Person
+                    "Surname": "{{          if(temp.Method == 'POST'; parameters.Surname ;              temp.Person.Surname )}}",
+                    "Cpf": "{{              if(temp.Method == 'POST'; parameters.Cpf ;                  temp.Person.Cpf )}}",
+                    "RG": "{{               if(temp.Method == 'POST'; parameters.RG ;                   temp.Person.RG )}}",
+                    "Gender": "{{           if(temp.Method == 'POST'; parameters.Gender ;               temp.Person.Gender )}}",
+                    "BirthDate": "{{        if(temp.Method == 'POST'; parameters.BirthDate ;            temp.Person.BirthDate )}}"
                 }
-            ]
-        },
+            }
+        }
+    },
+    {
+        // Company
+        "response": {
+            "temp": {
+                "Body": {
+                    "TradingName": "{{      if(temp.Method == 'POST'; parameters.TradingName ;          temp.Company.TradingName )}}",
+                    "Cnpj": "{{             if(temp.Method == 'POST'; parameters.Cnpj ;                 temp.Company.Cnpj )}}"
+                }
+            }
+        }
+    },
+    {
+        "condition": "{{if( temp.CustomerType == 'P'; true; false )}}",
+        "url": "/v1/Profile/API.svc/web/SavePerson",
+        "body": "{{temp.Body}}",
+        "response": {
+            "output": "{{body}}"
+        }
+    },
+    {
+        "condition": "{{if( temp.CustomerType == 'C'; true; false )}}",
+        "url": "/v1/Profile/API.svc/web/SaveCompany",
+        "body": "{{temp.Body}}",
         "response": {
             "output": "{{body}}"
         }

@@ -1,27 +1,78 @@
 [
     {
-        "name": "RG",
-        "type": "text"
+        "name": "CustomerID",
+        "type": "number",
+        "sequence": true
     },
     {
-        "name": "Cpf",
-        "type": "text"
+        "name": "IntegrationID",
+        "type": "number",
+        "sequence": true
     },
     {
-        "name": "Cnpj",
-        "type": "text"
+        "name": "CustomerType",
+        "type": "select",
+        "sequence": true,
+        "options": [
+            {
+                "label": "P",
+                "value": "80"
+            },
+            {
+                "label": "C",
+                "value": "67"
+            }
+        ]
     },
     {
-        "name": "Name",
-        "type": "text"
+        "name": "CustomerStatusID",
+        "type": "number",
+        "sequence": true
     },
     {
         "name": "Email",
-        "type": "text"
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "Cpf",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "Cnpj",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "RG",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "Name",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "Surname",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "TradingName",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "BirthDate",
+        "type": "text",
+        "sequence": true
     },
     {
         "name": "Gender",
         "type": "select",
+        "sequence": true,
         "options": [
             {
                 "label": "F",
@@ -31,11 +82,36 @@
                 "label": "M",
                 "value": "M"
             }
-        ]
+        ],
+        "enabled": true
+    },
+    {
+        "name": "Password",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "Password_Check",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "WebSiteID",
+        "type": "number",
+        "sequence": true
+    },
+    {
+        "name": "CustomerGroupIDs",
+        "type": "array",
+        "sequence": true,
+        "spec": {
+            "type": "number"
+        }
     },
     {
         "name": "Contact",
         "type": "collection",
+        "sequence": true,
         "spec": [
             {
                 "name": "Fax",
@@ -56,16 +132,9 @@
         ]
     },
     {
-        "name": "Surname",
-        "type": "text"
-    },
-    {
-        "name": "Password",
-        "type": "text"
-    },
-    {
         "name": "Addresses",
         "type": "array",
+        "sequence": true,
         "spec": {
             "type": "collection",
             "spec": [
@@ -121,51 +190,9 @@
         }
     },
     {
-        "name": "BirthDate",
-        "type": "text"
-    },
-    {
-        "name": "WebSiteID",
-        "type": "number"
-    },
-    {
-        "name": "CustomerID",
-        "type": "number"
-    },
-    {
-        "name": "TradingName",
-        "type": "text"
-    },
-    {
-        "name": "CustomerType",
-        "type": "text"
-    },
-    {
-        "name": "CurrentUserIPs",
-        "type": "text"
-    },
-    {
-        "name": "Password_Check",
-        "type": "text"
-    },
-    {
-        "name": "CurrentUserName",
-        "type": "text"
-    },
-    {
-        "name": "CustomerGroupIDs",
-        "type": "array",
-        "spec": {
-            "type": "number"
-        }
-    },
-    {
-        "name": "CustomerStatusID",
-        "type": "number"
-    },
-    {
         "name": "ExtendedProperties",
         "type": "array",
+        "sequence": true,
         "spec": {
             "type": "collection",
             "spec": [
@@ -179,5 +206,15 @@
                 }
             ]
         }
+    },
+    {
+        "name": "CurrentUserName",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "CurrentUserIPs",
+        "type": "text",
+        "sequence": true
     }
 ]
