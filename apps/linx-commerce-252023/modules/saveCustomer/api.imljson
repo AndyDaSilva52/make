@@ -2,12 +2,12 @@
     {
         "response": {
             "temp": {
-                "Method": "{{if(parameters.CustomerID == emptystring || parameters.CustomerID == 0; 'POST'; 'PUT')}}"
+                "Method": "{{if( ifempty(parameters.CustomerID, 0 ) == 0; 'POST'; 'PUT')}}"
             }
         }
     },
     {
-        "condition": "{{if(parameters.CustomerID == emptystring || parameters.CustomerID == 0; false; true)}}",
+        "condition": "{{if( ifempty(parameters.CustomerID, 0 ) == 0; false; true)}}",
         "url": "/v1/Profile/API.svc/web/GetCustomer",
         "body": "{{parameters.CustomerID}}",
         "response": {
@@ -19,7 +19,7 @@
         }
     },
     {
-        "condition": "{{if(parameters.CustomerID == emptystring || parameters.CustomerID == 0; false; true)}}",
+        "condition": "{{if( ifempty(parameters.CustomerID, 0 ) == 0; false; true)}}",
         "url": "/v1/Profile/API.svc/web/SearchCustomer",
         "body": {
             "Page": {
@@ -36,7 +36,7 @@
         }
     },
     {
-        "condition": "{{if(parameters.CustomerID == emptystring || parameters.CustomerID == 0; true; false)}}",
+        "condition": "{{if( ifempty(parameters.CustomerID, 0 ) == 0; true; false)}}",
         "response": {
             "temp": {
                 "CustomerTypeID": "{{switch(parameters.CustomerType;'P';80;'C';67;parameters.CustomerType)}}",
@@ -82,7 +82,7 @@
                     "Password": "{{         if(temp.Method == 'POST'; parameters.Password ;             null )}}",
                     "Password_Check": "{{   if(temp.Method == 'POST'; parameters.Password_Check ;       null )}}",
                     "CurrentUserName": "{{  if(temp.Method == 'POST'; parameters.CurrentUserName ;      null )}}",
-                    "CurrentUserIPs": "{{   if(temp.Method == 'POST'; parameters.CurrentUserIPs ;       emnullptystring )}}",
+                    "CurrentUserIPs": "{{   if(temp.Method == 'POST'; parameters.CurrentUserIPs ;       null )}}",
                     "Contact": {
                         "Fax": "{{          if(temp.Method == 'POST'; parameters.Contact.Fax ;          temp.Customer.Contact.Fax )}}",
                         "Phone": "{{        if(temp.Method == 'POST'; parameters.Contact.Phone ;        temp.Customer.Contact.Phone )}}",
@@ -103,11 +103,11 @@
             "temp": {
                 "Body": {
                     // Person
-                    "Surname": "{{          if(temp.Method == 'POST'; parameters.Surname ;              temp.Person.Surname )}}",
-                    "Cpf": "{{              if(temp.Method == 'POST'; parameters.Cpf ;                  temp.Person.Cpf )}}",
-                    "RG": "{{               if(temp.Method == 'POST'; parameters.RG ;                   temp.Person.RG )}}",
-                    "Gender": "{{           if(temp.Method == 'POST'; parameters.Gender ;               temp.Person.Gender )}}",
-                    "BirthDate": "{{        if(temp.Method == 'POST'; parameters.BirthDate ;            temp.Person.BirthDate )}}"
+                    "Surname": "{{   if(temp.Method == 'POST'; parameters.Surname ;                                             temp.Person.Surname )}}",
+                    "Cpf": "{{       if(temp.Method == 'POST'; parameters.Cpf ;                                                 temp.Person.Cpf )}}",
+                    "RG": "{{        if(temp.Method == 'POST'; parameters.RG ;                                                  temp.Person.RG )}}",
+                    "Gender": "{{    if(temp.Method == 'POST'; parameters.Gender ;                                              temp.Person.Gender )}}",
+                    "BirthDate": "{{ if(temp.Method == 'POST'; ('/Date(' + formatDate(parameters.BirthDate, 'X') + '000)/' ) ;  temp.Person.BirthDate )}}"
                 }
             }
         }
@@ -117,8 +117,8 @@
         "response": {
             "temp": {
                 "Body": {
-                    "TradingName": "{{      if(temp.Method == 'POST'; parameters.TradingName ;          temp.Company.TradingName )}}",
-                    "Cnpj": "{{             if(temp.Method == 'POST'; parameters.Cnpj ;                 temp.Company.Cnpj )}}"
+                    "TradingName": "{{ if(temp.Method == 'POST'; parameters.TradingName ; temp.Company.TradingName )}}",
+                    "Cnpj": "{{        if(temp.Method == 'POST'; parameters.Cnpj ;        temp.Company.Cnpj )}}"
                 }
             }
         }
@@ -128,7 +128,12 @@
         "url": "/v1/Profile/API.svc/web/SavePerson",
         "body": "{{temp.Body}}",
         "response": {
-            "output": "{{body}}"
+            "output": "{{body}}",
+            "valid": {
+                "condition": "{{body.IsValid}}",
+                "type": "DataError",
+                "message": "{{ ifempty(body.Errors[].Key, '') + ' ' + body.Errors[].ErrorMessage }}"
+            }
         }
     },
     {
@@ -136,7 +141,12 @@
         "url": "/v1/Profile/API.svc/web/SaveCompany",
         "body": "{{temp.Body}}",
         "response": {
-            "output": "{{body}}"
+            "output": "{{body}}",
+            "valid": {
+                "condition": "{{body.IsValid}}",
+                "type": "DataError",
+                "message": "{{ ifempty(body.Errors[].Key, '') + ' ' + body.Errors[].ErrorMessage }}"
+            }
         }
     }
 ]
