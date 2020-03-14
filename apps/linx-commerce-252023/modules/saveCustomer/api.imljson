@@ -8,18 +8,6 @@
     },
     {
         "condition": "{{if( ifempty(parameters.CustomerID, 0 ) == 0; false; true)}}",
-        "url": "/v1/Profile/API.svc/web/GetCustomer",
-        "body": "{{parameters.CustomerID}}",
-        "response": {
-            "temp": {
-                "Customer": "{{body}}",
-                "CustomerTypeID": "{{body.CustomerType}}", // Return 80 (Person) 67 (Company) or 71 (Guest)
-                "CustomerType": "{{switch(body.CustomerType;80;'P';67;'C';'G')}}"
-            }
-        }
-    },
-    {
-        "condition": "{{if( ifempty(parameters.CustomerID, 0 ) == 0; false; true)}}",
         "url": "/v1/Profile/API.svc/web/SearchCustomer",
         "body": {
             "Page": {
@@ -31,12 +19,14 @@
         },
         "response": {
             "temp": {
-                "IntegrationID": "{{body.Result[1].IntegrationID}}"
+                "IntegrationID": "{{body.Result[1].IntegrationID}}",
+                "CustomerTypeID": "{{ switch(body.Result[1].CustomerType; 'P'; 80; 'C'; 67; 71 ) }}",
+                "CustomerType": "{{ body.Result[1].CustomerType }}"
             }
         }
     },
     {
-        "condition": "{{if( ifempty(parameters.CustomerID, 0 ) == 0; true; false)}}",
+        "condition": "{{if( ifempty(parameters.CustomerID; 0 ) == 0; true; false)}}",
         "response": {
             "temp": {
                 "CustomerTypeID": "{{switch(parameters.CustomerType;'P';80;'C';67;parameters.CustomerType)}}",
@@ -51,7 +41,7 @@
         "body": "{{parameters.CustomerID}}",
         "response": {
             "temp": {
-                "Person": "{{body}}"
+                "Customer": "{{body}}"
             }
         }
     },
@@ -62,7 +52,7 @@
         "body": "{{parameters.CustomerID}}",
         "response": {
             "temp": {
-                "Company": "{{body}}"
+                "Customer": "{{body}}"
             }
         }
     },
@@ -103,11 +93,11 @@
             "temp": {
                 "Body": {
                     // Person
-                    "Surname": "{{   if(temp.Method == 'POST'; parameters.Surname ;                                             temp.Person.Surname )}}",
-                    "Cpf": "{{       if(temp.Method == 'POST'; parameters.Cpf ;                                                 temp.Person.Cpf )}}",
-                    "RG": "{{        if(temp.Method == 'POST'; parameters.RG ;                                                  temp.Person.RG )}}",
-                    "Gender": "{{    if(temp.Method == 'POST'; parameters.Gender ;                                              temp.Person.Gender )}}",
-                    "BirthDate": "{{ if(temp.Method == 'POST'; ('/Date(' + formatDate(parameters.BirthDate, 'X') + '000)/' ) ;  temp.Person.BirthDate )}}"
+                    "Surname": "{{   if(temp.Method == 'POST'; parameters.Surname ;                                             temp.Customer.Surname )}}",
+                    "Cpf": "{{       if(temp.Method == 'POST'; parameters.Cpf ;                                                 temp.Customer.Cpf )}}",
+                    "RG": "{{        if(temp.Method == 'POST'; parameters.RG ;                                                  temp.Customer.RG )}}",
+                    "Gender": "{{    if(temp.Method == 'POST'; parameters.Gender ;                                              temp.Customer.Gender )}}",
+                    "BirthDate": "{{ if(temp.Method == 'POST'; ('/Date(' + formatDate(parameters.BirthDate, 'X') + '000)/' ) ;  temp.Customer.BirthDate )}}"
                 }
             }
         }
@@ -117,8 +107,8 @@
         "response": {
             "temp": {
                 "Body": {
-                    "TradingName": "{{ if(temp.Method == 'POST'; parameters.TradingName ; temp.Company.TradingName )}}",
-                    "Cnpj": "{{        if(temp.Method == 'POST'; parameters.Cnpj ;        temp.Company.Cnpj )}}"
+                    "TradingName": "{{ if(temp.Method == 'POST'; parameters.TradingName ; temp.Customer.TradingName )}}",
+                    "Cnpj": "{{        if(temp.Method == 'POST'; parameters.Cnpj ;        temp.Customer.Cnpj )}}"
                 }
             }
         }

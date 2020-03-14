@@ -1,7 +1,7 @@
 {
     "name": "saveCustomer",
-    "label": "Save Customer",
-    "description": "Save Customer",
+    "label": "Create or Update Customer",
+    "description": "Uses the Save Person or Save Company to Create or Update a Customer",
     "connection": "linx-commerce-252023",
     "webhook": null,
     "type": "action"

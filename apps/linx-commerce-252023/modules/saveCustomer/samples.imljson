@@ -35,7 +35,7 @@
     },
     "Cpf": "String content",
     "CustomerGroupIDs": [
-        2147483647,
+        21,
         1,
         2
     ],

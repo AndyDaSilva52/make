@@ -2,24 +2,26 @@
     {
         "name": "CustomerID",
         "type": "number",
+        "help": "By letting this field empty it'll change to zero for creating a Customer",
         "sequence": true
     },
     {
         "name": "IntegrationID",
-        "type": "number",
+        "type": "text",
         "sequence": true
     },
     {
         "name": "CustomerType",
         "type": "select",
+        "help": "You could map this field to be 80 for Person or 67 for Company",
         "sequence": true,
         "options": [
             {
-                "label": "P",
+                "label": "Person",
                 "value": "80"
             },
             {
-                "label": "C",
+                "label": "Company",
                 "value": "67"
             }
         ]
