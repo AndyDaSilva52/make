@@ -1,0 +1,16 @@
+[
+    {
+        "name": "codigoMoeda",
+        "label": "Moeda",
+        "type": "select",
+        "enabled": true,
+        "help": "Ex: USD ou EUR",
+        "options": ""
+    },
+    {
+        "name": "data",
+        "label": "Data",
+        "type": "date",
+        "time": false
+    }
+]

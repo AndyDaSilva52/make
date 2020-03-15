@@ -1,0 +1,10 @@
+{
+    "name": "bcb-banco-central-do-brasil-252023",
+    "label": "BCB - Banco Central do Brasil",
+    "version": 1,
+    "theme": "#25457b",
+    "language": "pt",
+    "countries": [
+        "br"
+    ]
+}

@@ -1,0 +1,8 @@
+{
+    "name": "moedas",
+    "label": "Moedas",
+    "description": "Retorna a lista de moedas que podem ser usadas como parâmetros para este conjunto de dados.",
+    "connection": null,
+    "webhook": null,
+    "type": "action"
+}

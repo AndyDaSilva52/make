@@ -1,0 +1,11 @@
+{
+    // /CotacaoMoedaPeriodoFechamento(codigoMoeda='USD',dataInicialCotacao='02-26-2020',dataFinalCotacao='02-26-2020')?$format=json&$select=cotacaoCompra,cotacaoVenda
+    "url": "/CotacaoMoedaPeriodoFechamento(codigoMoeda='{{parameters.codigoMoeda}}',dataInicialCotacao='{{ formatDate(parameters.data; 'MM-DD-YYYY') }}',dataFinalCotacao='{{ formatDate(parameters.data; 'MM-DD-YYYY') }}')",
+    "method": "GET",
+    "qs": {
+        "$select": "cotacaoCompra,cotacaoVenda,dataHoraCotacao"
+    },
+    "response": {
+        "output": "{{body}}"
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "url": "/Moedas",
+    "method": "GET",
+    "qs": {},
+    "body": {},
+    "headers": {},
+    "response": {
+        "output": "{{body}}"
+    }
+}
