@@ -1,0 +1,14 @@
+{
+    "url": "/Moedas",
+    "method": "GET",
+    "qs": {
+        "$format": "json"
+    },
+    "response": {
+        "iterate": "{{body.value}}",
+        "output": {
+            "label": "{{item.simbolo + ' - ' + item.nomeFormatado}}",
+            "value": "{{item.simbolo}}"
+        }
+    }
+}

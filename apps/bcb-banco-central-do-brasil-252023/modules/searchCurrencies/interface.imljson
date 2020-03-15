@@ -1,0 +1,14 @@
+[
+    {
+        "name": "simbolo",
+        "type": "text"
+    },
+    {
+        "name": "nomeFormatado",
+        "type": "text"
+    },
+    {
+        "name": "tipoMoeda",
+        "type": "text"
+    }
+]

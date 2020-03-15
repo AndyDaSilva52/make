@@ -1,0 +1,8 @@
+{
+    "paridadeCompra": 1,
+    "paridadeVenda": 1,
+    "cotacaoCompra": 4.9002,
+    "cotacaoVenda": 4.9012,
+    "dataHoraCotacao": "2020-03-12T13:09:51.034Z",
+    "tipoBoletim": "Abertura"
+}

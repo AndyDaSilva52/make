@@ -1,0 +1,15 @@
+{
+    "url": "/CotacaoMoedaPeriodoFechamento(codigoMoeda='{{parameters.codigoMoeda}}',dataInicialCotacao='{{ formatDate(parameters.data; 'MM-DD-YYYY') }}',dataFinalCotacao='{{ formatDate(parameters.data; 'MM-DD-YYYY') }}')",
+    "method": "GET",
+    "qs": {
+        //"$select": "cotacaoCompra,cotacaoVenda,dataHoraCotacao"
+    },
+    "response": {
+        "output": {
+            "dataHoraCotacao": "{{ parseDate(body.value[].dataHoraCotacao; 'YYYY-MM-DD HH:mm:ss.SS' )}}",
+            "tipoBoletim": "{{body.value[].tipoBoletim}}",
+            "cotacaoCompra": "{{body.value[].cotacaoCompra}}",
+            "cotacaoVenda": "{{body.value[].cotacaoVenda}}"
+        }
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "name": "getCurrencyQuotationClosedPeriod",
+    "label": "Obter Cotação Moeda Fechada",
+    "description": "Retorna a Cotação Fechada em determinada Data",
+    "connection": null,
+    "webhook": null,
+    "type": "action"
+}

@@ -1,0 +1,27 @@
+{
+    "url": "/CotacaoMoedaDia(moeda='{{parameters.currency}}',dataCotacao='{{ formatDate(parameters.date; 'MM-DD-YYYY') }}')",
+    "method": "GET",
+    "qs": {
+        "$skip": 0,
+        "$top": "{{ifempty(parameters.limit;10)}}",
+        "$filter": "{{parameters.filter}}",
+        "$orderby": "{{parameters.orderby}}"
+    },
+    "response": {
+        "output": {
+            "paridadeCompra": "{{item.paridadeCompra}}",
+            "paridadeVenda": "{{item.paridadeVenda}}",
+            "cotacaoCompra": "{{item.cotacaoCompra}}",
+            "cotacaoVenda": "{{item.cotacaoVenda}}",
+            "dataHoraCotacao": "{{ parseDate(item.dataHoraCotacao; 'YYYY-MM-DD HH:mm:ss.SS') }}",
+            "tipoBoletim": "{{item.tipoBoletim}}"
+        },
+        "iterate": "{{body.value}}"
+    },
+    "pagination": {
+        "qs": {
+            "$skip": "{{ (pagination.page - 1) * parameters.limit}}",
+            "$top": "{{parameters.limit}}"
+        }
+    }
+}

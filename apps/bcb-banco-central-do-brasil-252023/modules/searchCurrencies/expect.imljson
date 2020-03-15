@@ -1,0 +1,14 @@
+[
+    {
+        "name": "filter",
+        "label": "Filtro",
+        "type": "text",
+        "help": "Ex: simbolo eq 'USD'.\nPara saber mais:\nhttps://olinda.bcb.gov.br/olinda/servico/ajuda"
+    },
+    {
+        "name": "limit",
+        "type": "hidden",
+        "default": 10,
+        "help": "Limit the Search Module"
+    }
+]

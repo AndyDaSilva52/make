@@ -1,0 +1,8 @@
+{
+    "name": "searchCurrencies",
+    "label": "Listar Moedas",
+    "description": "Retorna moedas",
+    "connection": null,
+    "webhook": null,
+    "type": "search"
+}

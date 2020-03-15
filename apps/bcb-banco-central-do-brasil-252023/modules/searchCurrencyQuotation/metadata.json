@@ -1,0 +1,8 @@
+{
+    "name": "searchCurrencyQuotation",
+    "label": "Listar Cotação de Moeda",
+    "description": "Retorna a Cotação de determinada Moeda em Data informada",
+    "connection": null,
+    "webhook": null,
+    "type": "search"
+}

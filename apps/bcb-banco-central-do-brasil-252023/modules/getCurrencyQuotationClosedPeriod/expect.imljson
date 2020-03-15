@@ -3,14 +3,17 @@
         "name": "codigoMoeda",
         "label": "Moeda",
         "type": "select",
+        "required": true,
         "enabled": true,
         "help": "Ex: USD ou EUR",
-        "options": ""
+        "mode": "edit",
+        "options": "rpc://getCurencies"
     },
     {
         "name": "data",
         "label": "Data",
         "type": "date",
+        "required": true,
         "time": false
     }
 ]

@@ -1,0 +1,19 @@
+{
+    "url": "/Moedas",
+    "method": "GET",
+    "qs": {
+        "$skip": 0,
+        "$top": "{{ifempty(parameters.limit;10)}}",
+        "$filter": "{{parameters.filter}}"
+    },
+    "response": {
+        "output": "{{item}}",
+        "iterate": "{{body.value}}"
+    },
+    "pagination": {
+        "qs": {
+            "$skip": "{{ (pagination.page - 1) * parameters.limit}}",
+            "$top": "{{parameters.limit}}"
+        }
+    }
+}

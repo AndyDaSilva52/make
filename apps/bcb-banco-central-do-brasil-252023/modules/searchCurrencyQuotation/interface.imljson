@@ -1,0 +1,27 @@
+[
+    {
+        "name": "paridadeCompra",
+        "type": "number"
+    },
+    {
+        "name": "paridadeVenda",
+        "type": "number"
+    },
+    {
+        "name": "cotacaoCompra",
+        "type": "number"
+    },
+    {
+        "name": "cotacaoVenda",
+        "type": "number"
+    },
+    {
+        "name": "dataHoraCotacao",
+        "type": "date",
+        "time": true
+    },
+    {
+        "name": "tipoBoletim",
+        "type": "text"
+    }
+]

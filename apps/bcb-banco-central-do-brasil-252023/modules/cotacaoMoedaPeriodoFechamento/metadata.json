@@ -1,8 +1,0 @@
-{
-    "name": "cotacaoMoedaPeriodoFechamento",
-    "label": "Cotação Moeda Período Fechamento",
-    "description": "Cotação Moeda Período Fechamento",
-    "connection": null,
-    "webhook": null,
-    "type": "action"
-}
