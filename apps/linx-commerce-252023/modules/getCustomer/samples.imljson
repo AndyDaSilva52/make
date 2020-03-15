@@ -333,9 +333,10 @@
         "Phone": "",
         "Phone2": ""
     },
-    "CreatedDate": "/Date(1551791976957-0300)/",
+    "CreatedDate": null,
     "CustomerHash": "52ef65bf4740a030b1e68ca10eef44d5",
     "CustomerID": 252661,
+    "IntegrationID": "0",
     "CustomerStatusID": 2,
     "CustomerStatus": "Cliente Ativo",
     "DocumentNumber": "00000000000191",

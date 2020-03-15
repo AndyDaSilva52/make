@@ -1,7 +1,7 @@
 {
     "name": "saveCustomer",
     "label": "Create or Update Customer",
-    "description": "Uses the Save Person or Save Company to Create or Update a Customer",
+    "description": "Using SavePerson or SaveCompany **Don't need to fill all fields",
     "connection": "linx-commerce-252023",
     "webhook": null,
     "type": "action"
