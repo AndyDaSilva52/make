@@ -1,11 +1,7 @@
 {
     "baseUrl": "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata",
+    "method": "GET",
     "qs": {
         "$format": "json"
-    },
-    "log": {
-        "sanitize": [
-            "request.headers.authorization"
-        ]
     }
 }

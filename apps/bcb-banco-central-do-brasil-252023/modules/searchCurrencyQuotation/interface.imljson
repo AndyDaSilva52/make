@@ -1,11 +1,12 @@
 [
     {
-        "name": "paridadeCompra",
-        "type": "number"
+        "name": "dataHoraCotacao",
+        "type": "date",
+        "time": true
     },
     {
-        "name": "paridadeVenda",
-        "type": "number"
+        "name": "tipoBoletim",
+        "type": "text"
     },
     {
         "name": "cotacaoCompra",
@@ -16,12 +17,11 @@
         "type": "number"
     },
     {
-        "name": "dataHoraCotacao",
-        "type": "date",
-        "time": true
+        "name": "paridadeCompra",
+        "type": "number"
     },
     {
-        "name": "tipoBoletim",
-        "type": "text"
+        "name": "paridadeVenda",
+        "type": "number"
     }
 ]
