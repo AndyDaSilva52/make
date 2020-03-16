@@ -89,6 +89,7 @@
     },
     {
         // Person
+        "condition": "{{(temp.CustomerTypeID == 80)}}",
         "response": {
             "temp": {
                 "Body": {
@@ -104,6 +105,7 @@
     },
     {
         // Company
+        "condition": "{{(temp.CustomerTypeID == 67)}}",
         "response": {
             "temp": {
                 "Body": {
