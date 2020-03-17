@@ -1,0 +1,8 @@
+{
+    "name": "int206FinancialIndexQuotation",
+    "label": "206 - Cotação de índice financeiro",
+    "description": "206 - Cotação de ìndice Financeiro",
+    "connection": "megaerp-252023",
+    "webhook": null,
+    "type": "action"
+}

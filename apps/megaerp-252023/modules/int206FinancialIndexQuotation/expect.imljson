@@ -1,0 +1,63 @@
+[
+    {
+        "name": "pPRO_IN_ID",
+        "type": "select",
+        "sequence": true,
+        //"enabled": true,
+        "dynamic": true,
+        "options": [
+            {
+                "label": "205 - Usuário",
+                "value": "205"
+            },
+            {
+                "label": "207 - Agente",
+                "value": "207"
+            },
+            {
+                "label": "305",
+                "value": "305"
+            },
+            {
+                "label": "307 - Movimento Financeiro",
+                "value": "307"
+            }
+        ]
+    },
+    {
+        "name": "pUSU_IN_CODIGO",
+        "type": "integer",
+        "sequence": true,
+        "default": 1
+    },
+    {
+        "name": "pXML",
+        "type": "text",
+        "multiline": true,
+        "sequence": true
+    },
+    {
+        "name": "pObs",
+        "type": "text",
+        "sequence": true,
+        "default": "#Integromat - "
+    },
+    {
+        "name": "pEnviaRecebe",
+        "type": "text",
+        "sequence": true,
+        "default": "R"
+    },
+    {
+        "name": "pTransacao",
+        "type": "integer",
+        "sequence": true,
+        "default": 0
+    },
+    {
+        "name": "pSistema",
+        "type": "integer",
+        "sequence": true,
+        "default": 1
+    }
+]
