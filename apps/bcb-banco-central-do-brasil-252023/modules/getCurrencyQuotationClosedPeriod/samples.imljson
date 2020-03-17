@@ -1,1 +1,6 @@
-null
+{
+    "dataHoraCotacao": "2020-03-16 13:08:35.261",
+    "tipoBoletim": "Fechamento",
+    "cotacaoCompra": 4.9464,
+    "cotacaoVenda": 4.9471
+}

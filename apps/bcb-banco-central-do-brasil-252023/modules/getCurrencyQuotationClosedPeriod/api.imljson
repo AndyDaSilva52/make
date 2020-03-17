@@ -1,5 +1,5 @@
 {
-    "url": "/CotacaoMoedaPeriodoFechamento(codigoMoeda='{{parameters.codigoMoeda}}',dataInicialCotacao='{{ formatDate(parameters.data; 'MM-DD-YYYY') }}',dataFinalCotacao='{{ formatDate(parameters.data; 'MM-DD-YYYY') }}')",
+    "url": "/CotacaoMoedaPeriodoFechamento(codigoMoeda='{{parameters.codigoMoeda}}',dataInicialCotacao='{{ formatDate( addDays(parameters.data; -10) ; 'MM-DD-YYYY') }}',dataFinalCotacao='{{ formatDate(parameters.data; 'MM-DD-YYYY') }}')",
     "method": "GET",
     "qs": {
         //"$select": "cotacaoCompra,cotacaoVenda,dataHoraCotacao"
