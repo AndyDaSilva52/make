@@ -62,22 +62,22 @@
             "temp": {
                 "Body": {
                     // Customer
-                    "CustomerID": "{{       if(temp.Method == 'POST'; 0 ;                               temp.Customer.CustomerID )}}",
-                    "IntegrationID": "{{    if(temp.Method == 'POST'; parameters.IntegrationID ;        temp.IntegrationID )}}",
-                    "CustomerType": "{{     if(temp.Method == 'POST'; temp.CustomerTypeID ;             temp.CustomerTypeID )}}",
-                    "CustomerStatusID": "{{ if(temp.Method == 'POST'; parameters.CustomerStatusID ;     temp.Customer.CustomerStatusID )}}",
-                    "Email": "{{            if(temp.Method == 'POST'; parameters.Email ;                temp.Customer.Email )}}",
-                    "Name": "{{             if(temp.Method == 'POST'; parameters.Name ;                 temp.Customer.Name )}}",
-                    "WebSiteID": "{{        if(temp.Method == 'POST'; parameters.WebSiteID ;            temp.Customer.WebSiteID )}}",
+                    "CustomerID": "{{       if(temp.Method == 'POST'; 0 ;                               temp.Customer.CustomerID                                                        )}}",
+                    "IntegrationID": "{{    if(temp.Method == 'POST'; parameters.IntegrationID ;        if(ifempty(parameters.IntegrationID, '') == ''     ; temp.IntegrationID ; parameters.IntegrationID) )}}",
+                    "CustomerType": "{{     if(temp.Method == 'POST'; temp.CustomerTypeID ;             temp.CustomerTypeID  )}}",
+                    "CustomerStatusID": "{{ if(temp.Method == 'POST'; parameters.CustomerStatusID ;     if(ifempty(parameters.CustomerStatusID, '') == ''  ; temp.Customer.CustomerStatusID; parameters.CustomerStatusID ) )}}",
+                    "Email": "{{            if(temp.Method == 'POST'; parameters.Email ;                if(ifempty(parameters.Email, '') == ''             ; temp.Customer.Email; parameters.Email ) )}}",
+                    "Name": "{{             if(temp.Method == 'POST'; parameters.Name ;                 if(ifempty(parameters.Name, '') == ''              ; temp.Customer.Name; parameters.Name ) )}}",
+                    "WebSiteID": "{{        if(temp.Method == 'POST'; parameters.WebSiteID ;            if(ifempty(parameters.WebSiteID, '') == ''         ; temp.Customer.WebSiteID; parameters.WebSiteID ) )}}",
                     "Password": "{{         if(temp.Method == 'POST'; parameters.Password ;             null )}}",
                     "Password_Check": "{{   if(temp.Method == 'POST'; parameters.Password_Check ;       null )}}",
                     "CurrentUserName": "{{  if(temp.Method == 'POST'; parameters.CurrentUserName ;      null )}}",
                     "CurrentUserIPs": "{{   if(temp.Method == 'POST'; parameters.CurrentUserIPs ;       null )}}",
                     "Contact": {
-                        "Fax": "{{          if(temp.Method == 'POST'; parameters.Contact.Fax ;          temp.Customer.Contact.Fax )}}",
-                        "Phone": "{{        if(temp.Method == 'POST'; parameters.Contact.Phone ;        temp.Customer.Contact.Phone )}}",
-                        "Phone2": "{{       if(temp.Method == 'POST'; parameters.Contact.Phone2 ;       temp.Customer.Contact.Phone2 )}}",
-                        "CellPhone": "{{    if(temp.Method == 'POST'; parameters.Contact.CellPhone ;    temp.Customer.Contact.CellPhone )}}"
+                        "Fax": "{{          if(temp.Method == 'POST'; parameters.Contact.Fax ;          if(ifempty(parameters.Contact.Fax, '') == ''       ; temp.Customer.Contact.Fax; parameters.Contact.Fax ) )}}",
+                        "Phone": "{{        if(temp.Method == 'POST'; parameters.Contact.Phone ;        if(ifempty(parameters.Contact.Phone, '') == ''     ; temp.Customer.Contact.Phone; parameters.Contact.Phone ) )}}",
+                        "Phone2": "{{       if(temp.Method == 'POST'; parameters.Contact.Phone2 ;       if(ifempty(parameters.Contact.Phone2, '') == ''    ; temp.Customer.Contact.Phone2 ; parameters.Contact.Phone2 ) )}}",
+                        "CellPhone": "{{    if(temp.Method == 'POST'; parameters.Contact.CellPhone ;    if(ifempty(parameters.Contact.CellPhone, '') == '' ; temp.Customer.Contact.CellPhone; parameters.Contact.CellPhone ) )}}"
                     },
                     // TODO: CustomerGroupIDs if not an array of numbers, get the values of CustomerGroupID
                     "CustomerGroupIDs": "{{     parameters.CustomerGroupIDs }}",
@@ -94,11 +94,11 @@
             "temp": {
                 "Body": {
                     // Person
-                    "Surname": "{{   if(temp.Method == 'POST'; parameters.Surname ;                                             temp.Customer.Surname )}}",
-                    "Cpf": "{{       if(temp.Method == 'POST'; parameters.Cpf ;                                                 temp.Customer.Cpf )}}",
-                    "RG": "{{        if(temp.Method == 'POST'; parameters.RG ;                                                  temp.Customer.RG )}}",
-                    "Gender": "{{    if(temp.Method == 'POST'; parameters.Gender ;                                              temp.Customer.Gender )}}",
-                    "BirthDate": "{{ if(temp.Method == 'POST'; ('/Date(' + formatDate(parameters.BirthDate, 'X') + '000)/' ) ;  temp.Customer.BirthDate )}}"
+                    "Surname": "{{   if(temp.Method == 'POST'; parameters.Surname ;                                             if(ifempty(parameters.Surname, '') == ''   ; temp.Customer.Surname; parameters.Surname ) )}}",
+                    "Cpf": "{{       if(temp.Method == 'POST'; parameters.Cpf ;                                                 if(ifempty(parameters.Cpf, '') == ''       ; temp.Customer.Cpf; parameters.Cpf ) )}}",
+                    "RG": "{{        if(temp.Method == 'POST'; parameters.RG ;                                                  if(ifempty(parameters.RG, '') == ''        ; temp.Customer.RG; parameters.RG ) )}}",
+                    "Gender": "{{    if(temp.Method == 'POST'; parameters.Gender ;                                              if(ifempty(parameters.Gender, '') == ''    ; temp.Customer.Gender; parameters.Gender ) )}}",
+                    "BirthDate": "{{ if(temp.Method == 'POST'; ('/Date(' + formatDate(parameters.BirthDate, 'X') + '000)/' ) ;  if(ifempty(parameters.BirthDate, '') == '' ; temp.Customer.BirthDate; ('/Date(' + formatDate(parameters.BirthDate, 'X') + '000)/' ) ) )}}"
                 }
             }
         }
@@ -109,8 +109,8 @@
         "response": {
             "temp": {
                 "Body": {
-                    "TradingName": "{{ if(temp.Method == 'POST'; parameters.TradingName ; temp.Customer.TradingName )}}",
-                    "Cnpj": "{{        if(temp.Method == 'POST'; parameters.Cnpj ;        temp.Customer.Cnpj )}}"
+                    "TradingName": "{{ if(temp.Method == 'POST'; parameters.TradingName ; if(ifempty(parameters.TradingName, '') == '' ; temp.Customer.TradingName; parameters.TradingName ) )}}",
+                    "Cnpj": "{{        if(temp.Method == 'POST'; parameters.Cnpj ;        if(ifempty(parameters.Cnpj, '') == ''        ; temp.Customer.Cnpj; parameters.Cnpj ) )}}"
                 }
             }
         }

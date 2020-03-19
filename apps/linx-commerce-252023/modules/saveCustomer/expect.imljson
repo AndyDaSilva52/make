@@ -142,52 +142,66 @@
             "type": "collection",
             "spec": [
                 {
-                    "name": "AddressLine",
-                    "type": "text"
-                },
-                {
-                    "name": "AddressNotes",
-                    "type": "text"
-                },
-                {
-                    "name": "City",
-                    "type": "text"
-                },
-                {
-                    "name": "ContactName",
-                    "type": "text"
-                },
-                {
                     "name": "ID",
-                    "type": "number"
-                },
-                {
-                    "name": "Landmark",
-                    "type": "text"
+                    "type": "number",
+                    "sequence": true
                 },
                 {
                     "name": "MainAddress",
-                    "type": "boolean"
+                    "type": "boolean",
+                    "sequence": true
                 },
                 {
                     "name": "Name",
-                    "type": "text"
+                    "type": "text",
+                    "sequence": true
                 },
                 {
-                    "name": "Neighbourhood",
-                    "type": "text"
+                    "name": "ContactName",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "AddressLine",
+                    "type": "text",
+                    "sequence": true
                 },
                 {
                     "name": "Number",
-                    "type": "text"
+                    "type": "text",
+                    "sequence": true
                 },
                 {
-                    "name": "PostalCode",
-                    "type": "text"
+                    "name": "AddressNotes",
+                    "type": "text",
+                    "help": "Complemento",
+                    "sequence": true
+                },
+                {
+                    "name": "Neighbourhood",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "City",
+                    "type": "text",
+                    "sequence": true
                 },
                 {
                     "name": "State",
-                    "type": "text"
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "PostalCode",
+                    "type": "text",
+                    "sequence": true
+                },
+                {
+                    "name": "Landmark",
+                    "type": "text",
+                    "help": "Ponto de Referência",
+                    "sequence": true
                 }
             ]
         }
