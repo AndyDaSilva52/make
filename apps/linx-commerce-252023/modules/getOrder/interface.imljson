@@ -19,6 +19,12 @@
         "type": "text",
         "sequence": true
     },
+    {
+        "name": "GlobalStatus",
+        "type": "number",
+        "sequence": true,
+        "help": "Status gloval do pedido (Ex.: Em progresso, Finalizado, Cancelado). Can be 65 - Acquired, 67 - Cancelled, 69 - Conflicted, 70 - Finished, 80 - Captured or 88 - NotApplicable"
+    },
     //{"name": "OriginalOrderID","type": "text", "help": "Id de identificação do pedido original"},
     {
         "name": "ExternalInfo",
@@ -60,6 +66,11 @@
         "sequence": true
     },
     {
+        "name": "CustomerTypeID",
+        "type": "uinteger",
+        "sequence": true
+    },
+    {
         "name": "CustomerType",
         "type": "text",
         "sequence": true
@@ -73,6 +84,10 @@
         "name": "WebSiteID",
         "type": "number",
         "sequence": true
+    },
+    {
+        "name": "WebSiteName",
+        "type": "text"
     },
     {
         "name": "WebSiteIntegrationID",
@@ -385,7 +400,8 @@
     {
         "name": "DeliveryPostalCode",
         "type": "text",
-        "sequence": true
+        "sequence": true,
+        "help": "Código postal da entrega"
     },
     {
         "name": "DeliveryAmount",
@@ -475,7 +491,8 @@
                 {
                     "name": "BundleKitDiscount",
                     "type": "text",
-                    "sequence": true
+                    "sequence": true,
+                    "help": "Tipo de cálculo de desconto no KIT. Can be 1 - Percent or 2 - RawValue"
                 },
                 {
                     "name": "BundleKitDiscountValue",
@@ -485,7 +502,8 @@
                 {
                     "name": "BundlePriceType",
                     "type": "text",
-                    "sequence": true
+                    "sequence": true,
+                    "help": "Tipo de desconto. Can be 0 - Fixed, 1 - KitDiscount or 2 - PerProductDiscount"
                 },
                 {
                     "name": "CatalogID",
@@ -495,7 +513,8 @@
                 {
                     "name": "CatalogItemType",
                     "type": "number",
-                    "sequence": true
+                    "sequence": true,
+                    "help": "Identifica o tipo de produto (7:bundle; 5:sku; 6:produto)"
                 },
                 {
                     "name": "DiscountAmount",
@@ -515,7 +534,8 @@
                 {
                     "name": "IsDeliverable",
                     "type": "boolean",
-                    "sequence": true
+                    "sequence": true,
+                    "help": "Quanto True = \"Envio normal\" e False \"Envio Virtual\""
                 },
                 {
                     "name": "IsFreeShipping",
@@ -605,7 +625,8 @@
                 {
                     "name": "SpecialType",
                     "type": "number",
-                    "sequence": true
+                    "sequence": true,
+                    "help": "Indica o tipo especial do produto. Can be 67 - Custom, 71 - Gift, 78 - No, 80 - Wrap, 83 - Service, 84 - GiftCertificate or 87 - Warranty"
                 },
                 {
                     "name": "Status",
@@ -613,7 +634,7 @@
                     "sequence": true
                 },
                 {
-                    "name": "Subtotal",
+                    "name": "SubTotal",
                     "type": "number",
                     "sequence": true
                 },
@@ -660,6 +681,7 @@
         "name": "PaymentMethods",
         "type": "array",
         "sequence": true,
+        "help": "Lista de modos de pagamento do pedido.",
         "spec": {
             "type": "collection",
             "spec": [
@@ -726,7 +748,8 @@
                         },
                         {
                             "name": "ExpirationDate",
-                            "type": "text",
+                            "type": "date",
+                            "time": false,
                             "sequence": true
                         },
                         {
@@ -832,12 +855,32 @@
     {
         "name": "Discounts",
         "type": "array",
-        "sequence": true
-    },
-    {
-        "name": "GlobalStatus",
-        "type": "number",
-        "sequence": true
+        "sequence": true,
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "Amount",
+                    "type": "number"
+                },
+                {
+                    "name": "DiscountID",
+                    "type": "uinteger"
+                },
+                {
+                    "name": "Message",
+                    "type": "text"
+                },
+                {
+                    "name": "Reference",
+                    "type": "text"
+                },
+                {
+                    "name": "Type",
+                    "type": "text"
+                }
+            ]
+        }
     },
     {
         "name": "HasConflicts",
@@ -851,7 +894,7 @@
     },
     {
         "name": "CancelledDate",
-        "type": "text",
+        "type": "date",
         "sequence": true
     },
     {
@@ -862,11 +905,13 @@
     {
         "name": "CreatedChannel",
         "type": "text",
-        "sequence": true
+        "sequence": true,
+        "help": "Canal criado pelo pedido"
     },
     {
         "name": "CreatedDate",
-        "type": "text",
+        "type": "date",
+        "time": true,
         "sequence": true
     },
     {
@@ -876,7 +921,8 @@
     },
     {
         "name": "ModifiedDate",
-        "type": "text",
+        "type": "date",
+        "time": true,
         "sequence": true
     },
     {
@@ -989,7 +1035,8 @@
     {
         "name": "PaymentStatus",
         "type": "number",
-        "sequence": true
+        "sequence": true,
+        "help": "Status global do pagamento do pedido. Can be 67 - Cancelled, 68 - Due, 73 - Collect, 79 - OverPaid, 80 - Paid, 82 - Refunded, 84 - PartiallyPaid, 85 - OverRefunded or 88 - NotApplicable"
     },
     {
         "name": "PaymentTaxAmount",
@@ -1114,7 +1161,8 @@
     {
         "name": "ShipmentStatus",
         "type": "number",
-        "sequence": true
+        "sequence": true,
+        "help": "Status global de expedição do pedido. Can be 68 - Delivered, 80 - PartiallyShipped, 83 - Shipped, 85 - Undeliverable, 87 - Waiting or 88 - NotApplicable"
     },
     {
         "name": "Shipments",
