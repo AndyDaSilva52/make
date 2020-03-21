@@ -1,4 +1,8 @@
 {
+    "IsValid": true,
+    "Warnings": [
+        "String Content"
+    ],
     "Errors": [
         {
             "ErrorCode": "",
@@ -29,7 +33,5 @@
             "TechnicalMessage": null
         }
     ],
-    "IsValid": true,
-    "Warnings": [],
     "CustomerID": 312805
 }

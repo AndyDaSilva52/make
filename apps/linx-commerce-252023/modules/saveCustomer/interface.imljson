@@ -1,1 +1,46 @@
-[]
+[
+    {
+        "name": "IsValid",
+        "type": "boolean"
+    },
+    {
+        "name": "Warnings",
+        "type": "array",
+        "spec": {
+            "type": "text"
+        }
+    },
+    {
+        "name": "Errors",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "ErrorCode",
+                    "type": "text"
+                },
+                {
+                    "name": "ErrorMessage",
+                    "type": "text"
+                },
+                {
+                    "name": "HelpEntry",
+                    "type": "text"
+                },
+                {
+                    "name": "Key",
+                    "type": "text"
+                },
+                {
+                    "name": "TechnicalMessage",
+                    "type": "text"
+                }
+            ]
+        }
+    },
+    {
+        "name": "CustomerID",
+        "type": "number"
+    }
+]

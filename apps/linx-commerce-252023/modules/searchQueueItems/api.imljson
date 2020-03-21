@@ -1,8 +1,8 @@
 {
     "url": "/v1/Queue/API.svc/web/SearchQueueItems",
-    "qs": {},
     "body": "{{parameters.filters}}",
     "response": {
+        "limit": "{{parameters.LimitResponse}}",
         "output": {
             "Attempts": "{{item.Attempts}}",
             "CreatedDate": "{{linxParseDate(item.CreatedDate)}}",

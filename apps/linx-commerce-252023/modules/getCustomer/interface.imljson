@@ -1,71 +1,59 @@
 [
     {
         "name": "CustomerID",
-        "type": "uinteger",
-        "sequence": true
+        "type": "uinteger"
     },
     {
         "name": "IntegrationID",
-        "type": "text",
-        "sequence": true
+        "type": "text"
     },
     {
         "name": "CustomerHash",
-        "type": "text",
-        "sequence": true
+        "type": "text"
     },
     {
         "name": "CreatedDate",
         "type": "date",
-        "time": true,
-        "sequence": true
+        "time": true
     },
     {
         "name": "CustomerStatusID",
-        "type": "uinteger",
-        "sequence": true
+        "type": "uinteger"
     },
     {
         "name": "CustomerStatus",
-        "type": "text",
-        "sequence": true
+        "type": "text"
     },
     {
         "name": "CustomerTypeID",
         "type": "uinteger",
-        "sequence": true,
-        "help": "Can be 80 (Person), 67 (Company) or 71 (Guest)"
+        "help": "Can be 80 (Person),67 (Company) or 71 (Guest)"
     },
     {
         "name": "CustomerType",
         "type": "text",
-        "sequence": true,
-        "help": "Can be \"P\" (Person), \"C\" (Company). \nChanged the value to follow the same as SearchCustomer. \nThe GetCustomer returns 67 (Person), 80 (Company) or 71 (Guest)\n Guest is not confirmed from the documentation"
-    },
-    {
-        "name": "TradingName",
-        "type": "text",
-        "sequence": true
+        "help": "Can be \"P\" (Person),\"C\" (Company). \nChanged the value to follow the same as SearchCustomer. \nThe GetCustomer returns 67 (Person),80 (Company) or 71 (Guest)\n Guest is not confirmed from the documentation"
     },
     {
         "name": "DocumentNumber",
+        "type": "text"
+    },
+    {
+        "name": "FullName",
         "type": "text",
-        "sequence": true
+        "help": "When CustomerType:\nWhen 'P' (Person) then Name concatenate with blank space and Surname.\nWhen 'C' (Company) is the same as TradingName"
     },
     {
         "name": "Name",
-        "type": "text",
-        "sequence": true
+        "type": "text"
     },
     {
         "name": "Password",
-        "type": "text",
-        "sequence": true
+        "type": "text"
     },
     {
         "name": "Email",
-        "type": "email",
-        "sequence": true
+        "type": "email"
     },
     {
         "name": "Groups",
@@ -73,16 +61,13 @@
         "spec": [
             {
                 "name": "CustomerGroupID",
-                "type": "uinteger",
-                "sequence": true
+                "type": "uinteger"
             },
             {
                 "name": "Title",
-                "type": "text",
-                "sequence": true
+                "type": "text"
             }
-        ],
-        "sequence": true
+        ]
     },
     {
         "name": "Contact",
@@ -90,189 +75,156 @@
         "spec": [
             {
                 "name": "CellPhone",
-                "type": "text",
-                "sequence": true
+                "type": "text"
             },
             {
                 "name": "Phone",
-                "type": "text",
-                "sequence": true
+                "type": "text"
             }
         ]
     },
     {
         "name": "Address",
         "type": "array",
-        "sequence": true,
         "spec": {
             "type": "collection",
             "spec": [
                 {
                     "name": "ID",
-                    "type": "number",
-                    "sequence": true
+                    "type": "number"
                 },
                 {
                     "name": "MainAddress",
-                    "type": "boolean",
-                    "sequence": true
+                    "type": "boolean"
                 },
                 {
                     "name": "Name",
-                    "type": "text",
-                    "sequence": true
+                    "type": "text"
                 },
                 {
                     "name": "ContactName",
-                    "type": "text",
-                    "sequence": true
+                    "type": "text"
                 },
                 {
                     "name": "AddressLine",
-                    "type": "text",
-                    "sequence": true
+                    "type": "text"
                 },
                 {
                     "name": "Number",
-                    "type": "text",
-                    "sequence": true
+                    "type": "text"
                 },
                 {
                     "name": "AddressNotes",
                     "type": "text",
-                    "help": "Complemento",
-                    "sequence": true
+                    "help": "Complemento"
                 },
                 {
                     "name": "Neighbourhood",
-                    "type": "text",
-                    "sequence": true
+                    "type": "text"
                 },
                 {
                     "name": "City",
-                    "type": "text",
-                    "sequence": true
+                    "type": "text"
                 },
                 {
                     "name": "State",
-                    "type": "text",
-                    "sequence": true
+                    "type": "text"
                 },
                 {
                     "name": "PostalCode",
-                    "type": "text",
-                    "sequence": true
+                    "type": "text"
                 },
                 {
                     "name": "Landmark",
                     "type": "text",
-                    "help": "Ponto de Referência",
-                    "sequence": true
+                    "help": "Ponto de Referência"
                 }
             ]
         }
     },
     {
         "name": "WebSiteID",
-        "type": "uinteger",
-        "sequence": true
+        "type": "uinteger"
     },
     {
         "name": "Person",
         "type": "collection",
-        "sequence": true,
         "spec": [
             {
                 "name": "Surname",
-                "type": "text",
-                "sequence": true
+                "type": "text"
             },
             {
                 "name": "Cpf",
-                "type": "text",
-                "sequence": true
+                "type": "text"
             },
             {
                 "name": "RG",
-                "type": "text",
-                "sequence": true
+                "type": "text"
             },
             {
                 "name": "BirthDate",
-                "type": "text",
-                "sequence": true
+                "type": "date",
+                "time": false
             },
             {
                 "name": "Gender",
                 "type": "text",
-                "sequence": true
+                "help": "F for Female. M for Male."
             },
             {
                 "name": "SystemProperties",
                 "type": "array",
-                "sequence": true,
                 "spec": {
                     "type": "collection",
                     "spec": [
                         {
                             "name": "PropertyMetadataID",
-                            "type": "number",
-                            "sequence": true
+                            "type": "number"
                         },
                         {
                             "name": "PropertyName",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         },
                         {
                             "name": "DisplayName",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         },
                         {
                             "name": "InputMask",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         },
                         {
                             "name": "InputType",
-                            "type": "number",
-                            "sequence": true
+                            "type": "number"
                         },
                         {
                             "name": "IsRequired",
-                            "type": "boolean",
-                            "sequence": true
+                            "type": "boolean"
                         },
                         {
                             "name": "IsStoreVisible",
-                            "type": "boolean",
-                            "sequence": true
+                            "type": "boolean"
                         },
                         {
                             "name": "MaxLength",
-                            "type": "number",
-                            "sequence": true
+                            "type": "number"
                         },
                         {
                             "name": "ShortDisplayName",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         },
                         {
                             "name": "SystemMaxLength",
-                            "type": "number",
-                            "sequence": true
+                            "type": "number"
                         },
                         {
                             "name": "TemplateHint",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         },
                         {
                             "name": "Watermark",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         }
                     ]
                 }
@@ -280,74 +232,60 @@
             {
                 "name": "ExtendedProperties",
                 "type": "array",
-                "sequence": true,
                 "spec": {
                     "type": "collection",
                     "spec": [
                         {
                             "name": "PropertyMetadataID",
-                            "type": "number",
-                            "sequence": true
+                            "type": "number"
                         },
                         {
                             "name": "PropertyName",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         },
                         {
                             "name": "DisplayName",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         },
                         {
                             "name": "InputMask",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         },
                         {
                             "name": "InputType",
-                            "type": "number",
-                            "sequence": true
+                            "type": "number"
                         },
                         {
                             "name": "IsRequired",
-                            "type": "boolean",
-                            "sequence": true
+                            "type": "boolean"
                         },
                         {
                             "name": "IsStoreVisible",
-                            "type": "boolean",
-                            "sequence": true
+                            "type": "boolean"
                         },
                         {
                             "name": "MaxLength",
-                            "type": "number",
-                            "sequence": true
+                            "type": "number"
                         },
                         {
                             "name": "ShortDisplayName",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         },
                         {
                             "name": "SystemMaxLength",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         },
                         {
                             "name": "TemplateHint",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         },
                         {
                             "name": "Watermark",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         },
                         {
                             "name": "Value",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         }
                     ]
                 }
@@ -357,84 +295,68 @@
     {
         "name": "Company",
         "type": "collection",
-        "sequence": true,
         "spec": [
             {
                 "name": "Cnpj",
-                "type": "text",
-                "sequence": true
+                "type": "text"
             },
             {
                 "name": "TradingName",
-                "type": "text",
-                "sequence": true
+                "type": "text"
             },
             {
                 "name": "SystemProperties",
                 "type": "array",
-                "sequence": true,
                 "spec": {
                     "type": "collection",
                     "spec": [
                         {
                             "name": "PropertyMetadataID",
-                            "type": "number",
-                            "sequence": true
+                            "type": "number"
                         },
                         {
                             "name": "PropertyName",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         },
                         {
                             "name": "DisplayName",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         },
                         {
                             "name": "InputMask",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         },
                         {
                             "name": "InputType",
-                            "type": "number",
-                            "sequence": true
+                            "type": "number"
                         },
                         {
                             "name": "IsRequired",
-                            "type": "boolean",
-                            "sequence": true
+                            "type": "boolean"
                         },
                         {
                             "name": "IsStoreVisible",
-                            "type": "boolean",
-                            "sequence": true
+                            "type": "boolean"
                         },
                         {
                             "name": "MaxLength",
-                            "type": "number",
-                            "sequence": true
+                            "type": "number"
                         },
                         {
                             "name": "ShortDisplayName",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         },
                         {
                             "name": "SystemMaxLength",
-                            "type": "number",
-                            "sequence": true
+                            "type": "number"
                         },
                         {
                             "name": "TemplateHint",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         },
                         {
                             "name": "Watermark",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         }
                     ]
                 }
@@ -442,74 +364,60 @@
             {
                 "name": "ExtendedProperties",
                 "type": "array",
-                "sequence": true,
                 "spec": {
                     "type": "collection",
                     "spec": [
                         {
                             "name": "PropertyMetadataID",
-                            "type": "number",
-                            "sequence": true
+                            "type": "number"
                         },
                         {
                             "name": "PropertyName",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         },
                         {
                             "name": "DisplayName",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         },
                         {
                             "name": "InputMask",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         },
                         {
                             "name": "InputType",
-                            "type": "number",
-                            "sequence": true
+                            "type": "number"
                         },
                         {
                             "name": "IsRequired",
-                            "type": "boolean",
-                            "sequence": true
+                            "type": "boolean"
                         },
                         {
                             "name": "IsStoreVisible",
-                            "type": "boolean",
-                            "sequence": true
+                            "type": "boolean"
                         },
                         {
                             "name": "MaxLength",
-                            "type": "number",
-                            "sequence": true
+                            "type": "number"
                         },
                         {
                             "name": "ShortDisplayName",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         },
                         {
                             "name": "SystemMaxLength",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         },
                         {
                             "name": "TemplateHint",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         },
                         {
                             "name": "Watermark",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         },
                         {
                             "name": "Value",
-                            "type": "text",
-                            "sequence": true
+                            "type": "text"
                         }
                     ]
                 }
@@ -519,7 +427,6 @@
     {
         "name": "SystemProperties",
         "type": "array",
-        "sequence": true,
         "spec": {
             "type": "collection",
             "spec": [
@@ -529,58 +436,47 @@
                 },
                 {
                     "name": "PropertyName",
-                    "type": "text",
-                    "sequence": true
+                    "type": "text"
                 },
                 {
                     "name": "DisplayName",
-                    "type": "text",
-                    "sequence": true
+                    "type": "text"
                 },
                 {
                     "name": "InputMask",
-                    "type": "text",
-                    "sequence": true
+                    "type": "text"
                 },
                 {
                     "name": "InputType",
-                    "type": "number",
-                    "sequence": true
+                    "type": "number"
                 },
                 {
                     "name": "IsRequired",
-                    "type": "boolean",
-                    "sequence": true
+                    "type": "boolean"
                 },
                 {
                     "name": "IsStoreVisible",
-                    "type": "boolean",
-                    "sequence": true
+                    "type": "boolean"
                 },
                 {
                     "name": "MaxLength",
-                    "type": "number",
-                    "sequence": true
+                    "type": "number"
                 },
                 {
                     "name": "ShortDisplayName",
-                    "type": "text",
-                    "sequence": true
+                    "type": "text"
                 },
                 {
                     "name": "SystemMaxLength",
-                    "type": "number",
-                    "sequence": true
+                    "type": "number"
                 },
                 {
                     "name": "TemplateHint",
-                    "type": "text",
-                    "sequence": true
+                    "type": "text"
                 },
                 {
                     "name": "Watermark",
-                    "type": "text",
-                    "sequence": true
+                    "type": "text"
                 }
             ]
         }
@@ -588,74 +484,60 @@
     {
         "name": "ExtendedProperties",
         "type": "array",
-        "sequence": true,
         "spec": {
             "type": "collection",
             "spec": [
                 {
                     "name": "PropertyMetadataID",
-                    "type": "number",
-                    "sequence": true
+                    "type": "number"
                 },
                 {
                     "name": "PropertyName",
-                    "type": "text",
-                    "sequence": true
+                    "type": "text"
                 },
                 {
                     "name": "DisplayName",
-                    "type": "text",
-                    "sequence": true
+                    "type": "text"
                 },
                 {
                     "name": "InputMask",
-                    "type": "text",
-                    "sequence": true
+                    "type": "text"
                 },
                 {
                     "name": "InputType",
-                    "type": "number",
-                    "sequence": true
+                    "type": "number"
                 },
                 {
                     "name": "IsRequired",
-                    "type": "boolean",
-                    "sequence": true
+                    "type": "boolean"
                 },
                 {
                     "name": "IsStoreVisible",
-                    "type": "boolean",
-                    "sequence": true
+                    "type": "boolean"
                 },
                 {
                     "name": "MaxLength",
-                    "type": "number",
-                    "sequence": true
+                    "type": "number"
                 },
                 {
                     "name": "ShortDisplayName",
-                    "type": "text",
-                    "sequence": true
+                    "type": "text"
                 },
                 {
                     "name": "SystemMaxLength",
-                    "type": "text",
-                    "sequence": true
+                    "type": "text"
                 },
                 {
                     "name": "TemplateHint",
-                    "type": "text",
-                    "sequence": true
+                    "type": "text"
                 },
                 {
                     "name": "Watermark",
-                    "type": "text",
-                    "sequence": true
+                    "type": "text"
                 },
                 {
                     "name": "Value",
-                    "type": "text",
-                    "sequence": true
+                    "type": "text"
                 }
             ]
         }

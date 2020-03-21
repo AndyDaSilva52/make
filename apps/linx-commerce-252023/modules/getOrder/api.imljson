@@ -7,8 +7,9 @@
             "temp": {
                 "Order": "{{body}}",
                 "Items": "{{body.Items}}",
-                "WhereItemProductID": "{{textAgg(body.Items,'ProductID', 'ProductID = ', ' || ')}}",
-                "WhereItemSkuID": "{{textAgg(body.Items, 'SkuID', 'ProductID = ', ' || ')}}"
+                "WhereItemProductID": "{{ textAgg(body.Items,'ProductID', 'ProductID = ', ' || ') }}",
+                "WhereItemSkuID": "{{ textAgg(body.Items, 'SkuID', 'ProductID = ', ' || ') }}",
+                "WherePaymentTransactionID": "{{ textAgg(body.PaymentMethods, 'TransactionID', 'TransactionID = ', ' || ') }}"
             }
         }
     },
@@ -123,8 +124,8 @@
                 "Items": "{{temp.Items}}",
                 "ItemsCount": "{{temp.Order.ItemsCount}}",
                 "ItemsQty": "{{temp.Order.ItemsQty}}",
-                "PaymentMethods": "{{temp.Order.PaymentMethods}}",
-                "PaymentMethodsFormated": "{{temp.PaymentMethods}}",
+                "PaymentMethods": "{{temp.PaymentMethods}}",
+                "PaymentMethodsWhere": "{{temp.WherePaymentTransactionID}}",
                 "PaymentDate": "{{linxParseDate(temp.Order.PaymentDate)}}",
                 "PaymentStatus": "{{temp.Order.PaymentStatus}}",
                 "PaymentTaxAmount": "{{temp.Order.PaymentTaxAmount}}",

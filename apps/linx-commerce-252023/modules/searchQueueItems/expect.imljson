@@ -76,5 +76,11 @@
                 "default": "CreatedDate"
             }
         ]
+    },
+    {
+        "name": "LimitResponse",
+        "type": "uinteger",
+        "help": "Limit the number of bundles",
+        "default": 100
     }
 ]

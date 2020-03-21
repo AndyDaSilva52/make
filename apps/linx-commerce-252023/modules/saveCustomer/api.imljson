@@ -80,7 +80,7 @@
                         "CellPhone": "{{    if(temp.Method == 'POST'; parameters.Contact.CellPhone ;    if(ifempty(parameters.Contact.CellPhone, '') == '' ; temp.Customer.Contact.CellPhone; parameters.Contact.CellPhone ) )}}"
                     },
                     // TODO: CustomerGroupIDs if not an array of numbers, get the values of CustomerGroupID
-                    "CustomerGroupIDs": "{{     parameters.CustomerGroupIDs }}",
+                    "CustomerGroupIDs": "{{     if(temp.Method == 'POST'; parameters.CustomerGroupIDs ; if(ifempty(parameters.CustomerGroupIDs; '') == '';  map(temp.Customer.Groups; 'CustomerGroupID') ; parameters.GroupIDs )}}",
                     "Addresses": "{{            parameters.Addresses }}",
                     "ExtendedProperties": "{{   parameters.ExtendedProperties }}"
                 }
@@ -116,6 +116,20 @@
         }
     },
     {
+        "condition": "{{temp.CustomerTypeID == 71 || ifempty(temp.CustomerType; '') == '' }}",
+        "response": {
+            "output": {
+                "IsValid": false
+            },
+            "valid": {
+                "condition": "{{ false }}",
+                "type": "DataError",
+                "message": "Não é possível atualizar o Cliente [{{parameters.CustomerID}}]"
+            }
+        }
+    },
+    {
+        "condition": "{{ temp.CustomerTypeID == 80 || temp.CustomerType == 67 }}",
         "url": "/v1/Profile/API.svc/web/{{if( temp.CustomerType == 'P'; 'SavePerson'; 'SaveCompany' )}}",
         "body": "{{temp.Body}}",
         "response": {
@@ -123,7 +137,7 @@
             "valid": {
                 "condition": "{{body.IsValid}}",
                 "type": "DataError",
-                "message": "{{ ifempty(body.Errors[].Key + ': ', '') + body.Errors[].ErrorMessage }}"
+                "message": "{{ '\"' + ifempty(body.Errors[].Key + '\"' + ': ', '') + body.Errors[].ErrorMessage }}"
             }
         }
     }

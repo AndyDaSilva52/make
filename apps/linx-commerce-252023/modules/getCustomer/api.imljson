@@ -10,38 +10,55 @@
             "OrderBy": "CreatedDate,CustomerID"
         },
         "response": {
-            "output": null,
             "temp": {
                 "Customer": "{{body.Result[1]}}",
                 "CustomerID": "{{body.Result[1].CustomerID}}",
+                "CustomerType": "{{body.Result[1].CustomerType}}",
                 "RecordCount": "{{body.Page.RecordCount}}"
             }
         }
     },
     {
+        "condition": "{{temp.RecordCount >= 1 && temp.CustomerType == 'P'}}",
         "url": "/v1/Profile/API.svc/web/GetPerson",
         "body": "{{temp.CustomerID}}",
         "response": {
             "temp": {
-                "Person": "{{body}}",
+                "Body": {
+                    "Person": {
+                        "Surname": "{{                  body.Surname}}",
+                        "Cpf": "{{                      body.Cpf}}",
+                        "RG": "{{                       body.RG}}",
+                        "BirthDate": "{{ (linxParseDate(body.BirthDate)) }}",
+                        "Gender": "{{                   body.Gender}}",
+                        "SystemProperties": "{{         body.SystemProperties}}",
+                        "ExtendedProperties": "{{       body.ExtendedProperties}}"
+                    }
+                },
                 "CustomerStatusID": "{{body.CustomerStatusID}}"
             }
-        },
-        "condition": "{{temp.RecordCount >= 1 && temp.Customer.CustomerType == 'P'}}"
+        }
     },
     {
+        "condition": "{{temp.RecordCount >= 1 && temp.CustomerType == 'C'}}",
         "url": "/v1/Profile/API.svc/web/GetCompany",
         "body": "{{temp.CustomerID}}",
         "response": {
             "temp": {
-                "Company": "{{body}}",
+                "Body": {
+                    "Company": {
+                        "Cnpj": "{{                 body.Cnpj}}",
+                        "TradingName": "{{          body.TradingName}}",
+                        "SystemProperties": "{{     body.SystemProperties}}",
+                        "ExtendedProperties": "{{   body.ExtendedProperties}}"
+                    }
+                },
                 "CustomerStatusID": "{{body.CustomerStatusID}}"
             }
-        },
-        "condition": "{{temp.RecordCount >= 1 && temp.Customer.CustomerType == 'C'}}"
+        }
     },
     {
-        "condition": true,
+        "condition": "{{temp.RecordCount >= 1}}",
         "url": "/v1/Profile/API.svc/web/GetCustomerStatus",
         "body": "{{temp.CustomerStatusID}}",
         "response": {
@@ -53,7 +70,12 @@
     {
         "condition": "{{temp.RecordCount == 0}}",
         "response": {
-            "output": null
+            "output": null,
+            "valid": {
+                "condition": "{{false}}",
+                "type": "DataError",
+                "message": "Não encontrado Cliente para [{{parameters.EntityKeyName}}][{{parameters.EntityKeyValue}}]."
+            }
         }
     },
     {
@@ -61,40 +83,33 @@
         "url": "/v1/Profile/API.svc/web/GetCustomer",
         "body": "{{temp.CustomerID}}",
         "response": {
-            "output": {
-                "CustomerID": "{{body.CustomerID}}",
-                "IntegrationID": "{{temp.Customer.IntegrationID}}",
-                "CustomerHash": "{{body.CustomerHash}}",
-                "CreatedDate": "{{linxParseDate(body.CreatedDate)}}",
-                "CustomerStatusID": "{{body.CustomerStatusID}}",
-                "CustomerStatus": "{{temp.CustomerStatus.Status}}",
-                "CustomerTypeID": "{{body.CustomerType}}",
-                "CustomerType": "{{switch(body.CustomerType; 80; 'P'; 67;'C'; 71;'G'; 'N'}}",
-                "Name": "{{body.Name}}",
-                "TradingName": "{{switch(body.CustomerType;80;body.Name + ' ' + temp.Person.Surname;67;temp.Company.TradingName;71;)}}",
-                "DocumentNumber": "{{temp.Customer.DocumentNumber}}",
-                "Password": "{{body.Password}}",
-                "Email": "{{body.Email}}",
-                "Groups": "{{body.Groups}}",
-                "Contact": "{{body.Contact}}",
-                "Address": "{{body.Address}}",
-                "WebSiteID": "{{body.WebSiteID}}",
-                "Person": {
-                    "Surname": "{{temp.Person.Surname}}",
-                    "Cpf": "{{temp.Person.Cpf}}",
-                    "RG": "{{temp.Person.RG}}",
-                    "BirthDate": "{{if(body.CustomerType = 80;(linxParseDate(temp.Person.BirthDate));emptystring)}}",
-                    "Gender": "{{temp.Person.Gender}}",
-                    "SystemProperties": "{{temp.Person.SystemProperties}}",
-                    "ExtendedProperties": "{{temp.Person.ExtendedProperties}}"
-                },
-                "Company": {
-                    "Cnpj": "{{temp.Company.Cnpj}}",
-                    "TradingName": "{{temp.Company.TradingName}}",
-                    "SystemProperties": "{{temp.Company.SystemProperties}}",
-                    "ExtendedProperties": "{{temp.Company.ExtendedProperties}}"
+            "temp": {
+                "Body": {
+                    "CustomerID": "{{               body.CustomerID}}",
+                    "IntegrationID": "{{            temp.Customer.IntegrationID}}",
+                    "CustomerHash": "{{             body.CustomerHash}}",
+                    "CreatedDate": "{{linxParseDate(body.CreatedDate)}}",
+                    "CustomerStatusID": "{{         body.CustomerStatusID}}",
+                    "CustomerStatus": "{{           temp.CustomerStatus.Status}}",
+                    "CustomerTypeID": "{{           body.CustomerType}}",
+                    "CustomerType": "{{             temp.CustomerType}}",
+                    "FullName": "{{          switch(body.CustomerType; 80; body.Name + ' ' + temp.Body.Person.Surname; 67; temp.Body.Company.TradingName ; body.Name )}}",
+                    "Name": "{{                     body.Name}}",
+                    "DocumentNumber": "{{           temp.Customer.DocumentNumber}}",
+                    "Password": "{{                 body.Password}}",
+                    "Email": "{{                    body.Email}}",
+                    "Groups": "{{                   body.Groups}}",
+                    "Contact": "{{                  body.Contact}}",
+                    "Address": "{{                  body.Address}}",
+                    "WebSiteID": "{{                body.WebSiteID}}"
                 }
             }
+        }
+    },
+    {
+        "condition": "{{temp.RecordCount >= 1}}",
+        "response": {
+            "output": "{{temp.Body}}"
         }
     }
 ]
