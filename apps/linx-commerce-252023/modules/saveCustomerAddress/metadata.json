@@ -1,0 +1,8 @@
+{
+    "name": "saveCustomerAddress",
+    "label": "Create or Update Customer Address",
+    "description": "Using SaveCustomerAddress **Don't need to fill all fields",
+    "connection": "linx-commerce-252023",
+    "webhook": null,
+    "type": "action"
+}

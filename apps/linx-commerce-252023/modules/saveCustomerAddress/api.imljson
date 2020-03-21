@@ -1,0 +1,60 @@
+[
+    {
+        "response": {
+            "temp": {
+                "Method": "{{ if( ifempty(parameters.ID, 0) == 0, 'POST', 'PUT' ) }}"
+            }
+        }
+    },
+    {
+        "condition": "{{ temp.Method == 'PUT' && ifempty(parameters.CustomerID, 0) <> 0}}",
+        "url": "/v1/Profile/API.svc/web/GetCustomer",
+        "body": "{{parameters.CustomerID}}",
+        "response": {
+            "temp": {
+                "Customer": "{{body}}",
+                "CustomerAddress": "{{ get( map(body.Address, 'ID'; parameters.ID) ,1) }}"
+            }
+        }
+    },
+    {
+        "response": {
+            "output": {
+                "Customer": "{{temp.Customer}}",
+                "CustomerAddress": "{{temp.CustomerAddress}}"
+            }
+        }
+    },
+    {
+        "response": {
+            "temp": {
+                "Address": {
+                    "CustomerID": 2147483647,
+                    "ID": 2147483647,
+                    "IsMainAddress": true,
+                    "Name": "String content",
+                    "ContactName": "String content",
+                    "AddressLine": "String content",
+                    "Number": "String content",
+                    "AddressNotes": "String content",
+                    "Neighbourhood": "String content",
+                    "City": "String content",
+                    "State": "String content",
+                    "PostalCode": "String content",
+                    "Landmark": "String content",
+                    "CurrentUserIPs": "String content",
+                    "CurrentUserName": "String content",
+                    "IsDeleted": true
+                }
+            }
+        }
+    },
+    {
+        "url": "/v1/Profile/API.svc/web/SaveCustomerAddress",
+        "method": "POST",
+        "body": "{{temp.Address}}",
+        "response": {
+            "output": "{{body}}"
+        }
+    }
+]

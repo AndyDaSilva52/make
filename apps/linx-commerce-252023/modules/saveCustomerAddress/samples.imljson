@@ -1,0 +1,16 @@
+{
+    "IsValid": true,
+    "Warnings": [
+        "String content"
+    ],
+    "Errors": [
+        {
+            "ErrorCode": "String content",
+            "ErrorMessage": "String content",
+            "HelpEntry": "String content",
+            "Key": "String content",
+            "TechnicalMessage": "String content"
+        }
+    ],
+    "AddressID": 2147483647
+}

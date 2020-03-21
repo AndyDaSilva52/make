@@ -1,0 +1,85 @@
+[
+    {
+        "name": "CustomerID",
+        "type": "number",
+        "required": true,
+        "sequence": true
+    },
+    {
+        "name": "ID",
+        "type": "number",
+        "sequence": true
+    },
+    {
+        "name": "IsMainAddress",
+        "type": "boolean",
+        "sequence": true
+    },
+    {
+        "name": "Name",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "ContactName",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "AddressLine",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "Number",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "AddressNotes",
+        "type": "text",
+        "help": "Complemento",
+        "sequence": true
+    },
+    {
+        "name": "Neighbourhood",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "City",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "State",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "PostalCode",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "Landmark",
+        "type": "text",
+        "help": "Ponto de Referência",
+        "sequence": true
+    },
+    {
+        "name": "CurrentUserIPs",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "CurrentUserName",
+        "type": "text",
+        "sequence": true
+    },
+    {
+        "name": "IsDeleted",
+        "type": "boolean",
+        "sequence": true
+    }
+]
