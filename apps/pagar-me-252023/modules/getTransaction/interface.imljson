@@ -526,13 +526,23 @@
     },
     {
         "name": "metadata",
-        "type": "collection",
-        "spec": []
+        "type": "array",
+        "spec": [
+            {
+                "type": "collection",
+                "spec": []
+            }
+        ]
     },
     {
         "name": "antifraud_metadata",
-        "type": "collection",
-        "spec": []
+        "type": "array",
+        "spec": [
+            {
+                "type": "collection",
+                "spec": []
+            }
+        ]
     },
     {
         "name": "reference_key",

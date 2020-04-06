@@ -1,9 +1,6 @@
 {
     "url": "/transactions/{{parameters.transaction_id}}",
     "method": "GET",
-    "qs": {},
-    "body": {},
-    "headers": {},
     "response": {
         "output": {
             "object": "{{body.object}}",
@@ -19,13 +16,13 @@
             "nsu": "{{body.nsu}}",
             "date_created": "{{body.date_created}}",
             "date_updated": "{{body.date_updated}}",
-            "amount": "{{parseNumber(if(contains(replace(body.amount);'#');'-';emptystring)+'0'+substring(body.amount;0;sum(length(replace(body.amount;'-';emptystring));-2))+'.'+substring(body.amount;sum(length(replace(body.amount;'-';emptystring));-2);length(replace(body.amount;'-';emptystring))))}}",
-            "authorized_amount": "{{parseNumber(if(contains(replace(body.authorized_amount);'#');'-';emptystring)+'0'+substring(body.authorized_amount;0;sum(length(replace(body.authorized_amount;'-';emptystring));-2))+'.'+substring(body.authorized_amount;sum(length(replace(body.authorized_amount;'-';emptystring));-2);length(replace(body.authorized_amount;'-';emptystring))))}}",
-            "paid_amount": "{{parseNumber(if(contains(replace(body.paid_amount);'#');'-';emptystring)+'0'+substring(body.paid_amount;0;sum(length(replace(body.paid_amount;'-';emptystring));-2))+'.'+substring(body.paid_amount;sum(length(replace(body.paid_amount;'-';emptystring));-2);length(replace(body.paid_amount;'-';emptystring))))}}",
-            "refunded_amount": "{{parseNumber(if(contains(replace(body.refunded_amount);'#');'-';emptystring)+'0'+substring(body.refunded_amount;0;sum(length(replace(body.refunded_amount;'-';emptystring));-2))+'.'+substring(body.refunded_amount;sum(length(replace(body.refunded_amount;'-';emptystring));-2);length(replace(body.refunded_amount;'-';emptystring))))}}",
+            "amount": "{{           pagarmeConvertNumber(body.amount)}}",
+            "authorized_amount": "{{pagarmeConvertNumber(body.authorized_amount)}}",
+            "paid_amount": "{{      pagarmeConvertNumber(body.paid_amount)}}",
+            "refunded_amount": "{{  pagarmeConvertNumber(body.refunded_amount)}}",
             "installments": "{{body.installments}}",
             "id": "{{body.id}}",
-            "cost": "{{parseNumber(if(contains(replace(body.cost);'#');'-';emptystring)+'0'+substring(body.cost;0;sum(length(replace(body.cost;'-';emptystring));-2))+'.'+substring(body.cost;sum(length(replace(body.cost;'-';emptystring));-2);length(replace(body.cost;'-';emptystring))))}}",
+            "cost": "{{             pagarmeConvertNumber(body.cost)}}",
             "card_holder_name": "{{body.card_holder_name}}",
             "card_last_digits": "{{body.card_last_digits}}",
             "card_first_digits": "{{body.card_first_digits}}",
@@ -97,8 +94,12 @@
                 "expiration_date": "{{body.card.expiration_date}}"
             },
             "split_rules": "{{body.split_rules}}",
-            "metadata": "{{body.metadata}}",
-            "antifraud_metadata": "{{body.antifraud_metadata}}",
+            "metadata": [
+                "{{ body.metadata }}"
+            ],
+            "antifraud_metadata": [
+                "{{ body.antifraud_metadata }}"
+            ],
             "reference_key": "{{body.reference_key}}",
             "device": "{{body.device}}",
             "local_transaction_id": "{{body.local_transaction_id}}",
