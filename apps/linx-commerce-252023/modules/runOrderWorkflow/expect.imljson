@@ -2,7 +2,8 @@
     {
         "name": "OrderNumber",
         "type": "text",
-        "sequence": true
+        "sequence": true,
+        "required": true
     },
     {
         "name": "Params",
@@ -26,6 +27,7 @@
     {
         "name": "WorkFlowID",
         "type": "number",
-        "sequence": true
+        "sequence": true,
+        "required": true
     }
 ]

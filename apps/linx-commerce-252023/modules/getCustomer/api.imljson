@@ -101,7 +101,9 @@
                     "Groups": "{{                   body.Groups}}",
                     "Contact": "{{                  body.Contact}}",
                     "Address": "{{                  body.Address}}",
-                    "WebSiteID": "{{                body.WebSiteID}}"
+                    "WebSiteID": "{{                body.WebSiteID}}",
+                    "ExtendedProperties": "{{       body.ExtendedProperties}}",
+                    "SystemProperties": "{{         body.SystemProperties}}"
                 }
             }
         }

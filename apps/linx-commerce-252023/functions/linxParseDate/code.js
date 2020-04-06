@@ -1,5 +1,9 @@
 function linxParseDate(date) {
 
+    if (!date) {
+        return null
+    }
+
     var strDate = new String(date);
 
     strDate = strDate.substring(

@@ -3,9 +3,12 @@
     "body": {
         "OrderNumber": "{{parameters.OrderNumber}}",
         "Params": "{{parameters.Params}}",
-        "WorkFlowID": "{{parameters.WorkflowID}}"
+        "WorkFlowID": "{{parameters.WorkFlowID}}"
     },
     "response": {
-        "output": "{{body}}"
+        "output": "{{body}}",
+        "valid": {
+            "condition": "{{body.IsValid}}"
+        }
     }
 }
