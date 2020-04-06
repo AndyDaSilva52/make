@@ -50,7 +50,7 @@
     },
     {
         "name": "pTransacao",
-        "type": "integer",
+        "type": "uinteger",
         "sequence": true,
         "default": 0
     },

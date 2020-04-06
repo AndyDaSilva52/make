@@ -1,20 +1,5 @@
 {
     "url": "/Integrador",
-    "method": "POST",
-    "qs": {
-        "wsdl": ""
-    },
-    "type": "raw",
-    "log": {
-        "sanitize": []
-    },
-    "headers": {
-        "Content-Type": "text/xml; charset=iso-8859-1",
-        "Accept": "text/xml; charset=iso-8859-1",
-        "Accept-Encoding": "gzip, deflate, br",
-        "Connection": "keep-alive",
-        "Cache-Control": "no-cache"
-    },
     "body": "<?xml version=\"1.0\" encoding=\"ISO-8859-1\" standalone=\"yes\"?><soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\"><soapenv:Body><tem:MegaIntegradorService___IntegraXML><tem:pPRO_IN_ID>{{parameters.pPRO_IN_ID}}</tem:pPRO_IN_ID><tem:pUSU_IN_CODIGO>{{parameters.pUSU_IN_CODIGO}}</tem:pUSU_IN_CODIGO><tem:pXML><![CDATA[{{ utf8Decode(parameters.pXML) }}]]></tem:pXML><tem:pObs>{{parameters.pObs}}</tem:pObs><tem:pEnviaRecebe>{{parameters.pEnviaRecebe}}</tem:pEnviaRecebe><tem:pTransacao>{{parameters.pTransacao}}</tem:pTransacao><tem:pSistema>{{parameters.pSistema}}</tem:pSistema><tem:pXMLHeader/></tem:MegaIntegradorService___IntegraXML></soapenv:Body></soapenv:Envelope>",
     "response": {
         "type": {

@@ -1,61 +1,80 @@
 [
     {
         "name": "pPRO_IN_ID",
+        "type": "hidden",
+        "sequence": true,
+        "default": 206
+    },
+    {
+        "name": "IND_IN_CODIGO",
+        "label": "Código do Índice Financeiro",
+        "type": "uinteger",
+        "sequence": true,
+        "help": "Campo: IND_IN_CODIGO"
+    },
+    {
+        "name": "VAL_DT_INDICE",
+        "label": "Data ",
+        "type": "date",
+        "sequence": true,
+        "help": "Campo: VAL_DT_INDICE. 🛈 Valor informado vai ser formatado para DD/MM/YYYY",
+        "time": false
+    },
+    {
+        "name": "VAL_RE_VALOR",
+        "label": "Valor",
+        "type": "number",
+        "sequence": true,
+        "help": "Campo: VAL_RE_VALOR",
+        "time": false
+    },
+    {
+        "name": "VAL_CH_TIPO",
+        "label": "Tipo de Valor",
         "type": "select",
         "sequence": true,
-        //"enabled": true,
-        "dynamic": true,
+        "help": "Previsto / Real. Campo: VAL_CH_TIPO",
         "options": [
             {
-                "label": "205 - Usuário",
-                "value": "205"
+                "label": "Real",
+                "value": "R"
             },
             {
-                "label": "207 - Agente",
-                "value": "207"
-            },
-            {
-                "label": "305",
-                "value": "305"
-            },
-            {
-                "label": "307 - Movimento Financeiro",
-                "value": "307"
+                "label": "Previsto",
+                "value": "P"
             }
-        ]
+        ],
+        "default": "R"
     },
     {
         "name": "pUSU_IN_CODIGO",
+        "label": "Código do Usuário",
         "type": "integer",
         "sequence": true,
         "default": 1
     },
     {
-        "name": "pXML",
-        "type": "text",
-        "multiline": true,
-        "sequence": true
-    },
-    {
         "name": "pObs",
+        "label": "Observação da Transação",
         "type": "text",
         "sequence": true,
         "default": "#Integromat - "
     },
     {
         "name": "pEnviaRecebe",
-        "type": "text",
+        "type": "hidden",
         "sequence": true,
         "default": "R"
     },
     {
         "name": "pTransacao",
-        "type": "integer",
+        "type": "hidden",
         "sequence": true,
         "default": 0
     },
     {
         "name": "pSistema",
+        "label": "Sistema",
         "type": "integer",
         "sequence": true,
         "default": 1

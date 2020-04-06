@@ -1,10 +1,8 @@
 {
     "name": "megaerp-252023",
-    "label": "MegaERP - MegaIntegrador",
+    "label": "MegaERP - Integrador (WebService)",
     "version": 1,
     "theme": "#3c91c5",
     "language": "pt",
-    "countries": [
-        "br"
-    ]
+    "countries": null
 }

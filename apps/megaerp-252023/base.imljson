@@ -1,11 +1,16 @@
 {
     "baseUrl": "{{connection.apiUrl}}",
+    "method": "POST",
     "qs": {
-        "wsdl": null
+        "wsdl": ""
     },
     "type": "raw",
     "headers": {
-        "Accept": "text/xml"
+        "Content-Type": "text/xml; charset=iso-8859-1",
+        "Accept": "text/xml; charset=iso-8859-1",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Connection": "keep-alive",
+        "Cache-Control": "no-cache"
     },
     "response": {
         "type": {
