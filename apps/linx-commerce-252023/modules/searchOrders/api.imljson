@@ -1,0 +1,41 @@
+{
+    "url": "/v1/Sales/API.svc/web/SearchOrders",
+    "body": {
+        "Page": {
+            "PageIndex": "{{parameters.Page.PageIndex}}",
+            "PageSize": "{{parameters.Page.PageSize}}"
+        },
+        "Where": "{{parameters.Where}}",
+        "OrderBy": "{{parameters.OrderBy}}"
+    },
+    "response": {
+        "limit": "{{parameters.LimitResponse}}",
+        "iterate": "{{body.Result}}",
+        //"output": "{{item}}"
+        "output": {
+            "CreatedDate": "{{linxParseDate(item.CreatedDate)}}",
+            "ModifiedDate": "{{linxParseDate(item.ModifiedDate)}}",
+            "OrderNumber": "{{item.OrderNumber}}",
+            "OrderID": "{{item.OrderID}}",
+            "OrderStatusID": "{{item.OrderStatusID}}",
+            "CustomerID": "{{item.CustomerID}}",
+            "DeliveryAmount": "{{item.DeliveryAmount}}",
+            "DiscountAmount": "{{item.DiscountAmount}}",
+            "TaxAmount": "{{item.TaxAmount}}",
+            "Total": "{{item.Total}}",
+            "TotalDue": "{{item.TotalDue}}",
+            "TotalPaid": "{{item.TotalPaid}}",
+            "TotalRefunded": "{{item.TotalRefunded}}",
+            "HasConflicts": "{{item.HasConflicts}}",
+            "WebSiteID": "{{item.WebSiteID}}"
+        }
+    },
+    "pagination": {
+        "body": {
+            "Page": {
+                "PageIndex": "{{(pagination.page - 1)}}"
+            }
+        },
+        "condition": "{{(body.Page.PageCount) > (body.Page.Index)}}"
+    }
+}

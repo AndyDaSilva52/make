@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Page",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "PageIndex",
+                "type": "hidden",
+                "default": 0,
+                "required": true
+            },
+            {
+                "name": "PageSize",
+                "type": "number",
+                "default": 100,
+                "required": true
+            }
+        ]
+    },
+    {
+        "name": "Where",
+        "type": "text",
+        "required": false,
+        "help": "Ex: OrderStatusID == 4"
+    },
+    {
+        "name": "OrderBy",
+        "type": "text",
+        "required": false,
+        "default": "CreatedDate",
+        "help": "Ex: CreatedDate"
+    },
+    {
+        "name": "LimitResponse",
+        "type": "uinteger",
+        "default": "100"
+    }
+]
