@@ -25,8 +25,7 @@
         "label": "Valor",
         "type": "number",
         "sequence": true,
-        "help": "Campo: VAL_RE_VALOR",
-        "time": false
+        "help": "Campo: VAL_RE_VALOR"
     },
     {
         "name": "VAL_CH_TIPO",

@@ -1,0 +1,8 @@
+{
+    "name": "int307FinancialMovementDev",
+    "label": "307 - Movimento Financeiro (Devolução)",
+    "description": "307 - Movimento Financeiro de Devolução",
+    "connection": "megaerp-252023",
+    "webhook": null,
+    "type": "action"
+}

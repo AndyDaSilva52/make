@@ -1,0 +1,8 @@
+{
+    "name": "int307FinancialMovement",
+    "label": "307 - Movimento Financeiro",
+    "description": "307 - Movimento Financeiro (Adiantamento e Avista)",
+    "connection": "megaerp-252023",
+    "webhook": null,
+    "type": "action"
+}
