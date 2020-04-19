@@ -1,0 +1,5 @@
+{
+    "editor.formatOnPaste": true,
+    "git.alwaysShowStagedChangesResourceGroup": true,
+    "git.fetchOnPull": true
+}
