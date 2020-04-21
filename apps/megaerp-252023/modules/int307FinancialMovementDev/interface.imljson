@@ -1,7 +1,18 @@
 [
     {
-        "name": "id",
-        "type": "uinteger",
-        "label": "User ID"
+        "name": "Erro",
+        "type": "boolean"
+    },
+    {
+        "name": "CodTransacao",
+        "type": "uinteger"
+    },
+    {
+        "name": "Mensagem",
+        "type": "text"
+    },
+    {
+        "name": "PKMega",
+        "type": "text"
     }
 ]

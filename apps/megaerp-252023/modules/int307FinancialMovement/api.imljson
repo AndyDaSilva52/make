@@ -13,12 +13,15 @@
                     "<MVF_ST_NOMINAL>{{     utf8Decode(parameters.MVF_ST_NOMINAL)}}</MVF_ST_NOMINAL>",
                     "<MVF_ST_DOCINTERNO>{{  utf8Decode(parameters.MVF_ST_DOCINTERNO)}}</MVF_ST_DOCINTERNO>",
                     "<MOV_ST_DOCUMENTO>{{   utf8Decode(parameters.MOV_ST_DOCUMENTO)}}</MOV_ST_DOCUMENTO>",
-                    "<MOV_DT_DATADOCTO>{{   utf8Decode(formatDate(parameters.MOV_DT_DATADOCTO; 'DD/MM/YYYY'))}}</MOV_DT_DATADOCTO>",
-                    "<MOV_DT_VENCTO>{{      utf8Decode(formatDate(parameters.MOV_DT_VENCTO; 'DD/MM/YYYY'))}}</MOV_DT_VENCTO>",
+                    "<MOV_DT_DATADOCTO>{{   utf8Decode(parameters.MOV_DT_DATADOCTO)}}</MOV_DT_DATADOCTO>",
+                    "<MOV_DT_VENCTO>{{      utf8Decode(parameters.MOV_DT_VENCTO)}}</MOV_DT_VENCTO>",
                     "<IND_IN_CODIGOMOE>{{   utf8Decode(parameters.IND_IN_CODIGOMOE)}}</IND_IN_CODIGOMOE>",
                     "<MOV_ST_COMPLHIST>{{   utf8Decode(parameters.MOV_ST_COMPLHIST)}}</MOV_ST_COMPLHIST>",
                     "<USU_IN_INCLUSAO>{{    utf8Decode(parameters.USU_IN_INCLUSAO)}}</USU_IN_INCLUSAO>"
-                ]
+                ],
+                "JSON": {
+                    "MovFinanc": "{{ parameters.MovFinanc }}"
+                }
             }
         }
     },
@@ -65,7 +68,7 @@
                     "<tem:pTransacao>{{     parameters.pTransacao}}</tem:pTransacao>",
                     "<tem:pSistema>{{       parameters.pSistema}}</tem:pSistema>",
                     "<tem:pXMLHeader/>",
-                    "<tem:pXML><![CDATA[{{  temp.xmlMovFinanc}}]]></tem:pXML>",
+                    "<tem:pXML><![CDATA[{{  convertJson2xml(temp.JSON, { compact: true }) }}]]></tem:pXML>",
                     "</tem:MegaIntegradorService___IntegraXML>",
                     "</soapenv:Body></soapenv:Envelope>"
                 ]
@@ -85,7 +88,12 @@
                 "Erro": "{{body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:Erro`[]}}",
                 "Mensagem": "{{body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:Mensagem`[]}}",
                 "CodTransacao": "{{body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:CodTransacao`[]}}",
-                "PKMega": "{{body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:PKMega`[]}}"
+                "PKMega": "{{body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:PKMega`[]}}",
+                "PKMegaCollection": {
+                    "ORG_IN_CODIGO": "{{substring(body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:PKMega`[]; 0; indexOf(body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:PKMega`[]; ';') )}}",
+                    //"MOV_SEQ_IN_CODIGO": "",
+                    "MOV_IN_NUMLANCTO": "{{substring(body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:PKMega`[]; 0; indexOf(body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:PKMega`[]; ';') + 1 )}}"
+                }
                 /** 
                 TODO: PKMegaArray ou PKMegaCollection ou PKMegaSplit
                     Array ou Collection de Chave e Valor

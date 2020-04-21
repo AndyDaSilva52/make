@@ -1,14 +1,417 @@
 [
     {
-        "name": "email",
-        "type": "email",
-        "label": "Email address",
-        "required": true
+        "name": "pPRO_IN_ID",
+        "type": "hidden",
+        "sequence": true,
+        "default": 307
     },
     {
-        "name": "name",
+        "name": "pUSU_IN_CODIGO",
+        "label": "Código do Usuário",
+        "type": "integer",
+        "help": "Código do Usuário de Integração do Serviço 307",
+        "sequence": true,
+        "default": 1
+    },
+    {
+        "name": "pObs",
+        "label": "Observação da Transação",
         "type": "text",
-        "label": "Name",
-        "required": true
+        "sequence": true,
+        "default": "#Integromat[appModule(int307FinancialMovement)]"
+    },
+    {
+        "name": "MovFinanc",
+        "label": "MovFinanc",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "_attributes",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "OPERACAO",
+                        "type": "text",
+                        "help": "Operação - I, U ou D",
+                        "default": "I",
+                        "validate": {
+                            "min": 0,
+                            "max": 1,
+                            "pattern": "(I|U|D)"
+                        }
+                    }
+                ],
+                "sequence": true
+            },
+            {
+                "name": "MOV_RE_VALOR",
+                "type": "number",
+                "help": "*Tamanho(20,2)"
+            },
+            {
+                "name": "FIL_IN_CODIGO",
+                "type": "integer",
+                "help": "Código da Filial",
+                "validate": {
+                    "min": 0,
+                    "max": 9999999
+                }
+            },
+            {
+                "name": "ACAO_IN_CODIGO",
+                "type": "integer",
+                "help": "Código de Ação"
+                //,"required": true
+                ,
+                "validate": {
+                    "min": 0,
+                    "max": 999
+                }
+            },
+            {
+                "name": "TPD_ST_CODIGO",
+                "type": "text",
+                "help": "Tipo de documento. Se não for informado pega do código de ação",
+                "validate": {
+                    "min": 0,
+                    "max": 10
+                }
+            },
+            {
+                "name": "AGN_ST_TIPOCODIGO",
+                "type": "text",
+                "help": "Tipo do código do Agente (COD, ALT, CPF ou CNPJ). Default COD",
+                "default": "COD",
+                "validate": {
+                    "min": 0,
+                    "max": 3
+                }
+            },
+            {
+                "name": "AGN_ST_CODIGO",
+                "type": "text",
+                "help": "Código do Agente"
+                //,"required": true
+                ,
+                "validate": {
+                    "min": 0,
+                    "max": 18
+                }
+            },
+            {
+                "name": "AGN_TAU_ST_CODIGO",
+                "type": "text",
+                "help": "Código do tipo de agente (C, F, U, T...)",
+                "validate": {
+                    "min": 0,
+                    "max": 3
+                }
+            },
+            {
+                "name": "MVF_ST_NOMINAL",
+                "type": "text",
+                "help": "Nominal",
+                "validate": {
+                    "min": 0,
+                    "max": 100
+                }
+            },
+            {
+                "name": "MVF_ST_DOCINTERNO",
+                "type": "text",
+                "help": "Número do documento interno",
+                "validate": {
+                    "min": 0,
+                    "max": 20
+                }
+            },
+            {
+                "name": "MOV_ST_DOCUMENTO",
+                "type": "text",
+                "help": "Número do documento"
+                //,"required": true
+                ,
+                "validate": {
+                    "min": 0,
+                    "max": 20
+                }
+            },
+            {
+                "name": "MOV_DT_DATADOCTO",
+                "type": "date",
+                "help": "Data do documento."
+                //,"required": true
+                ,
+                "time": false
+            },
+            {
+                "name": "MOV_DT_VENCTO",
+                "type": "date",
+                "help": "Data de vencimento",
+                "time": false
+            },
+            /**
+    {
+        "name": "MOV_DT_ORCAMENTO",
+        "type": "date",
+        "help": "Data de orçamento",
+        "time": false
+    },
+     */
+            {
+                "name": "IND_IN_CODIGOMOE",
+                "type": "integer",
+                "help": "Código do índice financeiro",
+                "default": 0,
+                "validate": {
+                    "min": 0,
+                    "max": 999
+                }
+            },
+            {
+                "name": "MOV_ST_COMPLHIST",
+                "type": "text",
+                "help": "",
+                "multiline": true,
+                "validate": {
+                    "min": 0,
+                    "max": 500
+                }
+            },
+            /**
+    {
+        "name": "HIS_IN_REDUZIDO",
+        "type": "integer",
+        "help": "Histórico padrão",
+        "validate": {
+            "min": 0,
+            "max": 9999999
+        }
+    },
+    {
+        "name": "REF_ORG_IN_CODIGO",
+        "type": "integer",
+        "help": "Código da organização do movimento",
+        "validate": {
+            "min": 0,
+            "max": 9999999
+        }
+    },
+    {
+        "name": "REF_MOV_SEQ_IN_CODIGO",
+        "type": "integer",
+        "help": "Sequência do Movimento",
+        "validate": {
+            "min": 0,
+            "max": 999
+        }
+    },
+    {
+        "name": "REF_MOV_IN_NUMLANCTO",
+        "type": "integer",
+        "help": "Número do lançamento do Movimento",
+        "validate": {
+            "min": 0,
+            "max": 99999999
+        }
+    },
+    {
+        "name": "CCF_IN_REDUZIDO",
+        "type": "integer",
+        "help": "Centro de Custo de Transferência",
+        "validate": {
+            "min": 0,
+            "max": 9999999
+        }
+    },
+    {
+        "name": "PRO_IN_REDUZIDO",
+        "type": "text",
+        "help": "Projeto de Transferência",
+        "validate": {
+            "min": 0,
+            "max": 9999999
+        }
+    },*/
+            {
+                "name": "USU_IN_INCLUSAO",
+                "type": "integer",
+                "help": "",
+                "default": 1,
+                "validate": {
+                    "min": 0,
+                    "max": 9999999
+                }
+                //, "advanced": true        
+            },
+            {
+                "name": "MovVinculado",
+                "type": "array",
+                "spec": {
+                    "type": "collection",
+                    "sequence": true,
+                    "spec": [
+                        {
+                            "name": "_attributes",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "OPERACAO",
+                                    "type": "text",
+                                    "help": "Operação - I, U ou D",
+                                    "default": "I",
+                                    "validate": {
+                                        "min": 0,
+                                        "max": 1,
+                                        "pattern": "(I|U|D)"
+                                    }
+                                }
+                            ],
+                            "sequence": true
+                        },
+                        {
+                            "name": "MOV_RE_VALOR",
+                            "type": "number"
+                        },
+                        {
+                            "name": "MOV_ST_DOCUMENTO",
+                            "type": "text",
+                            "help": "Número do documento interno",
+                            "validate": {
+                                "min": 0,
+                                "max": 20
+                            }
+                        },
+                        {
+                            "name": "MOV_ST_COMPLHIST",
+                            "type": "text",
+                            "multiline": true,
+                            "validate": {
+                                "min": 0,
+                                "max": 500
+                            }
+                        },
+                        {
+                            "name": "TPD_ST_CODIGO",
+                            "type": "text",
+                            "help": "Tipo de documento. Se não for informado pega do código de ação"
+                        },
+                        {
+                            "name": "AGN_ST_TIPOCODIGO",
+                            "type": "text",
+                            "default": "COD",
+                            "help": "Tipo do código do Agente (COD, ALT, CPF ou CNPJ). Default COD"
+                        },
+                        {
+                            "name": "AGN_ST_CODIGO",
+                            "type": "text",
+                            "help": "Código do Agente"
+                            //,"required": true
+                            ,
+                            "validate": {
+                                "min": 0,
+                                "max": 18
+                            }
+                        },
+                        {
+                            "name": "AGN_TAU_ST_CODIGO",
+                            "type": "text",
+                            "help": "Código do tipo de agente (C, F, U, T...)",
+                            "validate": {
+                                "min": 0,
+                                "max": 1
+                            }
+                        },
+                        {
+                            "name": "CLA_IN_REDUZIDO",
+                            "type": "integer",
+                            "help": "Classe",
+                            "validate": {
+                                "min": 0,
+                                "max": 9999999
+                            }
+                        },
+                        {
+                            "name": "CCF_IN_REDUZIDO",
+                            "type": "integer",
+                            "help": "Centro de Custo",
+                            "validate": {
+                                "min": 0,
+                                "max": 9999999
+                            }
+                        },
+                        {
+                            "name": "PRO_IN_REDUZIDO",
+                            "type": "integer",
+                            "help": "Projeto",
+                            "validate": {
+                                "min": 0,
+                                "max": 9999999
+                            }
+                        },
+                        {
+                            "name": "ADIANT_MOV_DT_DATADOCTO",
+                            "type": "date",
+                            "help": "Data do Adiantamento",
+                            "time": false
+                        },
+                        {
+                            "name": "MOV_ST_DOCUMENTO",
+                            "type": "text",
+                            "help": "Número do documento do adiantamento"
+                            //,"required": true
+                            ,
+                            "validate": {
+                                "min": 0,
+                                "max": 20
+                            }
+                        },
+                        {
+                            "name": "ADIANT_MOV_RE_VALOR",
+                            "type": "number",
+                            "help": "Valor do adiantamento"
+                        },
+                        {
+                            "name": "ADIANT_MOV_SEQ_IN_CODIGO",
+                            "type": "integer",
+                            "help": "Sequência do adiantamento",
+                            "validate": {
+                                "min": 0,
+                                "max": 999
+                            }
+                        },
+                        {
+                            "name": "ADIANT_MOV_IN_NUMLANCTO",
+                            "type": "integer",
+                            "help": "Número do lançamento do adiantamento",
+                            "validate": {
+                                "min": 0,
+                                "max": 99999999
+                            }
+                        }
+                    ]
+                }
+            }
+        ],
+        "sequence": true
+    },
+    {
+        "name": "pEnviaRecebe",
+        "type": "hidden",
+        "sequence": true,
+        "default": "R"
+    },
+    {
+        "name": "pTransacao",
+        "type": "hidden",
+        "sequence": true,
+        "default": 0
+    },
+    {
+        "name": "pSistema",
+        "label": "Sistema",
+        "type": "hidden",
+        "sequence": true,
+        "default": 1
     }
 ]
