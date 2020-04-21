@@ -1,18 +1,58 @@
-{
-    "url": "/Integrador",
-    "body": "<?xml version=\"1.0\" encoding=\"ISO-8859-1\" standalone=\"yes\"?><soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\"><soapenv:Body><tem:MegaIntegradorService___IntegraXML><tem:pPRO_IN_ID>{{ parameters.pPRO_IN_ID }}</tem:pPRO_IN_ID><tem:pUSU_IN_CODIGO>{{ parameters.pUSU_IN_CODIGO }}</tem:pUSU_IN_CODIGO><tem:pXML><![CDATA[<CotacaoInd OPERACAO=\"I\"><IND_IN_CODIGO>{{ utf8Decode(parameters.IND_IN_CODIGO) }}</IND_IN_CODIGO> <VAL_DT_INDICE>{{ utf8Decode(formatDate(parameters.VAL_DT_INDICE; 'DD/MM/YYYY')) }}</VAL_DT_INDICE> <VAL_RE_VALOR>{{ utf8Decode(parameters.VAL_RE_VALOR) }}</VAL_RE_VALOR> <VAL_CH_TIPO>{{ utf8Decode(parameters.VAL_CH_TIPO) }}</VAL_CH_TIPO> </CotacaoInd>]]></tem:pXML><tem:pObs>{{parameters.pObs}}</tem:pObs><tem:pEnviaRecebe>{{parameters.pEnviaRecebe}}</tem:pEnviaRecebe><tem:pTransacao>{{parameters.pTransacao}}</tem:pTransacao><tem:pSistema>{{parameters.pSistema}}</tem:pSistema><tem:pXMLHeader/></tem:MegaIntegradorService___IntegraXML></soapenv:Body></soapenv:Envelope>",
-    "response": {
-        "type": {
-            "*": "xml"
-            //"400-408": "text", // parse all 400-408 responses as text, overrides "*",
-            //"406": "xml" // parse the 406 response as XML, overrides above definitions
-        },
-        "output": {
-            "Erro": "{{body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:Erro`[]}}",
-            "Mensagem": "{{body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:Mensagem`[]}}",
-            "CodTransacao": "{{body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:CodTransacao`[]}}",
-            "PKMega": "{{body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:PKMega`[]}}"
-            /** 
+[
+    {
+        "response": {
+            "temp": {
+                "arrayXML": [
+                    "<CotacaoInd OPERACAO=\"I\">",
+                    "   <IND_IN_CODIGO>{{   utf8Decode(parameters.CotacaoInd.IND_IN_CODIGO) }}</IND_IN_CODIGO>",
+                    "   <VAL_DT_INDICE>{{   utf8Decode(parameters.CotacaoInd.VAL_DT_INDICE) }}</VAL_DT_INDICE>",
+                    "   <VAL_RE_VALOR>{{    utf8Decode(parameters.CotacaoInd.VAL_RE_VALOR) }}</VAL_RE_VALOR>",
+                    "   <VAL_CH_TIPO>{{     utf8Decode(parameters.CotacaoInd.VAL_CH_TIPO) }}</VAL_CH_TIPO>",
+                    "</CotacaoInd>"
+                ],
+                "JSON": {
+                    "CotacaoInd": "{{ parameters.CotacaoInd }}"
+                }
+            }
+        }
+    },
+    {
+        "response": {
+            "temp": {
+                "arrayBody": [
+                    "<?xml version=\"1.0\" encoding=\"ISO-8859-1\" standalone=\"yes\"?>",
+                    "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">",
+                    "<soapenv:Body>",
+                    "<tem:MegaIntegradorService___IntegraXML>",
+                    "<tem:pPRO_IN_ID>{{     parameters.pPRO_IN_ID }}</tem:pPRO_IN_ID>",
+                    "<tem:pUSU_IN_CODIGO>{{ parameters.pUSU_IN_CODIGO }}</tem:pUSU_IN_CODIGO>",
+                    "<tem:pObs>{{           parameters.pObs}}</tem:pObs>",
+                    "<tem:pEnviaRecebe>{{   parameters.pEnviaRecebe}}</tem:pEnviaRecebe>",
+                    "<tem:pTransacao>{{     parameters.pTransacao}}</tem:pTransacao>",
+                    "<tem:pSistema>{{       parameters.pSistema}}</tem:pSistema>",
+                    "<tem:pXMLHeader/>",
+                    "<tem:pXML><![CDATA[{{  convertJson2xml(temp.JSON, { compact: true }) }}]]></tem:pXML>",
+                    "</tem:MegaIntegradorService___IntegraXML>",
+                    "</soapenv:Body></soapenv:Envelope>"
+                ]
+            }
+        }
+    },
+    {
+        "url": "/Integrador",
+        "body": "{{join(temp.arrayBody, '\n')}}",
+        "response": {
+            "type": {
+                "*": "xml"
+                //"400-408": "text", // parse all 400-408 responses as text, overrides "*",
+                //"406": "xml" // parse the 406 response as XML, overrides above definitions
+            },
+            "output": {
+                "Erro": "{{body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:Erro`[]}}",
+                "Mensagem": "{{body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:Mensagem`[]}}",
+                "CodTransacao": "{{body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:CodTransacao`[]}}",
+                "PKMega": "{{body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:PKMega`[]}}"
+                /** 
             TODO: PKMegaArray ou PKMegaCollection ou PKMegaSplit
                 Array ou Collection de Chave e Valor
                 Ex:
@@ -22,6 +62,7 @@
                     "AGN_IN_CODIGO": 474
                 }
             */
+            }
         }
     }
-}
+]

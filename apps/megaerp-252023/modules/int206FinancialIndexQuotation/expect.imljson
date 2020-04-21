@@ -6,58 +6,88 @@
         "default": 206
     },
     {
-        "name": "IND_IN_CODIGO",
-        "label": "Código do Índice Financeiro",
-        "type": "uinteger",
-        "sequence": true,
-        "help": "Campo: IND_IN_CODIGO"
-    },
-    {
-        "name": "VAL_DT_INDICE",
-        "label": "Data ",
-        "type": "date",
-        "sequence": true,
-        "help": "Campo: VAL_DT_INDICE. 🛈 Valor informado vai ser formatado para DD/MM/YYYY",
-        "time": false
-    },
-    {
-        "name": "VAL_RE_VALOR",
-        "label": "Valor",
-        "type": "number",
-        "sequence": true,
-        "help": "Campo: VAL_RE_VALOR"
-    },
-    {
-        "name": "VAL_CH_TIPO",
-        "label": "Tipo de Valor",
-        "type": "select",
-        "sequence": true,
-        "help": "Previsto / Real. Campo: VAL_CH_TIPO",
-        "options": [
+        "name": "CotacaoInd",
+        "type": "collection",
+        "spec": [
             {
-                "label": "Real",
-                "value": "R"
+                "name": "_attributes",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "OPERACAO",
+                        "type": "text",
+                        "help": "Operação - I, U ou D",
+                        "default": "I",
+                        "validate": {
+                            "min": 0,
+                            "max": 1,
+                            "pattern": "(I|U|D)"
+                        }
+                    }
+                ],
+                "sequence": true
             },
             {
-                "label": "Previsto",
-                "value": "P"
+                "name": "IND_IN_CODIGO",
+                "label": "Código do Índice Financeiro (IND_IN_CODIGO)",
+                "type": "uinteger",
+                "sequence": true
+            },
+            {
+                "name": "VAL_DT_INDICE",
+                "label": "Data (VAL_DT_INDICE)",
+                "type": "text",
+                "sequence": true,
+                "pattern": "^[0-9]{2}/[0-9]{2}/[0-9]{4}$"
+            },
+            {
+                "name": "VAL_RE_VALOR",
+                "label": "Valor (VAL_RE_VALOR)",
+                "type": "number",
+                "sequence": true
+            },
+            {
+                "name": "VAL_CH_TIPO",
+                "label": "Tipo de Valor (VAL_CH_TIPO)",
+                "type": "select",
+                "sequence": true,
+                "help": "Previsto / Real.",
+                "options": [
+                    {
+                        "label": "Real",
+                        "value": "R"
+                    },
+                    {
+                        "label": "Previsto",
+                        "value": "P"
+                    }
+                ],
+                "default": "R"
             }
         ],
-        "default": "R"
+        "sequence": true
     },
     {
         "name": "pUSU_IN_CODIGO",
-        "label": "Código do Usuário",
+        "label": "Código do Usuário de Integração",
         "type": "integer",
         "sequence": true,
-        "default": 1
+        "default": 1,
+        "validate": {
+            "min": 0,
+            "max": 9999999
+        }
     },
     {
         "name": "pObs",
         "label": "Observação da Transação",
         "type": "text",
         "sequence": true,
-        "default": "#Integromat - "
+        "default": "#Integromat[int206FinancialIndexQuotation]",
+        "validate": {
+            "min": 0,
+            "max": 100
+        }
     },
     {
         "name": "pEnviaRecebe",
@@ -74,7 +104,7 @@
     {
         "name": "pSistema",
         "label": "Sistema",
-        "type": "integer",
+        "type": "hidden",
         "sequence": true,
         "default": 1
     }
