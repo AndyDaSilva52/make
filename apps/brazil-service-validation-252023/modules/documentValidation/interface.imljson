@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Document",
+        "label": "Número do Documento",
+        "type": "text"
+    },
+    {
+        "name": "IsValid",
+        "type": "boolean",
+        "label": "Documento Válido"
+    }
+]

@@ -1,0 +1,31 @@
+/** 
+Reference: https://www.treinaweb.com.br/ferramentas-para-desenvolvedores/ 
+*/
+[
+    {
+        "condition": "{{parameters.doc_type == 'cnpj'}}",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "response": {
+            "output": {
+                "Document": "{{parameters.doc_value}}",
+                "IsValid": "{{ cnpj(parameters.doc_value) }}"
+            }
+        }
+    },
+    {
+        // Não identificado o Tipo de Doc.
+        "condition": "{{parameters.doc_type !== 'cnpj'}}",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "response": {
+            "valid": {
+                "condition": "{{ false }}",
+                "type": "DataError",
+                "message": "Não identificado o Tipo de Documento informado [{{parameters.doc_type}}]"
+            }
+        }
+    }
+]

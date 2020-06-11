@@ -1,0 +1,10 @@
+{
+    "name": "brazil-service-validation-252023",
+    "label": "Brasil - Serviço de Validação de Documentos",
+    "version": 1,
+    "theme": "#009c3b",
+    "language": "pt",
+    "countries": [
+        "br"
+    ]
+}

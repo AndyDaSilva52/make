@@ -1,0 +1,8 @@
+{
+    "name": "documentValidation",
+    "label": "Validação de Documento",
+    "description": "CNPJ",
+    "connection": null,
+    "webhook": null,
+    "type": "action"
+}
