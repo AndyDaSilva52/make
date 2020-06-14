@@ -1,0 +1,19 @@
+{
+    "object": "payable",
+    "id": 1714903,
+    "status": "waiting_funds",
+    "amount": 240,
+    "fee": 60,
+    "anticipation_fee": 0,
+    "installment": 1,
+    "transaction_id": 1665560,
+    "split_rule_id": "sr_cj4ir4qks00p8tp6ey5eoovhs",
+    "bulk_anticipation_id": null,
+    "recipient_id": "re_cj2wd5u2600fecw6eytgcbkd0",
+    "payment_date": "2017-08-01T03:00:00.000Z",
+    "original_payment_date": null,
+    "type": "credit",
+    "payment_method": "credit_card",
+    "accrual_date": "2017-06-29T18:16:49.303Z",
+    "date_created": "2017-06-29T18:16:49.411Z"
+}

@@ -1,0 +1,73 @@
+[
+    {
+        "name": "object",
+        "type": "text"
+    },
+    {
+        "name": "id",
+        "type": "number"
+    },
+    {
+        "name": "status",
+        "type": "text"
+    },
+    {
+        "name": "amount",
+        "type": "number"
+    },
+    {
+        "name": "fee",
+        "type": "number"
+    },
+    {
+        "name": "anticipation_fee",
+        "type": "number"
+    },
+    {
+        "name": "installment",
+        "type": "integer"
+    },
+    {
+        "name": "transaction_id",
+        "type": "integer"
+    },
+    {
+        "name": "split_rule_id",
+        "type": "text"
+    },
+    {
+        "name": "bulk_anticipation_id",
+        "type": "text"
+    },
+    {
+        "name": "recipient_id",
+        "type": "text"
+    },
+    {
+        "name": "payment_date",
+        "type": "date",
+        "time": true
+    },
+    {
+        "name": "original_payment_date",
+        "type": "text"
+    },
+    {
+        "name": "type",
+        "type": "text"
+    },
+    {
+        "name": "payment_method",
+        "type": "text"
+    },
+    {
+        "name": "accrual_date",
+        "type": "date",
+        "time": true
+    },
+    {
+        "name": "date_created",
+        "type": "date",
+        "time": true
+    }
+]

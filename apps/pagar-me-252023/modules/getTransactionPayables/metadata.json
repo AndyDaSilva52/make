@@ -1,0 +1,8 @@
+{
+    "name": "getTransactionPayables",
+    "label": "Get Transaction Payables",
+    "description": "Retona um array com com objetos recebíveis (payables) . Os recebíveis são os dados de pagamento referente a uma transação.",
+    "connection": "pagar-me-252023",
+    "webhook": null,
+    "type": "search"
+}
