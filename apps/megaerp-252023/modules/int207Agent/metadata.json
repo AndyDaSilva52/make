@@ -1,0 +1,8 @@
+{
+    "name": "int207Agent",
+    "label": "207 - Agente",
+    "description": "207 - Agente",
+    "connection": "megaerp-252023",
+    "webhook": null,
+    "type": "action"
+}

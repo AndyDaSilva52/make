@@ -1,0 +1,280 @@
+{}
+/**
+<Agente OPERACAO="I/U/D">
+  <AGN_IN_CODIGO>Código do agente</AGN_IN_CODIGO> 
+  <AGN_ST_IDESTRANGEIRO>ID estrangeiro</AGN_ST_IDESTRANGEIRO> 
+  <PAI_AGN_IN_CODIGO>Código do pai</PAI_AGN_IN_CODIGO> 
+  <AGN_RE_LATITUDE>Latitude</AGN_RE_LATITUDE> 
+  <AGN_ST_FANTASIA>Fantasia do agente</AGN_ST_FANTASIA> 
+  <AGN_RE_LONGITUDE>Longitude</AGN_RE_LONGITUDE> 
+  <AGN_ST_NOME>Nome do agente</AGN_ST_NOME> 
+  <AGN_CH_TIPOPESSOAFJ>Tipo pessoa (F-Física, J-Jurídica, R-Rural)</AGN_CH_TIPOPESSOAFJ> 
+  <AGN_BO_FLUXO>Agente faz parte do fluxo de caixa</AGN_BO_FLUXO> 
+  <AGN_IN_NATJURID>Natureza Jurídica</AGN_IN_NATJURID> 
+  <CNAE_ST_CODIGO>Código CNAE</CNAE_ST_CODIGO> 
+  <AGN_ST_EMAIL>E-mail</AGN_ST_EMAIL> 
+  <AGN_ST_URL>URL</AGN_ST_URL> 
+  <PA_ST_SIGLA>País</PA_ST_SIGLA> 
+  <UF_ST_SIGLA>Estado</UF_ST_SIGLA> 
+  <AGN_CH_ENQUADRAMENTO>Enquadramento (N-Normal, M-Micro empresa, E-EPP)</AGN_CH_ENQUADRAMENTO> 
+  <AGN_ST_INSCRESTADUAL>Inscrição estadual</AGN_ST_INSCRESTADUAL> 
+  <AGN_ST_INSCRMUNIC>Inscrição municipal</AGN_ST_INSCRMUNIC> 
+  <AGN_ST_CEI>CEI</AGN_ST_CEI> 
+  <AGN_ST_CGC>CNPJ</AGN_ST_CGC> 
+  <MUN_IN_CODIGO>Código Município</MUN_IN_CODIGO> 
+  <AGN_ST_MUNICIPIO>Nome Município</AGN_ST_MUNICIPIO> 
+  <TPL_ST_SIGLA>Sigla do tipo de logradouro</TPL_ST_SIGLA> 
+  <AGN_ST_LOGRADOURO>Logradouro</AGN_ST_LOGRADOURO> 
+  <AGN_ST_NUMERO>Número (Endereço)</AGN_ST_NUMERO> 
+  <AGN_ST_BAIRRO>Bairro</AGN_ST_BAIRRO> 
+  <AGN_ST_CEP>CEP</AGN_ST_CEP> 
+  <AGN_ST_CXPOSTAL>Caixa postal</AGN_ST_CXPOSTAL> 
+  <AGN_ST_COMPLEMENTO>Complemento (Endereço)</AGN_ST_COMPLEMENTO> 
+  <AGN_ST_CEPCXPOSTAL>CEP Caixa postal</AGN_ST_CEPCXPOSTAL> 
+  <AGN_ST_REFERENCIA>Referência (Endereço)</AGN_ST_REFERENCIA> 
+  <AGN_BO_PUBLICO>Órgão Público, Fundação ou Autarquia? (S/N)</AGN_BO_PUBLICO> 
+  <AGN_ST_CODIGOALT>Código alternativo para localizar o agente</AGN_ST_CODIGOALT> 
+  <AGN_CH_STATUSINSCRESTADUAL>Status da Inscrição Estadual Atualização automática pelo sistema</AGN_CH_STATUSINSCRESTADUAL> 
+  <AGN_CH_RURALTIPOPESSOAFJ>Tipo de Pessoa Produtor Rural (F-Física, J-Jurídica)</AGN_CH_RURALTIPOPESSOAFJ> 
+  <TAB05_IN_CODIGO>Tipo de Inscrição</TAB05_IN_CODIGO> 
+  <AGN_ST_NRCAEPF>Cadastro de Atividade Econômica de Pessoa Física(CAEPF)</AGN_ST_NRCAEPF> 
+  <AGN_ST_NRCNO>Cadastro Nacional de Obras(CNO)</AGN_ST_NRCNO> 
+  <AGN_CH_TIPODESPADUANEIRA>Tipo de despesa aduaneira</AGN_CH_TIPODESPADUANEIRA> 
+  <AGN_IN_TIPOCAEPF>Tipo do Cadastro de Atividade Econômica da Pessoa Física (CAEPF)</AGN_IN_TIPOCAEPF> 
+  <AGN_CH_NATRETPISCOFINS>Natureza da retenção de PIS/COFINS</AGN_CH_NATRETPISCOFINS> 
+  <AGN_BO_RATEIOAFRMM>Rateio AFRMM da Declaração de Importação</AGN_BO_RATEIOAFRMM> 
+  <AGN_CH_TIPOAFRMM>Tipo de rateio do valor AFRMM da Declaração de Importação para os itens da Nota Fiscal</AGN_CH_TIPOAFRMM> 
+  <AGN_ST_PISMEI>Nº PIS MEI</AGN_ST_PISMEI> 
+  <AGN_ST_FRETEPESOVALOR>Frete Por</AGN_ST_FRETEPESOVALOR> 
+  <AGN_ST_CBOMEI>Nº CBO MEI</AGN_ST_CBOMEI> 
+  <AGN_BO_DISPENSADONIF>Indicador de beneficiário dispensado do Número de Identificação Fiscal NIF (agente estrangeiro)</AGN_BO_DISPENSADONIF> 
+  <AGN_ST_NIF>Número de identificação fiscal NIF (agente estrangeiro)</AGN_ST_NIF> 
+  <DFP_IN_CODIGO>Código da relação fonte Pagadora/Beneficiário PJ (agente estrangeiro)</DFP_IN_CODIGO> 
+<Telefone OPERACAO="I/U/D">
+  <TEA_ST_TELEFONE>Número</TEA_ST_TELEFONE> 
+  <TEA_ST_TIPO>Tipo</TEA_ST_TIPO> 
+  </Telefone>
+<AgenteId OPERACAO="I/U/D">
+  <AGN_TAU_ST_CODIGO>Tipo do agente</AGN_TAU_ST_CODIGO> 
+  <AGN_ST_CODIGOALT>Código alternativo</AGN_ST_CODIGOALT> 
+  <AGN_BO_EXCECAOFISCAL>Agente tem algum benefício fiscal?</AGN_BO_EXCECAOFISCAL> 
+  <AGN_BO_ATIVADOSALDO>Considera no saldo?</AGN_BO_ATIVADOSALDO> 
+  <AGN_RE_PERCFUNRURAL>Percentual de FUNRURAL</AGN_RE_PERCFUNRURAL> 
+  <AGN_DT_INICIOMOV>Data de início da movimentação</AGN_DT_INICIOMOV> 
+  <AGN_CH_STATUS>Status do agente (A-Ativo, I-Inativo)</AGN_CH_STATUS> 
+  <AGN_CH_DATABASE>Tipo de data base (E-Emissão, N-Entrada, V-Vencimento)</AGN_CH_DATABASE> 
+  <COND_ST_CODIGO>Condição de pagamento default do tipo de agente</COND_ST_CODIGO> 
+  <CAT_IN_REDUZIDO>Categoria do agente</CAT_IN_REDUZIDO> 
+<CondPagto OPERACAO="I/U/D">
+  <COND_ST_CODIGO>Condição de pagamento</COND_ST_CODIGO> 
+  </CondPagto>
+<Fornecedor OPERACAO="I/U/D">
+  <FOR_ST_APROVADO>Certificado pela ISO 9000?</FOR_ST_APROVADO> 
+  <FOR_ST_SUPPLYHOUSE>Supply house?</FOR_ST_SUPPLYHOUSE> 
+  </Fornecedor>
+<Cliente OPERACAO="I/U/D">
+  <TRA_AGN_IN_CODIGO1>Transportadora</TRA_AGN_IN_CODIGO1> 
+  <TRA_AGN_IN_CODIGO2>Redespacho</TRA_AGN_IN_CODIGO2> 
+  <CLI_ST_TIPOFRETE1>Frete Transportadora</CLI_ST_TIPOFRETE1> 
+  <CLI_ST_TIPOFRETE2>Frete Redespacho</CLI_ST_TIPOFRETE2> 
+  <BAN_IN_NUMERO>Banco</BAN_IN_NUMERO> 
+  <AGE_IN_CODIGO>Agência</AGE_IN_CODIGO> 
+  <CLI_CH_PROCFALENCIA>Em processo de falência?</CLI_CH_PROCFALENCIA> 
+  <CLI_CH_CONCORDATARIO>Em concordata?</CLI_CH_CONCORDATARIO> 
+  <CLI_BO_PREDIOPROPRIO>Prédio próprio?</CLI_BO_PREDIOPROPRIO> 
+  <CLI_BO_APLICACAOPRODUTO>Aplicação/produto?</CLI_BO_APLICACAOPRODUTO> 
+  <CLI_BO_FRETEAUTOMATICO>Calcula frete automático?</CLI_BO_FRETEAUTOMATICO> 
+  <HCOB_IN_SEQUENCIA>Forma de cobrança</HCOB_IN_SEQUENCIA> 
+  <CLI_RE_JUROSMENSAL>Taxa de juros mensal</CLI_RE_JUROSMENSAL> 
+  <CLI_RE_DECV>DECV</CLI_RE_DECV> 
+  </Cliente>
+<Observacao OPERACAO="I/U/D">
+  <TOA_DT_DATA>Data Observação</TOA_DT_DATA> 
+  <TOA_ST_CODIGO>Código do tipo de observação</TOA_ST_CODIGO> 
+  <OBSAGN_BL_OBSERVACAO>Observação</OBSAGN_BL_OBSERVACAO> 
+  <OBS_DT_DATACONTATO>Data e hora para contato futuro</OBS_DT_DATACONTATO> 
+  </Observacao>
+<Classe OPERACAO="I/U/D">
+  <CLA_IDE_ST_CODIGO>Identificador</CLA_IDE_ST_CODIGO> 
+  <CLA_IN_REDUZIDO>Reduzido da classe</CLA_IN_REDUZIDO> 
+  <CAU_CH_NATUREZA>Natureza</CAU_CH_NATUREZA> 
+  <CAU_RE_PERCENTUAL>Percentual</CAU_RE_PERCENTUAL> 
+  <CAU_ST_OBSERVACAO>Observação</CAU_ST_OBSERVACAO> 
+  </Classe>
+<ContaContabil OPERACAO="I/U/D">
+  <TCTA_ST_CODIGO>Tipo de conta</TCTA_ST_CODIGO> 
+  <PLA_IDE_ST_CODIGO>Identificador</PLA_IDE_ST_CODIGO> 
+  <PLA_IN_REDUZIDO>Reduzido da conta</PLA_IN_REDUZIDO> 
+  </ContaContabil>
+<ContaBancaria OPERACAO="I/U/D">
+  <CAID_BAN_IN_NUMERO>Número do banco</CAID_BAN_IN_NUMERO> 
+  <CAID_AGE_IN_CODIGO>Código da agência no Mega</CAID_AGE_IN_CODIGO> 
+  <CAIDAGE_ST_NUMERO>Número da agência</CAIDAGE_ST_NUMERO> 
+  <CAID_ST_CONTACORR>Conta corrente</CAID_ST_CONTACORR> 
+  <CAID_ST_TITULAR>Titular</CAID_ST_TITULAR> 
+  <CAID_BO_PREFERENCIAL>Conta preferencial</CAID_BO_PREFERENCIAL> 
+  <CAID_CH_TIPOCONTA>Tipo de conta (C-Conta corrente, P-Poupança)</CAID_CH_TIPOCONTA> 
+  <CAID_BO_INATIVA>Conta inativa? (S/N)</CAID_BO_INATIVA> 
+  <CAID_ST_CPFTITULAR>CPF do titular</CAID_ST_CPFTITULAR> 
+  <CAID_ST_CNPJTITULAR>CNPJ do titular</CAID_ST_CNPJTITULAR> 
+  </ContaBancaria>
+<Sindicato OPERACAO="I/U/D">
+  <SIN_ST_CODENTIDADEPATR>Cód. Sindical Entidade Patronal</SIN_ST_CODENTIDADEPATR> 
+  <SIN_ST_CODENTIDADELAB>Cód. Sindical Entidade Laboral</SIN_ST_CODENTIDADELAB> 
+  </Sindicato>
+<Transportadora OPERACAO="I/U/D">
+  <AGN_ST_RNTRC>Registro Nacional de Transportadores Rodoviários de Carga</AGN_ST_RNTRC> 
+  <AGN_ST_TAC>Transportador Autônomo de Carga TAC</AGN_ST_TAC> 
+  </Transportadora>
+<Obra OPERACAO="I/U/D">
+  <OBR_ST_MATRICULAOBRA>Código da Obra ou Número da Matrícula</OBR_ST_MATRICULAOBRA> 
+  <OBR_ST_ART>Código da Anotação de Responsabilidade Técnica (ART)</OBR_ST_ART> 
+  </Obra>
+  </AgenteId>
+<Endereco OPERACAO="I/U/D">
+  <ENA_IN_CODIGO>Código do endereço</ENA_IN_CODIGO> 
+  <ENA_RE_LATITUDE>Latitude</ENA_RE_LATITUDE> 
+  <PAG_IN_CODIGO>Código do contato</PAG_IN_CODIGO> 
+  <ENA_RE_LONGITUDE>Longitude</ENA_RE_LONGITUDE> 
+  <PA_ST_SIGLA>País</PA_ST_SIGLA> 
+  <UF_ST_SIGLA>Estado</UF_ST_SIGLA> 
+  <TPL_ST_SIGLA>Tipo de logradouro</TPL_ST_SIGLA> 
+  <TEA_ST_CODIGO>Tipo de endereço</TEA_ST_CODIGO> 
+  <MUN_IN_CODIGO>Município</MUN_IN_CODIGO> 
+  <ENA_ST_MUNICIPIO>Nome Município</ENA_ST_MUNICIPIO> 
+  <ENA_ST_LOGRADOURO>Logradouro</ENA_ST_LOGRADOURO> 
+  <ENA_ST_NUMERO>Número</ENA_ST_NUMERO> 
+  <ENA_ST_BAIRRO>Bairro</ENA_ST_BAIRRO> 
+  <ENA_ST_CEP>CEP</ENA_ST_CEP> 
+  <ENA_ST_CXPOSTAL>Caixa postal</ENA_ST_CXPOSTAL> 
+  <ENA_ST_COMPLEMENTO>Complemento</ENA_ST_COMPLEMENTO> 
+  <ENA_ST_REFERENCIA>Referência</ENA_ST_REFERENCIA> 
+  <ENA_ST_TELEFONE>Telefone</ENA_ST_TELEFONE> 
+  <ENA_ST_FAX>Fax</ENA_ST_FAX> 
+  <ENA_ST_CNPJ>CNPJ</ENA_ST_CNPJ> 
+  <ENA_ST_INSCRESTADUAL>Inscrição estadual</ENA_ST_INSCRESTADUAL> 
+  <ENA_CH_TIPOINSCRICAO>Tipo de inscrição (1-CNPJ, 2-CEI, 3-Rural)</ENA_CH_TIPOINSCRICAO> 
+  <ENA_CH_ENDERECOPERTENCE>Endereço do Cônjuge (P-Principal, C-Cônjuge)</ENA_CH_ENDERECOPERTENCE> 
+  <ENA_ST_NOME>Razão Social</ENA_ST_NOME> 
+  <ENA_ST_EMAIL>E-mail</ENA_ST_EMAIL> 
+  </Endereco>
+<Fiscal OPERACAO="I/U/D">
+  <AGN_DT_INIVIGENCIA>Data de início da vigência</AGN_DT_INIVIGENCIA> 
+  <AGN_BO_ESCRITURAR>Escriturar</AGN_BO_ESCRITURAR> 
+  <AGN_BO_ENQUADRAIPI>Enquadra IPI</AGN_BO_ENQUADRAIPI> 
+  <AGN_BO_ENQUADRAICMS>Enquadra ICMS</AGN_BO_ENQUADRAICMS> 
+  <AGN_BO_CALCICMSNAOENQ>Calcula ICMS não enquadrado</AGN_BO_CALCICMSNAOENQ> 
+  <AGN_BO_ENQUADRAISS>Enquadra ISS</AGN_BO_ENQUADRAISS> 
+  <AGN_BO_RETERIR>Retém IR</AGN_BO_RETERIR> 
+  <AGN_BO_RETERINSS>Retém INSS</AGN_BO_RETERINSS> 
+  <AGN_BO_SIMPLES>Enquadra no Simples</AGN_BO_SIMPLES> 
+  <AGN_BO_IPISIMPLES>IPI pelo Simples</AGN_BO_IPISIMPLES> 
+  <AGN_BO_ICMSSIMPLES>ICMS pelo Simples</AGN_BO_ICMSSIMPLES> 
+  <AGN_BO_ISSSIMPLES>ISS pelo Simples</AGN_BO_ISSSIMPLES> 
+  <AGN_BO_INSSSIMPLES>INSS pelo Simples</AGN_BO_INSSSIMPLES> 
+  <AGN_BO_SUSPENSOIPI>Cliente tem suspensão de IPI</AGN_BO_SUSPENSOIPI> 
+  <AGN_BO_RETERISS>Retém ISS</AGN_BO_RETERISS> 
+  <AGN_BO_ENQUADRAPIS>Enquadra PIS</AGN_BO_ENQUADRAPIS> 
+  <AGN_BO_ENQUADRACOFINS>Enquadra COFINS</AGN_BO_ENQUADRACOFINS> 
+  <AGN_BO_RETERCSLL>Retém CSLL</AGN_BO_RETERCSLL> 
+  <AGN_CH_TRIBESPECIAL>Tributação especial</AGN_CH_TRIBESPECIAL> 
+  <AGN_BO_ENQUADRASUFRAMA>Enquadra SUFRAMA</AGN_BO_ENQUADRASUFRAMA> 
+  <AGN_BO_ENQUADRAFUNRURAL>Enquadra FUNRURAL</AGN_BO_ENQUADRAFUNRURAL> 
+  <AGN_DT_FINVIGENCIASUFRAMA>Data final da vigência do SUFRAMA</AGN_DT_FINVIGENCIASUFRAMA> 
+  <AGN_BO_ENQUADRAINSSRURAL>Enquadra INSS Rural</AGN_BO_ENQUADRAINSSRURAL> 
+  <AGN_BO_IRRFSIMPLES>IRRF pelo Simples</AGN_BO_IRRFSIMPLES> 
+  <AGN_BO_CSLLSIMPLES>CSLL pelo Simples</AGN_BO_CSLLSIMPLES> 
+  <AGN_ST_OBS>Observação</AGN_ST_OBS> 
+  <AGN_CH_TIPOREGIME>Tipo Regime Tributário (R-Lucro Real, P-Lucro Presumido)</AGN_CH_TIPOREGIME> 
+  <AGN_CH_FORAPURPISCOFINS>Forma de Apuração Pis/Cofins (1-Incidência exclusivamente no regime não-cumulativo, 2-Incidência exclusivamente no regime cumulativo, 3-Incidência nos regimes não-cumulativo e cumulativo)</AGN_CH_FORAPURPISCOFINS> 
+  <AGN_CH_FORAPURLUCPREPC>Forma de Apuração do Lucro Presumido (1-Regime Caixa, 2-Regime Competência)</AGN_CH_FORAPURLUCPREPC> 
+  <AGN_CH_FORAPUEMPPC>Tipo de Apuração da Empresa (1-Incidência exclusivamente no regime não-cumulativo, 2-Incidência exclusivamente no regime cumulativo, 3-Incidência nos regimes não-cumulativo e cumulativo)</AGN_CH_FORAPUEMPPC> 
+  <AGN_BO_CONTPREVENQUADRA>Enquadrado Contribuição Previdenciária (INSS)</AGN_BO_CONTPREVENQUADRA> 
+  <AGN_CH_CONTPREVINCTRIB>Indicador Incidência Tributária da Contribuição Previdenciária (1-Apurada exclusivamente com base na Receita Bruta, 2-Apurada com base na Receita Bruta e nas Remunerações Pagas)</AGN_CH_CONTPREVINCTRIB> 
+  <ENI_ST_CODIGO>código do enquadramento legal do ipi)</ENI_ST_CODIGO> 
+  <AGN_BO_ISSORGAOPUBLICO>Tributa ISS para Órgão Público, Fundação ou Autarquia</AGN_BO_ISSORGAOPUBLICO> 
+  <STI_IN_CODIGO>CST do IPI</STI_IN_CODIGO> 
+  <AGN_BO_GERAREG1400>Gera Registro 1400</AGN_BO_GERAREG1400> 
+  <TAB08_IN_CODIGO>Código da classificação tributária</TAB08_IN_CODIGO> 
+  <AGN_CH_OBRIGAECD>Indicativo Obrigatoriedade ECD (0-Não Faz, 1-Empresa Entrega a ECD.)</AGN_CH_OBRIGAECD> 
+  <AGN_CH_ISENTAMULTAINT>Acordo Internacional para Isenção de Multa (0-Sem acordo, 1-Com acordo.)</AGN_CH_ISENTAMULTAINT> 
+  <AGN_CH_ENTFEDRESP>Ente Federativo Responsável – EFR(S -É EFR, NNão é EFR)</AGN_CH_ENTFEDRESP> 
+  <AGN_DT_PERIODOVALIDADE>Data de Validade das Informações</AGN_DT_PERIODOVALIDADE> 
+  <AGN_ST_CNPJENTFED>CNPJ do ente federativo</AGN_ST_CNPJENTFED> 
+  </Fiscal>
+<PesFisica OPERACAO="I/U/D">
+  <AGN_CH_TIPO>Tipo de Pessoa (P-Pessoa, C-Conjuge)</AGN_CH_TIPO> 
+  <AGN_ST_CPF>CPF</AGN_ST_CPF> 
+  <AGN_ST_RG>RG</AGN_ST_RG> 
+  <AGN_DT_NASCIMENTO>Data de nascimento</AGN_DT_NASCIMENTO> 
+  <AGN_ST_LOCALNASCIM>Local de nascimento</AGN_ST_LOCALNASCIM> 
+  <AGN_ST_NOMEPAI>Nome do pai</AGN_ST_NOMEPAI> 
+  <AGN_ST_NOMEMAE>Nome da mãe</AGN_ST_NOMEMAE> 
+  <AGN_ST_LOCALTRABALHO>Local de trabalho</AGN_ST_LOCALTRABALHO> 
+  <AGN_ST_TELLOCTRAB>Telefone do local de trabalho</AGN_ST_TELLOCTRAB> 
+  <AGN_DT_ADMISSAO>Data de admissão</AGN_DT_ADMISSAO> 
+  <AGN_ST_CARGOPROFISS>Cargo</AGN_ST_CARGOPROFISS> 
+  <AGN_RE_SALARIO>Salário</AGN_RE_SALARIO> 
+  <AGN_ST_CARTTRABALHO>Carteira de trabalho</AGN_ST_CARTTRABALHO> 
+  <AGN_ST_NACIONALIDADE>Nacionalidade</AGN_ST_NACIONALIDADE> 
+  <AGN_CH_ESTCIVIL>Estado civil (S-Solteiro(a), C-Casado(a), V-Viúvo(a), D-Divorciado(a), A-União Estável, J-Separado(a) Judicialmente)</AGN_CH_ESTCIVIL> 
+  <AGN_CH_SEXO>Sexo (M, F)</AGN_CH_SEXO> 
+  <AGN_ST_CONJUGE>Cônjuge</AGN_ST_CONJUGE> 
+  <AGN_ST_LOCTRABCONJ>Local de trabalho do cônjuge</AGN_ST_LOCTRABCONJ> 
+  <AGN_ST_TELLOCTRABCONJ>Telefone do local de trabalho do cônjuge</AGN_ST_TELLOCTRABCONJ> 
+  <AGN_CH_REGIMECASAMENTO>Regime de casamento (P-Comunhão parcial, U-Comunhão univ. de bens, S-Separação total de bens, D-Regime dotal, A-Partic. Final nos Aquestos, L-S-Separação legal de bens, O-S-Separação obrig. de bens</AGN_CH_REGIMECASAMENTO> 
+  <AGN_DT_EXPRG>Data de emissão do RG</AGN_DT_EXPRG> 
+  <AGN_ST_ORGEMISSORRG>Órgão emissor do RG</AGN_ST_ORGEMISSORRG> 
+  <AGN_ST_NOMEPESSOA>Nome P. Física</AGN_ST_NOMEPESSOA> 
+  <AGN_ST_PIS>Nº PIS</AGN_ST_PIS> 
+  <AGN_ST_INSS>Nº INSS</AGN_ST_INSS> 
+  <AGN_CH_MODELOCNH>Modelo CNH</AGN_CH_MODELOCNH> 
+  <AGN_ST_REGISTROCNH>Nº Registro CNH</AGN_ST_REGISTROCNH> 
+  <AGN_ST_ESPELHOCNH>Espelho CNH</AGN_ST_ESPELHOCNH> 
+  <AGN_ST_CATEGORIACNH>Categoria CNH</AGN_ST_CATEGORIACNH> 
+  <AGN_DT_EMISSAOCNH>Emissão CNH</AGN_DT_EMISSAOCNH> 
+  <AGN_DT_VALIDADECNH>Validade CNH</AGN_DT_VALIDADECNH> 
+  <AGN_DT_PRIMHABCNH>1ª Habilit. CNH</AGN_DT_PRIMHABCNH> 
+  <AGN_CH_STATUSCNH>Status CNH Atualização automática pelo sistema</AGN_CH_STATUSCNH> 
+  <AGN_DT_CASAMENTO>Data Casamento</AGN_DT_CASAMENTO> 
+  </PesFisica>
+<Representante OPERACAO="I/U/D">
+  <REP_CH_TIPOREP>Tipo de representante (I-Interno, E-Externo)</REP_CH_TIPOREP> 
+  <REP_CH_TIPOCOMISSAO>Tipo de comissão (F-Fator, X-Fixo)</REP_CH_TIPOCOMISSAO> 
+  </Representante>
+<Contato OPERACAO="I/U/D">
+  <PAG_IN_CODIGO>Código do contato</PAG_IN_CODIGO> 
+  <PAG_ST_NOME>Nome do contato</PAG_ST_NOME> 
+  <PAG_ST_DEPART>Departamento</PAG_ST_DEPART> 
+  <CAR_IN_CODIGO>Código do cargo</CAR_IN_CODIGO> 
+  <PAG_DT_NASCIMENTO>Data de nascimento</PAG_DT_NASCIMENTO> 
+  <PAG_ST_TELRESIDENCIAL>Telefone residencial</PAG_ST_TELRESIDENCIAL> 
+  <PAG_ST_CELULAR>Celular</PAG_ST_CELULAR> 
+  <PAG_ST_TELCOMERCIAL>Telefone comercial</PAG_ST_TELCOMERCIAL> 
+  <PAG_ST_RAMAL>Ramal</PAG_ST_RAMAL> 
+  <PAG_ST_EMAIL>E-mail</PAG_ST_EMAIL> 
+  <PAG_ST_IDENTIDADE>RG</PAG_ST_IDENTIDADE> 
+  <PAG_ST_CPF>CPF</PAG_ST_CPF> 
+  <PAG_CH_SEXO>Sexo</PAG_CH_SEXO> 
+  <PAG_CH_ESTADOCIVIL>Estado civil (S-Solteiro, C-Casado, V-Viúvo, D-Divorciado, A-Amasiado, J-Judicialmente separado, N-Não informado)</PAG_CH_ESTADOCIVIL> 
+  <TPR_IN_CODIGO>Tipo de relacionamento</TPR_IN_CODIGO> 
+  <PAG_ST_OBSERVACAO>Observação</PAG_ST_OBSERVACAO> 
+  <PAG_BO_RESPFISCAL>Responsável pela Área Fiscal</PAG_BO_RESPFISCAL> 
+  <PAG_BO_RESPFINANC>Responsável pela Área Financeira</PAG_BO_RESPFINANC> 
+  </Contato>
+<Referencia OPERACAO="I/U/D">
+  <RAG_ST_LOCAL>Referência</RAG_ST_LOCAL> 
+  <RAG_ST_CONTATO>Contato</RAG_ST_CONTATO> 
+  <RAG_ST_TELEFONE>Telefone</RAG_ST_TELEFONE> 
+  <RAG_RE_VRCREDITO>Valor crédito</RAG_RE_VRCREDITO> 
+  <RAG_DT_ULTIMACOMPRA>Data última compra</RAG_DT_ULTIMACOMPRA> 
+  <RAG_RE_VRULTIMACOMPRA>Valor última compra</RAG_RE_VRULTIMACOMPRA> 
+  <RAG_ST_OBERVACAO>Observação</RAG_ST_OBERVACAO> 
+  </Referencia>
+<Parametros OPERACAO="I/U/D">
+  <FIL_IN_CODIGO>Filial</FIL_IN_CODIGO> 
+  <PAR_DT_DATA>Data</PAR_DT_DATA> 
+  <USU_IN_CODIGO>Usuário</USU_IN_CODIGO> 
+  </Parametros>
+  </Agente>
+ */

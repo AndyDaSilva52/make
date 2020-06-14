@@ -3,7 +3,7 @@
         "response": {
             "temp": {
                 "JSON": {
-                    "MovFinanc": "{{ parameters.MovFinanc }}"
+                    "MovtoVinculado": "{{ parameters.MovtoVinculado }}"
                 }
             }
         }
@@ -38,15 +38,8 @@
         }
     },
     {
-        "response": {
-            "temp": {
-                "BODY": "{{ join(temp.arrayBody, '') }}"
-            }
-        }
-    },
-    {
         "url": "/Integrador",
-        "body": "{{ (temp.BODY) }}",
+        "body": "{{join(temp.arrayBody, '\n')}}",
         "response": {
             "type": {
                 "*": "xml"
@@ -58,11 +51,8 @@
                 "Mensagem": "{{body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:Mensagem`[]}}",
                 "CodTransacao": "{{body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:CodTransacao`[]}}",
                 "PKMega": "{{body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:PKMega`[]}}",
-                "PKMegaCollection": {
-                    "ORG_IN_CODIGO": "{{        get( split( body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:PKMega`[] ; ';' ) ; 1) }}",
-                    "ACAOM_IN_SEQUENCIA": "{{   get( split( body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:PKMega`[] ; ';' ) ; 2) }}"
-                },
-                "XML": "{{ if( parameters.pRetornaXML || body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:Erro`[] == true; temp.XML ; null) }}"
+                "PKMegaCollection": null,
+                "XML": "{{ if(body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:Erro`[] == true; temp.XML ; null) }}"
             }
         }
     }

@@ -1,0 +1,8 @@
+{
+    "name": "int306InvoicePayableReceivable",
+    "label": "306 - Fatura a Pagar e Receber",
+    "description": "Serviço 306",
+    "connection": "megaerp-252023",
+    "webhook": null,
+    "type": "action"
+}

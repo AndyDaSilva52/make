@@ -1,0 +1,1821 @@
+[
+    {
+        "name": "pPRO_IN_ID",
+        "type": "hidden",
+        "sequence": true,
+        "default": 207
+    },
+    {
+        "name": "Agente",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "_attributes",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "OPERACAO",
+                        "type": "text",
+                        "help": "Operação - I,U ou D",
+                        "default": "I",
+                        "validate": {
+                            "min": 0,
+                            "max": 1,
+                            "pattern": "(I|U|D)"
+                        }
+                    }
+                ],
+                "sequence": true
+            },
+            {
+                "name": "_comment",
+                "label": "Comentários",
+                "type": "array",
+                "spec": {
+                    "type": "text",
+                    "label": "Comentário"
+                }
+            },
+            {
+                "name": "AGN_IN_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "AGN_ST_CODIGOALT",
+                "type": "text"
+            },
+            {
+                "name": "PAI_AGN_IN_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "AGN_ST_FANTASIA",
+                "type": "text",
+                "validate": {
+                    "min": 0,
+                    "max": 100
+                }
+            },
+            {
+                "name": "AGN_ST_NOME",
+                "type": "text",
+                "validate": {
+                    "min": 0,
+                    "max": 100
+                }
+            },
+            {
+                "name": "AGN_CH_TIPOPESSOAFJ",
+                "type": "text",
+                "help": "Tipo pessoa (F-Física, J-Jurídica, R-Rural)",
+                "validate": {
+                    "pattern": "(F|J|R)"
+                }
+            },
+            {
+                "name": "AGN_ST_CGC",
+                "type": "text"
+            },
+            {
+                "name": "AGN_BO_FLUXO",
+                "type": "text",
+                "help": "Agente faz parte do fluxo de caixa",
+                "default": "S"
+            },
+            {
+                "name": "AGN_IN_NATJURID",
+                "type": "text",
+                "help": "Natureza Jurídica"
+            },
+            {
+                "name": "CNAE_ST_CODIGO",
+                "type": "text",
+                "help": "Código CNAE"
+            },
+            {
+                "name": "AGN_ST_EMAIL",
+                "type": "text"
+            },
+            {
+                "name": "AGN_ST_URL",
+                "type": "text"
+            },
+            {
+                "name": "AGN_CH_ENQUADRAMENTO",
+                "type": "text",
+                "help": "País"
+            },
+            {
+                "name": "AGN_ST_INSCRESTADUAL",
+                "type": "text",
+                "help": "País"
+            },
+            {
+                "name": "AGN_ST_INSCRMUNIC",
+                "type": "text",
+                "help": "País"
+            },
+            {
+                "name": "AGN_ST_CEI",
+                "type": "text"
+            },
+            {
+                "name": "PA_ST_SIGLA",
+                "type": "text",
+                "help": "País"
+            },
+            {
+                "name": "UF_ST_SIGLA",
+                "type": "text",
+                "help": "Estado. Ao atualizar o estado é obrigatório informar o Código do Município e o Município."
+            },
+            {
+                "name": "MUN_IN_CODIGO",
+                "type": "text",
+                "help": "Código Município. Ao atualizar o Código Município é obrigatório informar o Estado e o Nome do Município."
+            },
+            {
+                "name": "AGN_ST_MUNICIPIO",
+                "type": "text",
+                "help": "Nome Município. Ao atualizar o Nome Município é obrigatório informar o Estado e o Código do Município."
+            },
+            {
+                "name": "TPL_ST_SIGLA",
+                "type": "text",
+                "help": "Sigla do tipo de logradouro"
+            },
+            {
+                "name": "AGN_ST_LOGRADOURO",
+                "type": "text",
+                "help": "Logradouro"
+            },
+            {
+                "name": "AGN_ST_NUMERO",
+                "type": "text",
+                "help": "Número (Endereço)"
+            },
+            {
+                "name": "AGN_ST_BAIRRO",
+                "type": "text",
+                "help": "Bairro"
+            },
+            {
+                "name": "AGN_ST_CEP",
+                "type": "text",
+                "help": "CEP"
+            },
+            {
+                "name": "AGN_ST_REFERENCIA",
+                "type": "text",
+                "help": "Referência (Endereço)"
+            },
+            {
+                "name": "AGN_ST_COMPLEMENTO",
+                "type": "text",
+                "help": "Complemento (Endereço)"
+            },
+            {
+                "name": "AGN_ST_CXPOSTAL",
+                "type": "text",
+                "help": "Caixa Postal"
+            },
+            {
+                "name": "AGN_ST_CEPCXPOSTAL",
+                "type": "text",
+                "help": "CEP Caixa postal"
+            },
+            {
+                "name": "AGN_RE_LONGITUDE",
+                "type": "text",
+                "help": "Longitude"
+            },
+            {
+                "name": "AGN_RE_LATITUDE",
+                "type": "text",
+                "help": "Latitude"
+            },
+            {
+                "name": "AGN_BO_PUBLICO",
+                "type": "text"
+            },
+            {
+                "name": "AGN_CH_STATUSINSCRESTADUAL",
+                "type": "text"
+            },
+            {
+                "name": "AGN_CH_RURALTIPOPESSOAFJ",
+                "type": "text"
+            },
+            {
+                "name": "TAB05_IN_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "AGN_ST_NRCAEPF",
+                "type": "text"
+            },
+            {
+                "name": "AGN_ST_NRCNO",
+                "type": "text"
+            },
+            {
+                "name": "AGN_CH_TIPODESPADUANEIRA",
+                "type": "text"
+            },
+            {
+                "name": "AGN_IN_TIPOCAEPF",
+                "type": "text"
+            },
+            {
+                "name": "AGN_CH_NATRETPISCOFINS",
+                "type": "text"
+            },
+            {
+                "name": "AGN_BO_RATEIOAFRMM",
+                "type": "text"
+            },
+            {
+                "name": "AGN_CH_TIPOAFRMM",
+                "type": "text"
+            },
+            {
+                "name": "AGN_ST_PISMEI",
+                "type": "text"
+            },
+            {
+                "name": "AGN_ST_FRETEPESOVALOR",
+                "type": "text"
+            },
+            {
+                "name": "AGN_ST_CBOMEI",
+                "type": "text"
+            },
+            {
+                "name": "AGN_BO_DISPENSADONIF",
+                "type": "text"
+            },
+            {
+                "name": "AGN_ST_NIF",
+                "type": "text"
+            },
+            {
+                "name": "AGN_ST_IDESTRANGEIRO",
+                "type": "text"
+            },
+            {
+                "name": "DFP_IN_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "Endereco",
+                "type": "array",
+                "spec": {
+                    "type": "collection",
+                    "sequence": true,
+                    "spec": [
+                        {
+                            "name": "_attributes",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "OPERACAO",
+                                    "type": "text",
+                                    "help": "Operação - I,U ou D",
+                                    "default": "I",
+                                    "validate": {
+                                        "min": 0,
+                                        "max": 1,
+                                        "pattern": "(I|U|D)"
+                                    }
+                                }
+                            ],
+                            "sequence": true
+                        },
+                        {
+                            "name": "_comment",
+                            "label": "Comentários",
+                            "type": "array",
+                            "spec": {
+                                "type": "text",
+                                "label": "Comentário"
+                            }
+                        },
+                        {
+                            "name": "ENA_IN_CODIGO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "ENA_RE_LATITUDE",
+                            "type": "text"
+                        },
+                        {
+                            "name": "PAG_IN_CODIGO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "ENA_RE_LONGITUDE",
+                            "type": "text"
+                        },
+                        {
+                            "name": "PA_ST_SIGLA",
+                            "type": "text"
+                        },
+                        {
+                            "name": "UF_ST_SIGLA",
+                            "type": "text"
+                        },
+                        {
+                            "name": "TPL_ST_SIGLA",
+                            "type": "text"
+                        },
+                        {
+                            "name": "TEA_ST_CODIGO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "MUN_IN_CODIGO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "ENA_ST_MUNICIPIO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "ENA_ST_LOGRADOURO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "ENA_ST_NUMERO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "ENA_ST_BAIRRO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "ENA_ST_CEP",
+                            "type": "text"
+                        },
+                        {
+                            "name": "ENA_ST_CXPOSTAL",
+                            "type": "text"
+                        },
+                        {
+                            "name": "ENA_ST_COMPLEMENTO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "ENA_ST_REFERENCIA",
+                            "type": "text"
+                        },
+                        {
+                            "name": "ENA_ST_TELEFONE",
+                            "type": "text"
+                        },
+                        {
+                            "name": "ENA_ST_FAX",
+                            "type": "text"
+                        },
+                        {
+                            "name": "ENA_ST_CNPJ",
+                            "type": "text"
+                        },
+                        {
+                            "name": "ENA_ST_INSCRESTADUAL",
+                            "type": "text"
+                        },
+                        {
+                            "name": "ENA_CH_TIPOINSCRICAO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "ENA_CH_ENDERECOPERTENCE",
+                            "type": "text"
+                        },
+                        {
+                            "name": "ENA_ST_NOME",
+                            "type": "text"
+                        },
+                        {
+                            "name": "ENA_ST_EMAIL",
+                            "type": "array",
+                            "spec": {
+                                "type": "text"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Telefone",
+                "type": "array",
+                "spec": {
+                    "type": "collection",
+                    "sequence": true,
+                    "spec": [
+                        {
+                            "name": "_attributes",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "OPERACAO",
+                                    "type": "text",
+                                    "help": "Operação - I,U ou D",
+                                    "default": "I",
+                                    "validate": {
+                                        "min": 0,
+                                        "max": 1,
+                                        "pattern": "(I|U|D)"
+                                    }
+                                }
+                            ],
+                            "sequence": true
+                        },
+                        {
+                            "name": "TEA_ST_TELEFONE",
+                            "type": "text"
+                        },
+                        {
+                            "name": "TEA_ST_TIPO",
+                            "type": "array",
+                            "spec": {
+                                "type": "text"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "AgenteId",
+                "type": "array",
+                "spec": {
+                    "type": "collection",
+                    "sequence": true,
+                    "spec": [
+                        {
+                            "name": "_attributes",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "OPERACAO",
+                                    "type": "text",
+                                    "help": "Operação - I,U ou D",
+                                    "default": "I",
+                                    "validate": {
+                                        "min": 0,
+                                        "max": 1,
+                                        "pattern": "(I|U|D)"
+                                    }
+                                }
+                            ],
+                            "sequence": true
+                        },
+                        {
+                            "name": "_comment",
+                            "label": "Comentários",
+                            "type": "array",
+                            "spec": {
+                                "type": "text",
+                                "label": "Comentário"
+                            }
+                        },
+                        {
+                            "name": "AGN_TAU_ST_CODIGO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_ST_CODIGOALT",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_EXCECAOFISCAL",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_ATIVADOSALDO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_RE_PERCFUNRURAL",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_DT_INICIOMOV",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_CH_STATUS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_CH_DATABASE",
+                            "type": "text"
+                        },
+                        {
+                            "name": "COND_ST_CODIGO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "CAT_IN_REDUZIDO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "CondPagto",
+                            "type": "array",
+                            "spec": {
+                                "type": "collection",
+                                "sequence": true,
+                                "spec": [
+                                    {
+                                        "name": "_attributes",
+                                        "type": "collection",
+                                        "spec": [
+                                            {
+                                                "name": "OPERACAO",
+                                                "type": "text",
+                                                "help": "Operação - I,U ou D",
+                                                "default": "I",
+                                                "validate": {
+                                                    "min": 0,
+                                                    "max": 1,
+                                                    "pattern": "(I|U|D)"
+                                                }
+                                            }
+                                        ],
+                                        "sequence": true
+                                    },
+                                    {
+                                        "name": "_comment",
+                                        "label": "Comentários",
+                                        "type": "array",
+                                        "spec": {
+                                            "type": "text",
+                                            "label": "Comentário"
+                                        }
+                                    },
+                                    {
+                                        "name": "COND_ST_CODIGO",
+                                        "type": "array",
+                                        "spec": {
+                                            "type": "text"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Fornecedor",
+                            "type": "array",
+                            "spec": {
+                                "type": "collection",
+                                "sequence": true,
+                                "spec": [
+                                    {
+                                        "name": "_attributes",
+                                        "type": "collection",
+                                        "spec": [
+                                            {
+                                                "name": "OPERACAO",
+                                                "type": "text",
+                                                "help": "Operação - I,U ou D",
+                                                "default": "I",
+                                                "validate": {
+                                                    "min": 0,
+                                                    "max": 1,
+                                                    "pattern": "(I|U|D)"
+                                                }
+                                            }
+                                        ],
+                                        "sequence": true
+                                    },
+                                    {
+                                        "name": "_comment",
+                                        "label": "Comentários",
+                                        "type": "array",
+                                        "spec": {
+                                            "type": "text",
+                                            "label": "Comentário"
+                                        }
+                                    },
+                                    {
+                                        "name": "FOR_ST_APROVADO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "FOR_ST_SUPPLYHOUSE",
+                                        "type": "array",
+                                        "spec": {
+                                            "type": "text"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Cliente",
+                            "type": "array",
+                            "spec": {
+                                "type": "collection",
+                                "sequence": true,
+                                "spec": [
+                                    {
+                                        "name": "_attributes",
+                                        "type": "collection",
+                                        "spec": [
+                                            {
+                                                "name": "OPERACAO",
+                                                "type": "text",
+                                                "help": "Operação - I,U ou D",
+                                                "default": "I",
+                                                "validate": {
+                                                    "min": 0,
+                                                    "max": 1,
+                                                    "pattern": "(I|U|D)"
+                                                }
+                                            }
+                                        ],
+                                        "sequence": true
+                                    },
+                                    {
+                                        "name": "_comment",
+                                        "label": "Comentários",
+                                        "type": "array",
+                                        "spec": {
+                                            "type": "text",
+                                            "label": "Comentário"
+                                        }
+                                    },
+                                    {
+                                        "name": "TRA_AGN_IN_CODIGO1",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "TRA_AGN_IN_CODIGO2",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CLI_ST_TIPOFRETE1",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CLI_ST_TIPOFRETE2",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "BAN_IN_NUMERO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "AGE_IN_CODIGO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CLI_CH_PROCFALENCIA",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CLI_CH_CONCORDATARIO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CLI_BO_PREDIOPROPRIO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CLI_BO_APLICACAOPRODUTO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CLI_BO_FRETEAUTOMATICO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "HCOB_IN_SEQUENCIA",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CLI_RE_JUROSMENSAL",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CLI_RE_DECV",
+                                        "type": "array",
+                                        "spec": {
+                                            "type": "text"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Observacao",
+                            "type": "array",
+                            "spec": {
+                                "type": "collection",
+                                "sequence": true,
+                                "spec": [
+                                    {
+                                        "name": "_attributes",
+                                        "type": "collection",
+                                        "spec": [
+                                            {
+                                                "name": "OPERACAO",
+                                                "type": "text",
+                                                "help": "Operação - I,U ou D",
+                                                "default": "I",
+                                                "validate": {
+                                                    "min": 0,
+                                                    "max": 1,
+                                                    "pattern": "(I|U|D)"
+                                                }
+                                            }
+                                        ],
+                                        "sequence": true
+                                    },
+                                    {
+                                        "name": "_comment",
+                                        "label": "Comentários",
+                                        "type": "array",
+                                        "spec": {
+                                            "type": "text",
+                                            "label": "Comentário"
+                                        }
+                                    },
+                                    {
+                                        "name": "TOA_DT_DATA",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "TOA_ST_CODIGO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "OBSAGN_BL_OBSERVACAO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "OBS_DT_DATACONTATO",
+                                        "type": "array",
+                                        "spec": {
+                                            "type": "text"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Classe",
+                            "type": "array",
+                            "spec": {
+                                "type": "collection",
+                                "sequence": true,
+                                "spec": [
+                                    {
+                                        "name": "_attributes",
+                                        "type": "collection",
+                                        "spec": [
+                                            {
+                                                "name": "OPERACAO",
+                                                "type": "text",
+                                                "help": "Operação - I,U ou D",
+                                                "default": "I",
+                                                "validate": {
+                                                    "min": 0,
+                                                    "max": 1,
+                                                    "pattern": "(I|U|D)"
+                                                }
+                                            }
+                                        ],
+                                        "sequence": true
+                                    },
+                                    {
+                                        "name": "_comment",
+                                        "label": "Comentários",
+                                        "type": "array",
+                                        "spec": {
+                                            "type": "text",
+                                            "label": "Comentário"
+                                        }
+                                    },
+                                    {
+                                        "name": "CLA_IDE_ST_CODIGO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CLA_IN_REDUZIDO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CAU_CH_NATUREZA",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CAU_RE_PERCENTUAL",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CAU_ST_OBSERVACAO",
+                                        "type": "array",
+                                        "spec": {
+                                            "type": "text"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "ContaContabil",
+                            "type": "array",
+                            "spec": {
+                                "type": "collection",
+                                "sequence": true,
+                                "spec": [
+                                    {
+                                        "name": "_attributes",
+                                        "type": "collection",
+                                        "spec": [
+                                            {
+                                                "name": "OPERACAO",
+                                                "type": "text",
+                                                "help": "Operação - I,U ou D",
+                                                "default": "I",
+                                                "validate": {
+                                                    "min": 0,
+                                                    "max": 1,
+                                                    "pattern": "(I|U|D)"
+                                                }
+                                            }
+                                        ],
+                                        "sequence": true
+                                    },
+                                    {
+                                        "name": "_comment",
+                                        "label": "Comentários",
+                                        "type": "array",
+                                        "spec": {
+                                            "type": "text",
+                                            "label": "Comentário"
+                                        }
+                                    },
+                                    {
+                                        "name": "TCTA_ST_CODIGO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "PLA_IDE_ST_CODIGO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "PLA_IN_REDUZIDO",
+                                        "type": "array",
+                                        "spec": {
+                                            "type": "text"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "ContaBancaria",
+                            "type": "array",
+                            "spec": {
+                                "type": "collection",
+                                "sequence": true,
+                                "spec": [
+                                    {
+                                        "name": "_attributes",
+                                        "type": "collection",
+                                        "spec": [
+                                            {
+                                                "name": "OPERACAO",
+                                                "type": "text",
+                                                "help": "Operação - I,U ou D",
+                                                "default": "I",
+                                                "validate": {
+                                                    "min": 0,
+                                                    "max": 1,
+                                                    "pattern": "(I|U|D)"
+                                                }
+                                            }
+                                        ],
+                                        "sequence": true
+                                    },
+                                    {
+                                        "name": "_comment",
+                                        "label": "Comentários",
+                                        "type": "array",
+                                        "spec": {
+                                            "type": "text",
+                                            "label": "Comentário"
+                                        }
+                                    },
+                                    {
+                                        "name": "CAID_BAN_IN_NUMERO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CAID_AGE_IN_CODIGO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CAIDAGE_ST_NUMERO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CAID_ST_CONTACORR",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CAID_ST_TITULAR",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CAID_BO_PREFERENCIAL",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CAID_CH_TIPOCONTA",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CAID_BO_INATIVA",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CAID_ST_CPFTITULAR",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CAID_ST_CNPJTITULAR",
+                                        "type": "array",
+                                        "spec": {
+                                            "type": "text"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Sindicato",
+                            "type": "array",
+                            "spec": {
+                                "type": "collection",
+                                "sequence": true,
+                                "spec": [
+                                    {
+                                        "name": "_attributes",
+                                        "type": "collection",
+                                        "spec": [
+                                            {
+                                                "name": "OPERACAO",
+                                                "type": "text",
+                                                "help": "Operação - I,U ou D",
+                                                "default": "I",
+                                                "validate": {
+                                                    "min": 0,
+                                                    "max": 1,
+                                                    "pattern": "(I|U|D)"
+                                                }
+                                            }
+                                        ],
+                                        "sequence": true
+                                    },
+                                    {
+                                        "name": "_comment",
+                                        "label": "Comentários",
+                                        "type": "array",
+                                        "spec": {
+                                            "type": "text",
+                                            "label": "Comentário"
+                                        }
+                                    },
+                                    {
+                                        "name": "SIN_ST_CODENTIDADEPATR",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "SIN_ST_CODENTIDADELAB",
+                                        "type": "array",
+                                        "spec": {
+                                            "type": "text"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Transportadora",
+                            "type": "array",
+                            "spec": {
+                                "type": "collection",
+                                "sequence": true,
+                                "spec": [
+                                    {
+                                        "name": "_attributes",
+                                        "type": "collection",
+                                        "spec": [
+                                            {
+                                                "name": "OPERACAO",
+                                                "type": "text",
+                                                "help": "Operação - I,U ou D",
+                                                "default": "I",
+                                                "validate": {
+                                                    "min": 0,
+                                                    "max": 1,
+                                                    "pattern": "(I|U|D)"
+                                                }
+                                            }
+                                        ],
+                                        "sequence": true
+                                    },
+                                    {
+                                        "name": "_comment",
+                                        "label": "Comentários",
+                                        "type": "array",
+                                        "spec": {
+                                            "type": "text",
+                                            "label": "Comentário"
+                                        }
+                                    },
+                                    {
+                                        "name": "AGN_ST_RNTRC",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "AGN_ST_TAC",
+                                        "type": "array",
+                                        "spec": {
+                                            "type": "text"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Obra",
+                            "type": "array",
+                            "spec": {
+                                "type": "collection",
+                                "sequence": true,
+                                "spec": [
+                                    {
+                                        "name": "_attributes",
+                                        "type": "collection",
+                                        "spec": [
+                                            {
+                                                "name": "OPERACAO",
+                                                "type": "text",
+                                                "help": "Operação - I,U ou D",
+                                                "default": "I",
+                                                "validate": {
+                                                    "min": 0,
+                                                    "max": 1,
+                                                    "pattern": "(I|U|D)"
+                                                }
+                                            }
+                                        ],
+                                        "sequence": true
+                                    },
+                                    {
+                                        "name": "_comment",
+                                        "label": "Comentários",
+                                        "type": "array",
+                                        "spec": {
+                                            "type": "text",
+                                            "label": "Comentário"
+                                        }
+                                    },
+                                    {
+                                        "name": "OBR_ST_MATRICULAOBRA",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "OBR_ST_ART",
+                                        "type": "array",
+                                        "spec": {
+                                            "type": "text"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "PesFisica",
+                "type": "array",
+                "spec": {
+                    "type": "collection",
+                    "sequence": true,
+                    "spec": [
+                        {
+                            "name": "_attributes",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "OPERACAO",
+                                    "type": "text",
+                                    "help": "Operação - I,U ou D",
+                                    "default": "I",
+                                    "validate": {
+                                        "min": 0,
+                                        "max": 1,
+                                        "pattern": "(I|U|D)"
+                                    }
+                                }
+                            ],
+                            "sequence": true
+                        },
+                        {
+                            "name": "_comment",
+                            "label": "Comentários",
+                            "type": "array",
+                            "spec": {
+                                "type": "text",
+                                "label": "Comentário"
+                            }
+                        },
+                        {
+                            "name": "AGN_CH_TIPO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_ST_CPF",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_ST_RG",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_DT_NASCIMENTO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_ST_LOCALNASCIM",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_ST_NOMEPAI",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_ST_NOMEMAE",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_ST_LOCALTRABALHO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_ST_TELLOCTRAB",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_DT_ADMISSAO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_ST_CARGOPROFISS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_RE_SALARIO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_ST_CARTTRABALHO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_ST_NACIONALIDADE",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_CH_ESTCIVIL",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_CH_SEXO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_ST_CONJUGE",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_ST_LOCTRABCONJ",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_ST_TELLOCTRABCONJ",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_CH_REGIMECASAMENTO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_DT_EXPRG",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_ST_ORGEMISSORRG",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_ST_NOMEPESSOA",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_ST_PIS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_ST_INSS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_CH_MODELOCNH",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_ST_REGISTROCNH",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_ST_ESPELHOCNH",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_ST_CATEGORIACNH",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_DT_EMISSAOCNH",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_DT_VALIDADECNH",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_DT_PRIMHABCNH",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_CH_STATUSCNH",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_DT_CASAMENTO",
+                            "type": "array",
+                            "spec": {
+                                "type": "text"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Fiscal",
+                "type": "array",
+                "spec": {
+                    "type": "collection",
+                    "sequence": true,
+                    "spec": [
+                        {
+                            "name": "_attributes",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "OPERACAO",
+                                    "type": "text",
+                                    "help": "Operação - I,U ou D",
+                                    "default": "I",
+                                    "validate": {
+                                        "min": 0,
+                                        "max": 1,
+                                        "pattern": "(I|U|D)"
+                                    }
+                                }
+                            ],
+                            "sequence": true
+                        },
+                        {
+                            "name": "_comment",
+                            "label": "Comentários",
+                            "type": "array",
+                            "spec": {
+                                "type": "text",
+                                "label": "Comentário"
+                            }
+                        },
+                        {
+                            "name": "AGN_DT_INIVIGENCIA",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_ESCRITURAR",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_ENQUADRAIPI",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_ENQUADRAICMS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_CALCICMSNAOENQ",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_ENQUADRAISS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_RETERIR",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_RETERINSS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_SIMPLES",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_IPISIMPLES",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_ICMSSIMPLES",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_ISSSIMPLES",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_INSSSIMPLES",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_SUSPENSOIPI",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_RETERISS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_ENQUADRAPIS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_ENQUADRACOFINS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_RETERCSLL",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_CH_TRIBESPECIAL",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_ENQUADRASUFRAMA",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_ENQUADRAFUNRURAL",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_DT_FINVIGENCIASUFRAMA",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_ENQUADRAINSSRURAL",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_IRRFSIMPLES",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_CSLLSIMPLES",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_ST_OBS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_CH_TIPOREGIME",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_CH_FORAPURPISCOFINS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_CH_FORAPURLUCPREPC",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_CH_FORAPUEMPPC",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_CONTPREVENQUADRA",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_CH_CONTPREVINCTRIB",
+                            "type": "text"
+                        },
+                        {
+                            "name": "ENI_ST_CODIGO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_ISSORGAOPUBLICO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "STI_IN_CODIGO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_BO_GERAREG1400",
+                            "type": "text"
+                        },
+                        {
+                            "name": "TAB08_IN_CODIGO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_CH_OBRIGAECD",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_CH_ISENTAMULTAINT",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_CH_ENTFEDRESP",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_DT_PERIODOVALIDADE",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_ST_CNPJENTFED",
+                            "type": "array",
+                            "spec": {
+                                "type": "text"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Representante",
+                "type": "array",
+                "spec": {
+                    "type": "collection",
+                    "sequence": true,
+                    "spec": [
+                        {
+                            "name": "_attributes",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "OPERACAO",
+                                    "type": "text",
+                                    "help": "Operação - I,U ou D",
+                                    "default": "I",
+                                    "validate": {
+                                        "min": 0,
+                                        "max": 1,
+                                        "pattern": "(I|U|D)"
+                                    }
+                                }
+                            ],
+                            "sequence": true
+                        },
+                        {
+                            "name": "_comment",
+                            "label": "Comentários",
+                            "type": "array",
+                            "spec": {
+                                "type": "text",
+                                "label": "Comentário"
+                            }
+                        },
+                        {
+                            "name": "REP_CH_TIPOREP",
+                            "type": "text"
+                        },
+                        {
+                            "name": "REP_CH_TIPOCOMISSAO",
+                            "type": "array",
+                            "spec": {
+                                "type": "text"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Contato",
+                "type": "array",
+                "spec": {
+                    "type": "collection",
+                    "sequence": true,
+                    "spec": [
+                        {
+                            "name": "_attributes",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "OPERACAO",
+                                    "type": "text",
+                                    "help": "Operação - I,U ou D",
+                                    "default": "I",
+                                    "validate": {
+                                        "min": 0,
+                                        "max": 1,
+                                        "pattern": "(I|U|D)"
+                                    }
+                                }
+                            ],
+                            "sequence": true
+                        },
+                        {
+                            "name": "_comment",
+                            "label": "Comentários",
+                            "type": "array",
+                            "spec": {
+                                "type": "text",
+                                "label": "Comentário"
+                            }
+                        },
+                        {
+                            "name": "PAG_IN_CODIGO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "PAG_ST_NOME",
+                            "type": "text"
+                        },
+                        {
+                            "name": "PAG_ST_DEPART",
+                            "type": "text"
+                        },
+                        {
+                            "name": "CAR_IN_CODIGO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "PAG_DT_NASCIMENTO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "PAG_ST_TELRESIDENCIAL",
+                            "type": "text"
+                        },
+                        {
+                            "name": "PAG_ST_CELULAR",
+                            "type": "text"
+                        },
+                        {
+                            "name": "PAG_ST_TELCOMERCIAL",
+                            "type": "text"
+                        },
+                        {
+                            "name": "PAG_ST_RAMAL",
+                            "type": "text"
+                        },
+                        {
+                            "name": "PAG_ST_EMAIL",
+                            "type": "text"
+                        },
+                        {
+                            "name": "PAG_ST_IDENTIDADE",
+                            "type": "text"
+                        },
+                        {
+                            "name": "PAG_ST_CPF",
+                            "type": "text"
+                        },
+                        {
+                            "name": "PAG_CH_SEXO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "PAG_CH_ESTADOCIVIL",
+                            "type": "text"
+                        },
+                        {
+                            "name": "TPR_IN_CODIGO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "PAG_ST_OBSERVACAO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "PAG_BO_RESPFISCAL",
+                            "type": "text"
+                        },
+                        {
+                            "name": "PAG_BO_RESPFINANC",
+                            "type": "array",
+                            "spec": {
+                                "type": "text"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Referencia",
+                "type": "array",
+                "spec": {
+                    "type": "collection",
+                    "sequence": true,
+                    "spec": [
+                        {
+                            "name": "_attributes",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "OPERACAO",
+                                    "type": "text",
+                                    "help": "Operação - I,U ou D",
+                                    "default": "I",
+                                    "validate": {
+                                        "min": 0,
+                                        "max": 1,
+                                        "pattern": "(I|U|D)"
+                                    }
+                                }
+                            ],
+                            "sequence": true
+                        },
+                        {
+                            "name": "_comment",
+                            "label": "Comentários",
+                            "type": "array",
+                            "spec": {
+                                "type": "text",
+                                "label": "Comentário"
+                            }
+                        },
+                        {
+                            "name": "RAG_ST_LOCAL",
+                            "type": "text"
+                        },
+                        {
+                            "name": "RAG_ST_CONTATO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "RAG_ST_TELEFONE",
+                            "type": "text"
+                        },
+                        {
+                            "name": "RAG_RE_VRCREDITO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "RAG_DT_ULTIMACOMPRA",
+                            "type": "text"
+                        },
+                        {
+                            "name": "RAG_RE_VRULTIMACOMPRA",
+                            "type": "text"
+                        },
+                        {
+                            "name": "RAG_ST_OBERVACAO",
+                            "type": "array",
+                            "spec": {
+                                "type": "text"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Parametros",
+                "type": "array",
+                "spec": {
+                    "type": "collection",
+                    "sequence": true,
+                    "spec": [
+                        {
+                            "name": "_attributes",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "OPERACAO",
+                                    "type": "text",
+                                    "help": "Operação - I,U ou D",
+                                    "default": "I",
+                                    "validate": {
+                                        "min": 0,
+                                        "max": 1,
+                                        "pattern": "(I|U|D)"
+                                    }
+                                }
+                            ],
+                            "sequence": true
+                        },
+                        {
+                            "name": "_comment",
+                            "label": "Comentários",
+                            "type": "array",
+                            "spec": {
+                                "type": "text",
+                                "label": "Comentário"
+                            }
+                        },
+                        {
+                            "name": "FIL_IN_CODIGO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "PAR_DT_DATA",
+                            "type": "text"
+                        },
+                        {
+                            "name": "USU_IN_CODIGO",
+                            "type": "array",
+                            "spec": {
+                                "type": "text"
+                            }
+                        }
+                    ]
+                }
+            }
+        ],
+        "sequence": true
+    },
+    {
+        "name": "pUSU_IN_CODIGO",
+        "label": "Código do Usuário de Integração",
+        "type": "integer",
+        "sequence": true,
+        "default": 1,
+        "validate": {
+            "min": 0,
+            "max": 9999999
+        }
+    },
+    {
+        "name": "pObs",
+        "label": "Observação da Transação",
+        "type": "text",
+        "sequence": true,
+        "default": "#Integromat[int207Agents]",
+        "validate": {
+            "min": 0,
+            "max": 100
+        }
+    },
+    {
+        "name": "pEnviaRecebe",
+        "type": "hidden",
+        "sequence": true,
+        "default": "R"
+    },
+    {
+        "name": "pTransacao",
+        "type": "hidden",
+        "sequence": true,
+        "default": 0
+    },
+    {
+        "name": "pSistema",
+        "label": "Sistema",
+        "type": "hidden",
+        "sequence": true,
+        "default": 1
+    },
+    {
+        "name": "pRetornaXML",
+        "label": "Retornar XML?",
+        "help": "Indica se vai retornar o XML quando apresentar Erro.",
+        "type": "boolean",
+        "default": false,
+        "advanced": true
+    }
+]

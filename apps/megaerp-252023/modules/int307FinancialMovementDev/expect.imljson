@@ -18,7 +18,7 @@
         "label": "Observação da Transação",
         "type": "text",
         "sequence": true,
-        "default": "#Integromat[appModule(int307FinancialMovement)]"
+        "default": "#Integromat[appModule(int307FinancialMovementDev)]"
     },
     {
         "name": "MovFinanc",
@@ -42,6 +42,15 @@
                     }
                 ],
                 "sequence": true
+            },
+            {
+                "name": "_comment",
+                "label": "Comentário MovFinanc",
+                "type": "array",
+                "spec": {
+                    "type": "text",
+                    "label": "Comentário"
+                }
             },
             {
                 "name": "MOV_RE_VALOR",
@@ -84,7 +93,8 @@
                 "default": "COD",
                 "validate": {
                     "min": 0,
-                    "max": 3
+                    "max": 3,
+                    "pattern": "(COD|ALT|CPF|CNPJ)"
                 }
             },
             {
@@ -101,7 +111,7 @@
             {
                 "name": "AGN_TAU_ST_CODIGO",
                 "type": "text",
-                "help": "Código do tipo de agente (C, F, U, T...)",
+                "help": "Código do tipo de agente: \nN (Conta Financeira) \nC (Cliente) \nF (Fornecedor) \nR (Representante) \netc...",
                 "validate": {
                     "min": 0,
                     "max": 3
@@ -138,31 +148,40 @@
             },
             {
                 "name": "MOV_DT_DATADOCTO",
-                "type": "date",
-                "help": "Data do documento."
+                "type": "text",
+                "help": "Data do documento.",
+                "validate": {
+                    "min": 10,
+                    "max": 10,
+                    "pattern": "^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
+                }
                 //,"required": true
-                ,
-                "time": false
             },
             {
                 "name": "MOV_DT_VENCTO",
-                "type": "date",
+                "type": "text",
                 "help": "Data de vencimento",
-                "time": false
+                "validate": {
+                    "min": 10,
+                    "max": 10,
+                    "pattern": "^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
+                }
             },
-            /**
-    {
-        "name": "MOV_DT_ORCAMENTO",
-        "type": "date",
-        "help": "Data de orçamento",
-        "time": false
-    },
-     */
+            {
+                "name": "MOV_DT_ORCAMENTO",
+                "type": "text",
+                "help": "Data de orçamento",
+                "validate": {
+                    "min": 10,
+                    "max": 10,
+                    "pattern": "^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
+                }
+            },
             {
                 "name": "IND_IN_CODIGOMOE",
                 "type": "integer",
                 "help": "Código do índice financeiro",
-                "default": 0,
+                "default": "0",
                 "validate": {
                     "min": 0,
                     "max": 999
@@ -171,7 +190,6 @@
             {
                 "name": "MOV_ST_COMPLHIST",
                 "type": "text",
-                "help": "",
                 "multiline": true,
                 "validate": {
                     "min": 0,
@@ -179,70 +197,69 @@
                 }
             },
             /**
-    {
-        "name": "HIS_IN_REDUZIDO",
-        "type": "integer",
-        "help": "Histórico padrão",
-        "validate": {
-            "min": 0,
-            "max": 9999999
-        }
-    },
-    {
-        "name": "REF_ORG_IN_CODIGO",
-        "type": "integer",
-        "help": "Código da organização do movimento",
-        "validate": {
-            "min": 0,
-            "max": 9999999
-        }
-    },
-    {
-        "name": "REF_MOV_SEQ_IN_CODIGO",
-        "type": "integer",
-        "help": "Sequência do Movimento",
-        "validate": {
-            "min": 0,
-            "max": 999
-        }
-    },
-    {
-        "name": "REF_MOV_IN_NUMLANCTO",
-        "type": "integer",
-        "help": "Número do lançamento do Movimento",
-        "validate": {
-            "min": 0,
-            "max": 99999999
-        }
-    },
-    {
-        "name": "CCF_IN_REDUZIDO",
-        "type": "integer",
-        "help": "Centro de Custo de Transferência",
-        "validate": {
-            "min": 0,
-            "max": 9999999
-        }
-    },
-    {
-        "name": "PRO_IN_REDUZIDO",
-        "type": "text",
-        "help": "Projeto de Transferência",
-        "validate": {
-            "min": 0,
-            "max": 9999999
-        }
-    },*/
             {
-                "name": "USU_IN_INCLUSAO",
+                "name": "HIS_IN_REDUZIDO",
                 "type": "integer",
-                "help": "",
-                "default": 1,
+                "help": "Histórico padrão",
                 "validate": {
                     "min": 0,
                     "max": 9999999
                 }
-                //, "advanced": true        
+            },
+            {
+                "name": "REF_ORG_IN_CODIGO",
+                "type": "integer",
+                "help": "Código da organização do movimento",
+                "validate": {
+                    "min": 0,
+                    "max": 9999999
+                }
+            },
+            {
+                "name": "REF_MOV_SEQ_IN_CODIGO",
+                "type": "integer",
+                "help": "Sequência do Movimento",
+                "validate": {
+                    "min": 0,
+                    "max": 999
+                }
+            },
+            {
+                "name": "REF_MOV_IN_NUMLANCTO",
+                "type": "integer",
+                "help": "Número do lançamento do Movimento",
+                "validate": {
+                    "min": 0,
+                    "max": 99999999
+                }
+            },
+            {
+                "name": "CCF_IN_REDUZIDO",
+                "type": "integer",
+                "help": "Centro de Custo de Transferência",
+                "validate": {
+                    "min": 0,
+                    "max": 9999999
+                }
+            },
+            {
+                "name": "PRO_IN_REDUZIDO",
+                "type": "text",
+                "help": "Projeto de Transferência",
+                "validate": {
+                    "min": 0,
+                    "max": 9999999
+                }
+            },*/
+            {
+                "name": "USU_IN_INCLUSAO",
+                "type": "integer",
+                "help": "Usuário do Movimento Financeiro",
+                "validate": {
+                    "min": 0,
+                    "max": 9999999
+                },
+                "advanced": true
             },
             {
                 "name": "MovVinculado",
@@ -270,26 +287,18 @@
                             "sequence": true
                         },
                         {
+                            "name": "_comment",
+                            "label": "Comentário MovVinculado",
+                            "type": "array",
+                            "spec": {
+                                "type": "text",
+                                "label": "Comentário"
+                            },
+                            "sequence": true
+                        },
+                        {
                             "name": "MOV_RE_VALOR",
                             "type": "number"
-                        },
-                        {
-                            "name": "MOV_ST_DOCUMENTO",
-                            "type": "text",
-                            "help": "Número do documento interno",
-                            "validate": {
-                                "min": 0,
-                                "max": 20
-                            }
-                        },
-                        {
-                            "name": "MOV_ST_COMPLHIST",
-                            "type": "text",
-                            "multiline": true,
-                            "validate": {
-                                "min": 0,
-                                "max": 500
-                            }
                         },
                         {
                             "name": "TPD_ST_CODIGO",
@@ -297,10 +306,24 @@
                             "help": "Tipo de documento. Se não for informado pega do código de ação"
                         },
                         {
+                            "name": "MOV_ST_DOCUMENTO",
+                            "type": "text",
+                            "help": "Número do documento",
+                            "validate": {
+                                "min": 0,
+                                "max": 20
+                            }
+                        },
+                        {
                             "name": "AGN_ST_TIPOCODIGO",
                             "type": "text",
                             "default": "COD",
-                            "help": "Tipo do código do Agente (COD, ALT, CPF ou CNPJ). Default COD"
+                            "help": "Tipo do código do Agente (COD, ALT, CPF ou CNPJ). Default COD",
+                            "validate": {
+                                "min": 3,
+                                "max": 3,
+                                "pattern": "(COD|ALT|CPF|CNPJ)"
+                            }
                         },
                         {
                             "name": "AGN_ST_CODIGO",
@@ -316,7 +339,7 @@
                         {
                             "name": "AGN_TAU_ST_CODIGO",
                             "type": "text",
-                            "help": "Código do tipo de agente (C, F, U, T...)",
+                            "help": "Código do tipo de agente: \nN (Conta Financeira) \nC (Cliente) \nF (Fornecedor) \nR (Representante) \netc...",
                             "validate": {
                                 "min": 0,
                                 "max": 1
@@ -351,12 +374,16 @@
                         },
                         {
                             "name": "ADIANT_MOV_DT_DATADOCTO",
-                            "type": "date",
+                            "type": "text",
                             "help": "Data do Adiantamento",
-                            "time": false
+                            "validate": {
+                                "min": 10,
+                                "max": 10,
+                                "pattern": "^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
+                            }
                         },
                         {
-                            "name": "MOV_ST_DOCUMENTO",
+                            "name": "ADIANT_MOV_ST_DOCUMENTO",
                             "type": "text",
                             "help": "Número do documento do adiantamento"
                             //,"required": true
@@ -388,6 +415,15 @@
                                 "min": 0,
                                 "max": 99999999
                             }
+                        },
+                        {
+                            "name": "MOV_ST_COMPLHIST",
+                            "type": "text",
+                            "multiline": true,
+                            "validate": {
+                                "min": 0,
+                                "max": 500
+                            }
                         }
                     ]
                 }
@@ -413,5 +449,13 @@
         "type": "hidden",
         "sequence": true,
         "default": 1
+    },
+    {
+        "name": "pRetornaXML",
+        "label": "Retornar XML?",
+        "help": "Indica se vai retornar o XML quando apresentar Erro.",
+        "type": "boolean",
+        "default": false,
+        "advanced": true
     }
 ]

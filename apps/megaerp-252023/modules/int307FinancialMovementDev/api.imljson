@@ -2,23 +2,6 @@
     {
         "response": {
             "temp": {
-                "arrayMovFinanc": [
-                    "<MOV_RE_VALOR>{{       utf8Decode(parameters.MOV_RE_VALOR) }}</MOV_RE_VALOR>",
-                    "<FIL_IN_CODIGO>{{      utf8Decode(parameters.FIL_IN_CODIGO)}}</FIL_IN_CODIGO>",
-                    "<ACAO_IN_CODIGO>{{     utf8Decode(parameters.ACAO_IN_CODIGO)}}</ACAO_IN_CODIGO>",
-                    "<TPD_ST_CODIGO>{{      utf8Decode(parameters.TPD_ST_CODIGO)}}</TPD_ST_CODIGO>",
-                    "<AGN_ST_TIPOCODIGO>{{  utf8Decode(parameters.AGN_ST_TIPOCODIGO)}}</AGN_ST_TIPOCODIGO>",
-                    "<AGN_ST_CODIGO>{{      utf8Decode(parameters.AGN_ST_CODIGO)}}</AGN_ST_CODIGO>",
-                    "<AGN_TAU_ST_CODIGO>{{  utf8Decode(parameters.AGN_TAU_ST_CODIGO)}}</AGN_TAU_ST_CODIGO>",
-                    "<MVF_ST_NOMINAL>{{     utf8Decode(parameters.MVF_ST_NOMINAL)}}</MVF_ST_NOMINAL>",
-                    "<MVF_ST_DOCINTERNO>{{  utf8Decode(parameters.MVF_ST_DOCINTERNO)}}</MVF_ST_DOCINTERNO>",
-                    "<MOV_ST_DOCUMENTO>{{   utf8Decode(parameters.MOV_ST_DOCUMENTO)}}</MOV_ST_DOCUMENTO>",
-                    "<MOV_DT_DATADOCTO>{{   utf8Decode(parameters.MOV_DT_DATADOCTO)}}</MOV_DT_DATADOCTO>",
-                    "<MOV_DT_VENCTO>{{      utf8Decode(parameters.MOV_DT_VENCTO)}}</MOV_DT_VENCTO>",
-                    "<IND_IN_CODIGOMOE>{{   utf8Decode(parameters.IND_IN_CODIGOMOE)}}</IND_IN_CODIGOMOE>",
-                    "<MOV_ST_COMPLHIST>{{   utf8Decode(parameters.MOV_ST_COMPLHIST)}}</MOV_ST_COMPLHIST>",
-                    "<USU_IN_INCLUSAO>{{    utf8Decode(parameters.USU_IN_INCLUSAO)}}</USU_IN_INCLUSAO>"
-                ],
                 "JSON": {
                     "MovFinanc": "{{ parameters.MovFinanc }}"
                 }
@@ -28,28 +11,7 @@
     {
         "response": {
             "temp": {
-                "MovVinculadoJSON": {
-                    "MovVinculado": "{{parameters.MovVinculado}}"
-                }
-            }
-        }
-    },
-    {
-        "response": {
-            "temp": {
-                "xmlMovVinculado": [
-                    //"<MovVinculado OPERACAO=\"{{parameters.MovVinculado[]._OPERACAO}}\">{{join(temp.arrayMovVinculado; '\n')}}</MovVinculado>"
-                    "{{ convertJson2xml(temp.MovVinculadoJSON, { compact: true }) }}"
-                ]
-            }
-        }
-    },
-    {
-        "response": {
-            "temp": {
-                "xmlMovFinanc": [
-                    "<MovFinanc OPERACAO=\"{{parameters.MovFinanc_OPERACAO}}\">{{join(temp.arrayMovFinanc;'\n')}} {{'\n'}} {{ temp.xmlMovVinculado }}</MovFinanc>"
-                ]
+                "XML": "{{ convertJson2xml(temp.JSON, { compact: true }) }}"
             }
         }
     },
@@ -57,7 +19,7 @@
         "response": {
             "temp": {
                 "arrayBody": [
-                    "<?xml version=\"1.0\" encoding=\"ISO-8859-1\" standalone=\"yes\"?>",
+                    "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",
                     "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">",
                     "<soapenv:Body>",
                     "<tem:MegaIntegradorService___IntegraXML>",
@@ -68,7 +30,7 @@
                     "<tem:pTransacao>{{     parameters.pTransacao}}</tem:pTransacao>",
                     "<tem:pSistema>{{       parameters.pSistema}}</tem:pSistema>",
                     "<tem:pXMLHeader/>",
-                    "<tem:pXML><![CDATA[{{  convertJson2xml(temp.JSON, { compact: true }) }}]]></tem:pXML>",
+                    "<tem:pXML><![CDATA[{{  temp.XML }}]]></tem:pXML>",
                     "</tem:MegaIntegradorService___IntegraXML>",
                     "</soapenv:Body></soapenv:Envelope>"
                 ]
@@ -76,8 +38,15 @@
         }
     },
     {
+        "response": {
+            "temp": {
+                "BODY": "{{ join(temp.arrayBody, '') }}"
+            }
+        }
+    },
+    {
         "url": "/Integrador",
-        "body": "{{ join(temp.arrayBody, '\n') }}",
+        "body": "{{ temp.BODY }}",
         "response": {
             "type": {
                 "*": "xml"
@@ -88,17 +57,12 @@
                 "Erro": "{{body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:Erro`[]}}",
                 "Mensagem": "{{body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:Mensagem`[]}}",
                 "CodTransacao": "{{body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:CodTransacao`[]}}",
-                "PKMega": "{{body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:PKMega`[]}}"
-                /** 
-                TODO: PKMegaArray ou PKMegaCollection ou PKMegaSplit
-                    Array ou Collection de Chave e Valor
-                    Ex:
-                    PKMega = 1;474
-                    PKMegaArray = {
-                        "AGN_PAD_IN_CODIGO": 1
-                        "AGN_IN_CODIGO": 474
-                    }
-                */
+                "PKMega": "{{body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:PKMega`[]}}",
+                "PKMegaCollection": {
+                    "ORG_IN_CODIGO": "{{        substring(body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:PKMega`[] ; 0 ; indexOf(body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:PKMega`[]; ';') ) }}",
+                    "ACAOM_IN_SEQUENCIA": "{{   substring(body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:PKMega`[] ; indexOf(body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:PKMega`[] ; ';') + 1 )}}"
+                },
+                "XML": "{{ if( parameters.pRetornaXML || body.`SOAP-ENV:Envelope`.`SOAP-ENV:Body`[].`v1:MegaIntegradorService___IntegraXMLResponse`[].`v1:Result`[].`v1:Erro`[] == true; temp.XML ; null) }}"
             }
         }
     }

@@ -1,0 +1,1004 @@
+[
+    {
+        "name": "pPRO_IN_ID",
+        "type": "hidden",
+        "sequence": true,
+        "default": 306
+    },
+    {
+        "name": "Fatura",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "_attributes",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "OPERACAO",
+                        "type": "text",
+                        "help": "Operação - I, U ou D",
+                        "default": "I",
+                        "validate": {
+                            "min": 0,
+                            "max": 1,
+                            "pattern": "(I|U|D)"
+                        }
+                    }
+                ],
+                "sequence": true
+            },
+            {
+                "name": "_comment",
+                "label": "Comentários da Fatura",
+                "type": "array",
+                "spec": {
+                    "type": "text",
+                    "label": "Comentário"
+                }
+            },
+            {
+                "name": "MOV_CH_ORIGEM",
+                "type": "text"
+            },
+            {
+                "name": "ACAO_IN_CODIGO",
+                "type": "integer"
+            },
+            {
+                "name": "FIL_IN_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "TPD_ST_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "FAT_IN_NUMERO",
+                "type": "text"
+            },
+            {
+                "name": "FAT_DT_EMISSAO",
+                "type": "text"
+            },
+            {
+                "name": "FAT_ST_SERIEDOC",
+                "type": "text"
+            },
+            {
+                "name": "SER_ST_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "AGN_TAU_ST_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "AGN_ST_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "AGN_ST_TIPOCODIGO",
+                "type": "text"
+            },
+            {
+                "name": "FPA_ST_FAVORECIDO",
+                "type": "text"
+            },
+            {
+                "name": "FAT_ST_DOCTOINTERNO",
+                "type": "text"
+            },
+            {
+                "name": "IND_IN_CODIGOMOE",
+                "type": "text"
+            },
+            {
+                "name": "IND_IN_CODIGOIND",
+                "type": "text"
+            },
+            {
+                "name": "FPA_DT_ENTRADA",
+                "type": "text"
+            },
+            {
+                "name": "FAT_RE_VALOR",
+                "type": "text"
+            },
+            {
+                "name": "COND_ST_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "ACAOM_IN_SEQUENCIA",
+                "type": "text"
+            },
+            {
+                "name": "FAT_IN_NUMPARCELAS",
+                "type": "text"
+            },
+            {
+                "name": "USU_IN_INCLUSAO",
+                "type": "text"
+            },
+            {
+                "name": "Parcela",
+                "type": "array",
+                "spec": {
+                    "type": "collection",
+                    "sequence": true,
+                    "spec": [
+                        {
+                            "name": "_attributes",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "OPERACAO",
+                                    "type": "text",
+                                    "help": "Operação - I, U ou D",
+                                    "default": "I",
+                                    "validate": {
+                                        "min": 0,
+                                        "max": 1,
+                                        "pattern": "(I|U|D)"
+                                    }
+                                }
+                            ],
+                            "sequence": true
+                        },
+                        {
+                            "name": "MOV_ST_DOCUMENTO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "MOV_ST_PARCELA",
+                            "type": "text"
+                        },
+                        {
+                            "name": "MOV_DT_VENCTO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "MOV_ST_DIASEMANA",
+                            "type": "text"
+                        },
+                        {
+                            "name": "MOV_RE_VALORMOE",
+                            "type": "text"
+                        },
+                        {
+                            "name": "MOV_RE_PERC",
+                            "type": "text"
+                        },
+                        {
+                            "name": "HCOB_IN_SEQUENCIA",
+                            "type": "text"
+                        },
+                        {
+                            "name": "MOV_ST_COMPLHIST",
+                            "type": "text"
+                        },
+                        {
+                            "name": "HIS_IN_REDUZIDO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "HIS_IDE_ST_CODIGO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "HIS_PAD_IN_CODIGO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "HIS_TAB_IN_CODIGO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "FORP_IN_CODIGO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "TCOB_ST_CODIGO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "BAN_IN_NUMERO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "CAID_BAN_IN_NUMERO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "CAID_ST_CONTACORR",
+                            "type": "text"
+                        },
+                        {
+                            "name": "PRIP_ST_CODIGO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "CPA_ST_CODIGOBARRAS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "CPA_ST_NOSSONUMBANC",
+                            "type": "text"
+                        },
+                        {
+                            "name": "CRE_ST_NOSSONUMBANC",
+                            "type": "text"
+                        },
+                        {
+                            "name": "CPA_ST_CAMPOLIVRECODBARRAS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "HCOB_ST_DESCRICAO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "MOV_RE_PERCJUROSEFET",
+                            "type": "text"
+                        },
+                        {
+                            "name": "MOV_RE_VRMORAEFET",
+                            "type": "text"
+                        },
+                        {
+                            "name": "MOV_RE_PERCMULTAEFET",
+                            "type": "text"
+                        },
+                        {
+                            "name": "MOV_RE_VRMULTAEFET",
+                            "type": "text"
+                        },
+                        {
+                            "name": "MOV_DT_DTBASEMULTA",
+                            "type": "text"
+                        },
+                        {
+                            "name": "MOV_RE_PERCDESCEFET",
+                            "type": "text"
+                        },
+                        {
+                            "name": "MOV_RE_VRDESCCONDEFET",
+                            "type": "text"
+                        },
+                        {
+                            "name": "MOV_DT_DTBASEDESC",
+                            "type": "text"
+                        },
+                        {
+                            "name": "MOV_RE_PERCDESCEFET2",
+                            "type": "text"
+                        },
+                        {
+                            "name": "MOV_RE_VRDESCCONDEFET2",
+                            "type": "text"
+                        },
+                        {
+                            "name": "MOV_DT_DTBASEDESC2",
+                            "type": "text"
+                        },
+                        {
+                            "name": "CPA_ST_LINHADIGITAVEL",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_IN_CODIGOCTAPREV",
+                            "type": "text"
+                        },
+                        {
+                            "name": "MOV_DT_PRORROGADO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "MovtoVinculado",
+                            "type": "array",
+                            "spec": {
+                                "type": "collection",
+                                "sequence": true,
+                                "spec": [
+                                    {
+                                        "name": "_attributes",
+                                        "type": "collection",
+                                        "spec": [
+                                            {
+                                                "name": "OPERACAO",
+                                                "type": "text"
+                                            }
+                                        ],
+                                        "sequence": true
+                                    },
+                                    {
+                                        "name": "ORG_IN_CODIGO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CAU_DT_BASECONDPAGTO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "MOV_SEQ_IN_CODIGO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "MOV_IN_NUMLANCTO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "REF_FIL_IN_CODIGO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "REF_AGN_IN_CODIGO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "REF_AGN_TAU_ST_CODIGO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "REF_AGN_ST_CODIGO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "REF_AGN_ST_TIPOCODIGO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "REF_TPD_ST_CODIGO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "REF_MOV_ST_DOCUMENTO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "REF_MOV_ST_PARCELA",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "REF_MOV_DT_DATADOCTO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "REF_MOV_CH_ORIGEM",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "VINC_TREF_ST_CODIGO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "VINC_MOV_DT_DATADOCTO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "VINC_MOV_RE_VALOR",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "ACAO_IN_CODIGO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "TCOB_ST_CODIGO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "TPD_ST_CODIGO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "MOV_ST_COMPLHIST",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "IND_IN_CODIGOMOE",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "MOV_DT_DATADOCTO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "MOV_ST_DOCUMENTO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "MOV_DT_ORCAMENTO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "MOV_RE_VALOR",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "REF_MOV_SEQ_IN_CODIGO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "REF_MOV_IN_NUMLANCTO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "HIS_IDE_ST_CODIGO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "HIS_IN_REDUZIDO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CLA_IDE_ST_CODIGO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CLA_IN_REDUZIDO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "SCOB_ST_CODIGO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "COND_ST_CODIGO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "ADIANT_MOV_DT_DATADOCTO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "ADIANT_MOV_RE_VALOR",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "ADIANT_MOV_ST_DOCUMENTO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "ADIANT_MOV_SEQ_IN_CODIGO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "ADIANT_MOV_IN_NUMLANCTO",
+                                        "type": "array",
+                                        "spec": {
+                                            "type": "text"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+            /**
+            
+            
+            ,
+            {
+                "name": "Classe",
+                "type": "array",
+                "spec": {
+                    "type": "collection",
+                    "sequence": true,
+                    "spec": [
+                        {
+                            "name": "_attributes",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "OPERACAO",
+                                    "type": "text"
+                                }
+                            ],
+                            "sequence": true
+                        },
+                        {
+                            "name": "CLA_IN_REDUZIDO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "CLA_ST_EXTENSO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "LCL_RE_VALORMOE",
+                            "type": "text"
+                        },
+                        {
+                            "name": "LCL_CH_NATUREZA",
+                            "type": "text"
+                        },
+                        {
+                            "name": "LCL_RE_PERCENTUAL",
+                            "type": "text"
+                        },
+                        {
+                            "name": "LCL_ST_OBSERVACAO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "CentroCusto",
+                            "type": "array",
+                            "spec": {
+                                "type": "collection",
+                                "sequence": true,
+                                "spec": [
+                                    {
+                                        "name": "_attributes",
+                                        "type": "collection",
+                                        "spec": [
+                                            {
+                                                "name": "OPERACAO",
+                                                "type": "text"
+                                            }
+                                        ],
+                                        "sequence": true
+                                    },
+                                    {
+                                        "name": "CCF_IN_REDUZIDO",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "LCC_RE_VALORMOE",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "LCC_RE_PERCENTUAL",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "Projeto",
+                                        "type": "array",
+                                        "spec": {
+                                            "type": "collection",
+                                            "sequence": true,
+                                            "spec": [
+                                                {
+                                                    "name": "_attributes",
+                                                    "type": "collection",
+                                                    "spec": [
+                                                        {
+                                                            "name": "OPERACAO",
+                                                            "type": "text"
+                                                        }
+                                                    ],
+                                                    "sequence": true
+                                                },
+                                                {
+                                                    "name": "PRO_IN_REDUZIDO",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "name": "LPR_RE_VALORMOE",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "name": "LPR_RE_PERCENTUAL",
+                                                    "type": "array",
+                                                    "spec": {
+                                                        "type": "text"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+
+
+
+
+
+
+            
+             */
+            /**
+
+
+
+            
+            ,
+            
+            {
+                "name": "BaixaRef",
+                "type": "array",
+                "spec": {
+                    "type": "collection",
+                    "sequence": true,
+                    "spec": [
+                        {
+                            "name": "_attributes",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "OPERACAO",
+                                    "type": "text"
+                                }
+                            ],
+                            "sequence": true
+                        },
+                        {
+                            "name": "REF_TPD_ST_CODIGO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "REF_ST_NUMERONF",
+                            "type": "text"
+                        },
+                        {
+                            "name": "REF_DT_EMISSAONF",
+                            "type": "text"
+                        },
+                        {
+                            "name": "REF_RE_VALORNF",
+                            "type": "text"
+                        },
+                        {
+                            "name": "REF_ST_OBSERVACAO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "REF_ORG_IN_CODIGO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "REF_MOV_SEQ_IN_CODIGO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "REF_MOV_IN_NUMLANCTO",
+                            "type": "array",
+                            "spec": {
+                                "type": "text"
+                            }
+                        }
+                    ]
+                }
+            },
+
+
+
+
+             */
+            /**
+            
+            
+            
+            
+            
+            
+            {
+                "name": "FPA_DT_COMPETENCIA",
+                "type": "text"
+            },
+            {
+                "name": "FPA_IN_CODPAGTOGPS",
+                "type": "text"
+            },
+            {
+                "name": "FPA_RE_VALOROUTENTID",
+                "type": "text"
+            },
+            {
+                "name": "FPA_ST_GARE",
+                "type": "text"
+            },
+            {
+                "name": "FPA_BO_PAGTODECTERC",
+                "type": "text"
+            },
+            {
+                "name": "FPA_ST_GARENOTIFICACAO",
+                "type": "text"
+            },
+            {
+                "name": "FPA_ST_GAREETIQUETA",
+                "type": "text"
+            },
+            {
+                "name": "FPA_ST_DARFREFERENCIA",
+                "type": "text"
+            },
+            {
+                "name": "FPA_ST_FGTS",
+                "type": "text"
+            },
+            {
+                "name": "FPA_ST_FGTSLACRE",
+                "type": "text"
+            },
+            {
+                "name": "FPA_ST_FGTSIDENTIFICADOR",
+                "type": "text"
+            },
+            {
+                "name": "COS_IN_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "PDC_IN_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "SAP_ST_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "FPA_ST_SOLICITANTE",
+                "type": "text"
+            },
+            {
+                "name": "DRF_ST_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "FPA_RE_BASEIR",
+                "type": "text"
+            },
+            {
+                "name": "FPA_RE_VALORIR",
+                "type": "text"
+            },
+            {
+                "name": "FPA_RE_BASEISS",
+                "type": "text"
+            },
+            {
+                "name": "FPA_RE_VALORISS",
+                "type": "text"
+            },
+            {
+                "name": "FPA_RE_BASEINSS",
+                "type": "text"
+            },
+            {
+                "name": "FPA_RE_VALORINSS",
+                "type": "text"
+            },
+            {
+                "name": "FPA_BO_PODEREPETIR",
+                "type": "text"
+            },
+            {
+                "name": "CALC_COT_RE_VALOR",
+                "type": "text"
+            },
+            {
+                "name": "FAT_BO_VALORMOEDA",
+                "type": "text"
+            },
+            {
+                "name": "FAT_CH_SITUACAO",
+                "type": "text"
+            },
+
+
+
+
+             */
+            /**
+
+
+
+
+
+            
+            {
+                "name": "RetencoesCPA",
+                "type": "array",
+                "spec": {
+                    "type": "collection",
+                    "sequence": true,
+                    "spec": [
+                        {
+                            "name": "_attributes",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "OPERACAO",
+                                    "type": "text"
+                                }
+                            ],
+                            "sequence": true
+                        },
+                        {
+                            "name": "UF_ST_SIGLA",
+                            "type": "text"
+                        },
+                        {
+                            "name": "MUN_IN_CODIGO",
+                            "type": "text"
+                        },
+                        {
+                            "name": "FPA_RE_BASEIR",
+                            "type": "text"
+                        },
+                        {
+                            "name": "FPA_RE_ALIQUOTAIR",
+                            "type": "text"
+                        },
+                        {
+                            "name": "FPA_RE_VALORIR",
+                            "type": "text"
+                        },
+                        {
+                            "name": "FPA_BO_DILUIIR",
+                            "type": "text"
+                        },
+                        {
+                            "name": "DRF_ST_CODIGOIR",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_TAU_ST_CODIGOIR",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_PAD_IN_CODIGOIR",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_IN_CODIGOIR",
+                            "type": "text"
+                        },
+                        {
+                            "name": "FPA_RE_BASEISS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "FPA_RE_ALIQUOTAISS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "FPA_RE_VALORISS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_TAU_ST_CODIGOISS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_PAD_IN_CODIGOISS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "AGN_IN_CODIGOISS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "FPA_BO_DILUIISS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "FPA_RE_BASEINSS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "FPA_RE_ALIQUOTAINSS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "FPA_RE_VALORINSS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "FPA_BO_DILUIINSS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "FPA_DT_COMPETENCIA",
+                            "type": "text"
+                        },
+                        {
+                            "name": "FPA_RE_BASEFUNRURAL",
+                            "type": "text"
+                        },
+                        {
+                            "name": "FPA_RE_ALIQUOTAFUNRURAL",
+                            "type": "text"
+                        },
+                        {
+                            "name": "FPA_RE_VALORFUNRURAL",
+                            "type": "text"
+                        },
+                        {
+                            "name": "FPA_RE_BASESEST",
+                            "type": "text"
+                        },
+                        {
+                            "name": "FPA_RE_ALIQUOTASEST",
+                            "type": "text"
+                        },
+                        {
+                            "name": "FPA_RE_VALORSEST",
+                            "type": "text"
+                        },
+                        {
+                            "name": "FPA_BO_DILUISEST",
+                            "type": "text"
+                        },
+                        {
+                            "name": "RET_BO_CALCULAIR",
+                            "type": "text"
+                        },
+                        {
+                            "name": "RET_BO_CALCULAISS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "RET_BO_CALCULAINSS",
+                            "type": "text"
+                        },
+                        {
+                            "name": "RET_BO_CALCULASEST",
+                            "type": "array",
+                            "spec": {
+                                "type": "text"
+                            }
+                        }
+                    ]
+                }
+            }*/
+        ],
+        "sequence": true
+    },
+    {
+        "name": "pUSU_IN_CODIGO",
+        "label": "Código do Usuário de Integração",
+        "type": "integer",
+        "sequence": true,
+        "default": 1,
+        "validate": {
+            "min": 0,
+            "max": 9999999
+        }
+    },
+    {
+        "name": "pObs",
+        "label": "Observação da Transação",
+        "type": "text",
+        "sequence": true,
+        "default": "#Integromat[int306InvoicePayableReceivable]",
+        "validate": {
+            "min": 0,
+            "max": 100
+        }
+    },
+    {
+        "name": "pEnviaRecebe",
+        "type": "hidden",
+        "sequence": true,
+        "default": "R"
+    },
+    {
+        "name": "pTransacao",
+        "type": "hidden",
+        "sequence": true,
+        "default": 0
+    },
+    {
+        "name": "pSistema",
+        "label": "Sistema",
+        "type": "hidden",
+        "sequence": true,
+        "default": 1
+    },
+    {
+        "name": "pRetornaXML",
+        "label": "RetornarXML?",
+        "help": "Indica se vai retornar o XML quando apresentar Erro.",
+        "type": "boolean",
+        "default": false,
+        "advanced": true
+    }
+]

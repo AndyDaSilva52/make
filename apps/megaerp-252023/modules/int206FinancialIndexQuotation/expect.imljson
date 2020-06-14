@@ -107,5 +107,13 @@
         "type": "hidden",
         "sequence": true,
         "default": 1
+    },
+    {
+        "name": "pRetornaXML",
+        "label": "Retornar XML?",
+        "help": "Indica se vai retornar o XML quando apresentar Erro.",
+        "type": "boolean",
+        "default": false,
+        "advanced": true
     }
 ]

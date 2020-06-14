@@ -1,0 +1,8 @@
+{
+    "name": "int305LinkedMovement",
+    "label": "305 - Movimento Vinculado",
+    "description": "305 - Movimento Vinculado",
+    "connection": "megaerp-252023",
+    "webhook": null,
+    "type": "action"
+}

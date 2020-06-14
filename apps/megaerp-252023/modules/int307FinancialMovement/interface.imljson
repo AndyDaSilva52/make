@@ -1,18 +1,45 @@
 [
     {
         "name": "Erro",
+        "label": "Erro",
         "type": "boolean"
     },
     {
         "name": "CodTransacao",
+        "label": "CodTransacao",
         "type": "uinteger"
     },
     {
         "name": "Mensagem",
+        "label": "Mensagem",
         "type": "text"
     },
     {
         "name": "PKMega",
+        "label": "PKMega",
         "type": "text"
+    },
+    {
+        "name": "PKMegaCollection",
+        "label": "PKMegaCollection",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "ORG_IN_CODIGO",
+                "label": "ORG_IN_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "ACAOM_IN_SEQUENCIA",
+                "label": "ACAOM_IN_SEQUENCIA",
+                "type": "text"
+            }
+        ]
+    },
+    {
+        "name": "XML",
+        "label": "XML",
+        "type": "text",
+        "multiline": true
     }
 ]

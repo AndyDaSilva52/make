@@ -6,8 +6,8 @@
     },
     "type": "raw",
     "headers": {
-        "Content-Type": "text/xml; charset=iso-8859-1",
-        "Accept": "text/xml; charset=iso-8859-1",
+        "Content-Type": "text/xml; charset=utf-8",
+        "Accept": "text/xml; charset=utf-8",
         "Accept-Encoding": "gzip, deflate, br",
         "Connection": "keep-alive",
         "Cache-Control": "no-cache"

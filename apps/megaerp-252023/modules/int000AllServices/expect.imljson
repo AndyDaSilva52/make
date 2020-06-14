@@ -15,12 +15,32 @@
                 "value": "207"
             },
             {
-                "label": "305",
+                "label": "305 - Movtimento Vinculado",
                 "value": "305"
+            },
+            {
+                "label": "306 - Fatura a Pagar ou Receber",
+                "value": "306"
             },
             {
                 "label": "307 - Movimento Financeiro",
                 "value": "307"
+            },
+            {
+                "label": "403 - Lançamento Contábil",
+                "value": "403"
+            },
+            {
+                "label": "501 - Integração de Nota Fiscal",
+                "value": "501"
+            },
+            {
+                "label": "707 - Movimento de Estoque",
+                "value": "707"
+            },
+            {
+                "label": "708 - Conhecimento de Frete",
+                "value": "708"
             }
         ]
     },
@@ -40,7 +60,7 @@
         "name": "pObs",
         "type": "text",
         "sequence": true,
-        "default": "#Integromat - "
+        "default": "#Integromat[int000AllServices]"
     },
     {
         "name": "pEnviaRecebe",
@@ -50,7 +70,7 @@
     },
     {
         "name": "pTransacao",
-        "type": "uinteger",
+        "type": "integer",
         "sequence": true,
         "default": 0
     },
@@ -59,5 +79,13 @@
         "type": "integer",
         "sequence": true,
         "default": 1
+    },
+    {
+        "name": "pRetornaXML",
+        "label": "Retornar XML?",
+        "help": "Indica se vai retornar o XML quando apresentar Erro.",
+        "type": "boolean",
+        "default": false,
+        "advanced": true
     }
 ]

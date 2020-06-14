@@ -43,6 +43,15 @@
                 "sequence": true
             },
             {
+                "name": "_comment",
+                "label": "Comentários (MovFinanc)",
+                "type": "array",
+                "spec": {
+                    "type": "text",
+                    "label": "Comentário"
+                }
+            },
+            {
                 "name": "MOV_RE_VALOR",
                 "type": "number",
                 "help": "*Tamanho(20,2)"
@@ -83,7 +92,8 @@
                 "default": "COD",
                 "validate": {
                     "min": 0,
-                    "max": 3
+                    "max": 3,
+                    "pattern": "(COD|ALT|CPF|CNPJ)"
                 }
             },
             {
@@ -100,7 +110,7 @@
             {
                 "name": "AGN_TAU_ST_CODIGO",
                 "type": "text",
-                "help": "Código do tipo de agente (C, F, U, T...)",
+                "help": "Código do tipo de agente: \nN (Conta Financeira) \nC (Cliente) \nF (Fornecedor) \nR (Representante) \netc...",
                 "validate": {
                     "min": 0,
                     "max": 3
@@ -157,7 +167,6 @@
                     "pattern": "^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
                 }
             },
-            /**
             {
                 "name": "MOV_DT_ORCAMENTO",
                 "type": "text",
@@ -168,12 +177,11 @@
                     "pattern": "^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
                 }
             },
-            */
             {
                 "name": "IND_IN_CODIGOMOE",
                 "type": "integer",
                 "help": "Código do índice financeiro",
-                "default": 0,
+                "default": "0",
                 "validate": {
                     "min": 0,
                     "max": 999
@@ -182,7 +190,6 @@
             {
                 "name": "MOV_ST_COMPLHIST",
                 "type": "text",
-                "help": "",
                 "multiline": true,
                 "validate": {
                     "min": 0,
@@ -247,13 +254,12 @@
             {
                 "name": "USU_IN_INCLUSAO",
                 "type": "integer",
-                "help": "",
-                "default": 1,
+                "help": "Usuário do Movimento Financeiro",
                 "validate": {
                     "min": 0,
                     "max": 9999999
-                }
-                //, "advanced": true        
+                },
+                "advanced": true
             },
             {
                 "name": "MovVinculado",
@@ -281,8 +287,22 @@
                             "sequence": true
                         },
                         {
+                            "name": "_comment",
+                            "label": "Comentário MovVinculado",
+                            "type": "array",
+                            "spec": {
+                                "type": "text",
+                                "label": "Comentário"
+                            }
+                        },
+                        {
                             "name": "MOV_RE_VALOR",
                             "type": "number"
+                        },
+                        {
+                            "name": "TPD_ST_CODIGO",
+                            "type": "text",
+                            "help": "Tipo de documento. Se não for informado pega do código de ação"
                         },
                         {
                             "name": "MOV_ST_DOCUMENTO",
@@ -294,24 +314,15 @@
                             }
                         },
                         {
-                            "name": "MOV_ST_COMPLHIST",
-                            "type": "text",
-                            "multiline": true,
-                            "validate": {
-                                "min": 0,
-                                "max": 500
-                            }
-                        },
-                        {
-                            "name": "TPD_ST_CODIGO",
-                            "type": "text",
-                            "help": "Tipo de documento. Se não for informado pega do código de ação"
-                        },
-                        {
                             "name": "AGN_ST_TIPOCODIGO",
                             "type": "text",
                             "default": "COD",
-                            "help": "Tipo do código do Agente (COD, ALT, CPF ou CNPJ). Default COD"
+                            "help": "Tipo do código do Agente (COD, ALT, CPF ou CNPJ). Default COD",
+                            "validate": {
+                                "min": 3,
+                                "max": 3,
+                                "pattern": "(COD|ALT|CPF|CNPJ)"
+                            }
                         },
                         {
                             "name": "AGN_ST_CODIGO",
@@ -327,7 +338,7 @@
                         {
                             "name": "AGN_TAU_ST_CODIGO",
                             "type": "text",
-                            "help": "Código do tipo de agente (C, F, U, T...)",
+                            "help": "Código do tipo de agente: \nN (Conta Financeira) \nC (Cliente) \nF (Fornecedor) \nR (Representante) \netc...",
                             "validate": {
                                 "min": 0,
                                 "max": 1
@@ -359,6 +370,15 @@
                                 "min": 0,
                                 "max": 9999999
                             }
+                        },
+                        {
+                            "name": "MOV_ST_COMPLHIST",
+                            "type": "text",
+                            "multiline": true,
+                            "validate": {
+                                "min": 0,
+                                "max": 500
+                            }
                         }
                     ]
                 }
@@ -384,5 +404,13 @@
         "type": "hidden",
         "sequence": true,
         "default": 1
+    },
+    {
+        "name": "pRetornaXML",
+        "label": "Retornar XML?",
+        "help": "Indica se vai retornar o XML quando apresentar Erro.",
+        "type": "boolean",
+        "default": false,
+        "advanced": true
     }
 ]

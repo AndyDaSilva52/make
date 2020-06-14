@@ -1,0 +1,243 @@
+[
+    {
+        "name": "pPRO_IN_ID",
+        "type": "hidden",
+        "sequence": true,
+        "default": 305
+    },
+    {
+        "name": "MovtoVinculado",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "_attributes",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "OPERACAO",
+                        "type": "text",
+                        "help": "Operação - I, U ou D",
+                        "default": "I",
+                        "validate": {
+                            "min": 0,
+                            "max": 1,
+                            "pattern": "(I|U|D)"
+                        }
+                    }
+                ],
+                "sequence": true
+            },
+            {
+                "name": "_comment",
+                "label": "Comentários",
+                "type": "array",
+                "spec": {
+                    "type": "text",
+                    "label": "Comentário"
+                }
+            },
+            {
+                "name": "ORG_IN_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "MOV_SEQ_IN_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "MOV_IN_NUMLANCTO",
+                "type": "text"
+            },
+            {
+                "name": "ACAO_IN_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "TCOB_ST_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "TPD_ST_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "MOV_ST_COMPLHIST",
+                "type": "text"
+            },
+            {
+                "name": "IND_IN_CODIGOMOE",
+                "type": "text"
+            },
+            {
+                "name": "MOV_DT_DATADOCTO",
+                "type": "text"
+            },
+            {
+                "name": "MOV_ST_DOCUMENTO",
+                "type": "text"
+            },
+            {
+                "name": "MOV_DT_ORCAMENTO",
+                "type": "text"
+            },
+            {
+                "name": "MOV_RE_VALOR",
+                "type": "text"
+            },
+            {
+                "name": "HIS_IDE_ST_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "HIS_IN_REDUZIDO",
+                "type": "text"
+            },
+            {
+                "name": "CLA_IDE_ST_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "CLA_IN_REDUZIDO",
+                "type": "text"
+            },
+            {
+                "name": "SCOB_ST_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "COND_ST_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "REF_FIL_IN_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "REF_AGN_IN_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "REF_AGN_TAU_ST_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "REF_AGN_ST_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "REF_AGN_ST_TIPOCODIGO",
+                "type": "text"
+            },
+            {
+                "name": "REF_TPD_ST_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "REF_MOV_ST_DOCUMENTO",
+                "type": "text"
+            },
+            {
+                "name": "REF_MOV_ST_PARCELA",
+                "type": "text"
+            },
+            {
+                "name": "REF_MOV_DT_DATADOCTO",
+                "type": "text"
+            },
+            {
+                "name": "REF_MOV_CH_ORIGEM",
+                "type": "text"
+            },
+            {
+                "name": "VINC_TREF_ST_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "VINC_MOV_DT_DATADOCTO",
+                "type": "text"
+            },
+            {
+                "name": "VINC_MOV_RE_VALOR",
+                "type": "text"
+            },
+            {
+                "name": "REF_MOV_SEQ_IN_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "REF_MOV_IN_NUMLANCTO",
+                "type": "text"
+            },
+            {
+                "name": "ADIANT_MOV_DT_DATADOCTO",
+                "type": "text"
+            },
+            {
+                "name": "ADIANT_MOV_RE_VALOR",
+                "type": "text"
+            },
+            {
+                "name": "ADIANT_MOV_ST_DOCUMENTO",
+                "type": "text"
+            },
+            {
+                "name": "ADIANT_MOV_SEQ_IN_CODIGO",
+                "type": "text"
+            },
+            {
+                "name": "ADIANT_MOV_IN_NUMLANCTO",
+                "type": "text"
+            }
+        ],
+        "sequence": true
+    },
+    {
+        "name": "pUSU_IN_CODIGO",
+        "label": "Código do Usuário de Integração",
+        "type": "integer",
+        "sequence": true,
+        "default": 1,
+        "validate": {
+            "min": 0,
+            "max": 9999999
+        }
+    },
+    {
+        "name": "pObs",
+        "label": "Observação da Transação",
+        "type": "text",
+        "sequence": true,
+        "default": "#Integromat[int305LinkedMovement]",
+        "validate": {
+            "min": 0,
+            "max": 100
+        }
+    },
+    {
+        "name": "pEnviaRecebe",
+        "type": "hidden",
+        "sequence": true,
+        "default": "R"
+    },
+    {
+        "name": "pTransacao",
+        "type": "hidden",
+        "sequence": true,
+        "default": 0
+    },
+    {
+        "name": "pSistema",
+        "label": "Sistema",
+        "type": "hidden",
+        "sequence": true,
+        "default": 1
+    },
+    {
+        "name": "pRetornaXML",
+        "label": "Retornar XML?",
+        "help": "Indica se vai retornar o XML quando apresentar Erro.",
+        "type": "boolean",
+        "default": false,
+        "advanced": true
+    }
+]

@@ -1,18 +1,22 @@
 [
     {
         "name": "Erro",
+        "label": "Erro",
         "type": "boolean"
     },
     {
         "name": "CodTransacao",
+        "label": "CodTransacao",
         "type": "uinteger"
     },
     {
         "name": "Mensagem",
+        "label": "Mensagem",
         "type": "text"
     },
     {
         "name": "PKMega",
+        "label": "PKMega",
         "type": "text"
     }
 ]
