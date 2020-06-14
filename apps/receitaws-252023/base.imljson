@@ -1,0 +1,7 @@
+{
+    "log": {
+        "sanitize": [
+            "request.headers.authorization"
+        ]
+    }
+}

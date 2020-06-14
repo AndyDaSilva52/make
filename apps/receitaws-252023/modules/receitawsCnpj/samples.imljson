@@ -1,0 +1,246 @@
+{
+    "atividade_principal": [
+        {
+            "text": "Bancos múltiplos, com carteira comercial",
+            "code": "64.22-1-00"
+        }
+    ],
+    "data_situacao": "03/11/2005",
+    "complemento": "ANDAR 1 A 16 SALA 101 A 1601 ANDAR 1 A 16 SALA 101 A 1601 ANDAR 1 A 16 SALA 101 A 1601",
+    "nome": "BANCO DO BRASIL SA",
+    "efr": "UNIÃO",
+    "uf": "DF",
+    "telefone": "(61) 3493-9002",
+    "email": "secex@bb.com.br",
+    "atividades_secundarias": [
+        {
+            "text": "Outras atividades de serviços financeiros não especificadas anteriormente",
+            "code": "64.99-9-99"
+        }
+    ],
+    "qsa": [
+        {
+            "qual": "10-Diretor",
+            "nome": "MARCIO HAMILTON FERREIRA"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "NILSON MARTINIANO MOREIRA"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "WALTER MALIENI JUNIOR"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "CARLOS ALBERTO ARAUJO NETTO"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "ANTONIO MAURICIO MAURANO"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "MARCELO AUGUSTO DUTRA LABUTO"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "ROGERIO MAGNO PANCA"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "SIMAO LUIZ KOVALSKI"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "TARCISIO HUBNER"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "EDUARDO CESAR PASA"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "MARCIO LUIZ MORAL"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "JOSE EDUARDO MOREIRA BERGO"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "ALEXANDRE ALVES DE SOUZA"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "CICERO PRZENDSIUK"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "EDSON ROGERIO DA COSTA"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "FABIANO MACANHAN FONTES"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "FERNANDO FLORENCIO CAMPOS"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "GUSTAVO DE SOUZA FOSSE"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "MARCO TULIO DE OLIVEIRA MENDONCA"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "MARVIO MELO FREITAS"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "REINALDO KAZUFUMI YOKOYAMA"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "JOSE CAETANO DE ANDRADE MINCHILLO"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "CARLOS RENATO BONETTI"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "JOSE EDUARDO PEREIRA FILHO"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "MARCO TULIO MORAES DA COSTA"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "JOAO PINTO RABELO JUNIOR"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "CARLOS HAMILTON VASCONCELOS ARAUJO"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "LUCINEIA POSSAR"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "JOSE RICARDO FAGONDE FORNI"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "MARCOS RENATO COLTRI"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "CARLA NESI"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "BERNARDO DE AZEVEDO SILVA ROTHE"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "ANTONIO GUSTAVO MATOS DO VALE"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "LUIZ CLAUDIO BATISTA"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "JOSE AVELAR MATIAS LOPES"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "ANA PAULA TEIXEIRA DE SOUSA"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "DELANO VALENTIM DE ANDRADE"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "GERSON EDUARDO DE OLIVEIRA"
+        },
+        {
+            "qual": "16-Presidente",
+            "nome": "RUBEM DE FREITAS NOVAES"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "PAULA LUCIANA VIANA DA SILVA LIMA MAZANEK"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "CAMILO BUZZI"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "CARLOS MOTTA DOS SANTOS"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "FABIO AUGUSTO CANTIZANI BARBOSA"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "IVANDRE MONTIEL DA SILVA"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "RONALDO SIMON FERREIRA"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "ENIO MATHIAS FERREIRA"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "DANIEL ANDRE STIELER"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "MAURICIO NOGUEIRA"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "THOMPSON SOARES PEREIRA CESAR"
+        },
+        {
+            "qual": "10-Diretor",
+            "nome": "ERIK DA COSTA BREYER"
+        }
+    ],
+    "situacao": "ATIVA",
+    "bairro": "ASA NORTE",
+    "logradouro": "Q SAUN QUADRA 5 LOTE B TORRES I, II E III",
+    "numero": "SN",
+    "cep": "70.040-912",
+    "municipio": "BRASILIA",
+    "porte": "DEMAIS",
+    "abertura": "01/08/1966",
+    "natureza_juridica": "203-8 - Sociedade de Economia Mista",
+    "fantasia": "DIRECAO GERAL",
+    "cnpj": "00.000.000/0001-91",
+    "ultima_atualizacao": "2020-02-26T06:04:53.898Z",
+    "status": "OK",
+    "tipo": "MATRIZ",
+    "motivo_situacao": "",
+    "situacao_especial": "",
+    "data_situacao_especial": "",
+    "capital_social": "67000000000.00",
+    "extra": {},
+    "billing": {
+        "free": true,
+        "database": true
+    }
+}

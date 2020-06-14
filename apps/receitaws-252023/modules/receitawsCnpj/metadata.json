@@ -1,0 +1,8 @@
+{
+    "name": "receitawsCnpj",
+    "label": "Get ReceitaWS - CNPJ",
+    "description": "ReceitaWS - CNPJ",
+    "connection": "receitaws-252023",
+    "webhook": null,
+    "type": "action"
+}

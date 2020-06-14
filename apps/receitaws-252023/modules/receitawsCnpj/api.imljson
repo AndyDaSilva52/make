@@ -1,0 +1,120 @@
+[
+    {
+        "condition": "{{!connection.commercial_mode}}",
+        "url": "https://www.receitaws.com.br/v1/cnpj/{{ replace( parameters.cnpj; '/[^0-9]/g'; emptystring) }}",
+        "method": "GET",
+        "headers": {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": "Bearer X{{parameters.token}}"
+        },
+        "response": {
+            "temp": {
+                "body": "{{body}}"
+            }
+        },
+        "log": {
+            "sanitize": [
+                "request.headers.authorization"
+            ]
+        }
+    },
+    {
+        "condition": "{{connection.commercial_mode}}",
+        "url": "https://www.receitaws.com.br/v1/cnpj/{{ replace( parameters.cnpj; '/[^0-9]/g'; emptystring)}}{{ if( ifempty(parameters.days;0) == 0; emptystring; '/days/' + parameters.days ) }}",
+        "method": "GET",
+        "headers": {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": "Bearer X{{parameters.token}}"
+        },
+        "response": {
+            "temp": {
+                "body": "{{body}}"
+            }
+        },
+        "log": {
+            "sanitize": [
+                "request.headers.authorization"
+            ]
+        }
+    },
+    {
+        "response": {
+            "output": {
+                "cnpj": "{{temp.body.cnpj}}",
+                "nome": "{{temp.body.nome}}",
+                "fantasia": "{{temp.body.fantasia}}",
+                "tipo": "{{temp.body.tipo}}",
+                "abertura": "{{temp.body.abertura}}",
+                "situacao": "{{temp.body.situacao}}",
+                "data_situacao": "{{temp.body.data_situacao}}",
+                "motivo_situacao": "{{temp.body.motivo_situacao}}",
+                "telefone": "{{temp.body.telefone}}",
+                "email": "{{temp.body.email}}",
+                "natureza_juridica": "{{temp.body.natureza_juridica}}",
+                "natureza_juridica_collection": {
+                    // 203-8 - Sociedade de Economia Mista
+                    "code": "{{ trim(substring(temp.body.natureza_juridica; 0; indexOf(temp.body.natureza_juridica; space))) }}",
+                    "text": "{{ trim(replace(substring(temp.body.natureza_juridica; indexOf(temp.body.natureza_juridica; space)); '-'; emptystring) )}}"
+                },
+                "atividade_principal": "{{temp.body.atividade_principal}}",
+                "atividades_secundarias": "{{temp.body.atividades_secundarias}}",
+                "logradouro": "{{temp.body.logradouro}}",
+                "numero": "{{temp.body.numero}}",
+                "bairro": "{{temp.body.bairro}}",
+                "municipio": "{{temp.body.municipio}}",
+                "uf": "{{temp.body.uf}}",
+                "complemento": "{{temp.body.complemento}}",
+                "cep": "{{temp.body.cep}}",
+                "efr": "{{temp.body.efr}}",
+                "porte": "{{temp.body.porte}}",
+                "qsa": "{{temp.body.qsa}}",
+                "situacao_especial": "{{temp.body.situacao_especial}}",
+                // TODO: Tem situações em que um parseDate não funciona! cnpj 83754234000151
+                "data_situacao_especial": "{{temp.body.data_situacao_especial}}",
+                "capital_social": "{{temp.body.capital_social}}",
+                "extra": "{{temp.body.extra}}",
+                "billing": "{{temp.body.billing}}",
+                "ultima_atualizacao": "{{temp.body.ultima_atualizacao}}",
+                "status": "{{temp.body.status}}"
+            },
+            "valid": {
+                "condition": "{{ if( temp.body.status == 'OK'; true; false) }}",
+                "type": "DataError",
+                "message": "status[{{temp.body.status}}] message[{{temp.body.message}}] cnpj[{{replace( parameters.cnpj; '/[^0-9]/g'; emptystring)}}]"
+            },
+            "error": {
+                "200": {
+                    "type": "DataError",
+                    "message": "[{{statusCode}}] - status[{{temp.status}}] message[{{temp.message}}] cnpj[{{replace( parameters.cnpj; '/[^0-9]/g'; emptystring)}}]"
+                },
+                "400": {
+                    "type": "ConnectionError",
+                    "message": "[{{statusCode}}] - Problema na requisição - cnpj[{{replace( parameters.cnpj; '/[^0-9]/g'; emptystring)}}]"
+                },
+                "401": {
+                    "type": "InvalidAccessTokenError",
+                    "message": "[{{statusCode}}] - Não Autorizado - cnpj[{{replace( parameters.cnpj; '/[^0-9]/g'; emptystring)}}]"
+                },
+                "404": {
+                    "type": "InvalidConfigurationError",
+                    "message": "[{{statusCode}}] - Não encontrado - cnpj[{{replace( parameters.cnpj; '/[^0-9]/g'; emptystring)}}]"
+                },
+                "429": {
+                    "type": "RateLimitError",
+                    "message": "[{{statusCode}}] - Muitas requisições, tente novamente mais tarde - cnpj[{{replace( parameters.cnpj; '/[^0-9]/g'; emptystring)}}]"
+                },
+                "500": {
+                    "type": "ConnectionError",
+                    "message": "[{{statusCode}}] - Problema na requisição - cnpj[{{replace( parameters.cnpj; '/[^0-9]/g'; emptystring)}}]"
+                },
+                "504": {
+                    "type": "ConnectionError",
+                    "message": "[{{statusCode}}] - Operação excedeu tempo de resposta - cnpj[{{replace( parameters.cnpj; '/[^0-9]/g'; emptystring)}}]"
+                },
+                "message": "[{{statusCode}}] - Erro genérico - cnpj[{{replace( parameters.cnpj; '/[^0-9]/g'; emptystring)}}]"
+            }
+        }
+    }
+]

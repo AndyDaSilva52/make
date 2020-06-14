@@ -1,0 +1,41 @@
+[
+    {
+        "condition": "{{!parameters.commercial_mode}}",
+        "url": "https://www.receitaws.com.br/v1/cnpj/{{ replace( '00.000.000/0001-91'; '/[^0-9]/g'; emptystring) }}",
+        "method": "GET",
+        "headers": {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        "response": {
+            "temp": {
+                "body": "{{body}}"
+            }
+        }
+    },
+    {
+        "condition": "{{parameters.commercial_mode}}",
+        "url": "https://www.receitaws.com.br/v1/cnpj/{{ replace( '00.000.000/0001-91'; '/[^0-9]/g'; emptystring)}}",
+        "method": "GET",
+        "headers": {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": "Bearer {{parameters.token}}"
+        },
+        "response": {
+            "temp": {
+                "body": "{{body}}"
+            }
+        },
+        "log": {
+            "sanitize": [
+                "request.headers.authorization"
+            ]
+        }
+    },
+    {
+        "response": {
+            "output": "{{temp.body}}"
+        }
+    }
+]
