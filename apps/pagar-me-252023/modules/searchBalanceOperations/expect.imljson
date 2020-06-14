@@ -1,9 +1,9 @@
 [
     {
         "name": "limit",
-        "type": "uinteger",
-        "label": "Count",
-        "default": 100
+        "type": "hidden",
+        "label": "Limit",
+        "default": 500
     },
     {
         "name": "status",
@@ -29,14 +29,14 @@
         "name": "start_date",
         "type": "date",
         "label": "Start Date",
-        "help": "Specific the day that will be filtered.\nTime will be set as 00:00:00.\nExample using formula for Yesterday: {{addDays(now;-1)}}",
+        "help": "Specific the day and time.\nExample using formula for Yesterday: {{addMinutes(now;-1)}}",
         "time": false
     },
     {
         "name": "end_date",
         "type": "date",
         "label": "End Date",
-        "help": "Specific the day that will be filtered.\nTime will be set as 23:59:59.\nExample using formula for Yesterday: {{addDays(now;-1)}}",
+        "help": "Specific the day that will be filtered.\nExample using formula for Yesterday: {{now}}",
         "time": false
     }
 ]

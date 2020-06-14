@@ -76,8 +76,45 @@
                 "date_created": "{{body.customer.date_created}}",
                 "documents": "{{body.customer.documents}}"
             },
-            "billing": "{{body.billing}}",
-            "shipping": "{{body.shipping}}",
+            "billing": {
+                "address": {
+                    "object": "{{body.billing.address.object}}",
+                    "street": "{{body.billing.address.street}}",
+                    "complementary": "{{body.billing.address.complementary}}",
+                    "street_number": "{{body.billing.address.street_number}}",
+                    "neighborhood": "{{body.billing.address.neighborhood}}",
+                    "city": "{{body.billing.address.city}}",
+                    "state": "{{body.billing.address.state}}",
+                    "zipcode": "{{body.billing.address.zipcode}}",
+                    "country": "{{body.billing.address.country}}",
+                    "id": "{{body.billing.address.id}}"
+                },
+                "object": "{{body.billing.object}}",
+                "id": "{{body.billing.id}}",
+                "name": "{{body.billing.name}}"
+            },
+            "shipping": {
+                "address": {
+                    "object": "{{body.shipping.object}}",
+                    "street": "{{body.shipping.street}}",
+                    "complementary": "{{body.shipping.complementary}}",
+                    "street_number": "{{body.shipping.street_number}}",
+                    "neighborhood": "{{body.shipping.neighborhood}}",
+                    "city": "{{body.shipping.city}}",
+                    "state": "{{body.shipping.state}}",
+                    "zipcode": "{{body.shipping.zipcode}}",
+                    "country": "{{body.shipping.country}}",
+                    "id": "{{body.shipping.id}}"
+                },
+                "object": "{{body.shipping.object}}",
+                "id": "{{body.shipping.id}}",
+                "name": "{{body.shipping.name}}",
+                "fee": "{{ pagarmeConvertNumber(body.shipping.fee) }}",
+                "delivery_date": "{{body.shipping}}",
+                "expedited": "{{body.shipping}}"
+            },
+            // TODO: fazer função que recebe o Object e converte keys para número
+            // Rever Interface.iml !!!
             "items": "{{body.items}}",
             "card": {
                 "object": "{{body.card.object}}",

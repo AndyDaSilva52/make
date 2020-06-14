@@ -5,8 +5,8 @@
         "count": "{{parameters.limit}}",
         "status": "{{parameters.status}}",
         "page": "{{ifempty(pagination.page;1)}}",
-        "start_date": "{{(formatDate(parseDate(formatDate(ifempty(parameters.start_date;now); 'YYYY-MM-DD') + ' 00:00:00.000'; 'YYYY-MM-DD HH:mm:ss.SSS'); 'X') + '000')}}",
-        "end_date": "{{(formatDate(parseDate((formatDate(ifempty(parameters.end_date;now);'YYYY-MM-DD') + ' 23:59:59.999');'YYYY-MM-DD HH:mm:ss.SSS'); 'X') + '999')}}"
+        "start_date": "{{   ( formatDate( ifempty(parameters.start_date;now) ; 'X') + '000') }}",
+        "end_date": "{{     ( formatDate( ifempty(parameters.end_date;  now) ; 'X') + '999') }}"
     },
     "body": {},
     "headers": {},

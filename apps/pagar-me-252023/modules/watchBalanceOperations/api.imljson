@@ -3,12 +3,11 @@
     "url": "/balance/operations",
     "method": "GET",
     "qs": {
-        "count": "{{parameters.limit}}",
-        "status": "{{parameters.status}}",
-        "page": "1"
-        //,
-        //"start_date": "",
-        //"end_date": ""
+        "count": "{{    parameters.limit}}",
+        "status": "{{   parameters.status}}",
+        "page": "{{     ifempty(pagination.page;1)}}",
+        "start_date": "{{ if( ifempty(response.trigger.date;true) == true ; null; (formatDate( response.trigger.date ; 'X') + '000'))  }}"
+        //,"end_date": ""
     },
     "body": {},
     "headers": {},
@@ -20,13 +19,14 @@
             "type": "date",
             "order": "desc"
         },
-        "output": "{{item}}",
-        "limit": "{{parameters.limit}}"
+        "output": "{{item}}"
+        //,"limit": "{{parameters.limit}}"
     },
     "pagination": {
         "mergeWithParent": true,
         "qs": {
-            "page": "{{pagination.page}}"
+            "page": "{{pagination.page}}",
+            "after": "{{iterate.container.last.data.id}}"
         }
     }
 }

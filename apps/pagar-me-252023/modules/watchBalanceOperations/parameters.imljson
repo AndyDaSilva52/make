@@ -1,10 +1,10 @@
 [
     {
-        "help": "Maximum number of results Integromat will work with during one execution cycle.",
+        "help": "The maximum number of results to be worked with during one execution cycle.",
         "name": "limit",
         "type": "uinteger",
         "label": "Limit",
-        "default": 2,
+        "default": 50,
         "required": true
     },
     {

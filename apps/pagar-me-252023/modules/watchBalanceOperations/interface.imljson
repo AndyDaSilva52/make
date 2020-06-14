@@ -1,1 +1,310 @@
-[]
+[
+    {
+        "name": "id",
+        "type": "text"
+    },
+    {
+        "name": "status",
+        "type": "text"
+    },
+    {
+        "name": "type",
+        "type": "text"
+    },
+    {
+        "name": "amount",
+        "type": "number"
+    },
+    {
+        "name": "fee",
+        "type": "number"
+    },
+    {
+        "name": "balance_amount",
+        "type": "number"
+    },
+    {
+        "name": "balance_old_amount",
+        "type": "number"
+    },
+    {
+        "name": "date_created",
+        "type": "date"
+    },
+    {
+        "name": "movement_object",
+        "type": "collection",
+        "sequence": true,
+        "spec": [
+            {
+                "name": "object",
+                "type": "text"
+            },
+            {
+                "name": "id",
+                "type": "text"
+            },
+            {
+                "name": "status",
+                "type": "text"
+            },
+            {
+                "name": "type",
+                "type": "text"
+            },
+            {
+                "name": "description",
+                "type": "text"
+            },
+            {
+                "name": "transaction_id",
+                "type": "text"
+            },
+            {
+                "name": "amount",
+                "type": "number"
+            },
+            {
+                "name": "fee",
+                "type": "number"
+            },
+            {
+                "name": "anticipation_fee",
+                "type": "number"
+            },
+            {
+                "name": "fraud_coverage_fee",
+                "type": "number"
+            },
+            {
+                "name": "accrual_date",
+                "type": "date",
+                "time": true
+            },
+            {
+                "name": "date_created",
+                "type": "date",
+                "time": true
+            },
+            {
+                "name": "date_updated",
+                "type": "date",
+                "time": true
+            },
+            {
+                "name": "payment_date",
+                "type": "date",
+                "time": false
+            },
+            {
+                "name": "funding_date",
+                "type": "date",
+                "time": false
+            },
+            {
+                "name": "funding_estimated_date",
+                "type": "date",
+                "time": false
+            },
+            {
+                "name": "installment",
+                "type": "number"
+            },
+            {
+                "name": "payment_method",
+                "type": "text"
+            },
+            {
+                "name": "recipient_id",
+                "type": "text"
+            },
+            {
+                "name": "object_id",
+                "type": "text"
+            },
+            {
+                "name": "object_type",
+                "type": "text"
+            },
+            {
+                "name": "source_type",
+                "type": "text"
+            },
+            {
+                "name": "source_id",
+                "type": "text"
+            },
+            {
+                "name": "target_type",
+                "type": "text"
+            },
+            {
+                "name": "target_id",
+                "type": "text"
+            },
+            {
+                "name": "split_rule_id",
+                "type": "text"
+            },
+            {
+                "name": "bulk_anticipation_id",
+                "type": "text"
+            },
+            {
+                "name": "originator_model",
+                "type": "text"
+            },
+            {
+                "name": "originator_model_id",
+                "type": "text"
+            },
+            {
+                "name": "original_payment_date",
+                "type": "date",
+                "time": true
+            },
+            {
+                "name": "metadata",
+                "type": "collection",
+                "sequence": true,
+                "spec": []
+            },
+            {
+                "name": "bank_account",
+                "type": "collection",
+                "sequence": true,
+                "spec": [
+                    {
+                        "name": "object",
+                        "type": "text"
+                    },
+                    {
+                        "name": "id",
+                        "type": "text"
+                    },
+                    {
+                        "name": "bank_code",
+                        "type": "text"
+                    },
+                    {
+                        "name": "agencia",
+                        "type": "text"
+                    },
+                    {
+                        "name": "agencia_dv",
+                        "type": "text"
+                    },
+                    {
+                        "name": "conta",
+                        "type": "text"
+                    },
+                    {
+                        "name": "conta_dv",
+                        "type": "text"
+                    },
+                    {
+                        "name": "type",
+                        "type": "text"
+                    },
+                    {
+                        "name": "document_type",
+                        "type": "text"
+                    },
+                    {
+                        "name": "document_number",
+                        "type": "text"
+                    },
+                    {
+                        "name": "legal_name",
+                        "type": "text"
+                    },
+                    {
+                        "name": "charge_transfer_fees",
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "date_created",
+                        "type": "date",
+                        "time": true
+                    }
+                ]
+            },
+            {
+                "name": "movement_object",
+                "type": "collection",
+                "sequence": true,
+                "spec": [
+                    {
+                        "name": "object",
+                        "type": "text"
+                    },
+                    {
+                        "name": "id",
+                        "type": "text"
+                    },
+                    {
+                        "name": "serial_number",
+                        "type": "text"
+                    },
+                    {
+                        "name": "amount",
+                        "type": "number"
+                    },
+                    {
+                        "name": "status",
+                        "type": "text"
+                    },
+                    {
+                        "name": "payment_method",
+                        "type": "text"
+                    },
+                    {
+                        "name": "type",
+                        "type": "text"
+                    },
+                    {
+                        "name": "period_start_date",
+                        "type": "date",
+                        "time": true
+                    },
+                    {
+                        "name": "period_end_date",
+                        "type": "date",
+                        "time": true
+                    },
+                    {
+                        "name": "movement_object",
+                        "type": "collection",
+                        "sequence": true,
+                        "spec": [
+                            {
+                                "name": "company_minimum_monthly_payment",
+                                "type": "number"
+                            },
+                            {
+                                "name": "company_production_date",
+                                "type": "date"
+                            },
+                            {
+                                "name": "proportional_minimum_monthly_payment",
+                                "type": "number"
+                            },
+                            {
+                                "name": "gateway_fee",
+                                "type": "number"
+                            },
+                            {
+                                "name": "consumed_fee",
+                                "type": "number"
+                            },
+                            {
+                                "name": "fee_collection_id",
+                                "type": "text"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

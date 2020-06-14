@@ -1,7 +1,8 @@
 [
     {
         "name": "transaction_id",
-        "type": "text",
+        "label": "transaction_id",
+        "type": "integer",
         "required": true
     }
 ]
