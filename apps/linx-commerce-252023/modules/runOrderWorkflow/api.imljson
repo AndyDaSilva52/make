@@ -8,7 +8,9 @@
     "response": {
         "output": "{{body}}",
         "valid": {
-            "condition": "{{body.IsValid}}"
+            "condition": "{{body.IsValid}}",
+            "type": "DataError",
+            "message": "{{ join(map(body.Errors, 'ErrorMessage'), ';' ) }}"
         }
     }
 }

@@ -14,6 +14,7 @@
         }
     },
     {
+        "condition": "{{ if(ifempty(temp.WhereItemProductID; false) == false; false; true) }}",
         "url": "/v1/Catalog/API.svc/web/SearchProduct",
         "body": {
             "Page": {
@@ -31,6 +32,7 @@
         }
     },
     {
+        "condition": "{{ if(ifempty(temp.WhereItemProductID; false) == false; false; true) }}",
         "response": {
             "temp": {
                 "Items": "{{setPropertyBetweenTwoArrays(temp.Items,temp.ItemsProductDetails,'ProductDetails','ProductID')}}"

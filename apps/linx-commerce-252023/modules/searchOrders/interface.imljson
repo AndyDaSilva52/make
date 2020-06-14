@@ -1,1 +1,480 @@
-[]
+[
+    {
+        "name": "AcquiredDate",
+        "type": "text"
+    },
+    {
+        "name": "Addresses",
+        "type": "text"
+    },
+    {
+        "name": "CancelledDate",
+        "type": "text"
+    },
+    {
+        "name": "CommissionAmount",
+        "type": "number"
+    },
+    {
+        "name": "CreatedBy",
+        "type": "text"
+    },
+    {
+        "name": "CreatedChannel",
+        "type": "text"
+    },
+    {
+        "name": "CreatedDate",
+        "type": "text"
+    },
+    {
+        "name": "CustomerID",
+        "type": "number"
+    },
+    {
+        "name": "CustomerType",
+        "type": "text"
+    },
+    {
+        "name": "DeliveryAmount",
+        "type": "number"
+    },
+    {
+        "name": "DeliveryMethods",
+        "type": "text"
+    },
+    {
+        "name": "DeliveryPostalCode",
+        "type": "text"
+    },
+    {
+        "name": "DiscountAmount",
+        "type": "number"
+    },
+    {
+        "name": "Discounts",
+        "type": "text"
+    },
+    {
+        "name": "ExternalInfo",
+        "type": "text"
+    },
+    {
+        "name": "Fulfillments",
+        "type": "array"
+    },
+    {
+        "name": "GlobalStatus",
+        "type": "number"
+    },
+    {
+        "name": "HasConflicts",
+        "type": "boolean"
+    },
+    {
+        "name": "Items",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "BundleKitDiscount",
+                    "type": "text"
+                },
+                {
+                    "name": "BundleKitDiscountValue",
+                    "type": "text"
+                },
+                {
+                    "name": "BundlePriceType",
+                    "type": "text"
+                },
+                {
+                    "name": "CatalogID",
+                    "type": "number"
+                },
+                {
+                    "name": "CatalogItemType",
+                    "type": "number"
+                },
+                {
+                    "name": "Depth",
+                    "type": "text"
+                },
+                {
+                    "name": "DiscountAmount",
+                    "type": "number"
+                },
+                {
+                    "name": "ExternalInfo",
+                    "type": "text"
+                },
+                {
+                    "name": "FormData",
+                    "type": "text"
+                },
+                {
+                    "name": "Height",
+                    "type": "text"
+                },
+                {
+                    "name": "InStockHandlingDays",
+                    "type": "number"
+                },
+                {
+                    "name": "IsDeleted",
+                    "type": "boolean"
+                },
+                {
+                    "name": "IsDeliverable",
+                    "type": "boolean"
+                },
+                {
+                    "name": "IsFreeOffer",
+                    "type": "boolean"
+                },
+                {
+                    "name": "IsFreeShipping",
+                    "type": "boolean"
+                },
+                {
+                    "name": "IsGiftWrapping",
+                    "type": "boolean"
+                },
+                {
+                    "name": "IsService",
+                    "type": "boolean"
+                },
+                {
+                    "name": "OrderID",
+                    "type": "text"
+                },
+                {
+                    "name": "OrderItemID",
+                    "type": "number"
+                },
+                {
+                    "name": "OutStockHandlingDays",
+                    "type": "number"
+                },
+                {
+                    "name": "ParentItemID",
+                    "type": "text"
+                },
+                {
+                    "name": "Price",
+                    "type": "number"
+                },
+                {
+                    "name": "PriceListID",
+                    "type": "number"
+                },
+                {
+                    "name": "ProductID",
+                    "type": "number"
+                },
+                {
+                    "name": "ProductIntegrationID",
+                    "type": "text"
+                },
+                {
+                    "name": "ProductName",
+                    "type": "text"
+                },
+                {
+                    "name": "Properties",
+                    "type": "text"
+                },
+                {
+                    "name": "Qty",
+                    "type": "number"
+                },
+                {
+                    "name": "SKU",
+                    "type": "text"
+                },
+                {
+                    "name": "SKUIntegrationID",
+                    "type": "text"
+                },
+                {
+                    "name": "SellerSKU",
+                    "type": "text"
+                },
+                {
+                    "name": "SerialKey",
+                    "type": "array"
+                },
+                {
+                    "name": "SkuID",
+                    "type": "number"
+                },
+                {
+                    "name": "SkuName",
+                    "type": "text"
+                },
+                {
+                    "name": "SpecialType",
+                    "type": "number"
+                },
+                {
+                    "name": "Status",
+                    "type": "text"
+                },
+                {
+                    "name": "Subtotal",
+                    "type": "number"
+                },
+                {
+                    "name": "TaxationAmount",
+                    "type": "number"
+                },
+                {
+                    "name": "Total",
+                    "type": "number"
+                },
+                {
+                    "name": "WareHouseID",
+                    "type": "number"
+                },
+                {
+                    "name": "WarehouseIntegrationID",
+                    "type": "text"
+                },
+                {
+                    "name": "Warehouses",
+                    "type": "array"
+                },
+                {
+                    "name": "WebSiteID",
+                    "type": "number"
+                },
+                {
+                    "name": "Weight",
+                    "type": "text"
+                },
+                {
+                    "name": "Width",
+                    "type": "text"
+                }
+            ]
+        }
+    },
+    {
+        "name": "ItemsCount",
+        "type": "number"
+    },
+    {
+        "name": "ItemsQty",
+        "type": "number"
+    },
+    {
+        "name": "MarketPlaceBrand",
+        "type": "text"
+    },
+    {
+        "name": "ModifiedBy",
+        "type": "text"
+    },
+    {
+        "name": "ModifiedDate",
+        "type": "text"
+    },
+    {
+        "name": "MultiSiteTenant",
+        "type": "text"
+    },
+    {
+        "name": "OrderGroupID",
+        "type": "text"
+    },
+    {
+        "name": "OrderGroupNumber",
+        "type": "text"
+    },
+    {
+        "name": "OrderID",
+        "type": "text"
+    },
+    {
+        "name": "OrderInvoice",
+        "type": "text"
+    },
+    {
+        "name": "OrderNumber",
+        "type": "text"
+    },
+    {
+        "name": "OrderStatusID",
+        "type": "number"
+    },
+    {
+        "name": "OrderType",
+        "type": "text"
+    },
+    {
+        "name": "OriginalOrderID",
+        "type": "text"
+    },
+    {
+        "name": "PaymentDate",
+        "type": "text"
+    },
+    {
+        "name": "PaymentMethods",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "Amount",
+                    "type": "number"
+                },
+                {
+                    "name": "InstallmentAmount",
+                    "type": "number"
+                },
+                {
+                    "name": "Installments",
+                    "type": "number"
+                },
+                {
+                    "name": "IntegrationID",
+                    "type": "text"
+                },
+                {
+                    "name": "OrderID",
+                    "type": "text"
+                },
+                {
+                    "name": "OrderPaymentMethodID",
+                    "type": "number"
+                },
+                {
+                    "name": "PaidAmount",
+                    "type": "number"
+                },
+                {
+                    "name": "PaymentDate",
+                    "type": "text"
+                },
+                {
+                    "name": "PaymentInfo",
+                    "type": "text"
+                },
+                {
+                    "name": "PaymentMethodID",
+                    "type": "number"
+                },
+                {
+                    "name": "PaymentNumber",
+                    "type": "text"
+                },
+                {
+                    "name": "Properties",
+                    "type": "text"
+                },
+                {
+                    "name": "RefundAmount",
+                    "type": "number"
+                },
+                {
+                    "name": "Status",
+                    "type": "text"
+                },
+                {
+                    "name": "TaxAmount",
+                    "type": "number"
+                },
+                {
+                    "name": "TransactionID",
+                    "type": "text"
+                }
+            ]
+        }
+    },
+    {
+        "name": "PaymentStatus",
+        "type": "number"
+    },
+    {
+        "name": "PaymentTaxAmount",
+        "type": "number"
+    },
+    {
+        "name": "Properties",
+        "type": "text"
+    },
+    {
+        "name": "Remarks",
+        "type": "text"
+    },
+    {
+        "name": "SalesRepresentative",
+        "type": "text"
+    },
+    {
+        "name": "Seller",
+        "type": "text"
+    },
+    {
+        "name": "SellerCommissionAmount",
+        "type": "number"
+    },
+    {
+        "name": "ShipmentDate",
+        "type": "text"
+    },
+    {
+        "name": "ShipmentStatus",
+        "type": "number"
+    },
+    {
+        "name": "Shipments",
+        "type": "text"
+    },
+    {
+        "name": "ShopperTicketID",
+        "type": "text"
+    },
+    {
+        "name": "SubTotal",
+        "type": "number"
+    },
+    {
+        "name": "Tags",
+        "type": "text"
+    },
+    {
+        "name": "TaxAmount",
+        "type": "number"
+    },
+    {
+        "name": "Total",
+        "type": "number"
+    },
+    {
+        "name": "TotalDue",
+        "type": "number"
+    },
+    {
+        "name": "TotalPaid",
+        "type": "number"
+    },
+    {
+        "name": "TotalRefunded",
+        "type": "number"
+    },
+    {
+        "name": "TrafficSourceID",
+        "type": "text"
+    },
+    {
+        "name": "WebSiteID",
+        "type": "number"
+    },
+    {
+        "name": "WebSiteIntegrationID",
+        "type": "text"
+    }
+]

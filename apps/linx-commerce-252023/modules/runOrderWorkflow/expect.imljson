@@ -15,11 +15,13 @@
             "spec": [
                 {
                     "name": "Key",
-                    "type": "text"
+                    "type": "text",
+                    "required": true
                 },
                 {
                     "name": "Value",
-                    "type": "text"
+                    "type": "text",
+                    "required": true
                 }
             ]
         }

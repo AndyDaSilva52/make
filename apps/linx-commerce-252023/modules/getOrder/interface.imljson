@@ -634,7 +634,7 @@
                     "sequence": true
                 },
                 {
-                    "name": "SubTotal",
+                    "name": "Subtotal",
                     "type": "number",
                     "sequence": true
                 },

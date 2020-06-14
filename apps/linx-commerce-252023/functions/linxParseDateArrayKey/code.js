@@ -1,5 +1,10 @@
 function linxParseDateArrayKey(obj, keys) {
 
+    /**
+    * obj must be an array
+    * keys String with comma (,) separator
+    */
+
     function setValue(propertyPath, value, obj) {
         /**
          * 
@@ -50,7 +55,9 @@ function linxParseDateArrayKey(obj, keys) {
         });
 
         return obj;
+        //} else if (obj instanceof String) {
     } else {
+        // String
         var strDate = new String(obj);
 
         strDate = strDate.substring(
@@ -63,5 +70,8 @@ function linxParseDateArrayKey(obj, keys) {
             strDate
             / 1000
             , 'X');
+        //} else
+        ///** if () //TODO: Object */ {
+        //    return obj;
     }
 }
