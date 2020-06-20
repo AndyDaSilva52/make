@@ -1,32 +1,11 @@
 [
     {
-        "condition": "{{!connection.commercial_mode}}",
-        "url": "https://www.receitaws.com.br/v1/cnpj/{{ replace( parameters.cnpj; '/[^0-9]/g'; emptystring) }}",
-        "method": "GET",
-        "headers": {
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "Authorization": "Bearer X{{parameters.token}}"
-        },
-        "response": {
-            "temp": {
-                "body": "{{body}}"
-            }
-        },
-        "log": {
-            "sanitize": [
-                "request.headers.authorization"
-            ]
-        }
-    },
-    {
-        "condition": "{{connection.commercial_mode}}",
         "url": "https://www.receitaws.com.br/v1/cnpj/{{ replace( parameters.cnpj; '/[^0-9]/g'; emptystring)}}{{ if( ifempty(parameters.days;0) == 0; emptystring; '/days/' + parameters.days ) }}",
         "method": "GET",
         "headers": {
             "Content-Type": "application/json",
             "Accept": "application/json",
-            "Authorization": "Bearer X{{parameters.token}}"
+            "Authorization": "Bearer {{connection.token}}"
         },
         "response": {
             "temp": {
@@ -42,16 +21,16 @@
     {
         "response": {
             "output": {
-                "cnpj": "{{temp.body.cnpj}}",
-                "nome": "{{temp.body.nome}}",
-                "fantasia": "{{temp.body.fantasia}}",
-                "tipo": "{{temp.body.tipo}}",
-                "abertura": "{{temp.body.abertura}}",
-                "situacao": "{{temp.body.situacao}}",
-                "data_situacao": "{{temp.body.data_situacao}}",
-                "motivo_situacao": "{{temp.body.motivo_situacao}}",
-                "telefone": "{{temp.body.telefone}}",
-                "email": "{{temp.body.email}}",
+                "cnpj": "{{     temp.body.cnpj}}",
+                "nome": "{{     temp.body.nome}}",
+                "fantasia": "{{ temp.body.fantasia}}",
+                "tipo": "{{     temp.body.tipo}}",
+                "abertura": "{{ temp.body.abertura}}",
+                "situacao": "{{ temp.body.situacao}}",
+                "data_situacao": "{{    temp.body.data_situacao}}",
+                "motivo_situacao": "{{  temp.body.motivo_situacao}}",
+                "telefone": "{{         temp.body.telefone}}",
+                "email": "{{            temp.body.email}}",
                 "natureza_juridica": "{{temp.body.natureza_juridica}}",
                 "natureza_juridica_collection": {
                     // 203-8 - Sociedade de Economia Mista
@@ -82,13 +61,10 @@
             "valid": {
                 "condition": "{{ if( temp.body.status == 'OK'; true; false) }}",
                 "type": "DataError",
-                "message": "status[{{temp.body.status}}] message[{{temp.body.message}}] cnpj[{{replace( parameters.cnpj; '/[^0-9]/g'; emptystring)}}]"
+                "message": "status[{{temp.body.status}}] mensagem[{{temp.body.message}}] cnpj[{{replace( parameters.cnpj; '/[^0-9]/g'; emptystring)}}]"
             },
             "error": {
-                "200": {
-                    "type": "DataError",
-                    "message": "[{{statusCode}}] - status[{{temp.status}}] message[{{temp.message}}] cnpj[{{replace( parameters.cnpj; '/[^0-9]/g'; emptystring)}}]"
-                },
+                "message": "[{{statusCode}}] - Erro genérico - cnpj[{{replace( parameters.cnpj; '/[^0-9]/g'; emptystring)}}]",
                 "400": {
                     "type": "ConnectionError",
                     "message": "[{{statusCode}}] - Problema na requisição - cnpj[{{replace( parameters.cnpj; '/[^0-9]/g'; emptystring)}}]"
@@ -112,8 +88,7 @@
                 "504": {
                     "type": "ConnectionError",
                     "message": "[{{statusCode}}] - Operação excedeu tempo de resposta - cnpj[{{replace( parameters.cnpj; '/[^0-9]/g'; emptystring)}}]"
-                },
-                "message": "[{{statusCode}}] - Erro genérico - cnpj[{{replace( parameters.cnpj; '/[^0-9]/g'; emptystring)}}]"
+                }
             }
         }
     }

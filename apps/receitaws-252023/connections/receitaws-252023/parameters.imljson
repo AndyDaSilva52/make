@@ -1,18 +1,8 @@
 [
     {
-        "name": "commercial_mode",
-        "label": "Mode de Consulta Comercial?",
-        "type": "boolean",
-        "editable": false,
-        "default": false,
-        "required": true,
-        "nested": [
-            {
-                "name": "token",
-                "type": "text",
-                "label": "Token",
-                "required": true
-            }
-        ]
+        "name": "token",
+        "type": "text",
+        "label": "Token",
+        "required": true
     }
 ]

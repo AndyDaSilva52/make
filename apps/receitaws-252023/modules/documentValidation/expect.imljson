@@ -1,0 +1,24 @@
+[
+    {
+        "name": "doc_type",
+        "type": "hidden",
+        "label": "Tipo de Documento",
+        "default": "cnpj",
+        "options": [
+            {
+                "label": "CNPJ",
+                "value": "cnpj"
+            }
+        ]
+    },
+    {
+        "name": "doc_value",
+        "label": "Lista de Documentos",
+        "help": "* Pode ser informado apenas um valor, mas precisa ser como Array. Para isso pode ser usado: \n\n {{split(\"00.000.000/0001-91\"; \",\")}}",
+        "type": "array",
+        "spec": {
+            "type": "text",
+            "label": "cnpj"
+        }
+    }
+]

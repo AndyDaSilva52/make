@@ -1,20 +1,19 @@
 [
     {
-        "name": "days",
-        "type": "uinteger",
-        "label": "Dias",
-        "help": "Quantidade máxima de dias com relação à última consulta na Receita Federal deste CNPJ",
-        "required": false,
-        "disabled": "{{!connection.commercial_mode}}"
-    },
-    {
         "name": "cnpj",
         "type": "text",
         "label": "CNPJ",
         "help": "CNPJ a ser pesquisado.\nAceita formato \"00.000.000/0001-91\" ou \"00000000000191\"",
         "required": true,
         "validate": {
-            "pattern": "([0-9]{2}\\.?[0-9]{3}\\.?[0-9]{3}\\/?[0-9]{4}\\-?[0-9]{2})"
+            "pattern": "([0-9]{2}\\.?[0-9]{3}\\.?[0-9]{3}\\/?[0-9]{4}\\-?[0-9]{2}|[0-9]{14})"
         }
+    },
+    {
+        "name": "days",
+        "type": "uinteger",
+        "label": "Dias",
+        "help": "Quantidade máxima de dias com relação à última consulta na Receita Federal deste CNPJ (** Pode gerar cobranças ao ser informado)",
+        "required": false
     }
 ]

@@ -1,1 +1,173 @@
-[]
+[
+    {
+        "name": "cnpj",
+        "type": "text"
+    },
+    {
+        "name": "tipo",
+        "type": "text"
+    },
+    {
+        "name": "nome",
+        "type": "text"
+    },
+    {
+        "name": "fantasia",
+        "type": "text"
+    },
+    {
+        "name": "abertura",
+        "type": "text",
+        "help": "Texto no formato DD/MM/YYYY"
+    },
+    {
+        "name": "natureza_juridica",
+        "type": "text"
+    },
+    {
+        "name": "atividade_principal",
+        "spec": {
+            "spec": [
+                {
+                    "name": "code",
+                    "type": "text"
+                },
+                {
+                    "name": "text",
+                    "type": "text"
+                }
+            ],
+            "type": "collection"
+        },
+        "type": "array"
+    },
+    {
+        "name": "atividades_secundarias",
+        "spec": {
+            "spec": [
+                {
+                    "name": "code",
+                    "type": "text"
+                },
+                {
+                    "name": "text",
+                    "type": "text"
+                }
+            ],
+            "type": "collection"
+        },
+        "type": "array"
+    },
+    {
+        "name": "situacao",
+        "type": "text"
+    },
+    {
+        "name": "data_situacao",
+        "type": "text"
+    },
+    {
+        "name": "motivo_situacao",
+        "type": "text"
+    },
+    {
+        "name": "situacao_especial",
+        "type": "text"
+    },
+    {
+        "name": "data_situacao_especial",
+        "type": "text"
+    },
+    {
+        "name": "email",
+        "type": "text"
+    },
+    {
+        "name": "telefone",
+        "type": "text"
+    },
+    {
+        "name": "uf",
+        "type": "text"
+    },
+    {
+        "name": "municipio",
+        "type": "text"
+    },
+    {
+        "name": "logradouro",
+        "type": "text"
+    },
+    {
+        "name": "numero",
+        "type": "text"
+    },
+    {
+        "name": "bairro",
+        "type": "text"
+    },
+    {
+        "name": "cep",
+        "type": "text"
+    },
+    {
+        "name": "complemento",
+        "type": "text"
+    },
+    {
+        "name": "porte",
+        "type": "text"
+    },
+    {
+        "name": "capital_social",
+        "type": "text"
+    },
+    {
+        "name": "qsa",
+        "spec": {
+            "spec": [
+                {
+                    "name": "nome",
+                    "type": "text"
+                },
+                {
+                    "name": "qual",
+                    "type": "text"
+                }
+            ],
+            "type": "collection"
+        },
+        "type": "array"
+    },
+    {
+        "name": "efr",
+        "type": "text"
+    },
+    {
+        "name": "extra",
+        "spec": [],
+        "type": "collection"
+    },
+    {
+        "name": "status",
+        "type": "text"
+    },
+    {
+        "name": "ultima_atualizacao",
+        "type": "date"
+    },
+    {
+        "name": "billing",
+        "spec": [
+            {
+                "name": "database",
+                "type": "boolean"
+            },
+            {
+                "name": "free",
+                "type": "boolean"
+            }
+        ],
+        "type": "collection"
+    }
+]

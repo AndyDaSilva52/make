@@ -1,0 +1,21 @@
+[
+    {
+        "name": "documents",
+        "label": "Lista de Documentos",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "cnpj",
+                    "type": "text"
+                },
+                {
+                    "name": "isValid",
+                    "label": "Válido?",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+]

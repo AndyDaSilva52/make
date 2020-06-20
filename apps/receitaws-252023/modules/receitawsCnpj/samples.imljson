@@ -1,23 +1,38 @@
 {
+    "cnpj": "00.000.000/0001-91",
+    "tipo": "MATRIZ",
+    "nome": "BANCO DO BRASIL SA",
+    "fantasia": "DIRECAO GERAL",
+    "abertura": "01/08/1966",
+    "natureza_juridica": "203-8 - Sociedade de Economia Mista",
     "atividade_principal": [
         {
             "text": "Bancos múltiplos, com carteira comercial",
             "code": "64.22-1-00"
         }
     ],
-    "data_situacao": "03/11/2005",
-    "complemento": "ANDAR 1 A 16 SALA 101 A 1601 ANDAR 1 A 16 SALA 101 A 1601 ANDAR 1 A 16 SALA 101 A 1601",
-    "nome": "BANCO DO BRASIL SA",
-    "efr": "UNIÃO",
-    "uf": "DF",
-    "telefone": "(61) 3493-9002",
-    "email": "secex@bb.com.br",
     "atividades_secundarias": [
         {
             "text": "Outras atividades de serviços financeiros não especificadas anteriormente",
             "code": "64.99-9-99"
         }
     ],
+    "situacao": "ATIVA",
+    "data_situacao": "03/11/2005",
+    "motivo_situacao": "",
+    "situacao_especial": "",
+    "data_situacao_especial": "",
+    "email": "secex@bb.com.br",
+    "telefone": "(61) 3493-9002",
+    "uf": "DF",
+    "municipio": "BRASILIA",
+    "logradouro": "Q SAUN QUADRA 5 LOTE B TORRES I, II E III",
+    "numero": "SN",
+    "bairro": "ASA NORTE",
+    "cep": "70.040-912",
+    "complemento": "ANDAR 1 A 16 SALA 101 A 1601 ANDAR 1 A 16 SALA 101 A 1601 ANDAR 1 A 16 SALA 101 A 1601",
+    "porte": "DEMAIS",
+    "capital_social": "67000000000.00",
     "qsa": [
         {
             "qual": "10-Diretor",
@@ -220,25 +235,10 @@
             "nome": "ERIK DA COSTA BREYER"
         }
     ],
-    "situacao": "ATIVA",
-    "bairro": "ASA NORTE",
-    "logradouro": "Q SAUN QUADRA 5 LOTE B TORRES I, II E III",
-    "numero": "SN",
-    "cep": "70.040-912",
-    "municipio": "BRASILIA",
-    "porte": "DEMAIS",
-    "abertura": "01/08/1966",
-    "natureza_juridica": "203-8 - Sociedade de Economia Mista",
-    "fantasia": "DIRECAO GERAL",
-    "cnpj": "00.000.000/0001-91",
-    "ultima_atualizacao": "2020-02-26T06:04:53.898Z",
-    "status": "OK",
-    "tipo": "MATRIZ",
-    "motivo_situacao": "",
-    "situacao_especial": "",
-    "data_situacao_especial": "",
-    "capital_social": "67000000000.00",
+    "efr": "UNIÃO",
     "extra": {},
+    "status": "OK",
+    "ultima_atualizacao": "2020-02-26T06:04:53.898Z",
     "billing": {
         "free": true,
         "database": true
