@@ -1,0 +1,12 @@
+{
+    "url": "https://api.rd.services/platform/events",
+    "headers": {
+        "Content-Type": "application/json",
+        "Authoration": "Bearer {{parameters.apiKey}}"
+    },
+    "log": {
+        "sanitize": [
+            "request.headers.Authoration"
+        ]
+    }
+}

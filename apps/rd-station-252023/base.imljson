@@ -1,0 +1,12 @@
+{
+    "baseUrl": "https://api.rd.services",
+    "headers": {
+        "Content-Type": "application/json",
+        "Authorization": "{{ 'Bearer ' + if(connection.accessToken, connection.accessToken, connection.apiKey) }}"
+    },
+    "log": {
+        "sanitize": [
+            "request.headers.api_key"
+        ]
+    }
+}

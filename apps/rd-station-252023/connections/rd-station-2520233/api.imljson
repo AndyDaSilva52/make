@@ -1,0 +1,98 @@
+{
+    "authorize": {
+        "qs": {
+            "scope": "{{join(oauth.scope, ',')}}",
+            "client_id": "{{ifempty(parameters.clientId, common.clientId)}}",
+            "redirect_url": "{{oauth.redirectUri}}",
+            "response_type": "code"
+        },
+        "url": "https://api.rd.services/auth/dialog",
+        "response": {
+            "temp": {
+                "code": "{{query.code}}"
+            }
+        }
+    },
+    "token": {
+        "url": "https://api.rd.services/auth/token",
+        "method": "POST",
+        "body": {
+            "code": "{{temp.code}}",
+            "client_id": "{{ifempty(parameters.clientId, common.clientId)}}",
+            "grant_type": "authorization_code",
+            "redirect_uri": "{{oauth.redirectUri}}",
+            "client_secret": "{{ifempty(parameters.clientSecret, common.clientSecret)}}"
+        },
+        "type": "urlencoded",
+        "response": {
+            "data": {
+                "expires": "{{addSeconds(now, body.expires_in)}}",
+                "accessToken": "{{body.access_token}}",
+                "refreshToken": "{{body.refresh_token}}"
+            },
+            "expires": "{{addSeconds(now, body.refresh_expires_in)}}"
+        },
+        "log": {
+            "sanitize": [
+                "request.body.code",
+                "request.body.client_secret",
+                "response.body.access_token",
+                "response.body.refresh_token"
+            ]
+        }
+    },
+    "refresh": {
+        "condition": "{{data.expires < addMinutes(now, 15)}}",
+        "url": "https://api.rd.services/auth/token",
+        "method": "POST",
+        "body": {
+            "client_id": "{{ifempty(parameters.clientId, common.clientId)}}",
+            "grant_type": "refresh_token",
+            "client_secret": "{{ifempty(parameters.clientSecret, common.clientSecret)}}",
+            "refresh_token": "{{data.refreshToken}}"
+        },
+        "type": "urlencoded",
+        "response": {
+            "data": {
+                "expires": "{{addSeconds(now, body.expires_in)}}",
+                "accessToken": "{{body.access_token}}",
+                "refreshToken": "{{body.refresh_token}}"
+            },
+            "expires": "{{addSeconds(now, body.refresh_expires_in)}}"
+        },
+        "log": {
+            "sanitize": [
+                "request.body.client_secret",
+                "request.body.refresh_token",
+                "response.body.access_token",
+                "response.body.refresh_token"
+            ]
+        }
+    },
+    "info": {
+        "url": "https://api.rd.services/marketing/account_info",
+        "headers": {
+            "authorization": "Bearer {{connection.accessToken}}"
+        },
+        "response": {
+            "uid": "{{body.name}}"
+        },
+        "log": {
+            "sanitize": [
+                "request.headers.authorization"
+            ]
+        }
+    },
+    "invalidate": {
+        "url": "https://api.rd.services/auth/revoke",
+        "headers": {
+            "authorization": "Bearer {{connection.accessToken}}",
+            "Content-Type": "x-www-form-urlencoded"
+        },
+        "log": {
+            "sanitize": [
+                "request.headers.authorization"
+            ]
+        }
+    }
+}
