@@ -1,8 +1,8 @@
 {
     "name": "rd-station-252023",
-    "label": "RD Station",
+    "label": "RD Station Marketing",
     "version": 1,
-    "theme": "#000000",
+    "theme": "#364a65",
     "language": "en",
-    "countries": []
+    "countries": null
 }
