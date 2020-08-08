@@ -75,7 +75,11 @@
             "authorization": "Bearer {{connection.accessToken}}"
         },
         "response": {
-            "uid": "{{body.name}}"
+            //"uid": "{{body.name}}",
+            "metadata": {
+                "value": "{{body.name}}",
+                "type": "text"
+            }
         },
         "log": {
             "sanitize": [

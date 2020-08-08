@@ -4,9 +4,46 @@
         "Content-Type": "application/json",
         "Authorization": "{{ 'Bearer ' + if(connection.accessToken, connection.accessToken, connection.apiKey) }}"
     },
+    "response": {
+        "error": {
+            "400": {
+                "type": "ConnectionError",
+                "message": "{{ getErrors(statusCode, body) }}"
+            },
+            "401": {
+                "type": "InvalidAccessTokenError",
+                "message": "{{ getErrors(statusCode, body) }}"
+            },
+            "404": {
+                "type": "InvalidConfigurationError",
+                "message": "{{ getErrors(statusCode, body) }}"
+            },
+            "415": {
+                "type": "InvalidConfigurationError",
+                "message": "{{ getErrors(statusCode, body) }}"
+            },
+            "422": {
+                "type": "InvalidConfigurationError",
+                "message": "{{ getErrors(statusCode, body) }}"
+            },
+            "429": {
+                "type": "RateLimitError",
+                "message": "{{ getErrors(statusCode, body) }}"
+            },
+            "500": {
+                "type": "ConnectionError",
+                "message": "{{ getErrors(statusCode, body) }}"
+            },
+            "504": {
+                "type": "ConnectionError",
+                "message": "{{ getErrors(statusCode, body) }}"
+            },
+            "message": "{{ getErrors(statusCode, body) }}"
+        }
+    },
     "log": {
         "sanitize": [
-            "request.headers.api_key"
+            "request.headers.Authorization"
         ]
     }
 }
