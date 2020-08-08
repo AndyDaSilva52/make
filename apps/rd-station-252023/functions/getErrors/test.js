@@ -1,4 +1,4 @@
-it('status Code 404 with array of collection about the error            ', () => {
+it('status Code 401 with array of collection about the error            ', () => {
     let result = getErrors(401, {
         "errors": [
             {
@@ -16,7 +16,7 @@ it('status Code 404 with array of collection about the error            ', () =>
         ]
     });
 
-    assert.deepEqual(result, '[401] Type[UNAUTHORIZED] Message[Invalid token.] Type[ACCESS_DENIED] Message[Wrong credentials provided.] Type[EXPIRED_CODE_GRANT] Message[The authorization code grant has expired.]');
+    assert.deepEqual(result, '[401]\n** Type[UNAUTHORIZED] Message[Invalid token.]\n** Type[ACCESS_DENIED] Message[Wrong credentials provided.]\n** Type[EXPIRED_CODE_GRANT] Message[The authorization code grant has expired.]');
 });
 
 it('status code 404 not found with only one collection                  ', () => {
@@ -26,7 +26,7 @@ it('status code 404 not found with only one collection                  ', () =>
             "error_message": "Lead not found."
         }
     });
-    assert.deepEqual(result, '[404] Type[RESOURCE_NOT_FOUND] Message[Lead not found.]')
+    assert.deepEqual(result, '[404]\n** Type[RESOURCE_NOT_FOUND] Message[Lead not found.]')
 });
 
 it('status code 400 Bad Request with collection of key fields           ', () => {
@@ -50,7 +50,7 @@ it('status code 400 Bad Request with collection of key fields           ', () =>
         }
     }
     );
-    assert.deepEqual(result, '[400] Field[email] Type[CANNOT_BE_NULL] Message[email cannot be null.] Field[linkedin] Type[INVALID_FORMAT] Message[linkedin must use only letters, numbers, \'.\', \'-\' and \'_\'] Field[name] Type[CANNOT_BE_BLANK] Message[Can not be blank]')
+    assert.deepEqual(result, '[400]\n* Field[email]\n** Type[CANNOT_BE_NULL] Message[email cannot be null.]\n* Field[linkedin]\n** Type[INVALID_FORMAT] Message[linkedin must use only letters, numbers, \'.\', \'-\' and \'_\']\n* Field[name]\n** Type[CANNOT_BE_BLANK] Message[Can not be blank]')
 });
 
 it('status code 422 Unprocessable Entity                                ', () => {
@@ -64,5 +64,5 @@ it('status code 422 Unprocessable Entity                                ', () =>
             ]
         }
     });
-    assert.deepEqual(result, '[422] Field[name] Type[MUST_BE_STRING] Message[Name must be string.]')
+    assert.deepEqual(result, '[422]\n* Field[name]\n** Type[MUST_BE_STRING] Message[Name must be string.]')
 });
