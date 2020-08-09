@@ -7,7 +7,7 @@
     "response": {
         "error": {
             "400": {
-                "type": "ConnectionError",
+                "type": "DataError",
                 "message": "{{ getErrors(statusCode, body) }}"
             },
             "401": {
