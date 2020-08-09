@@ -1,0 +1,8 @@
+{
+    "name": "upsertContact",
+    "label": "Create or Update a Contact",
+    "description": "With an UPSERT like behavior, this endpoint is capable of both updating the properites of a Contact or creating a new Contact.",
+    "connection": "rd-station-2520233",
+    "webhook": null,
+    "type": "action"
+}

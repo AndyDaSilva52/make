@@ -1,0 +1,7 @@
+{
+    "url": "/platform/contacts/fields",
+    "method": "GET",
+    "response": {
+        "output": "{{body}}"
+    }
+}

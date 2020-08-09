@@ -1,0 +1,196 @@
+[
+    {
+        "name": "identifier",
+        "label": "Identifier",
+        "type": "select",
+        "options": [
+            {
+                "label": "Email",
+                "value": "email"
+            },
+            {
+                "label": "UUID",
+                "value": "uuid"
+            }
+        ]
+    },
+    {
+        "name": "value",
+        "label": "Email or UUID",
+        "type": "text"
+    },
+    {
+        "name": "name",
+        "label": "Name",
+        "type": "text"
+    },
+    {
+        "name": "job_title",
+        "label": "Job Title",
+        "type": "text"
+    },
+    {
+        "name": "bio",
+        "label": "Notes",
+        "type": "text",
+        "multiline": true
+    },
+    {
+        "name": "personal_phone",
+        "label": "Peronal Phone",
+        "type": "text"
+    },
+    {
+        "name": "mobile_phone",
+        "label": "Mobile Phone",
+        "type": "text"
+    },
+    {
+        "name": "website",
+        "label": "Website",
+        "type": "text"
+    },
+    {
+        "name": "linkedin",
+        "label": "Linkedin",
+        "type": "text"
+    },
+    {
+        "name": "facebook",
+        "label": "Facebook",
+        "type": "text"
+    },
+    {
+        "name": "twitter",
+        "label": "Twitter",
+        "type": "text"
+    },
+    {
+        "name": "city",
+        "label": "City",
+        "type": "text"
+    },
+    {
+        "name": "state",
+        "label": "State",
+        "type": "text"
+    },
+    {
+        "name": "country",
+        "label": "Country",
+        "type": "text"
+    },
+    {
+        "name": "tags",
+        "label": "Tags",
+        "type": "array",
+        "spec": {
+            "type": "text",
+            "label": "Tag"
+        }
+    },
+    {
+        "name": "extra_emails",
+        "label": "Extra Emails",
+        "type": "array",
+        "spec": {
+            "type": "email",
+            "label": "Email"
+        }
+    },
+    {
+        "name": "custom_fields",
+        "label": "Fields",
+        "type": "array",
+        "help": "Can be used for Default or Custom fields. More info at [Documentation - Fields](https://developers.rdstation.com/en/reference/fields)",
+        "spec": [
+            {
+                "name": "name",
+                "label": "Field Name",
+                "type": "text",
+                "required": true
+            },
+            {
+                "name": "value",
+                "label": "Field Value",
+                "type": "text",
+                "required": true
+            }
+        ]
+    },
+    {
+        "name": "legal_bases",
+        "label": "Legal Bases",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "category",
+                    "label": "Category",
+                    "type": "select",
+                    "options": [
+                        {
+                            "label": "data_processing",
+                            "value": "data_processing"
+                        },
+                        {
+                            "label": "communications",
+                            "value": "communications"
+                        }
+                    ],
+                    "validate": {
+                        "pattern": "(data_processing||communications)"
+                    }
+                },
+                {
+                    "name": "type",
+                    "label": "Type",
+                    "type": "select",
+                    "options": [
+                        {
+                            "label": "pre_existent_contract",
+                            "value": "pre_existent_contract"
+                        },
+                        {
+                            "label": "consent",
+                            "value": "consent"
+                        },
+                        {
+                            "label": "legitimate_interest",
+                            "value": "legitimate_interest"
+                        },
+                        {
+                            "label": "judicial_process",
+                            "value": "judicial_process"
+                        },
+                        {
+                            "label": "vital_interest",
+                            "value": "vital_interest"
+                        },
+                        {
+                            "label": "public_interest",
+                            "value": "public_interest"
+                        }
+                    ]
+                },
+                {
+                    "name": "status",
+                    "label": "Status",
+                    "type": "select",
+                    "options": [
+                        {
+                            "label": "granted",
+                            "value": "granted"
+                        },
+                        {
+                            "label": "declined",
+                            "value": "declined"
+                        }
+                    ],
+                    "help": "You can leave `Status` empty when `Category` is `data_processing` or pay attention to the fact that when `Category` is `data_processing` the only accepted value for `Status` is `granted`."
+                }
+            ]
+        }
+    }
+]
