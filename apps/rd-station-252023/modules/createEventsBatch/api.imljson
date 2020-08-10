@@ -1,0 +1,8 @@
+{
+    "url": "/platform/events/batch",
+    "method": "POST",
+    "body": "{{ getExpectEventInput(parameters.events) }}",
+    "response": {
+        "output": "{{body}}"
+    }
+}

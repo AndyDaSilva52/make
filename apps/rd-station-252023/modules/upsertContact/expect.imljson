@@ -113,7 +113,8 @@
             {
                 "name": "value",
                 "label": "Field Value",
-                "type": "text",
+                "type": "any",
+                "multiline": true,
                 "required": true
             }
         ]

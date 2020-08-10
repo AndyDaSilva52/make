@@ -1,0 +1,42 @@
+[
+    {
+        "name": "event_type",
+        "label": "Event Type",
+        "type": "text",
+        "help": "The event type that diferentiates the event. Ex:\n`CONVERSION`, `OPPORTUNITY`, `SALE`, `OPPORTUNITY_LOST`, `ORDER_PLACED`, `ORDER_PLACED_ITEM`, `CART_ABANDONED`, `CART_ABANDONED_ITEM`, `CHAT_STARTED`, `CHAT_FINISHED` or `CALL_FINISHED`.\nFor more info [RD Station - Documentation - Events](https://developers.rdstation.com/en/reference/events)"
+    },
+    {
+        "name": "event_family",
+        "label": "Event Family",
+        "type": "text",
+        "help": "The family of the event for processing purposes. It currently accepts only `CDP` as valid option.",
+        "default": "CDP"
+    },
+    {
+        "name": "payload",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "custom_fields",
+                "label": "Fields",
+                "type": "array",
+                "help": "",
+                "spec": [
+                    {
+                        "name": "name",
+                        "label": "Field Name",
+                        "type": "text",
+                        "required": true
+                    },
+                    {
+                        "name": "value",
+                        "label": "Field Value",
+                        "type": "any",
+                        "multiline": true,
+                        "required": true
+                    }
+                ]
+            }
+        ]
+    }
+]

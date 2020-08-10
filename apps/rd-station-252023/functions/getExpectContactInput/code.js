@@ -18,7 +18,12 @@ function getExpectContactInput(input, timezone) {
             // This is the last property - the one where to set the value
         } else {
             // We set the value to the last property
-            obj[properties[0]] = value
+            try {
+                obj[properties[0]] = JSON.parse(value);
+            } catch (error) {
+                obj[properties[0]] = value;
+            }
+
             return true // this is the end
         }
 
@@ -35,7 +40,6 @@ function getExpectContactInput(input, timezone) {
             if ((key === 'identifier') || key === 'value') {
                 delete body[key];
             }
-
             if (key === 'custom_fields') {
                 var custom_fields = body[key];
                 custom_fields.forEach(item => {
