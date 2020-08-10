@@ -1,0 +1,37 @@
+[
+    {
+        "name": "lifecycle_stage",
+        "label": "Lifecycle Stage",
+        "type": "text",
+        "help": "The stage in the funnel which the contact belongs to. Valid options: `Lead`, `Qualified Lead` and `Client`."
+    },
+    {
+        "name": "opportunity",
+        "label": "Opportunity",
+        "type": "boolean",
+        "help": "It indicates whether the contact is an opportunity or not in the funnel."
+    },
+    {
+        "name": "contact_owner_email",
+        "label": "Contact Owner Email",
+        "type": "text",
+        "help": "The email of the user responsible for the contact."
+    },
+    {
+        "name": "interest",
+        "label": "Interest",
+        "type": "number",
+        "help": "The contact interest score in the current funnel."
+    },
+    {
+        "name": "fit",
+        "label": "Fit",
+        "type": "number",
+        "help": "The contact fit score in the current funnel."
+    },
+    {
+        "name": "origin",
+        "label": "Origin",
+        "type": "text"
+    }
+]

@@ -1,0 +1,66 @@
+[
+    {
+        "name": "identifier",
+        "label": "Identifier",
+        "type": "select",
+        "default": "uuid",
+        "required": true,
+        "options": [
+            {
+                "label": "UUID",
+                "value": "uuid"
+            },
+            {
+                "label": "Email",
+                "value": "email"
+            }
+        ]
+    },
+    {
+        "name": "value",
+        "label": "Value",
+        "type": "text",
+        "required": true,
+        "help": "The unique uuid or email associated to RD Station Contact accordinly with Key Used."
+    },
+    {
+        "name": "funnel_name",
+        "label": "Funnel Name",
+        "type": "text",
+        "required": true,
+        "default": "default"
+    },
+    {
+        "name": "lifecycle_stage",
+        "label": "Lifecycle Stage",
+        "type": "select",
+        "options": [
+            {
+                "label": "Lead",
+                "value": "Lead"
+            },
+            {
+                "label": "Qualified Lead",
+                "value": "Qualified Lead"
+            },
+            {
+                "label": "Client",
+                "value": "Client"
+            }
+        ],
+        "help": "The stage in the funnel which the contact belongs to. Valid options: `Lead`, `Qualified Lead` and `Client`."
+    },
+    {
+        "name": "opportunity",
+        "label": "Opportunity",
+        "type": "boolean",
+        "required": true,
+        "help": "It indicates whether the contact is an opportunity or not in the funnel."
+    },
+    {
+        "name": "contact_owner_email",
+        "label": "Contact Owner Email",
+        "type": "text",
+        "help": "The email of the user responsible for the contact. Can be defined as null for disassociate the current owner."
+    }
+]

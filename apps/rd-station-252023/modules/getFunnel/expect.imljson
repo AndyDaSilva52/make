@@ -1,0 +1,33 @@
+[
+    {
+        "name": "identifier",
+        "label": "Identifier",
+        "type": "select",
+        "default": "uuid",
+        "required": true,
+        "options": [
+            {
+                "label": "UUID",
+                "value": "uuid"
+            },
+            {
+                "label": "Email",
+                "value": "email"
+            }
+        ]
+    },
+    {
+        "name": "value",
+        "label": "Value",
+        "type": "text",
+        "required": true,
+        "help": "The unique uuid or email associated to RD Station Contact accordinly with Key used."
+    },
+    {
+        "name": "funnel_name",
+        "label": "Funnel Name",
+        "type": "text",
+        "required": true,
+        "default": "default"
+    }
+]

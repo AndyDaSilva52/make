@@ -1,0 +1,8 @@
+{
+    "name": "getContact",
+    "label": "Get Contact",
+    "description": "Returns data about a specific Contact",
+    "connection": "rd-station-2520233",
+    "webhook": null,
+    "type": "action"
+}

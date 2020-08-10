@@ -1,0 +1,8 @@
+{
+    "lifecycle_stage": "Client",
+    "opportunity": true,
+    "contact_owner_email": "email@example.org",
+    "fit": 60,
+    "interest": 100,
+    "origin": null
+}

@@ -1,0 +1,9 @@
+{
+    //  https://api.rd.services/platform/contacts/{uuid}|email:{contact_email}/funnels/{funnel_name}
+    "url": "/platform/contacts/{{ if( parameters.identifier == 'email', 'email:' + parameters.value, parameters.value ) }}/funnels/{{parameters.funnel_name}}",
+    "method": "PUT",
+    "body": "{{ getExpectFunnelInput(parameters) }}",
+    "response": {
+        "output": "{{body}}"
+    }
+}
