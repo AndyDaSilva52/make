@@ -1,0 +1,8 @@
+{
+    "name": "newLeadConversion",
+    "label": "New Lead Conversion",
+    "description": "Triggers when a new lead is created",
+    "connection": null,
+    "webhook": "rd-station-2520232",
+    "type": "instant_trigger"
+}

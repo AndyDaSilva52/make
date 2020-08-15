@@ -1,0 +1,13 @@
+[
+    {
+        "name": "event_identifiers",
+        "label": "Event Identifiers",
+        "type": "array",
+        "help": "The identifiers from the events that must trigger the webhook. If no event is informed, we will send all conversions carried out",
+        "spec": {
+            "type": "text",
+            "label": "Event Identifier"
+        },
+        "enabled": true
+    }
+]

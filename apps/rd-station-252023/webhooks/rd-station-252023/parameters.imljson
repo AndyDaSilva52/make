@@ -1,0 +1,56 @@
+[
+    {
+        "name": "event_type",
+        "label": "Event Type",
+        "type": "select",
+        "options": [
+            {
+                "label": "CONVERTED",
+                "value": "WEBHOOK.CONVERTED"
+            },
+            {
+                "label": "MARKED_OPPORTUNITY",
+                "value": "WEBHOOK.MARKED_OPPORTUNITY"
+            }
+        ]
+    },
+    {
+        "name": "entity_type",
+        "label": "Entity Type",
+        "type": "select",
+        "default": "CONTACT",
+        "options": [
+            {
+                "label": "CONTACT",
+                "value": "CONTACT"
+            }
+        ]
+    },
+    {
+        "name": "event_identifiers",
+        "label": "Event Identifiers",
+        "type": "array",
+        "help": "The identifiers from the events that must trigger the webhook. Only for `Event Type` equal `CONVERTED`.",
+        "spec": {
+            "type": "text",
+            "label": "Event Identifier"
+        }
+    },
+    {
+        "name": "http_method",
+        "label": "HTTP Method",
+        "type": "text",
+        "default": "POST",
+        "help": "The HTTP method that the webhook will trigger. Currently only `POST` methods are supported."
+    },
+    {
+        "name": "include_relations",
+        "label": "Include Relations",
+        "type": "array",
+        "help": "The relations you would like to include in webhook payload. Only `COMPANY` and `CONTACT_FUNNEL` are supported.",
+        "spec": {
+            "type": "text",
+            "label": "Include Relation"
+        }
+    }
+]

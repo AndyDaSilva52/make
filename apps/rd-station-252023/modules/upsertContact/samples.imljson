@@ -17,7 +17,6 @@
     "extra_emails": [
         "contact2@example.com"
     ],
-    "cf_custom_field_2": "custom field value2",
     "legal_bases": [
         {
             "category": "data_processing",

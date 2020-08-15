@@ -1,6 +1,6 @@
 {
     "name": "getFunnel",
-    "label": "Get Funnel",
+    "label": "Get a Funnel",
     "description": "Return a list of Funnels associated to the given contact.",
     "connection": "rd-station-2520233",
     "webhook": null,

@@ -1,6 +1,6 @@
 {
     "name": "updateFunnel",
-    "label": "Update Funnel",
+    "label": "Update a Funnel",
     "description": "Updates the funnel about the current contact.",
     "connection": "rd-station-2520233",
     "webhook": null,

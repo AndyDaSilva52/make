@@ -1,6 +1,6 @@
 {
     "name": "createEvent",
-    "label": "Create Event",
+    "label": "Create an Event",
     "description": "Responsible for receiving different event types in which RD Station Contacts take part in.",
     "connection": "rd-station-2520233",
     "webhook": null,

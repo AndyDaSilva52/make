@@ -26,11 +26,11 @@
         "type": "urlencoded",
         "response": {
             "data": {
-                "expires": "{{addSeconds(now, body.expires_in)}}",
+                "expires": "{{ addSeconds(now, body.expires_in) }}",
                 "accessToken": "{{body.access_token}}",
                 "refreshToken": "{{body.refresh_token}}"
             },
-            "expires": "{{addSeconds(now, body.refresh_expires_in)}}"
+            "expires": "{{addSeconds(now, ifempty(body.refresh_expires_in, body.expires_in))}}"
         },
         "log": {
             "sanitize": [
@@ -58,7 +58,7 @@
                 "accessToken": "{{body.access_token}}",
                 "refreshToken": "{{body.refresh_token}}"
             },
-            "expires": "{{addSeconds(now, body.refresh_expires_in)}}"
+            "expires": "{{addSeconds(now, ifempty(body.refresh_expires_in, body.expires_in))}}"
         },
         "log": {
             "sanitize": [

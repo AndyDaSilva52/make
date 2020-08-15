@@ -1,7 +1,7 @@
 {
     "name": "createEventsBatch",
     "label": "Create Events (Batch)",
-    "description": "Allows to send more than one event at onde. Thus allowing events of order placed and order placed itemsn bo be sent without the need of multiple requests.",
+    "description": "Allows to send more than one event at onde.",
     "connection": "rd-station-2520233",
     "webhook": null,
     "type": "action"

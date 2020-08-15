@@ -1,1 +1,14 @@
-{}
+{
+    "event_batch_uuid": "e1d47a85-9934-4eb3-8548-2258ab072a77",
+    "events": [
+        {
+            "event_uuid": "8f595f2c-7fbb-4293-b1e0-5d6008d826f1"
+        },
+        {
+            "event_uuid": "ecb602ab-91ca-48c8-993d-0e9f9083e921"
+        },
+        {
+            "event_uuid": "d83bc79f-82cf-4e5d-b5b9-a4783e1ca029"
+        }
+    ]
+}

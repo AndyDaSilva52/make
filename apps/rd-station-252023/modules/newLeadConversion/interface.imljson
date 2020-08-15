@@ -1,0 +1,83 @@
+[
+    {
+        "name": "event_type",
+        "type": "text",
+        "label": "Event Type"
+    },
+    {
+        "name": "entity_type",
+        "type": "text",
+        "label": "Entity Type"
+    },
+    {
+        "name": "event_identifier",
+        "type": "text",
+        "label": "Event Identifier"
+    },
+    {
+        "name": "timestamp",
+        "type": "date",
+        "label": "Timestamp",
+        "time": true,
+        "help": "The time when the webhook was sent."
+    },
+    {
+        "name": "event_timestamp",
+        "type": "date",
+        "label": "Event Timestamp",
+        "time": true,
+        "help": "The time when the event that triggered the webhook has occurred."
+    },
+    {
+        "name": "contact",
+        "type": "collection",
+        "help": "The entity itself, could be `company` or any other supported entity.",
+        "spec": [
+            "rpc://contactFieldsInterface",
+            {
+                "name": "company",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "name": "funnel",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "name",
+                        "type": "text"
+                    },
+                    {
+                        "name": "lifecycle_stage",
+                        "type": "text"
+                    },
+                    {
+                        "name": "opportunity",
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "contact_owner_email",
+                        "type": "text"
+                    },
+                    {
+                        "name": "interest",
+                        "type": "number"
+                    },
+                    {
+                        "name": "fit",
+                        "type": "number"
+                    },
+                    {
+                        "name": "origin",
+                        "type": "text"
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -1,6 +1,6 @@
 {
     "name": "accountInfo",
-    "label": "Account Information",
+    "label": "Get Account Information",
     "description": "Returns the account name from your RD Station Marketing account.",
     "connection": "rd-station-2520233",
     "webhook": null,
