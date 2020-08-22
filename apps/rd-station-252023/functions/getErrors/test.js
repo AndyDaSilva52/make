@@ -118,3 +118,12 @@ it('status code 400 validation rules                                           '
     });
     assert.deepEqual(result, '[400]\n** Type[INVALID_OPTION] Message[Must be one of the valid options.] Path[$.body.event_type] Validation Rules[{"valid_options":["CONVERSION","OPPORTUNITY","OPPORTUNITY_LOST","SALE","ORDER_PLACED","ORDER_PLACED_ITEM"]}]\n\nFor more info: https://developers.rdstation.com/en/error-states');
 });
+it('status code 429 rate limit                                                 ', () => {
+    let result = getErrors(429, {
+        "error": "'identity_limiter' rate limit exceeded for 60 second(s) period for key '197925'",
+        "max": 120,
+        "usage": 121,
+        "remaining_time": 21
+    });
+    assert.deepEqual(result, "[429]\n** {\"error\":\"'identity_limiter' rate limit exceeded for 60 second(s) period for key '197925'\",\"max\":120,\"usage\":121,\"remaining_time\":21}\n\nFor more info: https://developers.rdstation.com/en/error-states")
+})

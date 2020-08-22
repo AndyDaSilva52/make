@@ -48,9 +48,12 @@ function getErrors(statusCode, body) {
         message = message + '\n**' + ' Message[' + body.message + ']'
     } else if (typeof body == "object" && IsJsonString(body)) {
         message = message + '\n**' + ' ' + JSON.stringify(body)
+    } else if (typeof body == "object" && !IsJsonString(body)) {
+        message = message + '\n**' + ' ' + JSON.stringify(body)
     } else {
         message = message + '\n' + body;
     }
 
     return (message + '\n\nFor more info: https://developers.rdstation.com/en/error-states');
+   
 }
