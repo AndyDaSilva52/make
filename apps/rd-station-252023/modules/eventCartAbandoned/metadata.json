@@ -1,0 +1,8 @@
+{
+    "name": "eventCartAbandoned",
+    "label": "Create an Event of Abandoned Cart",
+    "description": "Whenever a cart is abandoned on an e-commerce platform.",
+    "connection": "rd-station-2520233",
+    "webhook": null,
+    "type": "action"
+}

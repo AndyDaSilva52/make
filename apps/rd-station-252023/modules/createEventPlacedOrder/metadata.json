@@ -1,0 +1,8 @@
+{
+    "name": "createEventPlacedOrder",
+    "label": "Create an Event of Placed Order",
+    "description": "Whenever an oder is placed on an e-commerce platform.",
+    "connection": "rd-station-2520233",
+    "webhook": null,
+    "type": "action"
+}

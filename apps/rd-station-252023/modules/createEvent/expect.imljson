@@ -34,6 +34,30 @@
                         "type": "any",
                         "multiline": true,
                         "required": true
+                    },
+                    {
+                        "name": "type",
+                        "label": "Type",
+                        "type": "select",
+                        "default": "STRING",
+                        "options": [
+                            {
+                                "label": "STRING",
+                                "value": "STRING"
+                            },
+                            {
+                                "label": "INTEGER",
+                                "value": "INTEGER"
+                            },
+                            {
+                                "label": "FLOAT",
+                                "value": "FLOAT"
+                            },
+                            {
+                                "label": "JSON",
+                                "value": "JSON"
+                            }
+                        ]
                     }
                 ]
             }

@@ -1,4 +1,4 @@
-it('Should be okay                                                   ', () => {
+it('Should be okay - first                                                     ', () => {
     let result = getExpectEventInput({
         "payload": {
             "custom_fields": [
@@ -13,6 +13,16 @@ it('Should be okay                                                   ', () => {
                 {
                     "name": "job_title",
                     "value": "job title value"
+                },
+                {
+                    "name": "cf_order_total_items",
+                    "value": "10.00",
+                    "type": "INTEGER"
+                },
+                {
+                    "name": "cf_order_payment_amount",
+                    "value": "10.00",
+                    "type": "FLOAT"
                 },
                 {
                     "name": "email",
@@ -33,7 +43,9 @@ it('Should be okay                                                   ', () => {
             "name": "Nome",
             "job_title": "job title value",
             "email": "email@email.com",
-            "state": "state of the contact"
+            "state": "state of the contact",
+            "cf_order_payment_amount": 10.00,
+            "cf_order_total_items": 10
         },
         "event_type": "CONVERSION",
         "event_family": "CDP"
@@ -44,7 +56,7 @@ it('Should be okay                                                   ', () => {
 
 
 
-it('Should be okay                                                   ', () => {
+it('Should be okay - second                                                    ', () => {
     let result = getExpectEventInput({
         "payload": {
             "custom_fields": [
@@ -115,7 +127,7 @@ it('Should be okay                                                   ', () => {
 
 
 
-it('Should be okay with array of objects                             ', () => {
+it('Should be okay with array of objects                                       ', () => {
     let result = getExpectEventInput([{
         "payload": {
             "custom_fields": [

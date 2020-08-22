@@ -1,0 +1,7 @@
+[
+    {
+        "name": "event_uuid",
+        "label": "Event UUID",
+        "type": "text"
+    }
+]

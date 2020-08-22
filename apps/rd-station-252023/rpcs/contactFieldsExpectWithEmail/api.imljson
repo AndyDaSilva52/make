@@ -6,6 +6,6 @@
             "type": "DataError",
             "message": "{{getErrors(statusCode, body)}}"
         },
-        "output": "{{getExpectContact(body.fields, 'expect', 'contacts')}}"
+        "output": "{{getExpectContact(body.fields, 'expect-with-email', 'events')}}"
     }
 }

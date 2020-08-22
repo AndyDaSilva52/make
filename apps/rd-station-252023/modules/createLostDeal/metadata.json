@@ -1,0 +1,8 @@
+{
+    "name": "createLostDeal",
+    "label": "Create a Lost Deal",
+    "description": "Mark a deal as lost.",
+    "connection": "rd-station-2520233",
+    "webhook": null,
+    "type": "action"
+}

@@ -1,0 +1,173 @@
+[
+    {
+        "name": "event_type",
+        "label": "Event Type",
+        "type": "select",
+        "required": true,
+        "help": "The event type that diferentiates the event. Could be `CHAT_STARTED`, `CHAT_FINISHED` or `CALL_FINISHED`.",
+        "options": {
+            "store": [
+                {
+                    "label": "Chat Started",
+                    "value": "CHAT_STARTED",
+                    "nested": [
+                        {
+                            "name": "payload",
+                            "label": "Payload",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "email",
+                                    "label": "Email",
+                                    "type": "text",
+                                    "help": "Email of the Contact"
+                                },
+                                {
+                                    "name": "chat_subject",
+                                    "label": "Chat Subject",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "cf_chat_status",
+                                    "label": "Chat Status",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "cf_chat_type",
+                                    "label": "Chat Type",
+                                    "type": "text"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "label": "Chat Finished",
+                    "value": "CHAT_FINISHED",
+                    "nested": [
+                        {
+                            "name": "payload",
+                            "label": "Payload",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "email",
+                                    "label": "Email",
+                                    "type": "text",
+                                    "help": "Email of the Contact"
+                                },
+                                {
+                                    "name": "chat_subject",
+                                    "label": "Chat Subject",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "cf_chat_status",
+                                    "label": "Chat Status",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "cf_chat_type",
+                                    "label": "Chat Type",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "cf_chat_transcript_message",
+                                    "label": "Chat Transcript Message",
+                                    "type": "text",
+                                    "multiline": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "label": "Call Finished",
+                    "value": "CALL_FINISHED",
+                    "nested": [
+                        {
+                            "name": "payload",
+                            "label": "Payload",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "email",
+                                    "label": "Email",
+                                    "type": "text",
+                                    "help": "Email of the Contact"
+                                },
+                                {
+                                    "name": "call_user_email",
+                                    "label": "Call User Email",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "call_from_number",
+                                    "label": "Call from Number",
+                                    "type": "text",
+                                    "required": true,
+                                    "help": "Number of Call Tracking"
+                                },
+                                {
+                                    "name": "call_started_at",
+                                    "label": "Call Started at",
+                                    "type": "date",
+                                    "time": true
+                                },
+                                {
+                                    "name": "call_duration",
+                                    "label": "Call Duration",
+                                    "type": "text",
+                                    "help": "Call duration, in seconds."
+                                },
+                                {
+                                    "name": "call_type",
+                                    "label": "Call Type",
+                                    "type": "text",
+                                    "help": "Inbound or Outbound"
+                                },
+                                {
+                                    "name": "call_status",
+                                    "label": "Call Status",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "call_status_description",
+                                    "label": "Call Status Description",
+                                    "type": "text",
+                                    "help": "Call status complement. This could be the name of the recipient, a personalized message or 'Off'"
+                                },
+                                {
+                                    "name": "call_phone_type",
+                                    "label": "Call Type",
+                                    "type": "text",
+                                    "help": "Phone type. Mobile or Comercial."
+                                },
+                                {
+                                    "name": "call_carrier",
+                                    "label": "Call Carrier",
+                                    "type": "text",
+                                    "help": "Carrier name."
+                                },
+                                {
+                                    "name": "call_record",
+                                    "label": "Call Type",
+                                    "type": "text",
+                                    "help": "Call recording URL."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "name": "event_family",
+        "label": "Event Family",
+        "type": "text",
+        "default": "CDP",
+        "advanced": true,
+        "help": "The family of the event for processing purposes. It currently accepts only `CDP` as valid option."
+    }
+]

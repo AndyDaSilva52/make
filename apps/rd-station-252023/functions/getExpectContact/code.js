@@ -1,14 +1,16 @@
-function getExpectContact(fields, type) {
+function getExpectContact(fields, type, origin) {
 
-    function getExpect(input, typ) {
+    function getExpect(input, typ, ori) {
         var results = []
         
         if (typ == 'interface') {results.push({"name": "uuid","label": "UUID","type": "text"})}
 
-        if (typ == 'expect') {}
+        if (typ == 'expect' || typ == 'expect-with-email') {}
+
         input
         //.filter(f => {return true})
-        .sort(function (a, b) { return a.uuid < b.uuid ? -1 : a.uuid > b.uuid ? 1 : 0 })
+        .sort(function(a,b) { if (a.label.default > b.label.default) { return 1 } if (a.label.default < b.label.default) { return -1 } return 0 })
+        //.sort(function (a, b) { return a.custom_field = false ? 1 : b.custom_field == false ? 1 : 0 })
         .forEach(f => {
             const data = { name: f.api_identifier, label: f.label.default, type: 'text'}
             switch (f.data_type) {
@@ -27,16 +29,13 @@ function getExpectContact(fields, type) {
                 case 'TEXT_INPUT': {
                   break
                 }
-                case 'EMAIL_INPUT': {
-                  data.type = 'email'
+                case 'EMAIL_INPUT': { data.type = 'email'
                   break
                 }
-                case 'PHONE_INPUT': {
-                  data.type = 'text'
+                case 'PHONE_INPUT': { data.type = 'text'
                   break
                 }
-                case 'URL_INPUT': {
-                  data.type = 'url'
+                case 'URL_INPUT': { data.type = 'url'
                   break
                 }
                 case 'RADIO_BUTTON': {
@@ -83,7 +82,14 @@ function getExpectContact(fields, type) {
             }
             case 'INTEGER': {
                 // presentation_type: 'NUMBER_INPUT'
-                data.type = 'number'
+                switch (ori) {
+                  /** /platform/contacts   Expect the value to be integer (outside double quotes)
+                     /platform/events     Expect the value inside double quotes (string) */
+                  case 'contacts': data.type = 'integer'
+                  break
+                  case 'events': data.type = 'text'
+                  break
+                }
             }
           }
           results.push(data)
@@ -95,9 +101,9 @@ function getExpectContact(fields, type) {
           {"name": "status","label": "Status","type": "text","help": "Can be empty when `Category` is `data_processing` or pay attention to the fact that when `Category` is `data_processing` the only accepted value for `Status` is `granted`."}]}
         }
           )
-        if (typ == 'expect') { results = results.filter(function(el) {return (el.name !== 'email')}) }
+        if (typ == 'expect') { results = results.filter(function(el) {return (el.name !== 'email') }) }
         return results
     }
 
-    if (Array.isArray(fields) && fields.length) { return getExpect(fields, type) } else { return {} }
+    if (Array.isArray(fields) && fields.length) { return getExpect(fields, type, origin) } else { return {} }
 }

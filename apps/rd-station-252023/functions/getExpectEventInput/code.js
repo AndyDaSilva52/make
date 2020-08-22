@@ -4,7 +4,7 @@ function getExpectEventInput(input) {
         const body = Object.assign({}, obj);
         var payload = body.payload;
 
-        function setValue(propertyPath, value, obj) {
+        function setValue(propertyPath, value, obj, typ) {
             /**
              * 
              */
@@ -16,17 +16,19 @@ function getExpectEventInput(input) {
             if (properties.length > 1) {
                 // The property doesn't exists OR is not an object (and so we overwritten it) so we create it
                 if (!obj.hasOwnProperty(properties[0]) || typeof obj[properties[0]] !== "object") obj[properties[0]] = {};
-                // We iterate.
+                
                 return setValue(properties.slice(1), value, obj[properties[0]]);
-                // This is the last property - the one where to set the value
             } else {
                 // We set the value to the last property
-                try {
-                    obj[properties[0]] = JSON.parse(value);
-                } catch (e) {
-                    obj[properties[0]] = value;
-                }
-                return true;
+                if (typ != 'FLOAT' && typ != 'INTEGER') {
+                    value = JSON.stringify(value)
+                    try {
+                        obj[properties[0]] = JSON.parse(value)
+                    } catch (e) {
+                        obj[properties[0]] = value.toString()
+                    }
+                } else { obj[properties[0]] = ((typ == 'FLOAT') ? parseFloat(value) : (typ == 'INTEGER') ? parseInt(value) : Number(value)) }
+                return true
             }
         }
 
@@ -36,7 +38,7 @@ function getExpectEventInput(input) {
                 if (key === 'custom_fields') {
                     var custom_fields = payload[key];
                     custom_fields.forEach(item => {
-                        setValue(('payload.' + item['name']), item['value'], body);
+                        setValue(('payload.' + item['name']), (item['value']), body, item['type']);
                     });
                     delete payload[key];
                 }
@@ -61,4 +63,3 @@ function getExpectEventInput(input) {
     return getExpect(input);
 
 }
-

@@ -1,0 +1,225 @@
+[
+    {
+        "name": "event_type",
+        "label": "Event Type",
+        "type": "select",
+        "required": true,
+        "help": "The event type that diferentiates the event. Could be `CART_ABANDONED` or `CART_ABANDONED_ITEM`.",
+        "options": {
+            "store": [
+                {
+                    "label": "Abandoned Cart",
+                    "value": "CART_ABANDONED",
+                    "nested": [
+                        {
+                            "name": "payload",
+                            "label": "Payload",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "email",
+                                    "label": "email",
+                                    "type": "text",
+                                    "help": "Email of the contact."
+                                },
+                                {
+                                    "name": "name",
+                                    "label": "Name",
+                                    "type": "text",
+                                    "help": "Name of the contact."
+                                },
+                                {
+                                    "name": "cf_cart_id",
+                                    "label": "Cart Identifier",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "cf_cart_total_items",
+                                    "label": "Total Number of Items",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "cf_cart_status",
+                                    "label": "Status of Cart",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "legal_bases",
+                                    "label": "Legal Bases",
+                                    "type": "array",
+                                    "spec": {
+                                        "type": "collection",
+                                        "spec": [
+                                            {
+                                                "name": "category",
+                                                "label": "Category",
+                                                "type": "select",
+                                                "options": [
+                                                    {
+                                                        "label": "data_processing",
+                                                        "value": "data_processing"
+                                                    },
+                                                    {
+                                                        "label": "communications",
+                                                        "value": "communications"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "type",
+                                                "label": "Type",
+                                                "type": "select",
+                                                "options": [
+                                                    {
+                                                        "label": "pre_existent_contract",
+                                                        "value": "pre_existent_contract"
+                                                    },
+                                                    {
+                                                        "label": "consent",
+                                                        "value": "consent"
+                                                    },
+                                                    {
+                                                        "label": "legitimate_interest",
+                                                        "value": "legitimate_interest"
+                                                    },
+                                                    {
+                                                        "label": "judicial_process",
+                                                        "value": "judicial_process"
+                                                    },
+                                                    {
+                                                        "label": "vital_interest",
+                                                        "value": "vital_interest"
+                                                    },
+                                                    {
+                                                        "label": "public_interest",
+                                                        "value": "public_interest"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "status",
+                                                "label": "Status",
+                                                "type": "text",
+                                                "help": "Can be empty when `Category` is `data_processing` or pay attention to the fact that when `Category` is `data_processing` the only accepted value for `Status` is `granted`."
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "label": "Abandoned Cart with a specific Item",
+                    "value": "CART_ABANDONED_ITEM",
+                    "nested": [
+                        {
+                            "name": "payload",
+                            "label": "Payload",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "email",
+                                    "label": "email",
+                                    "type": "text",
+                                    "help": "Email of the contact."
+                                },
+                                {
+                                    "name": "name",
+                                    "label": "Name",
+                                    "type": "text",
+                                    "help": "Name of the contact."
+                                },
+                                {
+                                    "name": "cf_cart_id",
+                                    "label": "Cart Identifier",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "cf_cart_product_id",
+                                    "label": "Product Identifier",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "cf_cart_product_sku",
+                                    "label": "SKU Identifier",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "legal_bases",
+                                    "label": "Legal Bases",
+                                    "type": "array",
+                                    "spec": {
+                                        "type": "collection",
+                                        "spec": [
+                                            {
+                                                "name": "category",
+                                                "label": "Category",
+                                                "type": "select",
+                                                "options": [
+                                                    {
+                                                        "label": "data_processing",
+                                                        "value": "data_processing"
+                                                    },
+                                                    {
+                                                        "label": "communications",
+                                                        "value": "communications"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "type",
+                                                "label": "Type",
+                                                "type": "select",
+                                                "options": [
+                                                    {
+                                                        "label": "pre_existent_contract",
+                                                        "value": "pre_existent_contract"
+                                                    },
+                                                    {
+                                                        "label": "consent",
+                                                        "value": "consent"
+                                                    },
+                                                    {
+                                                        "label": "legitimate_interest",
+                                                        "value": "legitimate_interest"
+                                                    },
+                                                    {
+                                                        "label": "judicial_process",
+                                                        "value": "judicial_process"
+                                                    },
+                                                    {
+                                                        "label": "vital_interest",
+                                                        "value": "vital_interest"
+                                                    },
+                                                    {
+                                                        "label": "public_interest",
+                                                        "value": "public_interest"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "status",
+                                                "label": "Status",
+                                                "type": "text",
+                                                "help": "Can be empty when `Category` is `data_processing` or pay attention to the fact that when `Category` is `data_processing` the only accepted value for `Status` is `granted`."
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "name": "event_family",
+        "label": "Event Family",
+        "type": "text",
+        "default": "CDP",
+        "advanced": true,
+        "help": "The family of the event for processing purposes. It currently accepts only `CDP` as valid option."
+    }
+]

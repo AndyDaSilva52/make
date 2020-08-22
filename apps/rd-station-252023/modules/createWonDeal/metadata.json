@@ -1,0 +1,8 @@
+{
+    "name": "createWonDeal",
+    "label": "Create a Won Deal",
+    "description": "Mark a deal as won.",
+    "connection": "rd-station-2520233",
+    "webhook": null,
+    "type": "action"
+}
