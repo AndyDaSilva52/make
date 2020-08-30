@@ -1,4 +1,5 @@
 function getErrors(statusCode, body) {
+    if (!body) return;
 
     let errors = body.errors;
 
@@ -22,7 +23,7 @@ function getErrors(statusCode, body) {
 
     if (Array.isArray(errors) && errors.length) {
         errors.forEach((item, idxItem) => {
-            message += ('\n**' + ' Type[' + item[`error_type`] + '] Message[' + item[`error_message`] + ']');
+            message += ('\n\n**' + ' Type[' + item[`error_type`] + '] Message[' + item[`error_message`] + ']');
             if (item.hasOwnProperty('path')) {
                 message += (' Path[' + item[`path`] + ']');
             }
@@ -34,7 +35,7 @@ function getErrors(statusCode, body) {
         });
     } else if (typeof errors == "object" && !errors.hasOwnProperty('error_type') && !errors.hasOwnProperty('error_message')) {
         Object.keys(errors).forEach(key => {
-            message += ('\n*' + ' Field[' + key + ']');
+            message += ('\n\n*' + ' Field[' + key + ']');
             let messages = '';
             errors[key].forEach((item, idxItem) => {
                 messages += ('\n**' + ' Type[' + item[`error_type`] + '] Message[' + item[`error_message`] + ']');
@@ -43,15 +44,15 @@ function getErrors(statusCode, body) {
         });
     }
     else if (typeof errors == "object" && (errors.hasOwnProperty('error_type'))) {
-        message += ('\n**' + ' Type[' + errors.error_type + '] Message[' + errors.error_message + ']');
+        message += ('\n\n**' + ' Type[' + errors.error_type + '] Message[' + errors.error_message + ']');
     } else if (typeof body == "object" && (body.hasOwnProperty('message'))) {
-        message = message + '\n**' + ' Message[' + body.message + ']'
+        message = message + '\n\n**' + ' Message[' + body.message + ']'
     } else if (typeof body == "object" && IsJsonString(body)) {
-        message = message + '\n**' + ' ' + JSON.stringify(body)
+        message = message + '\n\n**' + ' ' + JSON.stringify(body)
     } else if (typeof body == "object" && !IsJsonString(body)) {
-        message = message + '\n**' + ' ' + JSON.stringify(body)
+        message = message + '\n\n**' + ' ' + JSON.stringify(body)
     } else {
-        message = message + '\n' + body;
+        message = message + '\n\n' + body;
     }
 
     return (message + '\n\nFor more info: https://developers.rdstation.com/en/error-states');

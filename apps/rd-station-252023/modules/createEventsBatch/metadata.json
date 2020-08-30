@@ -1,7 +1,7 @@
 {
     "name": "createEventsBatch",
     "label": "Create Events (Batch)",
-    "description": "Allows to send more than one event at onde.",
+    "description": "Allows to send more than one event at once.",
     "connection": "rd-station-2520233",
     "webhook": null,
     "type": "action"

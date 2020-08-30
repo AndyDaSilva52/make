@@ -1,9 +1,0 @@
-[
-    {
-        "name": "apiKey",
-        "type": "text",
-        "label": "API Key",
-        "required": true,
-        "help": "To get the API Key access [RD Station App Store](https://appstore.rdstation.com/en/publisher)"
-    }
-]

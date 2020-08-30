@@ -2,6 +2,7 @@
     "url": "/integrations/webhooks",
     "method": "GET",
     "response": {
+        "limit": 100,
         "output": "{{item}}",
         "iterate": "{{body.webhooks}}"
     }

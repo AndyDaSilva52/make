@@ -1,65 +1,61 @@
 function getExpectEventInput(input) {
 
-    function getExpectObj(obj) {
-        const body = Object.assign({}, obj);
-        var payload = body.payload;
+	function getExpectObj(obj_input) {
+		const body = Object.assign({}, obj_input);
+		var payload = body.payload;
 
-        function setValue(propertyPath, value, obj, typ) {
-            /**
-             * 
-             */
-            if (!propertyPath) return;
+		function setValue(propertyPath, value, obj, typ) {
 
-            let properties = Array.isArray(propertyPath) ? propertyPath : propertyPath.split(".");
+			if (!propertyPath) return;
 
-            // Not yet at the last property so keep digging
-            if (properties.length > 1) {
-                // The property doesn't exists OR is not an object (and so we overwritten it) so we create it
-                if (!obj.hasOwnProperty(properties[0]) || typeof obj[properties[0]] !== "object") obj[properties[0]] = {};
-                
-                return setValue(properties.slice(1), value, obj[properties[0]]);
-            } else {
-                // We set the value to the last property
-                if (typ != 'FLOAT' && typ != 'INTEGER') {
-                    value = JSON.stringify(value)
-                    try {
-                        obj[properties[0]] = JSON.parse(value)
-                    } catch (e) {
-                        obj[properties[0]] = value.toString()
-                    }
-                } else { obj[properties[0]] = ((typ == 'FLOAT') ? parseFloat(value) : (typ == 'INTEGER') ? parseInt(value) : Number(value)) }
-                return true
-            }
-        }
+			let properties = Array.isArray(propertyPath) ? propertyPath : propertyPath.split(".");
 
-        Object
-            .keys(payload)
-            .forEach(key => {
-                if (key === 'custom_fields') {
-                    var custom_fields = payload[key];
-                    custom_fields.forEach(item => {
-                        setValue(('payload.' + item['name']), (item['value']), body, item['type']);
-                    });
-                    delete payload[key];
-                }
-            });
+			if (properties.length > 1) {
+				if (!obj.hasOwnProperty(properties[0]) || typeof obj[properties[0]] !== "object") obj[properties[0]] = {};
+				
+				return setValue(properties.slice(1), value, obj[properties[0]], typ);
+			} else {
+				if (typ == 'JSON') {
+					try {
+						obj[properties[0]] = JSON.parse(value)
+					} catch (e) {
+						obj[properties[0]] = value.toString()
+					}
+				} else if(typ == 'FLOAT' || typ == 'INTEGER') {
+					obj[properties[0]] = ((typ == 'FLOAT') ? parseFloat(value) : (typ == 'INTEGER') ? parseInt(value) : Number(value))
+				} else { obj[properties[0]] = value }
+				return true
+			}
+		}
 
-        return body;
-    }
+		Object
+			.keys(payload)
+			.forEach(key => {
+				if (key === 'custom_fields') {
+					var custom_fields = payload[key];
+					custom_fields.forEach(item => {
+						setValue(('payload.' + item['name']), (item['value']), body, item['type']);
+					});
+					delete payload[key];
+				}
+			});
 
-    function getExpect(obj) {
-        if (Array.isArray(obj) && obj.length) {
-            obj.forEach((item, idxItem) => {
-                obj[idxItem] = getExpectObj(item);
-            });
-            return obj;
-        } else {
-            return getExpectObj(obj);
-        }
-    }
+		return body;
+	}
 
-    if (!input) return input;
+	function getExpect(obj) {
+		if (Array.isArray(obj) && obj.length) {
+			obj.forEach((item, idxItem) => {
+				obj[idxItem] = getExpectObj(item);
+			});
+			return obj;
+		} else {
+			return getExpectObj(obj);
+		}
+	}
 
-    return getExpect(input);
+	if (!input) return input;
+
+	return getExpect(input);
 
 }

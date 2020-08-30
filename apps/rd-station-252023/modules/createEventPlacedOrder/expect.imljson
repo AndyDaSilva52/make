@@ -8,7 +8,7 @@
         "options": {
             "store": [
                 {
-                    "label": "Cart Abandoned",
+                    "label": "Order Placed",
                     "value": "ORDER_PLACED",
                     "nested": [
                         {
@@ -29,7 +29,7 @@
                                 },
                                 {
                                     "name": "cf_order_total_items",
-                                    "type": "number"
+                                    "type": "integer"
                                 },
                                 {
                                     "name": "cf_order_status",
@@ -45,17 +45,72 @@
                                 },
                                 {
                                     "name": "legal_bases",
+                                    "label": "Legal Bases",
                                     "type": "array",
                                     "spec": {
                                         "type": "collection",
                                         "spec": [
                                             {
                                                 "name": "category",
-                                                "type": "text"
+                                                "label": "Category",
+                                                "type": "select",
+                                                "options": [
+                                                    {
+                                                        "label": "data_processing",
+                                                        "value": "data_processing"
+                                                    },
+                                                    {
+                                                        "label": "communications",
+                                                        "value": "communications"
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "name": "type",
-                                                "type": "text"
+                                                "label": "Type",
+                                                "type": "select",
+                                                "options": [
+                                                    {
+                                                        "label": "pre_existent_contract",
+                                                        "value": "pre_existent_contract"
+                                                    },
+                                                    {
+                                                        "label": "consent",
+                                                        "value": "consent"
+                                                    },
+                                                    {
+                                                        "label": "legitimate_interest",
+                                                        "value": "legitimate_interest"
+                                                    },
+                                                    {
+                                                        "label": "judicial_process",
+                                                        "value": "judicial_process"
+                                                    },
+                                                    {
+                                                        "label": "vital_interest",
+                                                        "value": "vital_interest"
+                                                    },
+                                                    {
+                                                        "label": "public_interest",
+                                                        "value": "public_interest"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "status",
+                                                "label": "Status",
+                                                "type": "select",
+                                                "options": [
+                                                    {
+                                                        "label": "granted",
+                                                        "value": "granted"
+                                                    },
+                                                    {
+                                                        "label": "declined",
+                                                        "value": "declined"
+                                                    }
+                                                ],
+                                                "help": "Can be empty when `Category` is `data_processing` or pay attention to the fact that when `Category` is `data_processing` the only accepted value for `Status` is `granted`."
                                             }
                                         ]
                                     }
@@ -65,7 +120,7 @@
                     ]
                 },
                 {
-                    "label": "Placed Order with a specific Item",
+                    "label": "Order Placed with a specific Item",
                     "value": "ORDER_PLACED_ITEM",
                     "nested": [
                         {
@@ -94,17 +149,72 @@
                                 },
                                 {
                                     "name": "legal_bases",
+                                    "label": "Legal Bases",
                                     "type": "array",
                                     "spec": {
                                         "type": "collection",
                                         "spec": [
                                             {
                                                 "name": "category",
-                                                "type": "text"
+                                                "label": "Category",
+                                                "type": "select",
+                                                "options": [
+                                                    {
+                                                        "label": "data_processing",
+                                                        "value": "data_processing"
+                                                    },
+                                                    {
+                                                        "label": "communications",
+                                                        "value": "communications"
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "name": "type",
-                                                "type": "text"
+                                                "label": "Type",
+                                                "type": "select",
+                                                "options": [
+                                                    {
+                                                        "label": "pre_existent_contract",
+                                                        "value": "pre_existent_contract"
+                                                    },
+                                                    {
+                                                        "label": "consent",
+                                                        "value": "consent"
+                                                    },
+                                                    {
+                                                        "label": "legitimate_interest",
+                                                        "value": "legitimate_interest"
+                                                    },
+                                                    {
+                                                        "label": "judicial_process",
+                                                        "value": "judicial_process"
+                                                    },
+                                                    {
+                                                        "label": "vital_interest",
+                                                        "value": "vital_interest"
+                                                    },
+                                                    {
+                                                        "label": "public_interest",
+                                                        "value": "public_interest"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "status",
+                                                "label": "Status",
+                                                "type": "select",
+                                                "options": [
+                                                    {
+                                                        "label": "granted",
+                                                        "value": "granted"
+                                                    },
+                                                    {
+                                                        "label": "declined",
+                                                        "value": "declined"
+                                                    }
+                                                ],
+                                                "help": "Can be empty when `Category` is `data_processing` or pay attention to the fact that when `Category` is `data_processing` the only accepted value for `Status` is `granted`."
                                             }
                                         ]
                                     }

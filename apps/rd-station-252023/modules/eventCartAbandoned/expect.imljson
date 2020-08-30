@@ -36,7 +36,7 @@
                                 {
                                     "name": "cf_cart_total_items",
                                     "label": "Total Number of Items",
-                                    "type": "text"
+                                    "type": "integer"
                                 },
                                 {
                                     "name": "cf_cart_status",
@@ -99,7 +99,17 @@
                                             {
                                                 "name": "status",
                                                 "label": "Status",
-                                                "type": "text",
+                                                "type": "select",
+                                                "options": [
+                                                    {
+                                                        "label": "granted",
+                                                        "value": "granted"
+                                                    },
+                                                    {
+                                                        "label": "declined",
+                                                        "value": "declined"
+                                                    }
+                                                ],
                                                 "help": "Can be empty when `Category` is `data_processing` or pay attention to the fact that when `Category` is `data_processing` the only accepted value for `Status` is `granted`."
                                             }
                                         ]
@@ -201,7 +211,17 @@
                                             {
                                                 "name": "status",
                                                 "label": "Status",
-                                                "type": "text",
+                                                "type": "select",
+                                                "options": [
+                                                    {
+                                                        "label": "granted",
+                                                        "value": "granted"
+                                                    },
+                                                    {
+                                                        "label": "declined",
+                                                        "value": "declined"
+                                                    }
+                                                ],
                                                 "help": "Can be empty when `Category` is `data_processing` or pay attention to the fact that when `Category` is `data_processing` the only accepted value for `Status` is `granted`."
                                             }
                                         ]

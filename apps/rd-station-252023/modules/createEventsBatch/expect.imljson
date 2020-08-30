@@ -3,6 +3,7 @@
         "name": "events",
         "label": "Array of Events",
         "type": "array",
+        "help": "For more info [RD Station - Documentation - Events](https://developers.rdstation.com/en/reference/events#events-batch-post)",
         "spec": [
             {
                 "name": "event_type",
@@ -20,6 +21,7 @@
             {
                 "name": "payload",
                 "type": "collection",
+                "help": "Map an array of fields with `name`, `value` and the right `type` where folows `payload` from  [RD Station - Documentation - Events](https://developers.rdstation.com/en/reference/events).\nJSON format is allowed at `value`. Ex: Field `name` 'legal_bases' the `value` could be `[{\"category\":\"data_processing\",\"type\":\"pre_existent_contract\"},{\"category\":\"communications\",\"type\":\"consent\",\"status\":\"granted\"}]`",
                 "spec": [
                     {
                         "name": "custom_fields",
@@ -59,7 +61,7 @@
                                         "value": "FLOAT"
                                     },
                                     {
-                                        "label": "JSON",
+                                        "label": "JSON or ARRAY",
                                         "value": "JSON"
                                     }
                                 ]

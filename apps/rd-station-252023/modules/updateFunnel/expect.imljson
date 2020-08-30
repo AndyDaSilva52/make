@@ -21,7 +21,7 @@
         "label": "Value",
         "type": "text",
         "required": true,
-        "help": "The unique uuid or email associated to RD Station Contact accordinly with Key Used."
+        "help": "The unique uuid or email associated to RD Station Contact accordinly with the Identifier."
     },
     {
         "name": "funnel_name",

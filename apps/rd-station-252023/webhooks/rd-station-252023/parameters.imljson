@@ -39,9 +39,10 @@
     {
         "name": "http_method",
         "label": "HTTP Method",
-        "type": "text",
+        "type": "hidden",
         "default": "POST",
-        "help": "The HTTP method that the webhook will trigger. Currently only `POST` methods are supported."
+        "help": "The HTTP method that the webhook will trigger. Currently only `POST` methods are supported.",
+        "advanced": true
     },
     {
         "name": "include_relations",

@@ -123,7 +123,17 @@
                                 {
                                     "name": "call_type",
                                     "label": "Call Type",
-                                    "type": "text",
+                                    "type": "select",
+                                    "options": [
+                                        {
+                                            "label": "Inbound",
+                                            "value": "Inbound"
+                                        },
+                                        {
+                                            "label": "Outbound",
+                                            "value": "Outbound"
+                                        }
+                                    ],
                                     "help": "Inbound or Outbound"
                                 },
                                 {

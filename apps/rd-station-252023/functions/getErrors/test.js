@@ -16,7 +16,7 @@ it('status Code 401 with array of collection about the error                   '
         ]
     });
 
-    assert.deepEqual(result, '[401]\n** Type[UNAUTHORIZED] Message[Invalid token.]\n** Type[ACCESS_DENIED] Message[Wrong credentials provided.]\n** Type[EXPIRED_CODE_GRANT] Message[The authorization code grant has expired.]\n\nFor more info: https://developers.rdstation.com/en/error-states');
+    assert.deepEqual(result, '[401]\n\n** Type[UNAUTHORIZED] Message[Invalid token.]\n\n** Type[ACCESS_DENIED] Message[Wrong credentials provided.]\n\n** Type[EXPIRED_CODE_GRANT] Message[The authorization code grant has expired.]\n\nFor more info: https://developers.rdstation.com/en/error-states');
 });
 
 it('status code 404 not found with only one collection                         ', () => {
@@ -26,7 +26,7 @@ it('status code 404 not found with only one collection                         '
             "error_message": "Lead not found."
         }
     });
-    assert.deepEqual(result, '[404]\n** Type[RESOURCE_NOT_FOUND] Message[Lead not found.]\n\nFor more info: https://developers.rdstation.com/en/error-states')
+    assert.deepEqual(result, '[404]\n\n** Type[RESOURCE_NOT_FOUND] Message[Lead not found.]\n\nFor more info: https://developers.rdstation.com/en/error-states')
 });
 
 it('status code 400 Bad Request with collection of key fields                  ', () => {
@@ -50,7 +50,7 @@ it('status code 400 Bad Request with collection of key fields                  '
         }
     }
     );
-    assert.deepEqual(result, '[400]\n* Field[email]\n** Type[CANNOT_BE_NULL] Message[email cannot be null.]\n* Field[linkedin]\n** Type[INVALID_FORMAT] Message[linkedin must use only letters, numbers, \'.\', \'-\' and \'_\']\n* Field[name]\n** Type[CANNOT_BE_BLANK] Message[Can not be blank]\n\nFor more info: https://developers.rdstation.com/en/error-states')
+    assert.deepEqual(result, '[400]\n\n* Field[email]\n** Type[CANNOT_BE_NULL] Message[email cannot be null.]\n\n* Field[linkedin]\n** Type[INVALID_FORMAT] Message[linkedin must use only letters, numbers, \'.\', \'-\' and \'_\']\n\n* Field[name]\n** Type[CANNOT_BE_BLANK] Message[Can not be blank]\n\nFor more info: https://developers.rdstation.com/en/error-states')
 });
 
 it('status code 422 Unprocessable Entity                                       ', () => {
@@ -64,14 +64,14 @@ it('status code 422 Unprocessable Entity                                       '
             ]
         }
     });
-    assert.deepEqual(result, '[422]\n* Field[name]\n** Type[MUST_BE_STRING] Message[Name must be string.]\n\nFor more info: https://developers.rdstation.com/en/error-states')
+    assert.deepEqual(result, '[422]\n\n* Field[name]\n** Type[MUST_BE_STRING] Message[Name must be string.]\n\nFor more info: https://developers.rdstation.com/en/error-states')
 });
 
 it('status code 404 no Route matched with those values                         ', () => {
     let result = getErrors(404, {
         "message": "no Route matched with those values"
     });
-    assert.deepEqual(result, '[404]\n** Message[no Route matched with those values]\n\nFor more info: https://developers.rdstation.com/en/error-states')
+    assert.deepEqual(result, '[404]\n\n** Message[no Route matched with those values]\n\nFor more info: https://developers.rdstation.com/en/error-states')
 });
 
 it('status code 400 field legal_bases.type Must be provided                    ', () => {
@@ -91,7 +91,7 @@ it('status code 400 field legal_bases.type Must be provided                    '
             }
         ]
     });
-    assert.deepEqual(result, '[400]\n** Type[MISSING] Message[Must be provided.] Path[$.legal_bases[0].type]\n** Type[MISSING] Message[Must be provided.] Path[$.legal_bases[0].category]\n\nFor more info: https://developers.rdstation.com/en/error-states');
+    assert.deepEqual(result, '[400]\n\n** Type[MISSING] Message[Must be provided.] Path[$.legal_bases[0].type]\n\n** Type[MISSING] Message[Must be provided.] Path[$.legal_bases[0].category]\n\nFor more info: https://developers.rdstation.com/en/error-states');
 });
 
 
@@ -116,7 +116,7 @@ it('status code 400 validation rules                                           '
             }
         ]
     });
-    assert.deepEqual(result, '[400]\n** Type[INVALID_OPTION] Message[Must be one of the valid options.] Path[$.body.event_type] Validation Rules[{"valid_options":["CONVERSION","OPPORTUNITY","OPPORTUNITY_LOST","SALE","ORDER_PLACED","ORDER_PLACED_ITEM"]}]\n\nFor more info: https://developers.rdstation.com/en/error-states');
+    assert.deepEqual(result, '[400]\n\n** Type[INVALID_OPTION] Message[Must be one of the valid options.] Path[$.body.event_type] Validation Rules[{"valid_options":["CONVERSION","OPPORTUNITY","OPPORTUNITY_LOST","SALE","ORDER_PLACED","ORDER_PLACED_ITEM"]}]\n\nFor more info: https://developers.rdstation.com/en/error-states');
 });
 it('status code 429 rate limit                                                 ', () => {
     let result = getErrors(429, {
@@ -125,5 +125,5 @@ it('status code 429 rate limit                                                 '
         "usage": 121,
         "remaining_time": 21
     });
-    assert.deepEqual(result, "[429]\n** {\"error\":\"'identity_limiter' rate limit exceeded for 60 second(s) period for key '197925'\",\"max\":120,\"usage\":121,\"remaining_time\":21}\n\nFor more info: https://developers.rdstation.com/en/error-states")
+    assert.deepEqual(result, "[429]\n\n** {\"error\":\"'identity_limiter' rate limit exceeded for 60 second(s) period for key '197925'\",\"max\":120,\"usage\":121,\"remaining_time\":21}\n\nFor more info: https://developers.rdstation.com/en/error-states")
 })
