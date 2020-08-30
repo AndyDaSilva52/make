@@ -3,6 +3,10 @@
         "name": "event_type",
         "label": "Event Type",
         "type": "select",
+        "validate": false,
+        "enabled": true,
+        "editable": true,
+        "help": "Could be different value if needed and the API allow.",
         "options": [
             {
                 "label": "CONVERTED",
@@ -32,8 +36,170 @@
         "type": "array",
         "help": "The identifiers from the events that must trigger the webhook. Only for `Event Type` equal `CONVERTED`.",
         "spec": {
-            "type": "text",
-            "label": "Event Identifier"
+            "label": "Event Identifier",
+            "type": "select",
+            "validate": false,
+            "enabled": true,
+            "editable": true,
+            "options": [
+                {
+                    "label": "CONVERSION",
+                    "value": "CONVERSION"
+                },
+                {
+                    "label": "OPPORTUNITY",
+                    "value": "OPPORTUNITY"
+                },
+                {
+                    "label": "OPPORTUNITY_CREATED",
+                    "value": "OPPORTUNITY_CREATED"
+                },
+                {
+                    "label": "OPPORTUNITY_UPDATED",
+                    "value": "OPPORTUNITY_UPDATED"
+                },
+                {
+                    "label": "OPPORTUNITY_LOST",
+                    "value": "OPPORTUNITY_LOST"
+                },
+                {
+                    "label": "CONTACT_CREATED",
+                    "value": "CONTACT_CREATED"
+                },
+                {
+                    "label": "CONTACT_UPDATED",
+                    "value": "CONTACT_UPDATED"
+                },
+                {
+                    "label": "ENTERED_CLUSTER",
+                    "value": "ENTERED_CLUSTER"
+                },
+                {
+                    "label": "LEFT_CLUSTER",
+                    "value": "LEFT_CLUSTER"
+                },
+                {
+                    "label": "FUNNEL_STAGE_CHANGED",
+                    "value": "FUNNEL_STAGE_CHANGED"
+                },
+                {
+                    "label": "LEGAL_BASE_CHANGED",
+                    "value": "LEGAL_BASE_CHANGED"
+                },
+                {
+                    "label": "COOKIE_CONSENT_UPDATED",
+                    "value": "COOKIE_CONSENT_UPDATED"
+                },
+                {
+                    "label": "FUNCTIONAL_CONSENT_UPDATED",
+                    "value": "FUNCTIONAL_CONSENT_UPDATED"
+                },
+                {
+                    "label": "ANALYTICS_CONSENT_UPDATED",
+                    "value": "ANALYTICS_CONSENT_UPDATED"
+                },
+                {
+                    "label": "DOUBLE_OPT_IN_EMAIL_CONFIRMED",
+                    "value": "DOUBLE_OPT_IN_EMAIL_CONFIRMED"
+                },
+                {
+                    "label": "EMAIL_SOFT_BOUNCED",
+                    "value": "EMAIL_SOFT_BOUNCED"
+                },
+                {
+                    "label": "EMAIL_HARD_BOUNCED",
+                    "value": "EMAIL_HARD_BOUNCED"
+                },
+                {
+                    "label": "EMAIL_SPAM_REPORTED",
+                    "value": "EMAIL_SPAM_REPORTED"
+                },
+                {
+                    "label": "EMAIL_UNSUBSCRIBED",
+                    "value": "EMAIL_UNSUBSCRIBED"
+                },
+                {
+                    "label": "EMAIL_DELIVERED",
+                    "value": "EMAIL_DELIVERED"
+                },
+                {
+                    "label": "EMAIL_OPENED",
+                    "value": "EMAIL_OPENED"
+                },
+                {
+                    "label": "EMAIL_CLICKED",
+                    "value": "EMAIL_CLICKED"
+                },
+                {
+                    "label": "EMAIL_DROPPED",
+                    "value": "EMAIL_DROPPED"
+                },
+                {
+                    "label": "CART_ABANDONED",
+                    "value": "CART_ABANDONED"
+                },
+                {
+                    "label": "CART_ABANDONED_ITEM",
+                    "value": "CART_ABANDONED_ITEM"
+                },
+                {
+                    "label": "SALE",
+                    "value": "SALE"
+                },
+                {
+                    "label": "ORDER_PLACED",
+                    "value": "ORDER_PLACED"
+                },
+                {
+                    "label": "ORDER_PLACED_ITEM",
+                    "value": "ORDER_PLACED_ITEM"
+                },
+                {
+                    "label": "PAGE_VISITED",
+                    "value": "PAGE_VISITED"
+                },
+                {
+                    "label": "CHAT_STARTED",
+                    "value": "CHAT_STARTED"
+                },
+                {
+                    "label": "CHAT_FINISHED",
+                    "value": "CHAT_FINISHED"
+                },
+                {
+                    "label": "CALL_FINISHED",
+                    "value": "CALL_FINISHED"
+                },
+                {
+                    "label": "MEDIA_PLAYBACK_STARTED",
+                    "value": "MEDIA_PLAYBACK_STARTED"
+                },
+                {
+                    "label": "MEDIA_PLAYBACK_STOPPED",
+                    "value": "MEDIA_PLAYBACK_STOPPED"
+                },
+                {
+                    "label": "TASK_CREATED",
+                    "value": "TASK_CREATED"
+                },
+                {
+                    "label": "TASK_UPDATED",
+                    "value": "TASK_UPDATED"
+                },
+                {
+                    "label": "WORKFLOW_STARTED",
+                    "value": "WORKFLOW_STARTED"
+                },
+                {
+                    "label": "WORKFLOW_FINISHED",
+                    "value": "WORKFLOW_FINISHED"
+                },
+                {
+                    "label": "WORKFLOW_CANCELED",
+                    "value": "WORKFLOW_CANCELED"
+                }
+            ],
+            "help": "The event type that differentiates the event. Ex:\n`CONVERSION`, `OPPORTUNITY`, `SALE`, `OPPORTUNITY_LOST`. Could be different value from the pre-existent list.\nFor more info [RD Station - Documentation - Events](https://developers.rdstation.com/en/reference/events)"
         }
     },
     {

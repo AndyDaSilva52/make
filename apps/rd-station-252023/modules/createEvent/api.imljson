@@ -1,7 +1,7 @@
 {
     "url": "/platform/events",
     "method": "POST",
-    "body": "{{ getExpectEventInput(parameters) }}",
+    "body": "{{ getExpectEventInput(parameters, environment.timezone) }}",
     "response": {
         "output": "{{body}}"
     }
