@@ -1,24 +1,4 @@
 [
-    /**
-    {
-        "name": "event_type",
-        "label": "Event Type",
-        "type": "hidden",
-        "help": "The event type that diferentiates the event. For the conversion event it should be sent as `CONVERSION`."
-    },
-    {
-        "name": "event_family",
-        "label": "Event Family",
-        "type": "text",
-        "help": "The family of the event for processing purposes. It currently accepts only `CDP` as valid option."
-    },
-     
-    {
-        "name": "payload",
-        "label": "Payload",
-        "type": "collection",
-        "spec": [
-            */
     {
         "name": "conversion_identifier",
         "label": "Event Identifier",
@@ -76,9 +56,10 @@
         "type": "text",
         "help": "UTM value param (term)."
     },
+    {
+        "name": "available_for_mailing",
+        "label": "Available for Mailing",
+        "type": "boolean"
+    },
     "rpc://contactFieldsExpectWithEmail"
-    /**
-        ]
-    }
-     */
 ]

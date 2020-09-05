@@ -18,7 +18,7 @@
                             "spec": [
                                 {
                                     "name": "email",
-                                    "label": "email",
+                                    "label": "Email",
                                     "type": "text",
                                     "help": "Email of the contact."
                                 },
@@ -56,11 +56,11 @@
                                                 "type": "select",
                                                 "options": [
                                                     {
-                                                        "label": "data_processing",
+                                                        "label": "Data Processing",
                                                         "value": "data_processing"
                                                     },
                                                     {
-                                                        "label": "communications",
+                                                        "label": "Communications",
                                                         "value": "communications"
                                                     }
                                                 ]
@@ -71,27 +71,27 @@
                                                 "type": "select",
                                                 "options": [
                                                     {
-                                                        "label": "pre_existent_contract",
+                                                        "label": "Pre Existent Contract",
                                                         "value": "pre_existent_contract"
                                                     },
                                                     {
-                                                        "label": "consent",
+                                                        "label": "Consent",
                                                         "value": "consent"
                                                     },
                                                     {
-                                                        "label": "legitimate_interest",
+                                                        "label": "Legitimate Interest",
                                                         "value": "legitimate_interest"
                                                     },
                                                     {
-                                                        "label": "judicial_process",
+                                                        "label": "Judicial Process",
                                                         "value": "judicial_process"
                                                     },
                                                     {
-                                                        "label": "vital_interest",
+                                                        "label": "Vital Interest",
                                                         "value": "vital_interest"
                                                     },
                                                     {
-                                                        "label": "public_interest",
+                                                        "label": "Public Interest",
                                                         "value": "public_interest"
                                                     }
                                                 ]
@@ -102,11 +102,11 @@
                                                 "type": "select",
                                                 "options": [
                                                     {
-                                                        "label": "granted",
+                                                        "label": "Granted",
                                                         "value": "granted"
                                                     },
                                                     {
-                                                        "label": "declined",
+                                                        "label": "Declined",
                                                         "value": "declined"
                                                     }
                                                 ],
@@ -130,7 +130,7 @@
                             "spec": [
                                 {
                                     "name": "email",
-                                    "label": "email",
+                                    "label": "Email",
                                     "type": "text",
                                     "help": "Email of the contact."
                                 },
@@ -168,11 +168,11 @@
                                                 "type": "select",
                                                 "options": [
                                                     {
-                                                        "label": "data_processing",
+                                                        "label": "Data Processing",
                                                         "value": "data_processing"
                                                     },
                                                     {
-                                                        "label": "communications",
+                                                        "label": "Communications",
                                                         "value": "communications"
                                                     }
                                                 ]
@@ -183,27 +183,27 @@
                                                 "type": "select",
                                                 "options": [
                                                     {
-                                                        "label": "pre_existent_contract",
+                                                        "label": "Pre Existent Contract",
                                                         "value": "pre_existent_contract"
                                                     },
                                                     {
-                                                        "label": "consent",
+                                                        "label": "Consent",
                                                         "value": "consent"
                                                     },
                                                     {
-                                                        "label": "legitimate_interest",
+                                                        "label": "Legitimate Interest",
                                                         "value": "legitimate_interest"
                                                     },
                                                     {
-                                                        "label": "judicial_process",
+                                                        "label": "Judicial Process",
                                                         "value": "judicial_process"
                                                     },
                                                     {
-                                                        "label": "vital_interest",
+                                                        "label": "Vital Interest",
                                                         "value": "vital_interest"
                                                     },
                                                     {
-                                                        "label": "public_interest",
+                                                        "label": "Public Interest",
                                                         "value": "public_interest"
                                                     }
                                                 ]
@@ -214,11 +214,11 @@
                                                 "type": "select",
                                                 "options": [
                                                     {
-                                                        "label": "granted",
+                                                        "label": "Granted",
                                                         "value": "granted"
                                                     },
                                                     {
-                                                        "label": "declined",
+                                                        "label": "Declined",
                                                         "value": "declined"
                                                     }
                                                 ],

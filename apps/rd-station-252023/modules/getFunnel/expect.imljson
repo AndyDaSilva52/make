@@ -28,6 +28,7 @@
         "label": "Funnel Name",
         "type": "text",
         "required": true,
-        "default": "default"
+        "default": "default",
+        "advanced": true
     }
 ]
