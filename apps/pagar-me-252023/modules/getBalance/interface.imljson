@@ -1,18 +1,46 @@
 [
     {
-        "label": "object",
+        "name": "object",
+        "label": "Object",
         "type": "text"
     },
     {
-        "label": "waiting_funds_amount",
-        "type": "number"
+        "name": "waiting_funds",
+        "label": "Waiting Funds",
+        "help": "It has the property `amount`, which represents how much you have already sold in your store, but is not yet available in your Pagar.me account.",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "amount",
+                "label": "Amount",
+                "type": "number"
+            }
+        ]
     },
     {
-        "label": "transferred_amount",
-        "type": "number"
+        "name": "transferred",
+        "label": "Transferred",
+        "help": "It has the property `amount`, which represents how much you have already transferred to your bank account (how much you have actually received).",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "amount",
+                "label": "Amount",
+                "type": "number"
+            }
+        ]
     },
     {
-        "label": "available_amount",
-        "type": "number"
+        "name": "available",
+        "label": "Available",
+        "help": "It has the property `amount`, which represents how much is available in your Pagar.me account to be transferred.",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "amount",
+                "label": "Amount",
+                "type": "number"
+            }
+        ]
     }
 ]

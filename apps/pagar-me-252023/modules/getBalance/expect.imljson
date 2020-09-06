@@ -3,8 +3,18 @@
         "name": "recipient_id",
         "type": "text",
         "label": "Recipient ID",
-        "help": "Id de um recebedor específico, caso queira obter o saldo específico dele",
+        "help": "Id of a specific recipient, if you want to get his specific balance. If not informed will get the balance from the main recipient.",
         "required": false,
-        "advanced": true
+        "rpc": {
+            "label": "Find recipient by name",
+            "url": "rpc://rGetRecipientByName",
+            "parameters": [
+                {
+                    "name": "name",
+                    "label": "Name",
+                    "type": "text"
+                }
+            ]
+        }
     }
 ]

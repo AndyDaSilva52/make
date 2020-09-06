@@ -1,0 +1,20 @@
+{
+    "url": "/recipients",
+    "method": "GET",
+    "qs": {
+        "count": 10,
+        "page": 1,
+        "name": "{{parameters.name}}"
+    },
+    "response": {
+        "error": {
+            "type": "DataError",
+            "message": "{{getErrors(statusCode, body, environment.timezone)}}"
+        },
+        "iterate": "{{body}}",
+        "output": {
+            "label": "{{item.bank_account.legal_name + ' (Bank[' + item.bank_account.bank_code + '] Agency[' item.bank_account.agencia '] Account[' + item.bank_account.conta + '])'}}",
+            "value": "{{item.id}}"
+        }
+    }
+}

@@ -1,7 +1,7 @@
 {
     "name": "getBalanceOperation",
-    "label": "Get Balance Operation (Operação de Saldo)",
-    "description": "Specific Balance Operation",
+    "label": "Get Balance Operation",
+    "description": "Through the route /balance/operations/:id you can see a specific operation that occurred on your account balance.",
     "connection": "pagar-me-252023",
     "webhook": null,
     "type": "action"

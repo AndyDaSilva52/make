@@ -1,0 +1,5 @@
+{
+    "name": "rGetRecipientByName",
+    "label": "Get Recipient By Name",
+    "connection": "pagar-me-252023"
+}

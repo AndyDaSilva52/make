@@ -1,1 +1,185 @@
-{}
+{
+    "object": "balance_operation",
+    "id": 2499868,
+    "status": "available",
+    "type": "payable",
+    "amount": 300,
+    "fee": 1.15,
+    "date_created": "2017-08-03T18:20:54.464Z",
+    "balance_amount": 0,
+    "balance_old_amount": null,
+    "movement_object": {
+        "object": "payable",
+        "id": 1966185,
+        "status": "paid",
+        "amount": 300,
+        "fee": 1.15,
+        "anticipation_fee": 0,
+        "installment": 3,
+        "transaction_id": 1785141,
+        "split_rule_id": null,
+        "bulk_anticipation_id": null,
+        "recipient_id": "re_cj5idth9i00lc8c6elbeiayhs",
+        "payment_date": "2017-03-03T03:00:00.000Z",
+        "original_payment_date": null,
+        "type": "credit",
+        "payment_method": "credit_card",
+        "accrual_date": null,
+        "date_created": "2017-04-03T18:20:54.457Z",
+        "fraud_coverage_fee": 0,
+        "originator_model": null,
+        "originator_model_id": null,
+        "metadata": [
+            {}
+        ],
+        "transaction_details": {
+            "object": "transaction",
+            "status": "paid",
+            "refuse_reason": null,
+            "status_reason": "acquirer",
+            "acquirer_response_code": "0000",
+            "acquirer_name": "pagarme",
+            "acquirer_id": "58a49047916d40fa539ba926",
+            "authorization_code": "448887",
+            "soft_descriptor": null,
+            "tid": 1835855,
+            "nsu": 1835855,
+            "date_created": "2017-08-15T15:47:44.686Z",
+            "date_updated": "2017-08-15T15:47:45.175Z",
+            "amount": 10000,
+            "authorized_amount": 10000,
+            "paid_amount": 10000,
+            "refunded_amount": 0,
+            "installments": 1,
+            "id": 1835855,
+            "cost": 50,
+            "card_holder_name": "Morpheus Fishburne",
+            "card_last_digits": "1111",
+            "card_first_digits": "411111",
+            "card_brand": "visa",
+            "card_pin_mode": null,
+            "postback_url": null,
+            "payment_method": "credit_card",
+            "capture_method": "ecommerce",
+            "antifraud_score": null,
+            "boleto_url": null,
+            "boleto_barcode": null,
+            "boleto_expiration_date": null,
+            "referer": "api_key",
+            "ip": "10.2.13.68",
+            "subscription_id": null,
+            "phone": null,
+            "address": null,
+            "customer": {
+                "object": "customer",
+                "id": 234253,
+                "external_id": "#3311",
+                "type": "individual",
+                "country": "br",
+                "document_number": null,
+                "document_type": "cpf",
+                "name": "Morpheus Fishburne",
+                "email": "mopheus@nabucodonozor.com",
+                "phone_numbers": [
+                    "+5511999998888",
+                    "+5511888889999"
+                ],
+                "born_at": null,
+                "birthday": "1965-01-01",
+                "gender": null,
+                "date_created": "2017-08-15T15:47:43.817Z",
+                "documents": [
+                    {
+                        "object": "document",
+                        "id": "doc_cj6dri2ay0n7ryy6eff0c3oyh",
+                        "type": "cpf",
+                        "number": "71404665560"
+                    }
+                ]
+            },
+            "billing": {
+                "address": {
+                    "object": "address",
+                    "street": "Rua Matrix",
+                    "complementary": null,
+                    "street_number": "9999",
+                    "neighborhood": "Rio Cotia",
+                    "city": "Cotia",
+                    "state": "sp",
+                    "zipcode": "06714360",
+                    "country": "br",
+                    "id": 146605
+                },
+                "object": "billing",
+                "id": 32,
+                "name": "Trinity Moss"
+            },
+            "shipping": {
+                "address": {
+                    "object": "address",
+                    "street": "Rua Matrix",
+                    "complementary": null,
+                    "street_number": "9999",
+                    "neighborhood": "Rio Cotia",
+                    "city": "Cotia",
+                    "state": "sp",
+                    "zipcode": "06714360",
+                    "country": "br",
+                    "id": 146606
+                },
+                "object": "shipping",
+                "id": 26,
+                "name": "Neo Reeves",
+                "fee": 33.11,
+                "delivery_date": "2000-12-21",
+                "expedited": true
+            },
+            "items": [
+                {
+                    "object": "item",
+                    "id": "1",
+                    "title": "Red pill",
+                    "unit_price": 120,
+                    "quantity": 1,
+                    "category": null,
+                    "tangible": true,
+                    "venue": null,
+                    "date": null
+                },
+                {
+                    "object": "item",
+                    "id": "a123",
+                    "title": "Blue pill",
+                    "unit_price": 120,
+                    "quantity": 1,
+                    "category": null,
+                    "tangible": true,
+                    "venue": null,
+                    "date": null
+                }
+            ],
+            "card": {
+                "object": "card",
+                "id": "card_cj6dri2e90n7syy6e11lthfha",
+                "date_created": "2017-08-15T15:47:44.673Z",
+                "date_updated": "2017-08-15T15:47:45.237Z",
+                "brand": "visa",
+                "holder_name": "Morpheus Fishburne",
+                "first_digits": "411111",
+                "last_digits": "1111",
+                "country": "UNITED STATES",
+                "fingerprint": "3ace8040fba3f5c3a0690ea7964ea87d97123437",
+                "valid": true,
+                "expiration_date": "0922"
+            },
+            "split_rules": null,
+            "metadata": [
+                {}
+            ],
+            "antifraud_metadata": [
+                {}
+            ],
+            "reference_key": null
+        }
+    }
+}

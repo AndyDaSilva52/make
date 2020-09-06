@@ -2,7 +2,8 @@
     {
         "name": "balance_operation_id",
         "type": "text",
-        //"label": "balance_operation_id",
+        "label": "Balance Operation ID",
+        "help": "Operation identifier.",
         "required": true
     }
 ]

@@ -1,0 +1,19 @@
+{
+    "url": "https://api.pagar.me/1{{parameters.url}}",
+    "method": "{{parameters.method}}",
+    "qs": {
+        "{{...}}": "{{toCollection(parameters.qs, 'key', 'value')}}"
+    },
+    "headers": {
+        "{{...}}": "{{toCollection(parameters.headers, 'key', 'value')}}"
+    },
+    "body": "{{parameters.body}}",
+    "type": "text",
+    "response": {
+        "output": {
+            "headers": "{{headers}}",
+            "body": "{{getExpectOutput(body, parameters.properties)}}",
+            "statusCode": "{{statusCode}}"
+        }
+    }
+}

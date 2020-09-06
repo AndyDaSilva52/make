@@ -1,155 +1,28 @@
-{
-    "url": "/transactions/{{parameters.transaction_id}}",
-    "method": "GET",
-    "response": {
-        "output": {
-            "object": "{{body.object}}",
-            "status": "{{body.status}}",
-            "refuse_reason": "{{body.refuse_reason}}",
-            "status_reason": "{{body.status_reason}}",
-            "acquirer_response_code": "{{body.acquirer_response_code}}",
-            "acquirer_name": "{{body.acquirer_name}}",
-            "acquirer_id": "{{body.acquirer_id}}",
-            "authorization_code": "{{body.authorization_code}}",
-            "soft_descriptor": "{{body.soft_descriptor}}",
-            "tid": "{{body.tid}}",
-            "nsu": "{{body.nsu}}",
-            "date_created": "{{body.date_created}}",
-            "date_updated": "{{body.date_updated}}",
-            "amount": "{{           pagarmeConvertNumber(body.amount)}}",
-            "authorized_amount": "{{pagarmeConvertNumber(body.authorized_amount)}}",
-            "paid_amount": "{{      pagarmeConvertNumber(body.paid_amount)}}",
-            "refunded_amount": "{{  pagarmeConvertNumber(body.refunded_amount)}}",
-            "installments": "{{body.installments}}",
-            "id": "{{body.id}}",
-            "cost": "{{             pagarmeConvertNumber(body.cost)}}",
-            "card_holder_name": "{{body.card_holder_name}}",
-            "card_last_digits": "{{body.card_last_digits}}",
-            "card_first_digits": "{{body.card_first_digits}}",
-            "card_brand": "{{body.card_brand}}",
-            "card_pin_mode": "{{body.card_pin_mode}}",
-            "card_magstripe_fallback": "{{body.card_magstripe_fallback}}",
-            "cvm_pin": "{{body.cvm_pin}}",
-            "postback_url": "{{body.postback_url}}",
-            "payment_method": "{{body.payment_method}}",
-            "capture_method": "{{body.capture_method}}",
-            "antifraud_score": "{{body.antifraud_score}}",
-            "boleto_url": "{{body.boleto_url}}",
-            "boleto_barcode": "{{body.boleto_barcode}}",
-            "boleto_expiration_date": "{{body.boleto_expiration_date}}",
-            "referer": "{{body.referer}}",
-            "ip": "{{body.ip}}",
-            "subscription_id": "{{body.subscription_id}}",
-            "phone": {
-                "object": "{{body.phone.object}}",
-                "ddi": "{{body.phone.ddi}}",
-                "ddd": "{{body.phone.ddd}}",
-                "number": "{{body.phone.number}}",
-                "id": "{{body.phone.id}}"
-            },
-            "address": {
-                "object": "{{body.address.object}}",
-                "street": "{{body.address.street}}",
-                "complementary": "{{body.address.complementary}}",
-                "street_number": "{{body.address.street_number}}",
-                "neighborhood": "{{body.address.neighborhood}}",
-                "city": "{{body.address.city}}",
-                "state": "{{body.address.state}}",
-                "zipcode": "{{body.address.zipcode}}",
-                "country": "{{body.address.country}}",
-                "id": "{{body.address.id}}"
-            },
-            "customer": {
-                "object": "{{body.customer.object}}",
-                "id": "{{body.customer.id}}",
-                "external_id": "{{body.customer.external_id}}",
-                "type": "{{body.customer.type}}",
-                "country": "{{body.customer.country}}",
-                "document_number": "{{body.customer.document_number}}",
-                "document_type": "{{body.customer.document_type}}",
-                "name": "{{body.customer.name}}",
-                "email": "{{body.customer.email}}",
-                "phone_numbers": "{{body.customer.phone_numbers}}",
-                "born_at": "{{body.customer.born_at}}",
-                "birthday": "{{body.customer.birthday}}",
-                "gender": "{{body.customer.gender}}",
-                "date_created": "{{body.customer.date_created}}",
-                "documents": "{{body.customer.documents}}"
-            },
-            "billing": {
-                "address": {
-                    "object": "{{body.billing.address.object}}",
-                    "street": "{{body.billing.address.street}}",
-                    "complementary": "{{body.billing.address.complementary}}",
-                    "street_number": "{{body.billing.address.street_number}}",
-                    "neighborhood": "{{body.billing.address.neighborhood}}",
-                    "city": "{{body.billing.address.city}}",
-                    "state": "{{body.billing.address.state}}",
-                    "zipcode": "{{body.billing.address.zipcode}}",
-                    "country": "{{body.billing.address.country}}",
-                    "id": "{{body.billing.address.id}}"
-                },
-                "object": "{{body.billing.object}}",
-                "id": "{{body.billing.id}}",
-                "name": "{{body.billing.name}}"
-            },
-            "shipping": {
-                "address": {
-                    "object": "{{body.shipping.object}}",
-                    "street": "{{body.shipping.street}}",
-                    "complementary": "{{body.shipping.complementary}}",
-                    "street_number": "{{body.shipping.street_number}}",
-                    "neighborhood": "{{body.shipping.neighborhood}}",
-                    "city": "{{body.shipping.city}}",
-                    "state": "{{body.shipping.state}}",
-                    "zipcode": "{{body.shipping.zipcode}}",
-                    "country": "{{body.shipping.country}}",
-                    "id": "{{body.shipping.id}}"
-                },
-                "object": "{{body.shipping.object}}",
-                "id": "{{body.shipping.id}}",
-                "name": "{{body.shipping.name}}",
-                "fee": "{{ pagarmeConvertNumber(body.shipping.fee) }}",
-                "delivery_date": "{{body.shipping}}",
-                "expedited": "{{body.shipping}}"
-            },
-            // TODO: fazer função que recebe o Object e converte keys para número
-            // Rever Interface.iml !!!
-            "items": "{{body.items}}",
-            "card": {
-                "object": "{{body.card.object}}",
-                "id": "{{body.card.id}}",
-                "date_created": "{{body.card.date_created}}",
-                "date_updated": "{{body.card.date_updated}}",
-                "brand": "{{body.card.brand}}",
-                "holder_name": "{{body.card.holder_name}}",
-                "first_digits": "{{body.card.first_digits}}",
-                "last_digits": "{{body.card.last_digits}}",
-                "country": "{{body.card.country}}",
-                "fingerprint": "{{body.card.fingerprint}}",
-                "valid": "{{body.card.valid}}",
-                "expiration_date": "{{body.card.expiration_date}}"
-            },
-            "split_rules": "{{body.split_rules}}",
-            "metadata": [
-                "{{ body.metadata }}"
-            ],
-            "antifraud_metadata": [
-                "{{ body.antifraud_metadata }}"
-            ],
-            "reference_key": "{{body.reference_key}}",
-            "device": "{{body.device}}",
-            "local_transaction_id": "{{body.local_transaction_id}}",
-            "local_time": "{{body.local_time}}",
-            "fraud_covered": "{{body.fraud_covered}}",
-            "fraud_reimbursed": "{{body.fraud_reimbursed}}",
-            "order_id": "{{body.order_id}}",
-            "risk_level": "{{body.risk_level}}",
-            "receipt_url": "{{body.receipt_url}}",
-            "payment": "{{body.payment}}",
-            "addition": "{{body.addition}}",
-            "discount": "{{body.discount}}",
-            "private_label": "{{body.private_label}}"
+[
+    {
+        "response": {
+            "temp": {
+                "fields_transaction_number": [
+                    "amount",
+                    "authorized_amount",
+                    "paid_amount",
+                    "refunded_amount",
+                    "cost",
+                    "shipping.fee",
+                    "items.unit_price"
+                ],
+                "fields_transaction_to_array": [
+                    "metadata",
+                    "antifraud_metadata"
+                ]
+            }
+        }
+    },
+    {
+        "url": "/transactions/{{ ifempty(parameters.transaction_id, 0) }}",
+        "method": "GET",
+        "response": {
+            "output": "{{ getExpectOutput(convertPropertiesToArray(body, temp.fields_transaction_to_array), temp.fields_transaction_number) }}"
         }
     }
-}
+]

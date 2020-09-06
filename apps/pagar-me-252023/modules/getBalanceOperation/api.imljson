@@ -1,5 +1,42 @@
 [
     {
+        "response": {
+            "temp": {
+                "fields_balance_op": [
+                    "amount",
+                    "fee",
+                    "balance_amount",
+                    "balance_old_amount",
+                    "movement_object.amount",
+                    "movement_object.fee",
+                    "movement_object.anticipation_fee",
+                    "movement_object.fraud_coverage_fee",
+                    "movement_object.movement_object.amount",
+                    "movement_object.movement_object.metadata.company_minimum_monthly_payment",
+                    "movement_object.movement_object.metadata.proportional_minimum_monthly_payment",
+                    "movement_object.movement_object.metadata.gateway_fee",
+                    "movement_object.movement_object.metadata.consumed_fee"
+                ],
+                "fields_balance_op_to_array": [
+                    "metadata"
+                ],
+                "fields_transaction": [
+                    "amount",
+                    "authorized_amount",
+                    "paid_amount",
+                    "refunded_amount",
+                    "cost",
+                    "shipping.fee",
+                    "items.unit_price"
+                ],
+                "fields_transaction_to_array": [
+                    "metadata",
+                    "antifraud_metadata"
+                ]
+            }
+        }
+    },
+    {
         // getBalanceOperation
         "url": "/balance/operations/{{parameters.balance_operation_id}}",
         "method": "GET",
@@ -18,117 +55,10 @@
         "condition": "{{if( switch(temp.type; 'payable'; true; false) & if( ifempty(temp.transaction_id; 0) = 0; false; true); true; false)}}",
         "response": {
             "temp": {
-                "transaction_details": {
-                    "object": "{{body.object}}",
-                    "status": "{{body.status}}",
-                    "refuse_reason": "{{body.refuse_reason}}",
-                    "status_reason": "{{body.status_reason}}",
-                    "acquirer_response_code": "{{body.acquirer_response_code}}",
-                    "acquirer_name": "{{body.acquirer_name}}",
-                    "acquirer_id": "{{body.acquirer_id}}",
-                    "authorization_code": "{{body.authorization_code}}",
-                    "soft_descriptor": "{{body.soft_descriptor}}",
-                    "tid": "{{body.tid}}",
-                    "nsu": "{{body.nsu}}",
-                    "date_created": "{{body.date_created}}",
-                    "date_updated": "{{body.date_updated}}",
-                    "amount": "{{               pagarmeConvertNumber(body.amount) }}",
-                    "authorized_amount": "{{    pagarmeConvertNumber(body.authorized_amount)}}",
-                    "paid_amount": "{{          pagarmeConvertNumber(body.paid_amount)}}",
-                    "refunded_amount": "{{      pagarmeConvertNumber(body.refunded_amount)}}",
-                    "installments": "{{body.installments}}",
-                    "id": "{{body.id}}",
-                    "cost": "{{                 pagarmeConvertNumber(body.cost)}}",
-                    "card_holder_name": "{{body.card_holder_name}}",
-                    "card_last_digits": "{{body.card_last_digits}}",
-                    "card_first_digits": "{{body.card_first_digits}}",
-                    "card_brand": "{{body.card_brand}}",
-                    "card_pin_mode": "{{body.card_pin_mode}}",
-                    "card_magstripe_fallback": "{{body.card_magstripe_fallback}}",
-                    "cvm_pin": "{{body.cvm_pin}}",
-                    "postback_url": "{{body.postback_url}}",
-                    "payment_method": "{{body.payment_method}}",
-                    "capture_method": "{{body.capture_method}}",
-                    "antifraud_score": "{{body.antifraud_score}}",
-                    "boleto_url": "{{body.boleto_url}}",
-                    "boleto_barcode": "{{body.boleto_barcode}}",
-                    "boleto_expiration_date": "{{body.boleto_expiration_date}}",
-                    "referer": "{{body.referer}}",
-                    "ip": "{{body.ip}}",
-                    "subscription_id": "{{body.subscription_id}}",
-                    "phone": {
-                        "object": "{{body.phone.object}}",
-                        "ddi": "{{body.phone.ddi}}",
-                        "ddd": "{{body.phone.ddd}}",
-                        "number": "{{body.phone.number}}",
-                        "id": "{{body.phone.id}}"
-                    },
-                    "address": {
-                        "object": "{{body.address.object}}",
-                        "street": "{{body.address.street}}",
-                        "complementary": "{{body.address.complementary}}",
-                        "street_number": "{{body.address.street_number}}",
-                        "neighborhood": "{{body.address.neighborhood}}",
-                        "city": "{{body.address.city}}",
-                        "state": "{{body.address.state}}",
-                        "zipcode": "{{body.address.zipcode}}",
-                        "country": "{{body.address.country}}",
-                        "id": "{{body.address.id}}"
-                    },
-                    "customer": {
-                        "object": "{{body.customer.object}}",
-                        "id": "{{body.customer.id}}",
-                        "external_id": "{{body.customer.external_id}}",
-                        "type": "{{body.customer.type}}",
-                        "country": "{{body.customer.country}}",
-                        "document_number": "{{body.customer.document_number}}",
-                        "document_type": "{{body.customer.document_type}}",
-                        "name": "{{body.customer.name}}",
-                        "email": "{{body.customer.email}}",
-                        "phone_numbers": "{{body.customer.phone_numbers}}",
-                        "born_at": "{{body.customer.born_at}}",
-                        "birthday": "{{body.customer.birthday}}",
-                        "gender": "{{body.customer.gender}}",
-                        "date_created": "{{body.customer.date_created}}",
-                        "documents": "{{body.customer.documents}}"
-                    },
-                    "billing": "{{body.billing}}",
-                    "shipping": "{{body.shipping}}",
-                    "items": "{{body.items}}",
-                    "card": {
-                        "object": "{{body.card.object}}",
-                        "id": "{{body.card.id}}",
-                        "date_created": "{{body.card.date_created}}",
-                        "date_updated": "{{body.card.date_updated}}",
-                        "brand": "{{body.card.brand}}",
-                        "holder_name": "{{body.card.holder_name}}",
-                        "first_digits": "{{body.card.first_digits}}",
-                        "last_digits": "{{body.card.last_digits}}",
-                        "country": "{{body.card.country}}",
-                        "fingerprint": "{{body.card.fingerprint}}",
-                        "valid": "{{body.card.valid}}",
-                        "expiration_date": "{{body.card.expiration_date}}"
-                    },
-                    "split_rules": "{{body.split_rules}}",
-                    "metadata": [
-                        "{{ body.metadata }}"
-                    ],
-                    "antifraud_metadata": [
-                        "{{ body.antifraud_metadata }}"
-                    ],
-                    "reference_key": "{{body.reference_key}}",
-                    "device": "{{body.device}}",
-                    "local_transaction_id": "{{body.local_transaction_id}}",
-                    "local_time": "{{body.local_time}}",
-                    "fraud_covered": "{{body.fraud_covered}}",
-                    "fraud_reimbursed": "{{body.fraud_reimbursed}}",
-                    "order_id": "{{body.order_id}}",
-                    "risk_level": "{{body.risk_level}}",
-                    "receipt_url": "{{body.receipt_url}}",
-                    "payment": "{{body.payment}}",
-                    "addition": "{{body.addition}}",
-                    "discount": "{{body.discount}}",
-                    "private_label": "{{body.private_label}}"
+                "balance_op": {
+                    "movement_object": {
+                        "transaction_details": "{{ getExpectOutput(convertPropertiesToArray(body, temp.fields_transaction_to_array), temp.fields_transaction) }}"
+                    }
                 }
             }
         }
@@ -136,86 +66,7 @@
     {
         // merge with TransactionDetails
         "response": {
-            "output": {
-                "id": "{{temp.balance_op.id}}",
-                "status": "{{temp.balance_op.status}}",
-                "type": "{{temp.balance_op.type}}",
-                "amount": "{{                           pagarmeConvertNumber(temp.balance_op.amount)}}",
-                "fee": "{{                              pagarmeConvertNumber(temp.balance_op.fee)}}",
-                "balance_amount": "{{                   pagarmeConvertNumber(temp.balance_op.balance_amount)}}",
-                "balance_old_amount": "{{               pagarmeConvertNumber(temp.balance_op.balance_old_amount)}}",
-                "date_created": "{{temp.balance_op.date_created}}",
-                "movement_object": {
-                    "object": "{{temp.balance_op.movement_object.object}}",
-                    "id": "{{temp.balance_op.movement_object.id}}",
-                    "status": "{{temp.balance_op.movement_object.status}}",
-                    "type": "{{temp.balance_op.movement_object.type}}",
-                    "description": "{{temp.balance_op.movement_object.description}}",
-                    "transaction_id": "{{temp.balance_op.movement_object.transaction_id}}",
-                    "accrual_date": "{{temp.balance_op.movement_object.accrual_date}}",
-                    "date_created": "{{temp.balance_op.movement_object.date_created}}",
-                    "date_updated": "{{temp.balance_op.movement_object.date_updated}}",
-                    "payment_date": "{{temp.balance_op.movement_object.payment_date}}",
-                    "funding_date": "{{temp.balance_op.movement_object.funding_date}}",
-                    "funding_estimated_date": "{{temp.balance_op.movement_object.funding_estimated_date}}",
-                    "amount": "{{                       pagarmeConvertNumber(temp.balance_op.movement_object.amount)}}",
-                    "fee": "{{                          pagarmeConvertNumber(temp.balance_op.movement_object.fee)}}",
-                    "anticipation_fee": "{{             pagarmeConvertNumber(temp.balance_op.movement_object.anticipation_fee)}}",
-                    "fraud_coverage_fee": "{{           pagarmeConvertNumber(temp.balance_op.movement_object.fraud_coverage_fee)}}",
-                    "installment": "{{temp.balance_op.movement_object.installment}}",
-                    "payment_method": "{{temp.balance_op.movement_object.payment_method}}",
-                    "recipient_id": "{{temp.balance_op.movement_object.recipient_id}}",
-                    "object_id": "{{temp.balance_op.movement_object.object_id}}",
-                    "object_type": "{{temp.balance_op.movement_object.object_type}}",
-                    "source_type": "{{temp.balance_op.movement_object.source_type}}",
-                    "source_id": "{{temp.balance_op.movement_object.source_id}}",
-                    "target_type": "{{temp.balance_op.movement_object.target_type}}",
-                    "target_id": "{{temp.balance_op.movement_object.target_id}}",
-                    "split_rule_id": "{{temp.balance_op.movement_object.split_rule_id}}",
-                    "bulk_anticipation_id": "{{temp.balance_op.movement_object.bulk_anticipation_id}}",
-                    "originator_model": "{{temp.balance_op.movement_object.originator_model}}",
-                    "originator_model_id": "{{temp.balance_op.movement_object.originator_model_id}}",
-                    "original_payment_date": "{{temp.balance_op.movement_object.original_payment_date}}",
-                    "metadata": [
-                        "{{temp.balance_op.movement_object.metadata}}"
-                    ],
-                    "bank_account": {
-                        "object": "{{temp.balance_op.movement_object.bank_account.object}}",
-                        "id": "{{temp.balance_op.movement_object.bank_account.id}}",
-                        "bank_code": "{{temp.balance_op.movement_object.bank_account.bank_code}}",
-                        "agencia": "{{temp.balance_op.movement_object.bank_account.agencia}}",
-                        "agencia_dv": "{{temp.balance_op.movement_object.bank_account.agencia_dv}}",
-                        "conta": "{{temp.balance_op.movement_object.bank_account.conta}}",
-                        "conta_dv": "{{temp.balance_op.movement_object.bank_account.conta_dv}}",
-                        "type": "{{temp.balance_op.movement_object.bank_account.type}}",
-                        "document_type": "{{temp.balance_op.movement_object.bank_account.document_type}}",
-                        "document_number": "{{temp.balance_op.movement_object.bank_account.document_number}}",
-                        "legal_name": "{{temp.balance_op.movement_object.bank_account.legal_name}}",
-                        "charge_transfer_fees": "{{temp.balance_op.movement_object.bank_account.charge_transfer_fees}}",
-                        "date_created": "{{temp.balance_op.movement_object.bank_account.date_created}}"
-                    },
-                    "movement_object": {
-                        "object": "{{temp.balance_op.movement_object.movement_object.object}}",
-                        "id": "{{temp.balance_op.movement_object.movement_object.id}}",
-                        "serial_number": "{{temp.balance_op.movement_object.movement_object.serial_number}}",
-                        "amount": "{{                   pagarmeConvertNumber(temp.balance_op.movement_object.movement_object.amount)}}",
-                        "status": "{{temp.balance_op.movement_object.movement_object.status}}",
-                        "payment_method": "{{temp.balance_op.movement_object.movement_object.payment_method}}",
-                        "type": "{{temp.balance_op.movement_object.movement_object.type}}",
-                        "period_start_date": "{{temp.balance_op.movement_object.movement_object.period_start_date}}",
-                        "period_end_date": "{{temp.balance_op.movement_object.movement_object.period_end_date}}",
-                        "metadata": {
-                            "company_minimum_monthly_payment": "{{      pagarmeConvertNumber(temp.balance_op.movement_object.movement_object.metadata.company_minimum_monthly_payment)}}",
-                            "company_production_date": "{{              temp.balance_op.movement_object.movement_object.metadata.company_production_date}}",
-                            "proportional_minimum_monthly_payment": "{{ pagarmeConvertNumber(temp.balance_op.movement_object.movement_object.metadata.proportional_minimum_monthly_payment)}}",
-                            "gateway_fee": "{{                          pagarmeConvertNumber(temp.balance_op.movement_object.movement_object.metadata.gateway_fee)}}",
-                            "consumed_fee": "{{                         pagarmeConvertNumber(temp.balance_op.movement_object.movement_object.metadata.consumed_fee)}}",
-                            "fee_collection_id": "{{                    temp.balance_op.movement_object.metadata.movement_object.fee_collection_id}}"
-                        }
-                    },
-                    "transaction_details": "{{temp.transaction_details}}"
-                }
-            }
+            "output": "{{ getExpectOutput(convertPropertiesToArray(temp.balance_op, temp.fields_balance_op_to_array), temp.fields_balance_op) }}"
         }
     }
 ]
