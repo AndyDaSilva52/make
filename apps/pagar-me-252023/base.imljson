@@ -3,10 +3,10 @@
     "headers": {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "Authorization": "Basic {{base64(connection.apiKey + ':' + 'x')}}"
+        "Authorization": "Basic {{base64(connection.apiKey + ':' + 'x')}}",
+        "X-Pagarme-Version": "{{connection.apiVersion}}"
     },
     "qs": {},
-    "body": {},
     "log": {
         "sanitize": [
             "request.headers.authorization"
@@ -14,15 +14,28 @@
     },
     "response": {
         "error": {
-            //400 - Algum parâmetro obrigatório não foi passado, ou os parâmetros passados não estão corretos.
+            //200 - Everything worked as it should and your request was successfully processed.
+            //400 - Some required parameter has not been sent, or the parameters sent are not correct.
             "400": {
                 "type": "InvalidConfigurationError",
-                "message": "{{body.errors.message}} - parameter_name[{{body.erros.parameter_name}}]type[{{body.erros.type}}]"
+                "message": "{{getErrors(statusCode, body, environment.timezone)}}"
             },
-            //401 - Falta de autorização para acessar este endpoint.
-            //404 - Endpoint não encontrado, revise a URL passada.
-            //500 - Erro interno do Pagar.me, tente sua requisição novamente. Caso o erro continue, entre em contato com suporte@pagar.me
-            "message": "{{body.errors.message}} - parameter_name[{{body.erros.parameter_name}}]type[{{body.erros.type}}]"
+            //401 - Not authorized to access this endpoint.
+            "401": {
+                "type": "InvalidAccessTokenError",
+                "message": "{{getErrors(statusCode, body, environment.timezone)}}"
+            },
+            //404 - Endpoint not found, check the URL.
+            "404": {
+                "type": "InvalidConfigurationError",
+                "message": "{{getErrors(statusCode, body, environment.timezone)}}"
+            },
+            //500 - Pagar.me internal error, try to send your request again. If the error continues, please contact suporte@pagar.me.
+            "500": {
+                "type": "ConnectionError",
+                "message": "{{getErrors(statusCode, body, environment.timezone)}}"
+            },
+            "message": "{{getErrors(statusCode, body, environment.timezone)}}"
         }
     }
 }
