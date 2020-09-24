@@ -1,0 +1,8 @@
+{
+    "name": "watchChargebacks",
+    "label": "Watch Chargebacks",
+    "description": "Returns the information of all chargebacks registered for your company.",
+    "connection": "pagar-me-252023",
+    "webhook": null,
+    "type": "trigger"
+}

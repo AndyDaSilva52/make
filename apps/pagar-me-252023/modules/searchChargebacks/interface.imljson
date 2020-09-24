@@ -1,0 +1,77 @@
+[
+    {
+        "name": "object",
+        "type": "text",
+        "label": "Object"
+    },
+    {
+        "name": "id",
+        "type": "text",
+        "label": "ID"
+    },
+    {
+        "name": "installment",
+        "type": "number",
+        "label": "Installment",
+        "help": "Number of installments of the chargeback."
+    },
+    {
+        "name": "transaction_id",
+        "type": "number",
+        "label": "Transaction ID",
+        "help": "Id of the transaction which the chargeback refers to."
+    },
+    {
+        "name": "amount",
+        "type": "number",
+        "label": "Amount"
+    },
+    {
+        "name": "reason_code",
+        "type": "text",
+        "label": "Reason Code",
+        "help": "Reason code for the chargeback request."
+    },
+    {
+        "name": "card_brand",
+        "type": "text",
+        "label": "Card Brand"
+    },
+    {
+        "name": "created_at",
+        "type": "date",
+        "label": "Created at"
+    },
+    {
+        "name": "updated_at",
+        "type": "date",
+        "label": "Updated at"
+    },
+    {
+        "name": "date_created",
+        "type": "date",
+        "label": "Created Date"
+    },
+    {
+        "name": "date_updated",
+        "type": "date",
+        "label": "Updated Date"
+    },
+    {
+        "name": "accrual_date",
+        "type": "date",
+        "label": "Accrual Date"
+    },
+    {
+        "name": "status",
+        "type": "text",
+        "label": "Status",
+        "help": "Possible values: `presented`, `represented`."
+    },
+    {
+        "name": "cycle",
+        "type": "number",
+        "label": "Cycle",
+        "help": "Chargeback cycle.\nThe cycle `1` means that the transaction has become a chargeback.\nThe cycle `2` indicates that a chargeback, which once was cycle 1, has been re-presented and refused by the card issuer."
+    }
+]

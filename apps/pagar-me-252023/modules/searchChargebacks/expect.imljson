@@ -1,0 +1,72 @@
+[
+    {
+        "help": "The maximum number of results to be worked with during one execution cycle.",
+        "name": "count",
+        "type": "uinteger",
+        "label": "Limit",
+        "default": 100,
+        "required": true
+    },
+    {
+        "name": "status",
+        "label": "Status",
+        "type": "select",
+        "options": [
+            {
+                "label": "Presented",
+                "value": "presented"
+            },
+            {
+                "label": "Represented",
+                "value": "represented"
+            }
+        ]
+    },
+    {
+        "name": "date_created_from",
+        "type": "date",
+        "label": "Created Date From",
+        "time": true
+        //,"help": "Specific the date and time with prefix\n`<` (less than)\n`>` (greater than)\n`<=` (less than or equal to)\n`>=` (greater than or equal to)\nExample using formula: `>={{formatDate(now; 'x')}}`"
+    },
+    {
+        "name": "date_created_to",
+        "type": "date",
+        "label": "Created Date To",
+        "time": true
+        //,"help": "Specific the date and time with prefix\n`<` (less than)\n`>` (greater than)\n`<=` (less than or equal to)\n`>=` (greater than or equal to)\nExample using formula: `>={{formatDate(now; 'x')}}`"
+    },
+    {
+        "name": "date_updated_from",
+        "type": "date",
+        "label": "Updated Date From",
+        "time": true
+        //,"help": "Specific the date and time with prefix\n`<` (less than)\n`>` (greater than)\n`<=` (less than or equal to)\n`>=` (greater than or equal to)\nExample using formula: `>={{formatDate(now; 'x')}}`"
+    },
+    {
+        "name": "date_updated_to",
+        "type": "date",
+        "label": "Updated Date To",
+        "time": true
+        //,"help": "Specific the date and time with prefix\n`<` (less than)\n`>` (greater than)\n`<=` (less than or equal to)\n`>=` (greater than or equal to)\nExample using formula: `>={{formatDate(now; 'x')}}`"
+    },
+    {
+        "name": "accrual_date",
+        "type": "date",
+        "label": "Accrual Date",
+        "time": true,
+        "help": "Filter by the date the chargeback was informed."
+    },
+    {
+        "name": "installment",
+        "label": "Installment",
+        "type": "text",
+        "help": "Filter by chargeback installment."
+    },
+    {
+        "name": "transaction_id",
+        "type": "integer",
+        "label": "Transaction ID",
+        "help": "Filter by transaction ID"
+    }
+]

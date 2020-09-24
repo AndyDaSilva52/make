@@ -1,0 +1,32 @@
+[
+    {
+        "help": "The maximum number of results to be worked with during one execution cycle.",
+        "name": "count",
+        "type": "uinteger",
+        "label": "Limit",
+        "default": 100,
+        "required": true
+    },
+    {
+        "name": "date_created_from",
+        "label": "Created Date From",
+        "type": "date",
+        "time": true
+    },
+    {
+        "name": "date_created_to",
+        "label": "Created Date To",
+        "type": "date",
+        "time": true
+    },
+    {
+        "name": "id",
+        "label": "Customer ID",
+        "type": "text"
+    },
+    {
+        "name": "name",
+        "label": "Name",
+        "type": "text"
+    }
+]

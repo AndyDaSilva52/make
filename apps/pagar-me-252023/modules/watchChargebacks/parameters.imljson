@@ -1,0 +1,25 @@
+[
+    {
+        "help": "The maximum number of results to be worked with during one execution cycle.",
+        "name": "count",
+        "type": "uinteger",
+        "label": "Limit",
+        "default": 2,
+        "required": true
+    },
+    {
+        "name": "status",
+        "label": "Status",
+        "type": "select",
+        "options": [
+            {
+                "label": "Presented",
+                "value": "presented"
+            },
+            {
+                "label": "Represented",
+                "value": "represented"
+            }
+        ]
+    }
+]

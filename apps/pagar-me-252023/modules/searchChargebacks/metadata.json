@@ -1,0 +1,8 @@
+{
+    "name": "searchChargebacks",
+    "label": "Search Chargebacks",
+    "description": "Search Chargebacks",
+    "connection": "pagar-me-252023",
+    "webhook": null,
+    "type": "search"
+}

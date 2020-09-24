@@ -1,0 +1,123 @@
+[
+    {
+        "help": "The maximum number of results to be worked with during one execution cycle.",
+        "name": "count",
+        "type": "uinteger",
+        "label": "Limit",
+        "default": 50,
+        "required": true
+    },
+    {
+        "name": "status",
+        "type": "select",
+        "label": "Status",
+        "options": [
+            {
+                "label": "Processing",
+                "value": "processing"
+            },
+            {
+                "label": "Authorized",
+                "value": "authorized"
+            },
+            {
+                "label": "Paid",
+                "value": "paid"
+            },
+            {
+                "label": "Refunded",
+                "value": "refunded"
+            },
+            {
+                "label": "Waiting Payment",
+                "value": "waiting_payment"
+            },
+            {
+                "label": "Pending Refund",
+                "value": "pending_refund"
+            },
+            {
+                "label": "Refused",
+                "value": "refused"
+            }
+        ],
+        "required": false,
+        "validate": false
+    }/**,
+    {
+        "name": "amount",
+        "label": "Amount",
+        "type": "number",
+        "help": "Filter by transaction amount."
+    },
+    {
+        "name": "installments",
+        "label": "Installments",
+        "type": "text",
+        "help": "Filter by transaction installments."
+    },
+    {
+        "name": "card_brand",
+        "label": "Card Brand",
+        "type": "select",
+        "options": [
+            {
+                "label": "Amex",
+                "value": "amex"
+            },
+            {
+                "label": "Aura",
+                "value": "aura"
+            },
+            {
+                "label": "Discover",
+                "value": "discover"
+            },
+            {
+                "label": "Elo",
+                "value": "elo"
+            },
+            {
+                "label": "Hipercard",
+                "value": "hipercard"
+            },
+            {
+                "label": "JCB",
+                "value": "jcb"
+            },
+            {
+                "label": "Visa",
+                "value": "visa"
+            },
+            {
+                "label": "Mastercard",
+                "value": "mastercard"
+            }
+        ],
+        "required": false,
+        "validate": false,
+        "help": "Filter by card brand. Some possible values: `amex`, `aura`, `discover`, `elo`, `hipercard`, `jcb`, `visa`, `mastercard`."
+    },
+    {
+        "name": "payment_method",
+        "label": "Payment Method",
+        "type": "select",
+        "options": [
+            {
+                "label": "Credit Card",
+                "value": "credit_card"
+            },
+            {
+                "label": "Boleto",
+                "value": "boleto"
+            }
+        ],
+        "validate": false,
+        "help": "Filter by payment method: `credit_card`, `boleto`."
+    },
+    {
+        "name": "capture_method",
+        "label": "Capture Method",
+        "type": "text"
+    } */
+]

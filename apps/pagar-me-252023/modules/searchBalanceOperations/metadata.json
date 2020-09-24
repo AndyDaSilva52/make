@@ -1,7 +1,7 @@
 {
     "name": "searchBalanceOperations",
-    "label": "Search Balance Operations (Operações de Saldo)",
-    "description": "List of Balance Operations",
+    "label": "Search Balance Operations",
+    "description": "List all the operations that occurred in your account balance.",
     "connection": "pagar-me-252023",
     "webhook": null,
     "type": "search"

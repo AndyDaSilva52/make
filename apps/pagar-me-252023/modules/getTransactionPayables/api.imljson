@@ -2,28 +2,7 @@
     "url": "/transactions/{{ parameters.transaction_id }}/payables",
     "method": "GET",
     "response": {
-        "iterate": "{{body}}",
-        "output": "{{ pagarmeConvertNumberObjKey(item, 'amount,fee,anticipation_fee,fraud_coverage_fee') }}"
-        /**
-        {
-            "object": "{{ item.object }}",
-            "id": "{{ item.id }}",
-            "status": "{{ item.status }}",
-            "amount": "{{ pagarmeConvertNumber(item.amount) }}",
-            "fee": "{{ pagarmeConvertNumber(item.fee) }}",
-            "anticipation_fee": "{{ pagarmeConvertNumber(item.anticipation_fee) }}",
-            "installment": "{{ item.installment }}",
-            "transaction_id": "{{ item.transaction_id }}",
-            "split_rule_id": "{{ item.split_rule_id }}",
-            "bulk_anticipation_id": "{{ item.bulk_anticipation_id }}",
-            "recipient_id": "{{ item.recipient_id }}",
-            "payment_date": "{{ item.payment_date }}",
-            "original_payment_date": "{{ item.original_payment_date }}",
-            "type": "{{ item.type }}",
-            "payment_method": "{{ item.payment_method }}",
-            "accrual_date": "{{ item.accrual_date }}",
-            "date_created": "{{ item.date_created }}"
-        }
-         */
+        "iterate": "{{ getExpectOutput(body, 'amount,fee,anticipation_fee,fraud_coverage_fee' )}}",
+        "output": "{{ item }}"
     }
 }

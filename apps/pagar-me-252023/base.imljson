@@ -6,7 +6,6 @@
         "Authorization": "Basic {{base64(connection.apiKey + ':' + 'x')}}",
         "X-Pagarme-Version": "{{connection.apiVersion}}"
     },
-    "qs": {},
     "log": {
         "sanitize": [
             "request.headers.authorization"

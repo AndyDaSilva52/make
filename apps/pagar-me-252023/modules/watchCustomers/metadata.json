@@ -1,0 +1,8 @@
+{
+    "name": "watchCustomers",
+    "label": "Watch Customers",
+    "description": "Watch customers by Date Created",
+    "connection": "pagar-me-252023",
+    "webhook": null,
+    "type": "trigger"
+}

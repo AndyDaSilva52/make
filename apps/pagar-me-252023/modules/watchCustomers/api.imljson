@@ -1,0 +1,27 @@
+[
+    {
+        "url": "/customers",
+        "method": "GET",
+        "qs": {
+            "count": 500,
+            "page": "{{ ifempty(pagination.page, 1) }}"
+        },
+        "response": {
+            "iterate": "{{body}}",
+            "trigger": {
+                "id": "{{item.id}}",
+                "date": "{{ parseDate(item.date_created, 'YYYY-MM-DD hh:mm:ss', 'utc' )}}",
+                "type": "date",
+                "order": "desc"
+            },
+            "output": "{{item}}",
+            "limit": "{{parameters.count}}"
+        },
+        "pagination": {
+            "mergeWithParent": true,
+            "qs": {
+                "page": "{{pagination.page}}"
+            }
+        }
+    }
+]

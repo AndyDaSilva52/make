@@ -47,7 +47,7 @@
     {
         "name": "date_created",
         "type": "date",
-        "label": "Date Created"
+        "label": "Created Date"
     },
     {
         "name": "movement_object",
@@ -133,7 +133,7 @@
                 "name": "payment_date",
                 "type": "date",
                 "label": "Payment Date",
-                "time": false
+                "time": true
             },
             {
                 "name": "funding_date",

@@ -17,7 +17,7 @@ function convertPropertiesToArray(input, properties_path) {
         }
     }
 
-    listKeys = (Array.isArray(properties_path) && properties_path.length) ? properties_path : (typeof properties_path == "string") ? keys.split(',') : [];
+    listKeys = (Array.isArray(properties_path) && properties_path.length) ? properties_path : (typeof properties_path == "string") ? properties_path.split(',') : [];
 
     if (Array.isArray(input) && input.length) {
        return input 

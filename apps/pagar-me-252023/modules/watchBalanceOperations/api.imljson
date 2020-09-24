@@ -1,32 +1,50 @@
-{
-    //TODO: It's not working right
-    "url": "/balance/operations",
-    "method": "GET",
-    "qs": {
-        "count": "{{    parameters.limit}}",
-        "status": "{{   parameters.status}}",
-        "page": "{{     ifempty(pagination.page;1)}}",
-        "start_date": "{{ if( ifempty(response.trigger.date;true) == true ; null; (formatDate( response.trigger.date ; 'X') + '000'))  }}"
-        //,"end_date": ""
+[
+    {
+        "response": {
+            "temp": {
+                "fields_balance_op": [
+                    "amount",
+                    "fee",
+                    "balance_amount",
+                    "balance_old_amount",
+                    "movement_object.amount",
+                    "movement_object.fee",
+                    "movement_object.anticipation_fee",
+                    "movement_object.fraud_coverage_fee"
+                ],
+                "fields_balance_op_to_array": [
+                    "metadata"
+                ]
+            }
+        }
     },
-    "body": {},
-    "headers": {},
-    "response": {
-        "iterate": "{{body}}",
-        "trigger": {
-            "id": "{{item.id}}",
-            "date": "{{item.date_created}}",
-            "type": "date",
-            "order": "desc"
-        },
-        "output": "{{item}}"
-        //,"limit": "{{parameters.limit}}"
-    },
-    "pagination": {
-        "mergeWithParent": true,
+    {
+        "url": "/balance/operations",
+        "method": "GET",
         "qs": {
-            "page": "{{pagination.page}}",
-            "after": "{{iterate.container.last.data.id}}"
+            "count": 500,
+            "status": "{{   parameters.status }}",
+            "page": "{{     ifempty(pagination.page;1) }}"
+        },
+        "response": {
+            "iterate": "{{body}}",
+            "trigger": {
+                "id": "{{item.id}}",
+                "date": "{{ parseDate(item.date_created, 'YYYY-MM-DD hh:mm:ss', 'utc' )}}",
+                "type": "id",
+                "order": "desc"
+                // by `id` is more correctly because the order is `desc`, the `date` is also important but it's `unordered`
+            },
+            "output": "{{getExpectOutput(convertPropertiesToArray(item, temp.fields_balance_op_to_array), temp.fields_balance_op)}}",
+            "limit": "{{parameters.count}}"
+        },
+        "pagination": {
+            "mergeWithParent": true,
+            "qs": {
+                "page": "{{pagination.page}}"
+                //,
+                //"after": "{{iterate.container.last.data.id}}"
+            }
         }
     }
-}
+]

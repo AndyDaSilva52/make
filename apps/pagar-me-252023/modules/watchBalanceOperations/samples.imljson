@@ -1,1 +1,28 @@
-{}
+{
+    "object": "balance_operation",
+    "id": 2499858,
+    "status": "available",
+    "type": "payable",
+    "amount": 100,
+    "fee": 1.15,
+    "date_created": "2017-08-03T18:20:54.464Z",
+    "movement_object": {
+        "object": "payable",
+        "id": 1636196,
+        "status": "paid",
+        "amount": 100,
+        "fee": 1.15,
+        "anticipation_fee": 0,
+        "installment": 1,
+        "transaction_id": 1785148,
+        "split_rule_id": null,
+        "bulk_anticipation_id": null,
+        "recipient_id": "re_cj5idth9i00lcer5elboaxyhs",
+        "payment_date": "2017-05-03T03:00:00.000Z",
+        "original_payment_date": null,
+        "type": "credit",
+        "payment_method": "credit_card",
+        "accrual_date": null,
+        "date_created": "2017-03-03T18:20:54.457Z"
+    }
+}

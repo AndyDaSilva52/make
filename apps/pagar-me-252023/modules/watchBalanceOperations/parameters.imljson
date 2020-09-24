@@ -1,7 +1,7 @@
 [
     {
         "help": "The maximum number of results to be worked with during one execution cycle.",
-        "name": "limit",
+        "name": "count",
         "type": "uinteger",
         "label": "Limit",
         "default": 50,
@@ -13,12 +13,12 @@
         "label": "Status",
         "options": [
             {
-                "label": "Available",
-                "value": "available"
-            },
-            {
                 "label": "Waitings Funds",
                 "value": "waiting_funds"
+            },
+            {
+                "label": "Available",
+                "value": "available"
             },
             {
                 "label": "Transferred",

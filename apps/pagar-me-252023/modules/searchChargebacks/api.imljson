@@ -1,0 +1,65 @@
+[
+    {
+        "response": {
+            "temp": {
+                "expect_input": {
+                    "number": [
+                        "amount"
+                    ],
+                    "date": [
+                        {
+                            "key": "created_at",
+                            "value": "{{parameters.date_created_from}}",
+                            "op": ">="
+                        },
+                        {
+                            "key": "created_at",
+                            "value": "{{parameters.date_created_to}}",
+                            "op": "<="
+                        },
+                        {
+                            "key": "updated_at",
+                            "value": "{{parameters.date_updated_from}}",
+                            "op": ">="
+                        },
+                        {
+                            "key": "updated_at",
+                            "value": "{{parameters.date_updated_to}}",
+                            "op": "<="
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "response": {
+            "temp": {
+                "query_string": "{{ getExpectQueryString(temp.expect_input) }}",
+                "parameters": {
+                    "count": "{{ if(parameters.count > 250, 250, parameters.count) }}",
+                    "page": "{{ ifempty(pagination.page, 1) }}",
+                    "status": "{{ parameters.status }}",
+                    "accrual_date": "{{ if(ifempty(parameters.date_created, false), '>=' + formatDate(parameters.date_created, 'x') , null) }}",
+                    "installment": "{{ parameters.installment }}",
+                    "transaction_id": "{{ parameters.transaction_id }}"
+                }
+            }
+        }
+    },
+    {
+        "url": "/chargebacks{{ temp.query_string }}",
+        "method": "GET",
+        "qs": "{{getExpectInput(temp.parameters, temp.expect_input)}}",
+        "response": {
+            "output": "{{ item }}",
+            "iterate": "{{ getExpectOutput(convertPropertiesToArray(body, temp.expect_input.array_key_value_to_collection), temp.expect_input.number) }}",
+            "limit": "{{ parameters.count }}"
+        },
+        "pagination": {
+            "qs": {
+                "page": "{{pagination.page}}"
+            }
+        }
+    }
+]

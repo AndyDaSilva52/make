@@ -1,0 +1,9 @@
+{
+    "response": {
+        "limit": 100,
+        "output": {
+            "date": "{{parseDate(item.updated_at, 'YYYY-MM-DD hh:mm:ss', 'utc')}}",
+            "label": "{{item.id + ' (#' + item.transaction_id + ')' }}"
+        }
+    }
+}

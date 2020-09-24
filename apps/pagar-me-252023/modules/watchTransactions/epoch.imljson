@@ -1,0 +1,8 @@
+{
+    "response": {
+        "output": {
+            "date": "{{item.date_created}}",
+            "label": "{{item.tid}}"
+        }
+    }
+}

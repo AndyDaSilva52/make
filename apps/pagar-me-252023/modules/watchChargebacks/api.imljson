@@ -1,0 +1,40 @@
+[
+    {
+        "response": {
+            "temp": {
+                "expect_input": {
+                    "number": [
+                        "amount"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "url": "/chargebacks",
+        "method": "GET",
+        "qs": {
+            "count": 10,
+            "status": "{{   parameters.status }}",
+            "page": "{{     ifempty(pagination.page;1) }}",
+            "updated_at": "{{ if(ifempty(data.lastDate, false), '>=' + formatDate(data.lastDate, 'x') , null) }}"
+        },
+        "response": {
+            "iterate": "{{body}}",
+            "trigger": {
+                "id": "{{item.id}}",
+                "date": "{{ parseDate(item.updated_at, 'YYYY-MM-DD hh:mm:ss', 'utc' )}}",
+                "type": "date",
+                "order": "desc"
+            },
+            "output": "{{getExpectOutput(item, temp.expect_input.number)}}",
+            "limit": "{{parameters.count}}"
+        },
+        "pagination": {
+            "mergeWithParent": true,
+            "qs": {
+                "page": "{{pagination.page}}"
+            }
+        }
+    }
+]

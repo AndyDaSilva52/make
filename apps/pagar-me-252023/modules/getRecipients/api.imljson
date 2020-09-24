@@ -1,9 +1,24 @@
 {
     "url": "/recipients",
     "method": "GET",
-    "qs": {},
+    "qs": {
+        "id": "{{parameters.id}}",
+        "name": "{{parameters.name}}",
+        "bank_account_id": "{{parameters.bank_account_id}}",
+        "transfer_enabled": "{{parameters.transfer_enabled}}",
+        "transfer_day": "{{parameters.transfer_day}}",
+        "last_transfer": "{{}}",
+        "count": "{{ if(parameters.limit > 250, 250, parameters.limit) }}",
+        "page": "{{ ifempty(pagination.page, 1) }}"
+    },
     "response": {
-        "output": "{{item}}",
-        "iterate": "{{body}}"
+        "output": "{{convertPropertiesToArray(item, 'metadata')}}",
+        "iterate": "{{body}}",
+        "limit": "{{parameters.limit}}"
+    },
+    "pagination": {
+        "qs": {
+            "page": "{{ pagination.page }}"
+        }
     }
 }

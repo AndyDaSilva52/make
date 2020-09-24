@@ -1,7 +1,7 @@
 {
     "name": "watchBalanceOperations",
     "label": "Watch Balance Operations",
-    "description": "Watch Balance Operations using Date. Default status equals \"available\"",
+    "description": "Watch new balance operation that occurred in your account balance.",
     "connection": "pagar-me-252023",
     "webhook": null,
     "type": "trigger"

@@ -11,6 +11,7 @@
         "type": "select",
         "label": "Method",
         "required": true,
+        "validate": false,
         "default": "GET",
         "options": [
             {
@@ -78,13 +79,13 @@
     },
     {
         "name": "properties",
-        "label": "Properties to Number",
+        "label": "Number Properties",
         "help": "List of properties that has to be converted to `number` with decimal point separator.",
         "type": "array",
         "spec": {
             "label": "Property Path",
             "type": "text",
-            "help": "The relative path from `body` of the property that has to be converted to `number`.\nEx: For `URL`\n`/balance` the properties\n`waiting_funds.amount`\n`transferred.amount`\n`available.amount`\nhas to be converted to number with decimal point separator."
+            "help": "The relative path from `body` of the property that has to be converted to `number`.\nEx: For `URL` path `/balance` the properties\n`waiting_funds.amount`\n`transferred.amount`\n`available.amount`\nhas to be converted to number with decimal point separator."
         }
     }
 ]

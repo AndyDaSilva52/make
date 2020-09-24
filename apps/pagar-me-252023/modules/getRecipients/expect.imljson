@@ -1,8 +1,43 @@
 [
     {
+        "help": "The maximum number of results to be worked with during one execution cycle.",
+        "name": "limit",
+        "type": "uinteger",
+        "label": "Limit",
+        "default": 10,
+        "required": true
+    },
+    {
         "name": "name",
         "type": "text",
         "label": "Name",
-        "required": false
+        "required": false,
+        "help": "Filter by full or part of a recipient's name"
+    },
+    {
+        "name": "id",
+        "label": "Receipient ID",
+        "type": "text"
+    },
+    {
+        "name": "bank_account_id",
+        "label": "Bank Account ID",
+        "type": "text"
+    },
+    {
+        "name": "transfer_enabled",
+        "label": "Transfer Enabled",
+        "type": "boolean"
+    },
+    {
+        "name": "transfer_day",
+        "label": "Transfer Day",
+        "type": "text"
+    },
+    {
+        "name": "last_transfer",
+        "label": "Last Transfer Date",
+        "type": "date",
+        "time": false
     }
 ]

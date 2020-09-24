@@ -1,0 +1,8 @@
+{
+    "name": "searchCustomers",
+    "label": "Search Customers",
+    "description": "Search registered customers",
+    "connection": "pagar-me-252023",
+    "webhook": null,
+    "type": "search"
+}
