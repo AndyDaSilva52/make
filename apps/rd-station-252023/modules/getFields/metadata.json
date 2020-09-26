@@ -1,0 +1,8 @@
+{
+    "name": "getFields",
+    "label": "Get Fields",
+    "description": "Return a list of Fields and their attributes from the current account.",
+    "connection": "rd-station-2520233",
+    "webhook": null,
+    "type": "action"
+}

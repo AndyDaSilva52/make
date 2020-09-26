@@ -1,0 +1,65 @@
+[
+    {
+        "name": "conversion_identifier",
+        "label": "Event Identifier",
+        "type": "text",
+        "help": "Name to identify the source of the conversion event. Ex: landing-page, form-site, api."
+    },
+    {
+        "name": "company_name",
+        "label": "Company Name",
+        "type": "text",
+        "help": "Lead's company name. Ex: Resultados Digitais, Integromat."
+    },
+    {
+        "name": "company_site",
+        "label": "Company Site",
+        "type": "text"
+    },
+    {
+        "name": "company_address",
+        "label": "Company Address",
+        "type": "text"
+    },
+    {
+        "name": "company_size",
+        "label": "Company Size",
+        "type": "text",
+        "help": "Number of employees of lead's company. Ex: 1-5."
+    },
+    {
+        "name": "client_tracking_id",
+        "label": "Client Tracking ID",
+        "type": "text"
+    },
+    {
+        "name": "traffic_source",
+        "label": "Traffic Source",
+        "type": "text",
+        "help": "This can either be the value of a '__trf.src' cookie (base 64 encoded or not) or an UTM source param. If passing a cookie the following fields MUST be empty: traffic_medium, traffic_campaign and traffic_value."
+    },
+    {
+        "name": "traffic_medium",
+        "label": "Traffic Medium",
+        "type": "text",
+        "help": "UTM medium param."
+    },
+    {
+        "name": "traffic_campaign",
+        "label": "Traffic Campaign",
+        "type": "text",
+        "help": "UTM campaign param."
+    },
+    {
+        "name": "traffic_value",
+        "label": "Traffic Value",
+        "type": "text",
+        "help": "UTM value param (term)."
+    },
+    {
+        "name": "available_for_mailing",
+        "label": "Available for Mailing",
+        "type": "boolean"
+    },
+    "rpc://contactFieldsExpectWithEmail"
+]

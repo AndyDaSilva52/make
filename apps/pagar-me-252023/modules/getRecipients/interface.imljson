@@ -1,1 +1,207 @@
-rpc://rGetRecipients
+[
+    {
+        "name": "object",
+        "type": "text",
+        "label": "Object"
+    },
+    {
+        "name": "id",
+        "type": "text",
+        "label": "Recipient ID",
+        "help": "Recipient identifier."
+    },
+    {
+        "name": "transfer_enabled",
+        "type": "boolean",
+        "label": "Transfer Enabled",
+        "help": "Whether the recipient can receive payments automatically."
+    },
+    {
+        "name": "last_transfer",
+        "type": "date",
+        "label": "Last Transfer Date",
+        "time": false
+    },
+    {
+        "name": "transfer_interval",
+        "type": "text",
+        "label": "Transfer Interval",
+        "help": "Frequency at which the recipient will be paid. Possible values: `daily`, `weekly`, `monthly`."
+    },
+    {
+        "name": "transfer_day",
+        "type": "integer",
+        "label": "Transfer Day",
+        "help": "Day on which the recipient will be paid. It depends on transfer_interval.\nIf it is daily, it is not necessary.\nIf weekly, it can be from 1 (Monday) to 5 (Friday).\nIf it is monthly, it can be from 1 to 31. NOTE : When monthly=31 and months that has less than 31 days, the transfer is performed on the first business day of the following month."
+    },
+    {
+        "name": "automatic_anticipation_enabled",
+        "type": "boolean",
+        "label": "Automatic Anticipation Enabled",
+        "help": "Whether the recipient is able to automatically receive the amount available for anticipation."
+    },
+    {
+        "name": "automatic_anticipation_type",
+        "type": "text",
+        "label": "Automatic Anticipation Type",
+        "help": "Configuration of how we should create the automatic anticipations for the recipient. *full* value for creating anticipations following the maximum anticipatable volume rule. 1025 value for creating transactions anticipations, models D+X and 10/25."
+    },
+    {
+        "name": "automatic_anticipation_days",
+        "type": "text",
+        "label": "Automatic Anticipation Days",
+        "help": "List of days when we must create automatic anticipations."
+    },
+    {
+        "name": "automatic_anticipation_1025_delay",
+        "type": "number",
+        "label": "Automatic Anticipation 1025 Delay",
+        "help": "Defines how many days, counted from the day of the anticipation to before, we must not consider when creating the anticipation."
+    },
+    {
+        "name": "automatic_anticipation_fee_reimbursement",
+        "type": "text",
+        "label": "Automatic Anticipation Fee Reimbursement"
+    },
+    {
+        "name": "anticipatable_volume_percentage",
+        "type": "number",
+        "label": "Anticipatable Volume Percentage",
+        "help": "Percentage of the amount that can be anticipated for this recipient."
+    },
+    {
+        "name": "date_created",
+        "type": "date",
+        "label": "Created Date",
+        "time": true
+    },
+    {
+        "name": "date_updated",
+        "type": "date",
+        "label": "Updated Date",
+        "time": true
+    },
+    {
+        "name": "bank_account",
+        "type": "collection",
+        "label": "Bank Account",
+        "sequence": true,
+        "spec": [
+            {
+                "name": "object",
+                "type": "text",
+                "label": "Object"
+            },
+            {
+                "name": "id",
+                "type": "text",
+                "label": "ID"
+            },
+            {
+                "name": "bank_code",
+                "type": "text",
+                "label": "Bank Code"
+            },
+            {
+                "name": "agencia",
+                "type": "text",
+                "label": "Bank Agency Number (without Verifying Digit)"
+            },
+            {
+                "name": "agencia_dv",
+                "type": "text",
+                "label": "Bank Agency Verifying Digit"
+            },
+            {
+                "name": "conta",
+                "type": "text",
+                "label": "Bank Account Number"
+            },
+            {
+                "name": "conta_dv",
+                "type": "text",
+                "label": "Bank Account Verifying Digit"
+            },
+            {
+                "name": "type",
+                "type": "text",
+                "label": "Type"
+            },
+            {
+                "name": "document_type",
+                "type": "text",
+                "label": "Document Type"
+            },
+            {
+                "name": "document_number",
+                "type": "text",
+                "label": "Document Number"
+            },
+            {
+                "name": "legal_name",
+                "type": "text",
+                "label": "Legal Name"
+            },
+            {
+                "name": "charge_transfer_fees",
+                "type": "boolean",
+                "label": "Charge Transfer Fees"
+            },
+            {
+                "name": "date_created",
+                "type": "date",
+                "label": "Created Date",
+                "time": true
+            }
+        ]
+    },
+    {
+        "name": "status",
+        "type": "text",
+        "label": "Status",
+        "help": "Recipient status. Possible values: `registration`, `affiliation`, `active`, `refused`, `suspended`, `blocked`, `inactive`."
+    },
+    {
+        "name": "status_reason",
+        "type": "text",
+        "label": "Status Reason",
+        "help": "Reason why the recipient is in the respective status."
+    },
+    {
+        "name": "postback_url",
+        "type": "url",
+        "label": "Postback URL"
+    },
+    {
+        "name": "register_information",
+        "type": "text",
+        "label": "Register Information"
+    },
+    {
+        "name": "metadata",
+        "type": "array",
+        "label": "Metadata",
+        "help": "Object containing recipient additional data.",
+        "spec": [
+            {
+                "type": "collection",
+                "spec": []
+            }
+        ]
+    },
+    {
+        "name": "external_id",
+        "type": "text",
+        "label": "External ID"
+    },
+    {
+        "name": "mdr_configuration_id",
+        "type": "text",
+        "label": "MDR Configuration ID"
+    },
+    {
+        "name": "fee_preset_id",
+        "type": "text",
+        "label": "Fee Preset ID"
+    }
+]

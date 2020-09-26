@@ -1,0 +1,21 @@
+[
+    {
+        "name": "email",
+        "label": "Email",
+        "type": "email",
+        "help": "Email of the contact."
+    },
+    {
+        "name": "reason",
+        "label": "Reason",
+        "type": "text",
+        "help": "Reason for why the Contact was marked as lost."
+    },
+    {
+        "name": "funnel_name",
+        "label": "Funnel Name",
+        "type": "text",
+        "advanced": true,
+        "default": "default"
+    }
+]

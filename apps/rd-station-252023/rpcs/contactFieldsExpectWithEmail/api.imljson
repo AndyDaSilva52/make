@@ -1,0 +1,11 @@
+{
+    "url": "/platform/contacts/fields",
+    "method": "GET",
+    "response": {
+        "error": {
+            "type": "DataError",
+            "message": "{{getErrors(statusCode, body)}}"
+        },
+        "output": "{{getExpectContact(body.fields, 'expect-with-email', 'events')}}"
+    }
+}

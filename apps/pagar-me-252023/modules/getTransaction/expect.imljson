@@ -1,7 +1,7 @@
 [
     {
         "name": "transaction_id",
-        "label": "transaction_id",
+        "label": "Transaction ID (TID)",
         "type": "integer",
         "required": true
     }

@@ -1,298 +1,419 @@
 [
     {
         "name": "object",
-        "type": "text"
+        "type": "text",
+        "label": "Object"
     },
     {
         "name": "status",
-        "type": "text"
+        "type": "text",
+        "label": "Status",
+        "help": "Transaction status. Possible values: `processing`, `authorized`, `paid`, `refunded`, `chargedback`, `chargedback_refunded`, `waiting_payment`, `pending_refund`, `refused`."
     },
     {
         "name": "refuse_reason",
-        "type": "text"
+        "type": "text",
+        "label": "Refuse Reason",
+        "help": "Reason why the transaction was refused. Possible values: `acquirer`, `antifraud`, `internal_error`, `no_acquirer`, `acquirer_timeout`"
     },
     {
         "name": "status_reason",
-        "type": "text"
+        "type": "text",
+        "label": "Status Reason",
+        "help": "Agent responsible for validating or refusing the transaction. Possible values: `acquirer`, `antifraud`, `internal_error`, `no_acquirer`, `acquirer_timeout`"
     },
     {
         "name": "acquirer_response_code",
-        "type": "text"
+        "type": "text",
+        "label": "Acquirer Response Code",
+        "help": "Response message from the acquirer regarding the status of the transaction."
     },
     {
         "name": "acquirer_name",
-        "type": "text"
+        "type": "text",
+        "label": "Acquirer Name",
+        "help": "Acquirer responsible for processing the transaction. Possible values: `development` (in test environment), `pagarme` (Pagar.me acquirer), `stone`, `cielo`, `rede`."
     },
     {
         "name": "acquirer_id",
-        "type": "text"
+        "type": "text",
+        "label": "Acquirer ID",
+        "help": "Acquirer ID responsible for processing the transaction."
     },
     {
         "name": "authorization_code",
-        "type": "text"
+        "type": "text",
+        "label": "Authorization Code",
+        "help": "Authorization code returned from the card network."
     },
     {
         "name": "soft_descriptor",
-        "type": "text"
+        "type": "text",
+        "label": "Soft Descriptor",
+        "help": "Description that will appear on credit card statement besides the company name. Maximum of 13 characters."
     },
     {
         "name": "tid",
-        "type": "text"
+        "type": "text",
+        "label": "TID (Transaction Identifier)",
+        "help": "Transaction identifier at the acquirer."
     },
     {
         "name": "nsu",
-        "type": "text"
+        "type": "text",
+        "label": "NSU",
+        "help": "Transaction identifier at the acquirer."
     },
     {
         "name": "date_created",
         "type": "date",
+        "label": "Created Date",
+        "help": "Transaction creation date in ISODate format",
         "time": true
     },
     {
         "name": "date_updated",
         "type": "date",
+        "label": "Updated Date",
+        "help": "Transaction last update date in ISODate format",
         "time": true
     },
     {
         "name": "amount",
-        "type": "number"
+        "type": "number",
+        "label": "Transaction Amount",
+        "help": "Transaction amount. Ex: R$ 14.99 = 14.99."
     },
     {
         "name": "authorized_amount",
-        "type": "number"
+        "type": "number",
+        "label": "Authorized Amount",
+        "help": "Transaction authorized amount, being always less than or equal to the Transaction Amount."
     },
     {
         "name": "paid_amount",
-        "type": "number"
+        "type": "number",
+        "label": "Paid Amount",
+        "help": "Transaction captured amount, being always less than or equal to the Authoried Amount."
     },
     {
         "name": "refunded_amount",
-        "type": "number"
+        "type": "number",
+        "label": "Refunded Amount",
+        "help": "Transaction refunded amount so far, being always less than or equal to Paid Amount."
     },
     {
         "name": "installments",
-        "type": "uinteger"
+        "type": "integer",
+        "label": "Intallments",
+        "help": "Number of transaction installments. Minimum: 1 and Maximum: 12."
     },
     {
         "name": "id",
-        "type": "uinteger"
+        "type": "integer",
+        "label": "ID",
+        "help": "Transaction identifier"
     },
     {
         "name": "cost",
-        "type": "number"
+        "type": "number",
+        "label": "Cost",
+        "help": "Transaction cost for the company, involving processing and antifraud."
     },
     {
         "name": "card_holder_name",
-        "type": "text"
+        "type": "text",
+        "label": "Card Holder Name"
     },
     {
         "name": "card_last_digits",
-        "type": "text"
+        "type": "text",
+        "label": "Card Last Digits",
+        "help": "Card last 4 digits."
     },
     {
         "name": "card_first_digits",
-        "type": "text"
+        "type": "text",
+        "label": "Card First Digits",
+        "help": "Card first 6 digits."
     },
     {
         "name": "card_brand",
-        "type": "text"
+        "type": "text",
+        "label": "Card Brand"
     },
     {
         "name": "card_pin_mode",
-        "type": "text"
+        "type": "text",
+        "label": "Card PIN Mode",
+        "help": "Used in EMV transactions, it defines whether the card validation occurred online (through the issuing bank), or offline (through the chip)."
     },
     {
         "name": "card_magstripe_fallback",
-        "type": "boolean"
+        "type": "boolean",
+        "label": "Card Magstripe Fallback"
     },
     {
         "name": "cvm_pin",
-        "type": "boolean"
+        "type": "boolean",
+        "label": "CVM PIN"
     },
     {
         "name": "postback_url",
-        "type": "text"
+        "type": "text",
+        "label": "Postback URL",
+        "help": "URL of your system for receiving notifications about transaction status changes."
     },
     {
         "name": "payment_method",
-        "type": "text"
+        "type": "text",
+        "label": "Payment Method",
+        "help": "Payment method to be used. Possible values: credit_card and boleto"
     },
     {
         "name": "capture_method",
-        "type": "text"
+        "type": "text",
+        "label": "Capture Method",
+        "help": "How the payment data was captured. Possible values: magstripe, emv, ecommerce."
     },
     {
         "name": "antifraud_score",
-        "type": "text"
+        "type": "text",
+        "label": "Antifraud Score",
+        "help": "Which antifraud score was assigned to the transaction. By default, transactions with score >= 95 are refused."
     },
     {
         "name": "boleto_url",
-        "type": "text"
+        "type": "text",
+        "label": "Boleto URL"
     },
     {
         "name": "boleto_barcode",
-        "type": "text"
+        "type": "text",
+        "label": "Boleto Barcode"
     },
     {
         "name": "boleto_expiration_date",
-        "type": "text"
+        "type": "date",
+        "label": "Boleto Expiration Date",
+        "help": "In ISODate format"
     },
     {
         "name": "referer",
-        "type": "text"
+        "type": "text",
+        "label": "Referer",
+        "help": "Whether the transaction was created using the API Key or Encryption Key"
     },
     {
         "name": "ip",
-        "type": "text"
+        "type": "text",
+        "label": "Source IP",
+        "help": "Source IP that created the transaction, which can be of your client, if the request comes directly from the client-side, or of your servers, if everything is centralized in your application on the server-side."
     },
     {
         "name": "subscription_id",
-        "type": "text"
+        "type": "text",
+        "label": "Subscription ID",
+        "help": "If the transaction was created from a subscription charge, its id will be the value of this property subscription_id."
     },
     {
         "name": "phone",
         "type": "collection",
+        "label": "Phone",
+        "sequence": true,
         "spec": [
             {
                 "name": "object",
-                "type": "text"
-            },
-            {
-                "name": "ddi",
-                "type": "text"
-            },
-            {
-                "name": "ddd",
-                "type": "text"
-            },
-            {
-                "name": "number",
-                "type": "text"
+                "type": "text",
+                "label": "Object"
             },
             {
                 "name": "id",
-                "type": "uinteger"
+                "type": "integer",
+                "label": "ID"
+            },
+            {
+                "name": "ddi",
+                "type": "text",
+                "label": "DDI"
+            },
+            {
+                "name": "ddd",
+                "type": "text",
+                "label": "DDD"
+            },
+            {
+                "name": "number",
+                "type": "text",
+                "label": "Number"
             }
         ]
     },
     {
         "name": "address",
         "type": "collection",
+        "label": "Address",
+        "sequence": true,
         "spec": [
             {
                 "name": "object",
-                "type": "text"
-            },
-            {
-                "name": "street",
-                "type": "text"
-            },
-            {
-                "name": "complementary",
-                "type": "text"
-            },
-            {
-                "name": "street_number",
-                "type": "text"
-            },
-            {
-                "name": "neighborhood",
-                "type": "text"
-            },
-            {
-                "name": "city",
-                "type": "text"
-            },
-            {
-                "name": "state",
-                "type": "text"
-            },
-            {
-                "name": "zipcode",
-                "type": "text"
-            },
-            {
-                "name": "country",
-                "type": "text"
+                "type": "text",
+                "label": "Object"
             },
             {
                 "name": "id",
-                "type": "uinteger"
+                "type": "integer",
+                "label": "ID"
+            },
+            {
+                "name": "street",
+                "type": "text",
+                "label": "Street"
+            },
+            {
+                "name": "complementary",
+                "type": "text",
+                "label": "Complementary"
+            },
+            {
+                "name": "street_number",
+                "type": "text",
+                "label": "Street Number"
+            },
+            {
+                "name": "neighborhood",
+                "type": "text",
+                "label": "Neighborhood"
+            },
+            {
+                "name": "city",
+                "type": "text",
+                "label": "City"
+            },
+            {
+                "name": "state",
+                "type": "text",
+                "label": "State"
+            },
+            {
+                "name": "zipcode",
+                "type": "text",
+                "label": "Zipcode",
+                "help": "For Brazilian address (CEP), it must contain an 8-digit number."
+            },
+            {
+                "name": "country",
+                "type": "text",
+                "label": "Country",
+                "help": "Two lowercase letters. It must follow the ISO 3166-1 alpha-2 standard."
             }
         ]
     },
     {
         "name": "customer",
         "type": "collection",
+        "label": "Customer",
+        "sequence": true,
         "spec": [
             {
                 "name": "object",
-                "type": "text"
+                "type": "text",
+                "label": "Object"
             },
             {
                 "name": "id",
-                "type": "uinteger"
+                "type": "integer",
+                "label": "ID",
+                "help": "Customer identifier."
             },
             {
                 "name": "external_id",
-                "type": "text"
+                "type": "text",
+                "label": "External ID",
+                "help": "Customer identifier on your store."
             },
             {
                 "name": "type",
-                "type": "text"
+                "type": "text",
+                "label": "Type",
+                "help": "Must be `individual` or `corporation`."
             },
             {
                 "name": "country",
-                "type": "text"
-            },
-            {
-                "name": "document_number",
-                "type": "text"
+                "type": "text",
+                "label": "Country",
+                "help": "Country. Two lowercase letters, following the ISO 3166-1 alpha-2 standard."
             },
             {
                 "name": "document_type",
-                "type": "text"
+                "type": "text",
+                "label": "Document Type"
+            },
+            {
+                "name": "document_number",
+                "type": "text",
+                "label": "Document Number"
             },
             {
                 "name": "name",
-                "type": "text"
+                "type": "text",
+                "label": "Name",
+                "help": "Buyer name or business name."
             },
             {
                 "name": "email",
-                "type": "text"
+                "type": "text",
+                "label": "Email",
+                "help": "Buyer email."
             },
             {
                 "name": "phone_numbers",
-                "type": "array"
+                "type": "array",
+                "label": "Phone Numbers",
+                "spec": {
+                    "type": "text",
+                    "label": "Phone Number"
+                },
+                "help": "Phone numbers. Requires at least one value. Must follow the E.164 standard."
             },
             {
                 "name": "born_at",
-                "type": "text"
+                "type": "text",
+                "label": "Born At"
             },
             {
                 "name": "birthday",
-                "type": "text"
+                "type": "text",
+                "label": "Birthday (YYYY-MM-DD)",
+                "help": "Date of birth. It must follow the format YYYY-MM-DD."
             },
             {
                 "name": "gender",
-                "type": "text"
+                "type": "text",
+                "label": "Gender"
             },
             {
                 "name": "date_created",
                 "type": "date",
+                "label": "Created Date",
                 "time": true
             },
             {
                 "name": "documents",
                 "type": "collection",
+                "label": "Documents",
+                "sequence": true,
                 "spec": [
                     {
                         "name": "type",
-                        "type": "text"
+                        "type": "text",
+                        "label": "Type",
+                        "help": "Example: `cpf` or `cnpj`"
                     },
                     {
                         "name": "number",
-                        "type": "text"
+                        "type": "text",
+                        "label": "Number"
                     }
                 ]
             }
@@ -301,54 +422,73 @@
     {
         "name": "billing",
         "type": "collection",
+        "label": "Billing",
+        "help": "Required when antifraud enabled. Defines billing data, such as name and address.",
+        "sequence": true,
         "spec": [
             {
                 "name": "name",
-                "type": "text"
+                "type": "text",
+                "label": "Name",
+                "help": "Billing entity name."
             },
             {
                 "name": "address",
                 "type": "collection",
+                "label": "Address",
+                "sequence": true,
                 "spec": [
                     {
                         "name": "object",
-                        "type": "text"
-                    },
-                    {
-                        "name": "street",
-                        "type": "text"
-                    },
-                    {
-                        "name": "complementary",
-                        "type": "text"
-                    },
-                    {
-                        "name": "street_number",
-                        "type": "text"
-                    },
-                    {
-                        "name": "neighborhood",
-                        "type": "text"
-                    },
-                    {
-                        "name": "city",
-                        "type": "text"
-                    },
-                    {
-                        "name": "state",
-                        "type": "text"
-                    },
-                    {
-                        "name": "zipcode",
-                        "type": "text"
-                    },
-                    {
-                        "name": "country",
-                        "type": "text"
+                        "type": "text",
+                        "label": "Object"
                     },
                     {
                         "name": "id",
-                        "type": "uinteger"
+                        "type": "integer",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "street",
+                        "type": "text",
+                        "label": "Street"
+                    },
+                    {
+                        "name": "complementary",
+                        "type": "text",
+                        "label": "Complementary"
+                    },
+                    {
+                        "name": "street_number",
+                        "type": "text",
+                        "label": "Street Number"
+                    },
+                    {
+                        "name": "neighborhood",
+                        "type": "text",
+                        "label": "Neighborhood"
+                    },
+                    {
+                        "name": "city",
+                        "type": "text",
+                        "label": "City"
+                    },
+                    {
+                        "name": "state",
+                        "type": "text",
+                        "label": "State"
+                    },
+                    {
+                        "name": "zipcode",
+                        "type": "text",
+                        "label": "Zipcode",
+                        "help": "For Brazilian address (CEP), it must contain an 8-digit number."
+                    },
+                    {
+                        "name": "country",
+                        "type": "text",
+                        "label": "Country",
+                        "help": "Two lowercase letters. It must follow the ISO 3166-1 alpha-2 standard."
                     }
                 ]
             }
@@ -357,70 +497,90 @@
     {
         "name": "shipping",
         "type": "collection",
+        "label": "Shipping",
+        "sequence": true,
         "spec": [
             {
                 "name": "name",
                 "type": "text",
+                "label": "Name",
+                "help": "Shipping entity name.",
                 "required": true
             },
             {
                 "name": "fee",
                 "type": "number",
+                "label": "Fee",
                 "required": true
             },
             {
                 "name": "delivery_date",
                 "type": "text",
-                "help": "Data de entrega. Estimativa fornecida no formato AAAA-MM-DD"
+                "label": "Delivery Date (YYYY-MM-DD)",
+                "help": "Delivery date, provided in YYYY-MM-DD format."
             },
             {
                 "name": "expedited",
                 "type": "boolean",
-                "help": "Entrega expressa. Se for entrega expressa, deve conter 'true' (sim). Caso contrário, deve conter 'false' (não)"
+                "help": "Expedited delivery. If it is expedited delivery, it must be set to `true`. Otherwise, it must be `false`."
             },
             {
                 "name": "address",
                 "type": "collection",
+                "label": "Address",
+                "sequence": true,
                 "spec": [
                     {
                         "name": "object",
-                        "type": "text"
-                    },
-                    {
-                        "name": "street",
-                        "type": "text"
-                    },
-                    {
-                        "name": "complementary",
-                        "type": "text"
-                    },
-                    {
-                        "name": "street_number",
-                        "type": "text"
-                    },
-                    {
-                        "name": "neighborhood",
-                        "type": "text"
-                    },
-                    {
-                        "name": "city",
-                        "type": "text"
-                    },
-                    {
-                        "name": "state",
-                        "type": "text"
-                    },
-                    {
-                        "name": "zipcode",
-                        "type": "text"
-                    },
-                    {
-                        "name": "country",
-                        "type": "text"
+                        "type": "text",
+                        "label": "Object"
                     },
                     {
                         "name": "id",
-                        "type": "uinteger"
+                        "type": "integer",
+                        "label": "Address ID"
+                    },
+                    {
+                        "name": "street",
+                        "type": "text",
+                        "label": "Street"
+                    },
+                    {
+                        "name": "complementary",
+                        "type": "text",
+                        "label": "Complementary"
+                    },
+                    {
+                        "name": "street_number",
+                        "type": "text",
+                        "label": "Street Number"
+                    },
+                    {
+                        "name": "neighborhood",
+                        "type": "text",
+                        "label": "Neighborhood"
+                    },
+                    {
+                        "name": "city",
+                        "type": "text",
+                        "label": "City"
+                    },
+                    {
+                        "name": "state",
+                        "type": "text",
+                        "label": "State"
+                    },
+                    {
+                        "name": "zipcode",
+                        "type": "text",
+                        "label": "Zipcode",
+                        "help": "For Brazilian address (CEP), it must contain an 8-digit number."
+                    },
+                    {
+                        "name": "country",
+                        "type": "text",
+                        "label": "Country",
+                        "help": "Two lowercase letters. It must follow the ISO 3166-1 alpha-2 standard."
                     }
                 ]
             }
@@ -428,105 +588,142 @@
     },
     {
         "name": "items",
-        "type": "collection",
-        "spec": [
-            {
-                "name": "id",
-                "type": "text"
-            },
-            {
-                "name": "title",
-                "type": "text"
-            },
-            {
-                "name": "unit_price",
-                "type": "number"
-            },
-            {
-                "name": "quantity",
-                "type": "number"
-            },
-            {
-                "name": "tangible",
-                "type": "boolean"
-            },
-            {
-                "name": "category",
-                "type": "text"
-            },
-            {
-                "name": "venue",
-                "type": "text",
-                "help": "Local (se evento)."
-            },
-            {
-                "name": "date",
-                "type": "text",
-                "help": "Data (se evento). Estimativa fornecida no formato AAAA-MM-DD"
-            }
-        ]
+        "type": "array",
+        "label": "Items",
+        "sequence": true,
+        "help": "Required when antifraud enabled. Defines the information of the items sold, such as name, unit price and quantity.",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "id",
+                    "type": "text",
+                    "label": "Identifier",
+                    "help": "SKU (stock keeping unit) or store identification number."
+                },
+                {
+                    "name": "title",
+                    "type": "text",
+                    "label": "Title",
+                    "help": "Name of the item sold."
+                },
+                {
+                    "name": "unit_price",
+                    "type": "number",
+                    "label": "Unit Price",
+                    "help": "Price per unit. For example, if the price of each item is R$ 20.06, it must be provided as `20.06`"
+                },
+                {
+                    "name": "quantity",
+                    "type": "number",
+                    "label": "Quantity",
+                    "help": "Quantity of units sold."
+                },
+                {
+                    "name": "tangible",
+                    "type": "boolean",
+                    "label": "Tangible",
+                    "help": "Defines the product as physical good or not. Physical goods are products that must be physically sent to the buyer, such as shoes, electronics and toys. If it is a physical product this parameter must be set to `true`, otherwise, it must be sent as `false`."
+                },
+                {
+                    "name": "category",
+                    "type": "text",
+                    "label": "Category"
+                },
+                {
+                    "name": "venue",
+                    "type": "text",
+                    "label": "Venue",
+                    "help": "If it is an event."
+                },
+                {
+                    "name": "date",
+                    "type": "text",
+                    "label": "Date (Event)",
+                    "help": "Date (if it is an event) in YYYY-MM-DD format."
+                }
+            ]
+        }
     },
     {
         "name": "card",
         "type": "collection",
+        "label": "Card",
+        "sequence": true,
         "spec": [
             {
                 "name": "object",
-                "type": "text"
+                "type": "text",
+                "label": "Object"
             },
             {
                 "name": "id",
-                "type": "text"
+                "type": "text",
+                "label": "Id"
             },
             {
                 "name": "date_created",
-                "type": "date"
+                "type": "date",
+                "label": "Created Date"
             },
             {
                 "name": "date_updated",
-                "type": "date"
+                "type": "date",
+                "label": "Updated Date"
             },
             {
                 "name": "brand",
-                "type": "text"
+                "type": "text",
+                "label": "Brand"
             },
             {
                 "name": "holder_name",
-                "type": "text"
+                "type": "text",
+                "label": "Holder Name"
             },
             {
                 "name": "first_digits",
-                "type": "text"
+                "type": "text",
+                "label": "First Digits"
             },
             {
                 "name": "last_digits",
-                "type": "text"
+                "type": "text",
+                "label": "Last Digits"
             },
             {
                 "name": "country",
-                "type": "text"
+                "type": "text",
+                "label": "Country"
             },
             {
                 "name": "fingerprint",
-                "type": "text"
+                "type": "text",
+                "label": "Fingerprint"
             },
             {
                 "name": "valid",
-                "type": "boolean"
+                "type": "boolean",
+                "label": "Valid"
             },
             {
                 "name": "expiration_date",
-                "type": "text"
+                "type": "date",
+                "label": "Expiration Date",
+                "time": false
             }
         ]
     },
     {
         "name": "split_rules",
-        "type": "text"
+        "type": "text",
+        "label": "Split Rules"
     },
     {
         "name": "metadata",
         "type": "array",
+        "label": "Metadata",
+        "help": "Additional data sent when creating the transaction.",
         "spec": [
             {
                 "type": "collection",
@@ -537,6 +734,8 @@
     {
         "name": "antifraud_metadata",
         "type": "array",
+        "label": "Antifraud Metadata",
+        "help": "Object that contains data used in the antifraud integration.",
         "spec": [
             {
                 "type": "collection",
@@ -545,55 +744,75 @@
         ]
     },
     {
+        "name": "session",
+        "label": "Session",
+        "type": "text",
+        "help": "Unique value that identifies the user session accessing the site."
+    },
+    {
         "name": "reference_key",
-        "type": "text"
+        "type": "text",
+        "label": "Reference Key",
+        "help": "Unique value that identifies the transaction to allow a new request attempt with the certainty that the same operation will not be accidentally executed twice."
     },
     {
         "name": "device",
-        "type": "text"
+        "type": "text",
+        "label": "Device"
     },
     {
         "name": "local_transaction_id",
-        "type": "text"
+        "type": "text",
+        "label": "Local Transaction ID"
     },
     {
         "name": "local_time",
-        "type": "text"
+        "type": "text",
+        "label": "Local Time"
     },
     {
         "name": "fraud_covered",
-        "type": "boolean"
+        "type": "boolean",
+        "label": "Fraud Covered"
     },
     {
         "name": "fraud_reimbursed",
-        "type": "text"
+        "type": "text",
+        "label": "Fraud Reimbursed"
     },
     {
         "name": "order_id",
-        "type": "text"
+        "type": "text",
+        "label": "Order ID"
     },
     {
         "name": "risk_level",
-        "type": "text"
+        "type": "text",
+        "label": "Risk Level"
     },
     {
         "name": "receipt_url",
-        "type": "text"
+        "type": "text",
+        "label": "Receipt URL"
     },
     {
         "name": "payment",
-        "type": "text"
+        "type": "text",
+        "label": "Payment"
     },
     {
         "name": "addition",
-        "type": "text"
+        "type": "text",
+        "label": "Addition"
     },
     {
         "name": "discount",
-        "type": "text"
+        "type": "text",
+        "label": "Discount"
     },
     {
         "name": "private_label",
-        "type": "text"
+        "type": "text",
+        "label": "Private Label"
     }
 ]

@@ -1,0 +1,12 @@
+{
+    "url": "/platform/events",
+    "method": "POST",
+    "body": {
+        "event_type": "SALE",
+        "event_family": "CDP",
+        "payload": "{{parameters}}"
+    },
+    "response": {
+        "output": "{{body}}"
+    }
+}

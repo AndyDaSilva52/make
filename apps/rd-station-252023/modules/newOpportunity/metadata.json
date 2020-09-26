@@ -1,0 +1,8 @@
+{
+    "name": "newOpportunity",
+    "label": "New Opportunity",
+    "description": "Triggers when a Lead is marked as opportunity",
+    "connection": null,
+    "webhook": "rd-station-2520233",
+    "type": "instant_trigger"
+}

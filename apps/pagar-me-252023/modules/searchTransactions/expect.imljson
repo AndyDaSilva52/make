@@ -1,0 +1,435 @@
+[
+    {
+        "help": "The maximum number of results to be worked with during one execution cycle.",
+        "name": "count",
+        "type": "uinteger",
+        "label": "Limit",
+        "default": 100,
+        "required": true
+    },
+    {
+        "name": "status",
+        "type": "select",
+        "label": "Status",
+        "options": [
+            {
+                "label": "Processing",
+                "value": "processing"
+            },
+            {
+                "label": "Authorized",
+                "value": "authorized"
+            },
+            {
+                "label": "Paid",
+                "value": "paid"
+            },
+            {
+                "label": "Refunded",
+                "value": "refunded"
+            },
+            {
+                "label": "Waiting Payment",
+                "value": "waiting_payment"
+            },
+            {
+                "label": "Pending Refund",
+                "value": "pending_refund"
+            },
+            {
+                "label": "Refused",
+                "value": "refused"
+            }
+        ],
+        "required": false,
+        "validate": false
+    },
+    {
+        "name": "date_created_from",
+        "type": "date",
+        "label": "Created Date From",
+        "time": true
+        //,"help": "Specific the date and time with prefix\n`<` (less than)\n`>` (greater than)\n`<=` (less than or equal to)\n`>=` (greater than or equal to)\nExample using formula: `>={{formatDate(now; 'x')}}`"
+    },
+    {
+        "name": "date_created_to",
+        "type": "date",
+        "label": "Created Date To",
+        "time": true
+        //,"help": "Specific the date and time with prefix\n`<` (less than)\n`>` (greater than)\n`<=` (less than or equal to)\n`>=` (greater than or equal to)\nExample using formula: `>={{formatDate(now; 'x')}}`"
+    },
+    {
+        "name": "date_updated_from",
+        "type": "date",
+        "label": "Updated Date From",
+        "time": true
+        //,"help": "Specific the date and time with prefix\n`<` (less than)\n`>` (greater than)\n`<=` (less than or equal to)\n`>=` (greater than or equal to)\nExample using formula: `>={{formatDate(now; 'x')}}`"
+    },
+    {
+        "name": "date_updated_to",
+        "type": "date",
+        "label": "Updated Date To",
+        "time": true
+        //,"help": "Specific the date and time with prefix\n`<` (less than)\n`>` (greater than)\n`<=` (less than or equal to)\n`>=` (greater than or equal to)\nExample using formula: `>={{formatDate(now; 'x')}}`"
+    },
+    {
+        "name": "amount",
+        "label": "Amount",
+        "type": "number",
+        "help": "Filter by transaction amount."
+    },
+    {
+        "name": "installments",
+        "label": "Installments",
+        "type": "text",
+        "help": "Filter by transaction installments."
+    },
+    {
+        "name": "id",
+        "type": "integer",
+        "label": "ID",
+        "help": "Transaction identifier"
+    },
+    {
+        "name": "tid",
+        "type": "text",
+        "label": "TID",
+        "help": "Transaction identifier at the acquirer."
+    },
+    {
+        "name": "nsu",
+        "label": "NSU",
+        "type": "text"
+    },
+    /**
+    {
+        "name": "card_holder_name",
+        "label": "Card Holder Name",
+        "type": "text"
+    },
+    {
+        "name": "card_last_digits",
+        "label": "Card Last Digits",
+        "type": "text",
+        "help": "Filter by card last 4 digits."
+    },
+     */
+    {
+        "name": "card_brand",
+        "label": "Card Brand",
+        "type": "select",
+        "options": [
+            {
+                "label": "Amex",
+                "value": "amex"
+            },
+            {
+                "label": "Aura",
+                "value": "aura"
+            },
+            {
+                "label": "Discover",
+                "value": "discover"
+            },
+            {
+                "label": "Elo",
+                "value": "elo"
+            },
+            {
+                "label": "Hipercard",
+                "value": "hipercard"
+            },
+            {
+                "label": "JCB",
+                "value": "jcb"
+            },
+            {
+                "label": "Visa",
+                "value": "visa"
+            },
+            {
+                "label": "Mastercard",
+                "value": "mastercard"
+            }
+        ],
+        "required": false,
+        "validate": false,
+        "help": "Filter by card brand. Some possible values: `amex`, `aura`, `discover`, `elo`, `hipercard`, `jcb`, `visa`, `mastercard`."
+    },
+    /**
+    {
+        "name": "postback_url",
+        "label": "Postback URL",
+        "type": "text"
+    },
+     */
+    {
+        "name": "payment_method",
+        "label": "Payment Method",
+        "type": "select",
+        "options": [
+            {
+                "label": "Credit Card",
+                "value": "credit_card"
+            },
+            {
+                "label": "Boleto",
+                "value": "boleto"
+            }
+        ],
+        "validate": false,
+        "help": "Filter by payment method: `credit_card`, `boleto`."
+    },
+    {
+        "name": "capture_method",
+        "label": "Capture Method",
+        "type": "text"
+    },
+    /**
+    {
+        "name": "boleto_url",
+        "label": "Boleto URL",
+        "type": "text"
+    },
+     */
+    {
+        "name": "antifraud_score",
+        "label": "Antifraud Score",
+        "type": "text"
+    },
+    {
+        "name": "subscription_id",
+        "label": "Subscription ID",
+        "type": "text"
+    },
+    {
+        "name": "reference_key",
+        "label": "Reference Key",
+        "type": "text"
+    },
+    {
+        "name": "order_id",
+        "label": "Order ID",
+        "type": "text"
+    } /**, 
+    {
+        "name": "customer",
+        "label": "Customer",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "id",
+                "type": "integer",
+                "label": "ID",
+                "help": "Customer identifier."
+            },
+            {
+                "name": "external_id",
+                "type": "text",
+                "label": "External ID",
+                "help": "Customer identifier on your store."
+            },
+            {
+                "name": "type",
+                "type": "select",
+                "label": "Type",
+                "options": [
+                    {
+                        "label": "Individual",
+                        "value": "individual"
+                    },
+                    {
+                        "label": "Corporation",
+                        "value": "corporation"
+                    }
+                ],
+                "validate": false,
+                "help": "Must be `individual` or `corporation`."
+            },
+            {
+                "name": "country",
+                "type": "text",
+                "label": "Country",
+                "help": "Country. Two lowercase letters, following the ISO 3166-1 alpha-2 standard."
+            },
+            {
+                "name": "document_type",
+                "type": "text",
+                "label": "Document Type"
+            },
+            {
+                "name": "document_number",
+                "type": "text",
+                "label": "Document Number"
+            },
+            {
+                "name": "name",
+                "type": "text",
+                "label": "Name",
+                "help": "Buyer name or business name."
+            },
+            {
+                "name": "email",
+                "type": "text",
+                "label": "Email",
+                "help": "Buyer email."
+            },
+            {
+                "name": "phone_numbers",
+                "type": "array",
+                "label": "Phone Numbers",
+                "spec": {
+                    "type": "text",
+                    "label": "Phone Number"
+                },
+                "help": "Phone numbers. Requires at least one value. Must follow the E.164 standard."
+            },
+            {
+                "name": "born_at",
+                "type": "text",
+                "label": "Born At"
+            },
+            {
+                "name": "birthday",
+                "type": "text",
+                "label": "Birthday (YYYY-MM-DD)",
+                "help": "Date of birth. It must follow the format YYYY-MM-DD."
+            },
+            {
+                "name": "gender",
+                "type": "text",
+                "label": "Gender"
+            },
+            {
+                "name": "date_created",
+                "type": "date",
+                "label": "Created Date",
+                "time": true
+            },
+            {
+                "name": "documents",
+                "type": "array",
+                "label": "Documents",
+                "sequence": true,
+                "spec": {
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "type",
+                            "type": "text",
+                            "label": "Type",
+                            "help": "Example: `cpf` or `cnpj`"
+                        },
+                        {
+                            "name": "number",
+                            "type": "text",
+                            "label": "Number"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    
+    {
+        "name": "phone",
+        "label": "Phone",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "id",
+                "type": "integer",
+                "label": "ID"
+            },
+            {
+                "name": "ddi",
+                "type": "text",
+                "label": "DDI"
+            },
+            {
+                "name": "ddd",
+                "type": "text",
+                "label": "DDD"
+            },
+            {
+                "name": "number",
+                "type": "text",
+                "label": "Number"
+            }
+        ]
+    },
+    {
+        "name": "address",
+        "label": "Address",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "id",
+                "type": "integer",
+                "label": "ID"
+            },
+            {
+                "name": "street",
+                "type": "text",
+                "label": "Street"
+            },
+            {
+                "name": "complementary",
+                "type": "text",
+                "label": "Complementary"
+            },
+            {
+                "name": "street_number",
+                "type": "text",
+                "label": "Street Number"
+            },
+            {
+                "name": "neighborhood",
+                "type": "text",
+                "label": "Neighborhood"
+            },
+            {
+                "name": "city",
+                "type": "text",
+                "label": "City"
+            },
+            {
+                "name": "state",
+                "type": "text",
+                "label": "State"
+            },
+            {
+                "name": "zipcode",
+                "type": "text",
+                "label": "Zipcode",
+                "help": "For Brazilian address (CEP), it must contain an 8-digit number."
+            },
+            {
+                "name": "country",
+                "type": "text",
+                "label": "Country",
+                "help": "Two lowercase letters. It must follow the ISO 3166-1 alpha-2 standard."
+            }
+        ]
+    } ,
+    {
+        "name": "metadata",
+        "label": "Metadata",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "key",
+                    "label": "Key",
+                    "type": "text"
+                },
+                {
+                    "name": "value",
+                    "label": "Value",
+                    "type": "text"
+                }
+            ]
+        }
+    }*/
+]

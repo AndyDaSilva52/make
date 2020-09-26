@@ -1,7 +1,7 @@
 {
     "name": "getRecipients",
     "label": "List Recipients",
-    "description": "Recipients",
+    "description": "List items from an Array of objects containing the recipients created by your company.",
     "connection": "pagar-me-252023",
     "webhook": null,
     "type": "search"

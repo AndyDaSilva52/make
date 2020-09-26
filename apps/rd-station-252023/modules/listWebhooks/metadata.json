@@ -1,0 +1,8 @@
+{
+    "name": "listWebhooks",
+    "label": "List Webhooks",
+    "description": "Return a list with all webhook subscriptions from your account.",
+    "connection": "rd-station-2520233",
+    "webhook": null,
+    "type": "search"
+}

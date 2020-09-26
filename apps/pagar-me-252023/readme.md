@@ -1,16 +1,5 @@
 API Pagar.me
 
-[Documentação](https://docs.pagar.me/)
+[Documentation](https://docs.pagar.me/v4-Eng/docs)
 
-- Implementado:
-* Saldo
-* Histórico de Operações de Saldo
-
-Na implementação de Get Balance Operation, quando houver o transaction_id, será apresentado os detalhes da transação no campo movement_object.transaction_details
-
-Importante
-- Get Transaction 
-- Get Balance Operation
-Os campos de metadata e antifraud_metadata foram alterados para serem um array de objeto e não mais somente um objeto.
-Isso permite utilizar por exemplo a função
-get(map(metadata; orderNumber);1) para obter o valor do campo orderNumber que pode ser uma chave do objeto.
+At implementation of  Get Balance Operation when there is a valid `transaction_id` it'll be show the details about the transaction at `movement_object.transaction_details`

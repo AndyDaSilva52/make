@@ -1,0 +1,27 @@
+{
+    "webhooks": [
+        {
+            "uuid": "5408c5a3-4711-4f2e-8d0b-13407a3e30f3",
+            "event_type": "WEBHOOK.CONVERTED",
+            "event_identifiers": [
+                "newsletter"
+            ],
+            "entity_type": "CONTACT",
+            "url": "http://my-url.com",
+            "http_method": "POST",
+            "include_relations": []
+        },
+        {
+            "uuid": "642d985c-487c-4c53-b9de-2c1223841cae",
+            "event_type": "WEBHOOK.MARKED_OPPORTUNITY",
+            "event_identifiers": [],
+            "entity_type": "CONTACT",
+            "url": "http://my-url.com",
+            "http_method": "POST",
+            "include_relations": [
+                "COMPANY",
+                "CONTACT_FUNNEL"
+            ]
+        }
+    ]
+}

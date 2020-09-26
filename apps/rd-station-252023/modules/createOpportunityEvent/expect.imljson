@@ -1,0 +1,15 @@
+[
+    {
+        "name": "email",
+        "label": "Email",
+        "type": "email",
+        "help": "Email of the contact."
+    },
+    {
+        "name": "funnel_name",
+        "label": "Funnel Name",
+        "type": "text",
+        "advanced": true,
+        "default": "default"
+    }
+]

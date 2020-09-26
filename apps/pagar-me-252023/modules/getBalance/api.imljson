@@ -1,20 +1,23 @@
-{
-    "url": "/balance",
-    "method": "GET",
-    "qs": {
-        "recipient_id": "{{parameters.recipient_id}}"
+[
+    {
+        "response": {
+            "temp": {
+                "properties": [
+                    "waiting_funds.amount",
+                    "transferred.amount",
+                    "available.amount"
+                ]
+            }
+        }
     },
-    "body": {},
-    "headers": {},
-    "response": {
-        "output": {
-            "object": "{{body.object}}",
-            "waiting_funds_amount": "{{ pagarmeConvertNumber(body.waiting_funds.amount)}}",
-            /**"waiting_funds_amount_without_decimal_point": "{{body.waiting_funds.amount}}",*/
-            "transferred_amount": "{{   pagarmeConvertNumber(body.transferred.amount)}}",
-            /**"transferred_amount_without_decimal_point": "{{body.transferred.amount}}",*/
-            "available_amount": "{{     pagarmeConvertNumber(body.available.amount)}}"
-            /**,"available_amount_without_decimal_point": "{{body.available.amount}}"*/
+    {
+        "url": "/balance",
+        "method": "GET",
+        "qs": {
+            "recipient_id": "{{parameters.recipient_id}}"
+        },
+        "response": {
+            "output": "{{getExpectOutput(body, temp.properties)}}"
         }
     }
-}
+]

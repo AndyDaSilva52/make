@@ -1,0 +1,91 @@
+[
+    {
+        "name": "url",
+        "type": "text",
+        "label": "URL",
+        "help": "Enter a path relative to `https://api.pagar.me/1/`.\nEx: `/customers` or `/balance`",
+        "required": true
+    },
+    {
+        "name": "method",
+        "type": "select",
+        "label": "Method",
+        "required": true,
+        "validate": false,
+        "default": "GET",
+        "options": [
+            {
+                "label": "GET",
+                "value": "GET"
+            },
+            {
+                "label": "POST",
+                "value": "POST"
+            },
+            {
+                "label": "PUT",
+                "value": "PUT"
+            },
+            {
+                "label": "PATCH",
+                "value": "PATCH"
+            },
+            {
+                "label": "DELETE",
+                "value": "DELETE"
+            }
+        ]
+    },
+    {
+        "name": "headers",
+        "label": "Headers",
+        "help": "You don't have to add authorization headers; we already did that for you.",
+        "type": "array",
+        "spec": [
+            {
+                "name": "key",
+                "label": "Key",
+                "type": "text"
+            },
+            {
+                "name": "value",
+                "label": "Value",
+                "type": "text"
+            }
+        ],
+        "advanced": true
+    },
+    {
+        "name": "qs",
+        "label": "Query String",
+        "type": "array",
+        "spec": [
+            {
+                "name": "key",
+                "label": "Key",
+                "type": "text"
+            },
+            {
+                "name": "value",
+                "label": "Value",
+                "type": "text"
+            }
+        ]
+    },
+    {
+        "name": "body",
+        "label": "Body",
+        "type": "any"
+    },
+    {
+        "name": "properties",
+        "label": "Number Properties",
+        "help": "List of properties that has to be converted to `number` with decimal point separator.",
+        "type": "array",
+        "spec": {
+            "label": "Property Path",
+            "type": "text",
+            "help": "The relative path from `body` of the property that has to be converted to `number`.\nEx: For `URL` path `/balance` the properties\n`waiting_funds.amount`\n`transferred.amount`\n`available.amount`\nhas to be converted to number with decimal point separator."
+        }
+    }
+]

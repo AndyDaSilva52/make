@@ -1,73 +1,95 @@
 [
     {
         "name": "object",
-        "type": "text"
+        "type": "text",
+        "label": "Object"
     },
     {
         "name": "id",
-        "type": "number"
+        "type": "text",
+        "label": "Payable ID"
     },
     {
         "name": "status",
-        "type": "text"
+        "type": "text",
+        "label": "Status",
+        "help": "Transaction status. Possible values: `processing`, `authorized`, `paid`, `refunded`, `chargedback`, `chargedback_refunded`, `waiting_payment`, `pending_refund`, `refused`."
     },
     {
         "name": "amount",
-        "type": "number"
+        "type": "number",
+        "label": "Amount",
+        "help": "Payable amount. Ex: R$ 14.99 = 14.99."
     },
     {
         "name": "fee",
-        "type": "number"
+        "type": "number",
+        "label": "Fee"
     },
     {
         "name": "anticipation_fee",
-        "type": "number"
+        "type": "number",
+        "label": "Anticipation Fee"
     },
     {
         "name": "installment",
-        "type": "integer"
+        "type": "number",
+        "label": "Installment"
     },
     {
         "name": "transaction_id",
-        "type": "integer"
+        "type": "text",
+        "label": "Transaction ID (TID)"
     },
     {
         "name": "split_rule_id",
-        "type": "text"
+        "type": "text",
+        "label": "Split Rule ID"
     },
     {
         "name": "bulk_anticipation_id",
-        "type": "text"
+        "type": "text",
+        "label": "Bulk Anticipation ID"
     },
     {
         "name": "recipient_id",
-        "type": "text"
+        "type": "text",
+        "label": "Recipient ID",
+        "help": "Identifier of the recipient to which this payable relates."
     },
     {
         "name": "payment_date",
         "type": "date",
-        "time": true
+        "label": "Payment Date",
+        "time": false
     },
     {
         "name": "original_payment_date",
-        "type": "text"
+        "type": "date",
+        "label": "Original Payment Date",
+        "time": true
     },
     {
         "name": "type",
-        "type": "text"
+        "type": "text",
+        "label": "Type"
     },
     {
         "name": "payment_method",
-        "type": "text"
+        "type": "text",
+        "label": "Payment Method"
     },
     {
         "name": "accrual_date",
         "type": "date",
+        "label": "Accrual Date",
+        "help": "Date (ISODate) on which the issuing bank recognized the payment for the transaction to which this payable relates.",
         "time": true
     },
     {
         "name": "date_created",
         "type": "date",
+        "label": "Created Date",
         "time": true
     }
 ]

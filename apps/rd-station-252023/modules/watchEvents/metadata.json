@@ -1,0 +1,8 @@
+{
+    "name": "watchEvents",
+    "label": "Watch Events",
+    "description": "Watch for events",
+    "connection": null,
+    "webhook": "rd-station-252023",
+    "type": "instant_trigger"
+}

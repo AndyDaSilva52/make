@@ -1,7 +1,7 @@
 {
     "name": "getBalance",
-    "label": "Get Balance (Saldo)",
-    "description": "Balance",
+    "label": "Get Balance",
+    "description": "By using this route you can get of the main recipient or a specific one.",
     "connection": "pagar-me-252023",
     "webhook": null,
     "type": "action"

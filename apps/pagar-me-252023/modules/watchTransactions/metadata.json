@@ -1,0 +1,8 @@
+{
+    "name": "watchTransactions",
+    "label": "Watch Transactions",
+    "description": "Watch new transaction ordered from the most recently created.",
+    "connection": "pagar-me-252023",
+    "webhook": null,
+    "type": "trigger"
+}

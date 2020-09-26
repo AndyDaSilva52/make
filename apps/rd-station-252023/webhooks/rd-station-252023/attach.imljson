@@ -1,0 +1,21 @@
+{
+    "url": "/integrations/webhooks",
+    "method": "POST",
+    "body": {
+        "entity_type": "{{parameters.entity_type}}",
+        "event_type": "{{parameters.event_type}}",
+        "event_identifiers": "{{parameters.event_identifiers}}",
+        "url": "{{webhook.url}}",
+        "http_method": "{{ ifempty(parameters.http_method, 'POST') }}",
+        "include_relations": "{{parameters.include_relations}}"
+    },
+    "response": {
+        "error": {
+            "type": "DataError",
+            "message": "{{getErrors(statusCode, body)}}"
+        },
+        "data": {
+            "externalHookId": "{{body.uuid}}"
+        }
+    }
+}

@@ -1,0 +1,47 @@
+[
+    {
+        "name": "uuid",
+        "label": "UUID",
+        "type": "text",
+        "help": "The unique UUID associated to each RD Station webhook subscription."
+    },
+    {
+        "name": "event_type",
+        "label": "Event Type",
+        "type": "text",
+        "help": "The event type that triggers the webhook request."
+    },
+    {
+        "name": "event_identifiers",
+        "label": "Event Identifiers",
+        "type": "array",
+        "spec": {
+            "type": "text"
+        },
+        "help": "Allows filtering the identifiers of the event that trigger the webhoook. Only for 'WEBHOOK.CONVERTED' events."
+    },
+    {
+        "name": "entity_type",
+        "label": "Entity Type",
+        "type": "text",
+        "help": "The entity of the webhook subscription."
+    },
+    {
+        "name": "url",
+        "label": "URL",
+        "type": "text",
+        "help": "The webhook destination URL."
+    },
+    {
+        "name": "http_method",
+        "label": "HTTP Method",
+        "type": "text",
+        "help": "The HTTP method that the webhook will trigger."
+    },
+    {
+        "name": "include_relations",
+        "label": "Include Relations",
+        "type": "array",
+        "help": "Which additional relations will be provided in the webhook payload."
+    }
+]

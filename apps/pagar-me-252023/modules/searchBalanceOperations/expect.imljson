@@ -1,9 +1,14 @@
 [
     {
+        "help": "The maximum number of results to be worked with during one execution cycle.",
         "name": "limit",
-        "type": "hidden",
+        "type": "uinteger",
         "label": "Limit",
-        "default": 500
+        "default": 100,
+        "required": true,
+        "validate": {
+            "min": 1
+        }
     },
     {
         "name": "status",
@@ -11,32 +16,33 @@
         "label": "Status",
         "options": [
             {
-                "label": "Available",
-                "value": "available"
-            },
-            {
                 "label": "Waitings Funds",
                 "value": "waiting_funds"
+            },
+            {
+                "label": "Available",
+                "value": "available"
             },
             {
                 "label": "Transferred",
                 "value": "transferred"
             }
         ],
-        "required": false
+        "required": false,
+        "validate": false
     },
     {
         "name": "start_date",
         "type": "date",
-        "label": "Start Date",
-        "help": "Specific the day and time.\nExample using formula for Yesterday: {{addMinutes(now;-1)}}",
-        "time": false
+        "label": "Created Date Start at",
+        "help": "Specific the day and time.\nExample using formula for Yesterday: `{{addMinutes(now;-1)}}`",
+        "time": true
     },
     {
         "name": "end_date",
         "type": "date",
-        "label": "End Date",
-        "help": "Specific the day that will be filtered.\nExample using formula for Yesterday: {{now}}",
-        "time": false
+        "label": "Created Date End at",
+        "help": "Specific the day and time that will be filtered.\nExample using formula: `{{now}}`",
+        "time": true
     }
 ]

@@ -1,0 +1,8 @@
+{
+    "url": "/platform/events/batch",
+    "method": "POST",
+    "body": "{{ getExpectEventInput(parameters.events, environment.timezone) }}",
+    "response": {
+        "output": "{{body}}"
+    }
+}

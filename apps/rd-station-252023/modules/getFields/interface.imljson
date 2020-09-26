@@ -1,0 +1,107 @@
+[
+    {
+        "name": "fields",
+        "label": "Fields",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "uuid",
+                    "label": "uuid",
+                    "type": "text"
+                },
+                {
+                    "name": "label",
+                    "label": "Label",
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "en-UD",
+                            "label": "en-UD",
+                            "type": "text"
+                        },
+                        {
+                            "name": "en-US",
+                            "label": "en-US",
+                            "type": "text"
+                        },
+                        {
+                            "name": "es-ES",
+                            "label": "es-ES",
+                            "type": "text"
+                        },
+                        {
+                            "name": "pt-BR",
+                            "label": "pt-BR",
+                            "type": "text"
+                        },
+                        {
+                            "name": "default",
+                            "label": "default",
+                            "type": "text"
+                        }
+                    ]
+                },
+                {
+                    "name": "name",
+                    "label": "Name",
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "en-UD",
+                            "label": "en-UD",
+                            "type": "text"
+                        },
+                        {
+                            "name": "en-US",
+                            "label": "en-US",
+                            "type": "text"
+                        },
+                        {
+                            "name": "es-ES",
+                            "label": "es-ES",
+                            "type": "text"
+                        },
+                        {
+                            "name": "pt-BR",
+                            "label": "pt-BR",
+                            "type": "text"
+                        },
+                        {
+                            "name": "default",
+                            "label": "default",
+                            "type": "text"
+                        }
+                    ]
+                },
+                {
+                    "name": "api_identifier",
+                    "label": "API Identifier",
+                    "type": "text"
+                },
+                {
+                    "name": "custom_field",
+                    "label": "Is it a Custom Field",
+                    "type": "boolean"
+                },
+                {
+                    "name": "validation_rules",
+                    "label": "Validation Rules",
+                    "type": "collection",
+                    "spec": []
+                },
+                {
+                    "name": "presentation_type",
+                    "label": "Presentation Type",
+                    "type": "text"
+                },
+                {
+                    "name": "data_type",
+                    "label": "Data Type",
+                    "type": "text"
+                }
+            ]
+        }
+    }
+]

@@ -1,1 +1,31 @@
-{}
+{
+    "object": "recipient",
+    "id": "re_cix7pnghi02wm196emgbthh8u",
+    "transfer_enabled": true,
+    "last_transfer": null,
+    "transfer_interval": "weekly",
+    "transfer_day": 5,
+    "automatic_anticipation_enabled": true,
+    "anticipatable_volume_percentage": 85,
+    "date_created": "2016-12-27T16:11:58.911Z",
+    "date_updated": "2016-12-27T16:11:58.911Z",
+    "postback_url": "https://requestb.in/tl0092tl",
+    "status": "active",
+    "status_reason": null,
+    "metadata": null,
+    "bank_account": {
+        "object": "bank_account",
+        "id": 17345188,
+        "bank_code": "33",
+        "agencia": "00000",
+        "agencia_dv": null,
+        "conta": "00000",
+        "conta_dv": "0",
+        "type": "conta_corrente",
+        "document_type": "cpf",
+        "document_number": "35965816804",
+        "legal_name": "Nome much legal",
+        "charge_transfer_fees": true,
+        "date_created": "2016-12-27T16:08:26.202Z"
+    }
+}

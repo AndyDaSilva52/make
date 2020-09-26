@@ -1,0 +1,22 @@
+[
+    {
+        "name": "event_batch_uuid",
+        "label": "Event Batch UUID",
+        "type": "text"
+    },
+    {
+        "name": "events",
+        "label": "Events",
+        "type": "array",
+        "help": "The event uuid array is organized according to the the order of the array sent in the request payload.",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "event_uuid",
+                    "type": "text"
+                }
+            ]
+        }
+    }
+]

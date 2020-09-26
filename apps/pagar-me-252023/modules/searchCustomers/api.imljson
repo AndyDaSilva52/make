@@ -1,0 +1,24 @@
+[
+    {
+        "url": "/customers",
+        "method": "GET",
+        "qs": {
+            "count": "{{ if(parameters.count > 250, 250, parameters.count) }}",
+            "page": "{{ ifempty(pagination.page, 1) }}",
+            "id": "{{parameters.id}}",
+            "name": "{{parameters.name}}",
+            "created_at": "{{ if(ifempty(parameters.date_created_from, false), '>=' + formatDate(parameters.date_created_from, 'x') , null) }}",
+            "date_created": "{{ if(ifempty(parameters.date_created_to, false), '<=' + formatDate(parameters.date_created_to, 'x'), null) }}"
+        },
+        "response": {
+            "output": "{{item}}",
+            "iterate": "{{ body }}",
+            "limit": "{{ parameters.count }}"
+        },
+        "pagination": {
+            "qs": {
+                "page": "{{pagination.page}}"
+            }
+        }
+    }
+]

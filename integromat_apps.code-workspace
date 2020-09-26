@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\..\\LocalProjects\\loca_integromat_apps"
+		}
+	],
+	"settings": {
+		"quokka.suppressExpirationNotifications": true
+	},
+	"quokka.colors": {},
+	"plugins": [
+		"quokka-mocha-bdd"
+	],
+	"quokka-mocha-bdd": {
+		"interface": "bdd"
+	}
+}

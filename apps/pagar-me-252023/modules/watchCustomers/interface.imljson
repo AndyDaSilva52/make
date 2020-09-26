@@ -1,0 +1,203 @@
+[
+    {
+        "name": "object",
+        "type": "text",
+        "label": "Object"
+    },
+    {
+        "name": "id",
+        "type": "integer",
+        "label": "Customer ID",
+        "help": "Customer identifier."
+    },
+    {
+        "name": "external_id",
+        "type": "text",
+        "label": "External ID",
+        "help": "Customer identifier on your store."
+    },
+    {
+        "name": "type",
+        "type": "text",
+        "label": "Type",
+        "help": "Must be `individual` or `corporation`."
+    },
+    {
+        "name": "country",
+        "type": "text",
+        "label": "Country",
+        "help": "Country. Two lowercase letters, following the ISO 3166-1 alpha-2 standard."
+    },
+    {
+        "name": "document_type",
+        "type": "text",
+        "label": "Document Type"
+    },
+    {
+        "name": "document_number",
+        "type": "text",
+        "label": "Document Number"
+    },
+    {
+        "name": "name",
+        "type": "text",
+        "label": "Name",
+        "help": "Buyer name or business name."
+    },
+    {
+        "name": "email",
+        "type": "text",
+        "label": "Email",
+        "help": "Buyer email."
+    },
+    {
+        "name": "phone_numbers",
+        "type": "array",
+        "label": "Phone Numbers",
+        "spec": {
+            "type": "text",
+            "label": "Phone Number"
+        },
+        "help": "Phone numbers. Requires at least one value. Must follow the E.164 standard."
+    },
+    {
+        "name": "born_at",
+        "type": "text",
+        "label": "Born At"
+    },
+    {
+        "name": "birthday",
+        "type": "text",
+        "label": "Birthday (YYYY-MM-DD)",
+        "help": "Date of birth. It must follow the format YYYY-MM-DD."
+    },
+    {
+        "name": "gender",
+        "type": "text",
+        "label": "Gender"
+    },
+    {
+        "name": "date_created",
+        "type": "date",
+        "label": "Created Date",
+        "time": true
+    },
+    {
+        "name": "documents",
+        "type": "collection",
+        "label": "Documents",
+        "sequence": true,
+        "spec": [
+            {
+                "name": "type",
+                "type": "text",
+                "label": "Type",
+                "help": "Example: `cpf` or `cnpj`"
+            },
+            {
+                "name": "number",
+                "type": "text",
+                "label": "Number"
+            }
+        ]
+    },
+    {
+        "name": "phones",
+        "type": "array",
+        "label": "Phones",
+        "sequence": true,
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "object",
+                    "type": "text",
+                    "label": "Object"
+                },
+                {
+                    "name": "id",
+                    "type": "integer",
+                    "label": "ID"
+                },
+                {
+                    "name": "ddi",
+                    "type": "text",
+                    "label": "DDI"
+                },
+                {
+                    "name": "ddd",
+                    "type": "text",
+                    "label": "DDD"
+                },
+                {
+                    "name": "number",
+                    "type": "text",
+                    "label": "Number"
+                }
+            ]
+        }
+    },
+    {
+        "name": "addresses",
+        "type": "array",
+        "label": "Addresses",
+        "sequence": true,
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "object",
+                    "type": "text",
+                    "label": "Object"
+                },
+                {
+                    "name": "id",
+                    "type": "integer",
+                    "label": "ID"
+                },
+                {
+                    "name": "street",
+                    "type": "text",
+                    "label": "Street"
+                },
+                {
+                    "name": "complementary",
+                    "type": "text",
+                    "label": "Complementary"
+                },
+                {
+                    "name": "street_number",
+                    "type": "text",
+                    "label": "Street Number"
+                },
+                {
+                    "name": "neighborhood",
+                    "type": "text",
+                    "label": "Neighborhood"
+                },
+                {
+                    "name": "city",
+                    "type": "text",
+                    "label": "City"
+                },
+                {
+                    "name": "state",
+                    "type": "text",
+                    "label": "State"
+                },
+                {
+                    "name": "zipcode",
+                    "type": "text",
+                    "label": "Zipcode",
+                    "help": "For Brazilian address (CEP), it must contain an 8-digit number."
+                },
+                {
+                    "name": "country",
+                    "type": "text",
+                    "label": "Country",
+                    "help": "Two lowercase letters. It must follow the ISO 3166-1 alpha-2 standard."
+                }
+            ]
+        }
+    }
+]

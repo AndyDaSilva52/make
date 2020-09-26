@@ -1,0 +1,56 @@
+[
+    {
+        "response": {
+            "temp": {
+                "expect_input": {
+                    "number": [
+                        "amount",
+                        "authorized_amount",
+                        "paid_amount",
+                        "refunded_amount"
+                    ],
+                    "date": [
+                        "date_created",
+                        "date_updated"
+                    ],
+                    "array_key_value_to_collection": [
+                        "metadata"
+                    ]
+                },
+                "parameters": "{{parameters}}"
+            }
+        }
+    },
+    {
+        "response": {
+            "temp": {
+                "parameters": {
+                    "count": "{{ if(parameters.count > 250, 250, 100) }}",
+                    "page": "{{ ifempty(pagination.page, 1) }}"
+                }
+            }
+        }
+    },
+    {
+        "url": "/transactions",
+        "method": "GET",
+        "qs": "{{getExpectInput(temp.parameters, temp.expect_input)}}",
+        "response": {
+            "iterate": "{{ body }}",
+            "trigger": {
+                "id": "{{item.id}}",
+                "date": "{{ parseDate(item.date_created, 'YYYY-MM-DD hh:mm:ss', 'utc' )}}",
+                "type": "date",
+                "order": "desc"
+            },
+            "output": "{{ getExpectOutput(convertPropertiesToArray(item, temp.expect_input.array_key_value_to_collection), temp.expect_input.number) }}",
+            "limit": "{{parameters.count}}"
+        },
+        "pagination": {
+            "mergeWithParent": true,
+            "qs": {
+                "page": "{{pagination.page}}"
+            }
+        }
+    }
+]

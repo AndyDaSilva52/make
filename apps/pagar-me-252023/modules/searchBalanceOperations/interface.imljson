@@ -1,230 +1,302 @@
 [
     {
+        "name": "object",
+        "type": "text",
+        "label": "Object"
+    },
+    {
         "name": "id",
-        "type": "text"
+        "type": "text",
+        "label": "Balance Operation ID",
+        "help": "Operation identifier."
     },
     {
         "name": "status",
-        "type": "text"
+        "type": "text",
+        "label": "Status",
+        "help": "Account balance status. Possible values: `waiting_funds`, `available` and `transferred`."
     },
     {
         "name": "type",
-        "type": "text"
+        "type": "text",
+        "label": "Type",
+        "help": "What generated the operation. Possible values: `payable`, `anticipation` or `transfer`."
     },
     {
         "name": "amount",
-        "type": "number"
+        "type": "number",
+        "label": "Amount",
+        "help": "Amount of the operation."
     },
     {
         "name": "fee",
-        "type": "number"
+        "type": "number",
+        "label": "Fee"
     },
     {
         "name": "balance_amount",
-        "type": "number"
+        "type": "number",
+        "label": "Balance Amount",
+        "help": "Current account balance."
     },
     {
         "name": "balance_old_amount",
-        "type": "number"
+        "type": "number",
+        "label": "Balance Amount Old"
     },
     {
         "name": "date_created",
-        "type": "date"
+        "type": "date",
+        "label": "Created Date"
     },
     {
         "name": "movement_object",
         "type": "collection",
+        "label": "Movement Object",
+        "help": "Movement source object",
         "sequence": true,
         "spec": [
             {
                 "name": "object",
-                "type": "text"
+                "type": "text",
+                "label": "Object"
             },
             {
                 "name": "id",
-                "type": "text"
+                "type": "text",
+                "label": "ID",
+                "help": "Receivable identifier from payable, transfer or anticipation operation."
             },
             {
                 "name": "status",
-                "type": "text"
+                "type": "text",
+                "label": "Status",
+                "help": "Current status of the receivable. Possible values: `waiting_funds`, `prepaid`, `paid`."
             },
             {
                 "name": "type",
-                "type": "text"
-            },
-            {
-                "name": "description",
-                "type": "text"
+                "type": "text",
+                "label": "Type",
+                "help": "Receivable type. Possible values: `credit`, `refund`, `refund_reversal`, `chargeback`, `chargeback_refund`."
             },
             {
                 "name": "transaction_id",
-                "type": "text"
+                "type": "text",
+                "label": "Transaction ID (TID)",
+                "help": "Identifier of the transaction that generated the receivable."
             },
             {
                 "name": "amount",
-                "type": "number"
+                "type": "number",
+                "label": "Amount"
             },
             {
                 "name": "fee",
-                "type": "number"
+                "type": "number",
+                "label": "Fee"
             },
             {
                 "name": "anticipation_fee",
-                "type": "number"
+                "type": "number",
+                "label": "Anticipation Fee"
             },
             {
                 "name": "fraud_coverage_fee",
-                "type": "number"
+                "type": "number",
+                "label": "Fraud Coverage Fee"
             },
             {
                 "name": "accrual_date",
                 "type": "date",
+                "label": "Accrual Date",
+                "help": "Date (ISODate) on which the issuing bank recognized the payment for the transaction to which this receivable relates.",
                 "time": true
             },
             {
                 "name": "date_created",
                 "type": "date",
+                "label": "Created Date",
                 "time": true
             },
             {
                 "name": "date_updated",
                 "type": "date",
+                "label": "Updated Date",
                 "time": true
             },
             {
                 "name": "payment_date",
                 "type": "date",
-                "time": false
+                "label": "Payment Date",
+                "time": true
             },
             {
                 "name": "funding_date",
                 "type": "date",
+                "label": "Funding Date",
                 "time": false
             },
             {
                 "name": "funding_estimated_date",
                 "type": "date",
+                "label": "Funding Estimated Date",
                 "time": false
             },
             {
                 "name": "installment",
-                "type": "number"
+                "type": "number",
+                "label": "Installment"
             },
             {
                 "name": "payment_method",
-                "type": "text"
+                "type": "text",
+                "label": "Payment Method",
+                "help": "Payment method. Possible values: `credit_card`, `debit_card`, `boleto`."
             },
             {
                 "name": "recipient_id",
-                "type": "text"
+                "type": "text",
+                "label": "Recipient ID",
+                "help": "Identifier of the recipient to which this receivable relates."
             },
             {
                 "name": "object_id",
-                "type": "text"
+                "type": "text",
+                "label": "Object ID"
             },
             {
                 "name": "object_type",
-                "type": "text"
+                "type": "text",
+                "label": "Object Type"
             },
             {
                 "name": "source_type",
-                "type": "text"
+                "type": "text",
+                "label": "Source Type"
             },
             {
                 "name": "source_id",
-                "type": "text"
+                "type": "text",
+                "label": "Source ID"
             },
             {
                 "name": "target_type",
-                "type": "text"
+                "type": "text",
+                "label": "Target Type"
             },
             {
                 "name": "target_id",
-                "type": "text"
+                "type": "text",
+                "label": "Target ID"
             },
             {
                 "name": "split_rule_id",
-                "type": "text"
+                "type": "text",
+                "label": "Split Rule ID",
+                "help": "Receivable split rule identifier."
             },
             {
                 "name": "bulk_anticipation_id",
-                "type": "text"
+                "type": "text",
+                "label": "Bulk Anticipation ID"
             },
             {
                 "name": "originator_model",
-                "type": "text"
+                "type": "text",
+                "label": "Original Model"
             },
             {
                 "name": "originator_model_id",
-                "type": "text"
+                "type": "text",
+                "label": "Original Model ID"
             },
             {
                 "name": "original_payment_date",
                 "type": "date",
+                "label": "Original Payment Date",
                 "time": true
             },
             {
                 "name": "metadata",
-                "type": "collection",
-                "sequence": true,
-                "spec": []
+                "type": "array",
+                "label": "Metadata",
+                "spec": [
+                    {
+                        "type": "collection",
+                        "spec": []
+                    }
+                ]
             },
             {
                 "name": "bank_account",
                 "type": "collection",
+                "label": "Bank Account",
                 "sequence": true,
                 "spec": [
                     {
                         "name": "object",
-                        "type": "text"
+                        "type": "text",
+                        "label": "Object"
                     },
                     {
                         "name": "id",
-                        "type": "text"
+                        "type": "text",
+                        "label": "ID"
                     },
                     {
                         "name": "bank_code",
-                        "type": "text"
+                        "type": "text",
+                        "label": "Bank Code"
                     },
                     {
                         "name": "agencia",
-                        "type": "text"
+                        "type": "text",
+                        "label": "Bank Agency Number (without Verifying Digit)"
                     },
                     {
                         "name": "agencia_dv",
-                        "type": "text"
+                        "type": "text",
+                        "label": "Bank Agency Verifying Digit"
                     },
                     {
                         "name": "conta",
-                        "type": "text"
+                        "type": "text",
+                        "label": "Bank Account Number"
                     },
                     {
                         "name": "conta_dv",
-                        "type": "text"
+                        "type": "text",
+                        "label": "Bank Account Verifying Digit"
                     },
                     {
                         "name": "type",
-                        "type": "text"
+                        "type": "text",
+                        "label": "Type"
                     },
                     {
                         "name": "document_type",
-                        "type": "text"
+                        "type": "text",
+                        "label": "Document Type"
                     },
                     {
                         "name": "document_number",
-                        "type": "text"
+                        "type": "text",
+                        "label": "Document Number"
                     },
                     {
                         "name": "legal_name",
-                        "type": "text"
+                        "type": "text",
+                        "label": "Legal Name"
                     },
                     {
                         "name": "charge_transfer_fees",
-                        "type": "boolean"
+                        "type": "boolean",
+                        "label": "Charge Transfer Fees"
                     },
                     {
                         "name": "date_created",
                         "type": "date",
+                        "label": "Created Date",
                         "time": true
                     }
                 ]
@@ -232,74 +304,91 @@
             {
                 "name": "movement_object",
                 "type": "collection",
+                "label": "Movement Object",
                 "sequence": true,
                 "spec": [
                     {
                         "name": "object",
-                        "type": "text"
+                        "type": "text",
+                        "label": "Object"
                     },
                     {
                         "name": "id",
-                        "type": "text"
+                        "type": "text",
+                        "label": "ID"
                     },
                     {
                         "name": "serial_number",
-                        "type": "text"
+                        "type": "text",
+                        "label": "Serial Number"
                     },
                     {
                         "name": "amount",
-                        "type": "number"
+                        "type": "number",
+                        "label": "Amount"
                     },
                     {
                         "name": "status",
-                        "type": "text"
+                        "type": "text",
+                        "label": "Status"
                     },
                     {
                         "name": "payment_method",
-                        "type": "text"
+                        "type": "text",
+                        "label": "Payment Method"
                     },
                     {
                         "name": "type",
-                        "type": "text"
+                        "type": "text",
+                        "label": "Type"
                     },
                     {
                         "name": "period_start_date",
                         "type": "date",
+                        "label": "Period Start Date",
                         "time": true
                     },
                     {
                         "name": "period_end_date",
                         "type": "date",
+                        "label": "Period End Date",
                         "time": true
                     },
                     {
                         "name": "movement_object",
                         "type": "collection",
+                        "label": "Movement Object",
                         "sequence": true,
                         "spec": [
                             {
                                 "name": "company_minimum_monthly_payment",
-                                "type": "number"
+                                "type": "number",
+                                "label": "Company Minimum Monthly Payment"
                             },
                             {
                                 "name": "company_production_date",
-                                "type": "date"
+                                "type": "date",
+                                "label": "Company Production Date"
                             },
                             {
                                 "name": "proportional_minimum_monthly_payment",
-                                "type": "number"
+                                "type": "number",
+                                "label": "Proportional Minimum Monthly Payment"
                             },
                             {
                                 "name": "gateway_fee",
-                                "type": "number"
+                                "type": "number",
+                                "label": "Gateway Fee"
                             },
                             {
                                 "name": "consumed_fee",
-                                "type": "number"
+                                "type": "number",
+                                "label": "Consumed Fee"
                             },
                             {
                                 "name": "fee_collection_id",
-                                "type": "text"
+                                "type": "text",
+                                "label": "Fee Collection ID"
                             }
                         ]
                     }

@@ -1,0 +1,8 @@
+{
+    "name": "searchTransactions",
+    "label": "Search Transactions",
+    "description": "List of transaction objects, ordered from the most recently created transaction,",
+    "connection": "pagar-me-252023",
+    "webhook": null,
+    "type": "search"
+}

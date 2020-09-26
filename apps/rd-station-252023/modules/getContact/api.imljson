@@ -1,0 +1,9 @@
+{
+    //   https://api.rd.services/platform/contacts/{uuid}
+    //   https://api.rd.services/platform/contacts/email:{e-mail}
+    "url": "/platform/contacts/{{ if( parameters.identifier == 'email', 'email:' + parameters.value, parameters.value ) }}",
+    "method": "GET",
+    "response": {
+        "output": "{{body}}"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "name": "createCommunicationEvent",
+    "label": "Create an Event of Communication",
+    "description": "Chat or Call event",
+    "connection": "rd-station-2520233",
+    "webhook": null,
+    "type": "action"
+}

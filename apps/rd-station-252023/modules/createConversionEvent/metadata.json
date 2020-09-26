@@ -1,0 +1,8 @@
+{
+    "name": "createConversionEvent",
+    "label": "Create a Conversion Event",
+    "description": "It registers a new conversion event for a contact.",
+    "connection": "rd-station-2520233",
+    "webhook": null,
+    "type": "action"
+}

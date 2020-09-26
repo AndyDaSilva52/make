@@ -4,6 +4,9 @@
         "Authorization": "Basic {{base64(parameters.apiKey + ':' + 'x')}}",
         "X-Pagarme-Version": "{{parameters.apiVersion}}"
     },
+    "response": {
+        "output": "{{ getErros(statusCode, body, environment.timezone) }}"
+    },
     "log": {
         "sanitize": [
             "request.headers.authorization"

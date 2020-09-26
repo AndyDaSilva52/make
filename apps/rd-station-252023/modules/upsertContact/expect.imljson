@@ -1,0 +1,23 @@
+[
+    {
+        "name": "identifier",
+        "label": "Identifier",
+        "type": "select",
+        "options": [
+            {
+                "label": "Email",
+                "value": "email"
+            },
+            {
+                "label": "UUID",
+                "value": "uuid"
+            }
+        ]
+    },
+    {
+        "name": "value",
+        "label": "Email or UUID",
+        "type": "text"
+    },
+    "rpc://contactFieldsExpect"
+]

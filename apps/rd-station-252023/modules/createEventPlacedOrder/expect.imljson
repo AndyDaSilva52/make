@@ -1,0 +1,244 @@
+[
+    {
+        "name": "event_type",
+        "label": "Event Type",
+        "type": "select",
+        "required": true,
+        "help": "The event type that diferentiates the event. Could be `ORDER_PLACED` or `ORDER_PLACED_ITEM`.",
+        "options": {
+            "store": [
+                {
+                    "label": "Order Placed",
+                    "value": "ORDER_PLACED",
+                    "nested": [
+                        {
+                            "name": "payload",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "email",
+                                    "label": "Email",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "name",
+                                    "label": "Name",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "cf_order_id",
+                                    "label": "Order ID",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "cf_order_total_items",
+                                    "label": "Total of Items",
+                                    "type": "integer"
+                                },
+                                {
+                                    "name": "cf_order_status",
+                                    "label": "Order Status",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "cf_order_payment_method",
+                                    "label": "Order Payment Method",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "cf_order_payment_amount",
+                                    "label": "Order Payment Amount",
+                                    "type": "number"
+                                },
+                                {
+                                    "name": "legal_bases",
+                                    "label": "Legal Bases",
+                                    "type": "array",
+                                    "spec": {
+                                        "type": "collection",
+                                        "spec": [
+                                            {
+                                                "name": "category",
+                                                "label": "Category",
+                                                "type": "select",
+                                                "options": [
+                                                    {
+                                                        "label": "Data Processing",
+                                                        "value": "data_processing"
+                                                    },
+                                                    {
+                                                        "label": "Communications",
+                                                        "value": "communications"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "type",
+                                                "label": "Type",
+                                                "type": "select",
+                                                "options": [
+                                                    {
+                                                        "label": "Pre Existent Contract",
+                                                        "value": "pre_existent_contract"
+                                                    },
+                                                    {
+                                                        "label": "Consent",
+                                                        "value": "consent"
+                                                    },
+                                                    {
+                                                        "label": "Legitimate Interest",
+                                                        "value": "legitimate_interest"
+                                                    },
+                                                    {
+                                                        "label": "Judicial Process",
+                                                        "value": "judicial_process"
+                                                    },
+                                                    {
+                                                        "label": "Vital Interest",
+                                                        "value": "vital_interest"
+                                                    },
+                                                    {
+                                                        "label": "Public Interest",
+                                                        "value": "public_interest"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "status",
+                                                "label": "Status",
+                                                "type": "select",
+                                                "options": [
+                                                    {
+                                                        "label": "Granted",
+                                                        "value": "granted"
+                                                    },
+                                                    {
+                                                        "label": "Declined",
+                                                        "value": "declined"
+                                                    }
+                                                ],
+                                                "help": "Can be empty when `Category` is `data_processing` or pay attention to the fact that when `Category` is `data_processing` the only accepted value for `Status` is `granted`."
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "label": "Order Placed with a specific Item",
+                    "value": "ORDER_PLACED_ITEM",
+                    "nested": [
+                        {
+                            "name": "payload",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "name",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "email",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "cf_order_id",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "cf_order_product_id",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "cf_order_product_sku",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "legal_bases",
+                                    "label": "Legal Bases",
+                                    "type": "array",
+                                    "spec": {
+                                        "type": "collection",
+                                        "spec": [
+                                            {
+                                                "name": "category",
+                                                "label": "Category",
+                                                "type": "select",
+                                                "options": [
+                                                    {
+                                                        "label": "Data Processing",
+                                                        "value": "data_processing"
+                                                    },
+                                                    {
+                                                        "label": "Communications",
+                                                        "value": "communications"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "type",
+                                                "label": "Type",
+                                                "type": "select",
+                                                "options": [
+                                                    {
+                                                        "label": "Pre Existent Contract",
+                                                        "value": "pre_existent_contract"
+                                                    },
+                                                    {
+                                                        "label": "Consent",
+                                                        "value": "consent"
+                                                    },
+                                                    {
+                                                        "label": "Legitimate Interest",
+                                                        "value": "legitimate_interest"
+                                                    },
+                                                    {
+                                                        "label": "Judicial Process",
+                                                        "value": "judicial_process"
+                                                    },
+                                                    {
+                                                        "label": "Vital Interest",
+                                                        "value": "vital_interest"
+                                                    },
+                                                    {
+                                                        "label": "Public Interest",
+                                                        "value": "public_interest"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "status",
+                                                "label": "Status",
+                                                "type": "select",
+                                                "options": [
+                                                    {
+                                                        "label": "Granted",
+                                                        "value": "granted"
+                                                    },
+                                                    {
+                                                        "label": "Declined",
+                                                        "value": "declined"
+                                                    }
+                                                ],
+                                                "help": "Can be empty when `Category` is `data_processing` or pay attention to the fact that when `Category` is `data_processing` the only accepted value for `Status` is `granted`."
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "name": "event_family",
+        "label": "Event Family",
+        "type": "text",
+        "default": "CDP",
+        "advanced": true,
+        "help": "The family of the event for processing purposes. It currently accepts only `CDP` as valid option."
+    }
+]

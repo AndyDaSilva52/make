@@ -1,0 +1,32 @@
+{
+    "name": "RD Station Developer",
+    "email": "contact@example.com",
+    "job_title": "Developer",
+    "bio": "This documentation explains the RD Station API.",
+    "website": "https://developers.rdstation.com/",
+    "linkedin": "rd_station",
+    "personal_phone": "+55 48 3037-3600",
+    "city": "Florianópolis",
+    "state": "SC",
+    "country": "Brasil",
+    "tags": [
+        "developer",
+        "rdstation",
+        "api"
+    ],
+    "extra_emails": [
+        "contact2@example.com"
+    ],
+    "legal_bases": [
+        {
+            "category": "data_processing",
+            "type": "pre_existent_contract",
+            "status": "granted"
+        },
+        {
+            "category": "communications",
+            "type": "consent",
+            "status": "granted"
+        }
+    ]
+}

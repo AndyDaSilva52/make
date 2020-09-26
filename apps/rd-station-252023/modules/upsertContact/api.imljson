@@ -1,0 +1,8 @@
+{
+    "url": "/platform/contacts/{{parameters.identifier}}:{{parameters.value}}",
+    "method": "PATCH",
+    "body": "{{getExpectContactInput(parameters, environment.timezone)}}",
+    "response": {
+        "output": "{{body}}"
+    }
+}

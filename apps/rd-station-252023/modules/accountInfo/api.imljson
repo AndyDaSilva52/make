@@ -1,0 +1,7 @@
+{
+    "url": "/marketing/account_info",
+    "method": "GET",
+    "response": {
+        "output": "{{body}}"
+    }
+}

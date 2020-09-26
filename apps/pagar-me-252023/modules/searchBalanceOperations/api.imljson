@@ -1,98 +1,44 @@
-{
-    "url": "/balance/operations",
-    "method": "GET",
-    "qs": {
-        "count": "{{parameters.limit}}",
-        "status": "{{parameters.status}}",
-        "page": "{{ifempty(pagination.page;1)}}",
-        "start_date": "{{   ( formatDate( ifempty(parameters.start_date;now) ; 'X') + '000') }}",
-        "end_date": "{{     ( formatDate( ifempty(parameters.end_date;  now) ; 'X') + '999') }}"
-    },
-    "body": {},
-    "headers": {},
-    "response": {
-        "output": {
-            "id": "{{item.id}}",
-            "status": "{{item.status}}",
-            "type": "{{item.type}}",
-            "amount": "{{               pagarmeConvertNumber(item.amount)}}",
-            "fee": "{{                  pagarmeConvertNumber(item.fee)}}",
-            "balance_amount": "{{       pagarmeConvertNumber(item.balance_amount)}}",
-            "balance_old_amount": "{{   pagarmeConvertNumber(item.balance_old_amount)}}",
-            "date_created": "{{item.date_created}}",
-            "movement_object": {
-                "object": "{{item.movement_object.object}}",
-                "id": "{{item.movement_object.id}}",
-                "status": "{{item.movement_object.status}}",
-                "type": "{{item.movement_object.type}}",
-                "description": "{{item.movement_object.description}}",
-                "transaction_id": "{{item.movement_object.transaction_id}}",
-                "accrual_date": "{{item.movement_object.accrual_date}}",
-                "date_created": "{{item.movement_object.date_created}}",
-                "date_updated": "{{item.movement_object.date_updated}}",
-                "payment_date": "{{item.movement_object.payment_date}}",
-                "funding_date": "{{item.movement_object.funding_date}}",
-                "funding_estimated_date": "{{item.movement_object.funding_estimated_date}}",
-                "amount": "{{pagarmeConvertNumber(item.movement_object.amount)}}",
-                "fee": "{{pagarmeConvertNumber(item.movement_object.fee)}}",
-                "anticipation_fee": "{{pagarmeConvertNumber(item.movement_object.anticipation_fee)}}",
-                "fraud_coverage_fee": "{{pagarmeConvertNumber(item.movement_object.fraud_coverage_fee)}}",
-                "installment": "{{item.movement_object.installment}}",
-                "payment_method": "{{item.movement_object.payment_method}}",
-                "recipient_id": "{{item.movement_object.recipient_id}}",
-                "object_id": "{{item.movement_object.object_id}}",
-                "object_type": "{{item.movement_object.object_type}}",
-                "source_type": "{{item.movement_object.source_type}}",
-                "source_id": "{{item.movement_object.source_id}}",
-                "target_type": "{{item.movement_object.target_type}}",
-                "target_id": "{{item.movement_object.target_id}}",
-                "split_rule_id": "{{item.movement_object.split_rule_id}}",
-                "bulk_anticipation_id": "{{item.movement_object.bulk_anticipation_id}}",
-                "originator_model": "{{item.movement_object.originator_model}}",
-                "originator_model_id": "{{item.movement_object.originator_model_id}}",
-                "original_payment_date": "{{item.movement_object.original_payment_date}}",
-                "metadata": "{{item.movement_object.metadata}}",
-                "bank_account": {
-                    "object": "{{item.movement_object.bank_account.object}}",
-                    "id": "{{item.movement_object.bank_account.id}}",
-                    "bank_code": "{{item.movement_object.bank_account.bank_code}}",
-                    "agencia": "{{item.movement_object.bank_account.agencia}}",
-                    "agencia_dv": "{{item.movement_object.bank_account.agencia_dv}}",
-                    "conta": "{{item.movement_object.bank_account.conta}}",
-                    "conta_dv": "{{item.movement_object.bank_account.conta_dv}}",
-                    "type": "{{item.movement_object.bank_account.type}}",
-                    "document_type": "{{item.movement_object.bank_account.document_type}}",
-                    "document_number": "{{item.movement_object.bank_account.document_number}}",
-                    "legal_name": "{{item.movement_object.bank_account.legal_name}}",
-                    "charge_transfer_fees": "{{item.movement_object.bank_account.charge_transfer_fees}}",
-                    "date_created": "{{item.movement_object.bank_account.date_created}}"
-                },
-                "movement_object": {
-                    "object": "{{item.movement_object.movement_object.object}}",
-                    "id": "{{item.movement_object.movement_object.id}}",
-                    "serial_number": "{{item.movement_object.movement_object.serial_number}}",
-                    "amount": "{{pagarmeConvertNumber(item.movement_object.movement_object.amount)}}",
-                    "status": "{{item.movement_object.movement_object.status}}",
-                    "payment_method": "{{item.movement_object.movement_object.payment_method}}",
-                    "type": "{{item.movement_object.movement_object.type}}",
-                    "period_start_date": "{{item.movement_object.movement_object.period_start_date}}",
-                    "period_end_date": "{{item.movement_object.movement_object.period_end_date}}",
-                    "metadata": {
-                        "company_minimum_monthly_payment": "{{pagarmeConvertNumber(item.movement_object.movement_object.metadata.company_minimum_monthly_payment)}}",
-                        "company_production_date": "{{item.movement_object.movement_object.metadata.company_production_date}}",
-                        "proportional_minimum_monthly_payment": "{{pagarmeConvertNumber(item.movement_object.movement_object.metadata.proportional_minimum_monthly_payment)}}",
-                        "gateway_fee": "{{pagarmeConvertNumber(item.movement_object.movement_object.metadata.gateway_fee)}}",
-                        "consumed_fee": "{{pagarmeConvertNumber(item.movement_object.movement_object.metadata.consumed_fee)}}",
-                        "fee_collection_id": "{{item.movement_object.metadata.movement_object.fee_collection_id}}"
-                    }
-                }
+[
+    {
+        "response": {
+            "temp": {
+                "fields_balance_op": [
+                    "amount",
+                    "fee",
+                    "balance_amount",
+                    "balance_old_amount",
+                    "movement_object.amount",
+                    "movement_object.fee",
+                    "movement_object.anticipation_fee",
+                    "movement_object.fraud_coverage_fee"
+                ],
+                "fields_balance_op_to_array": [
+                    "metadata"
+                ]
             }
-        },
-        "iterate": "{{body}}"
+        }
     },
-    "pagination": {
+    {
+        "url": "/balance/operations",
+        "method": "GET",
         "qs": {
-            "page": "{{pagination.page}}"
+            "status": "{{parameters.status}}",
+            "start_date": "{{   (formatDate( ifempty(parameters.start_date;now) ; 'x')) }}",
+            "end_date": "{{     (formatDate( ifempty(parameters.end_date;  now) ; 'x')) }}",
+            "count": "{{ if(parameters.limit > 250, 250, parameters.limit) }}",
+            "page": "{{ ifempty(pagination.page, 1) }}"
+        },
+        "response": {
+            "output": "{{item}}",
+            "iterate": "{{ getExpectOutput(convertPropertiesToArray(body, temp.fields_balance_op_to_array), temp.fields_balance_op) }}",
+            "limit": "{{ parameters.limit }}"
+            // TODO:    Improve with parameter "Continue the execution of the route even if the module returns no results"
+            //          Today the behaviour is continue the execution event if returns an empty array
+        },
+        "pagination": {
+            "qs": {
+                "page": "{{pagination.page}}"
+            }
         }
     }
-}
+]

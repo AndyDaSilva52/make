@@ -1,0 +1,15 @@
+[
+    {
+        "name": "clientId",
+        "type": "text",
+        "label": "Client ID",
+        "advanced": true,
+        "help": "To get the Client ID and Client Secret you have to add an App in the [RD Station App Store](https://appstore.rdstation.com/en/publisher)"
+    },
+    {
+        "name": "clientSecret",
+        "type": "text",
+        "label": "Client Secret",
+        "advanced": true
+    }
+]
