@@ -1,0 +1,16 @@
+[
+    {
+        "help": "Número máximo de resultados para processar durante um ciclo de execução.",
+        "name": "limit",
+        "type": "uinteger",
+        "label": "Limite",
+        "default": 100,
+        "required": true
+    },
+    {
+        "name": "psn",
+        "label": "PSN",
+        "type": "number",
+        "help": "Número Sequencial de Pagamento (Payment Sequential Number)"
+    }
+]

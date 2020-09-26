@@ -1,0 +1,10 @@
+{
+    "response": {
+        "limit": 50,
+        "output": {
+            "id": "{{ (item.psn - 1) }}",
+            "date": "{{ item.paymentProcessed }}",
+            "label": "{{item.psn + ' - Doc. [' + item.docNum +']'}}"
+        }
+    }
+}

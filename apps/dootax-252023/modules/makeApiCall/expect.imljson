@@ -1,0 +1,85 @@
+[
+    {
+        "name": "url",
+        "type": "text",
+        "label": "URL",
+        "help": "Enter a path relative to `https://app.dootax.com.br/`.",
+        "required": true
+    },
+    {
+        "name": "method",
+        "type": "select",
+        "label": "Method",
+        "required": true,
+        "validate": false,
+        "default": "GET",
+        "options": [
+            {
+                "label": "GET",
+                "value": "GET"
+            },
+            {
+                "label": "POST",
+                "value": "POST"
+            },
+            {
+                "label": "PUT",
+                "value": "PUT"
+            },
+            {
+                "label": "PATCH",
+                "value": "PATCH"
+            },
+            {
+                "label": "DELETE",
+                "value": "DELETE"
+            }
+        ]
+    },
+    {
+        "name": "headers",
+        "label": "Headers",
+        "help": "You don't have to add authorization headers; we already did that for you.",
+        "type": "array",
+        "spec": [
+            {
+                "name": "key",
+                "label": "Key",
+                "type": "text"
+            },
+            {
+                "name": "value",
+                "label": "Value",
+                "type": "text"
+            }
+        ],
+        "default": [
+            {
+                "key": "Content-Type",
+                "value": "application/json"
+            }
+        ]
+    },
+    {
+        "name": "qs",
+        "label": "Query String",
+        "type": "array",
+        "spec": [
+            {
+                "name": "key",
+                "label": "Key",
+                "type": "text"
+            },
+            {
+                "name": "value",
+                "label": "Value",
+                "type": "text"
+            }
+        ]
+    },
+    {
+        "name": "body",
+        "label": "Body",
+        "type": "any"
+    }
+]

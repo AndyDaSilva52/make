@@ -1,0 +1,8 @@
+{
+    "name": "doodocWebhookNotification",
+    "label": "Webhook - Notificação",
+    "description": "Notificação",
+    "connection": null,
+    "webhook": "dootax-252023",
+    "type": "instant_trigger"
+}

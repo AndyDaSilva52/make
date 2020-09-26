@@ -1,0 +1,85 @@
+[
+    {
+        "help": "The maximum number of results to be worked with during one execution cycle.",
+        "name": "limit",
+        "type": "uinteger",
+        "label": "Limit",
+        "default": 2,
+        "required": true
+    },
+    {
+        "name": "initialDate",
+        "type": "date",
+        "label": "Data de Vencimento Inicial",
+        "time": true
+    },
+    {
+        "name": "finalDate",
+        "type": "date",
+        "label": "Data de Vencimento Final",
+        "time": true
+    },
+    {
+        "name": "status",
+        "type": "select",
+        "label": "Status",
+        "validate": false,
+        "options": [
+            {
+                "label": "Aguardando Pagamento",
+                "value": "Aguardando Pagamento"
+            }
+        ]
+    },
+    {
+        "name": "state",
+        "type": "text",
+        "label": "UF da Guia"
+        // TODO: validate max 2 min 0
+    },
+    {
+        "name": "docType",
+        "type": "text",
+        "label": "Tipo de Documento"
+    },
+    {
+        "name": "revenueCode",
+        "type": "array",
+        "label": "Código(s) da(s) Empresa(s)",
+        "spec": {
+            "label": "Código da Empresa",
+            "type": "number"
+        }
+    },
+    {
+        "name": "docNum",
+        "type": "text",
+        "label": "Número do Documento"
+    },
+    {
+        "name": "series",
+        "type": "text",
+        "label": "Série"
+    },
+    {
+        "name": "taxpayerCnpj",
+        "type": "text",
+        "label": "CNPJ do Pagador"
+    },
+    {
+        "name": "favoredCnpj",
+        "type": "text",
+        "label": "CNPJ do Favorecido"
+    },
+    {
+        "name": "accessKey",
+        "type": "text",
+        "label": "Chave de Acesso do DFe"
+    },
+    {
+        "name": "pdfBytes",
+        "type": "boolean",
+        "label": "Incluir PDF?",
+        "help": "Deve incluir o PDF da guia no corpo da resposta"
+    }
+]

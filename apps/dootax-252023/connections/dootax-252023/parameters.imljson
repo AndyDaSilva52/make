@@ -1,0 +1,15 @@
+[
+    {
+        "name": "token",
+        "label": "Token",
+        "type": "text",
+        "required": true
+    },
+    {
+        "name": "tenant",
+        "label": "Alias da Empresa (Tenant)",
+        "type": "text",
+        "required": true,
+        "help": "Alias utilizado pela empresa no acesso ao sistema. Ex: se a URL de acesso é `https://app.dootax.com.br/public/` deve ser informado `public`"
+    }
+]

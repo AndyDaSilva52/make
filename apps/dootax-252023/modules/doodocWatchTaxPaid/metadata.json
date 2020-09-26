@@ -1,0 +1,8 @@
+{
+    "name": "doodocWatchTaxPaid",
+    "label": "Assistir Guias Pagas",
+    "description": "Escutar novos registros",
+    "connection": "dootax-252023",
+    "webhook": null,
+    "type": "trigger"
+}

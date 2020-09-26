@@ -1,0 +1,157 @@
+[
+    {
+        "name": "psn",
+        "type": "number",
+        "label": "PSN",
+        "help": "Número Sequencial de Pagamento"
+    },
+    {
+        "name": "paymentProcessed",
+        "type": "text",
+        "label": "Data de Processamento do Pagamento",
+        "help": "Formato YYYY-MM-DD"
+    },
+    {
+        "name": "contaId",
+        "type": "number",
+        "label": "Identificador da Conta (Guia)",
+        "help": "ID da conta"
+    },
+    {
+        "name": "companyCnpj",
+        "type": "text",
+        "label": "CNPJ da Empresa"
+    },
+    {
+        "name": "companyCode",
+        "type": "text",
+        "label": "Código da Empresa"
+    },
+    {
+        "name": "branchCode",
+        "type": "text",
+        "label": "Código do Estabelecimento"
+    },
+    {
+        "name": "period",
+        "type": "text",
+        "label": "Data de Competência da Conta",
+        "help": "Formato YYYY-MM-DD"
+    },
+    {
+        "name": "docType",
+        "type": "text",
+        "label": "Tipo de Conta (Guia)"
+    },
+    {
+        "name": "revenueCode",
+        "type": "number",
+        "label": "Código da Receita"
+    },
+    {
+        "name": "revenueDetailCode",
+        "type": "text",
+        "label": "Código do Detalhe da Receita"
+    },
+    {
+        "name": "state",
+        "type": "text",
+        "label": "UF Favorecida"
+    },
+    {
+        "name": "docNum",
+        "type": "text",
+        "label": "Número do Documento"
+    },
+    {
+        "name": "series",
+        "type": "text",
+        "label": "Série do Documento"
+    },
+    {
+        "name": "principalAmount",
+        "type": "number",
+        "label": "Valor Principal do Título"
+    },
+    {
+        "name": "interestAmount",
+        "type": "number",
+        "label": "Valor dos Juros"
+    },
+    {
+        "name": "fineAmount",
+        "type": "number",
+        "label": "Valor da Multa"
+    },
+    {
+        "name": "fecpAmount",
+        "type": "number",
+        "label": "Valor do FECP"
+    },
+    {
+        "name": "fecpFineAmount",
+        "type": "number",
+        "label": "Valor da Multa referente ao FECP"
+    },
+    {
+        "name": "fecpInterestAmount",
+        "type": "number",
+        "label": "Valor dos Juros referente ao FECP"
+    },
+    {
+        "name": "restatementAmount",
+        "type": "number",
+        "label": "Valor da Correção Monetária"
+    },
+    {
+        "name": "otherAmount",
+        "type": "number",
+        "label": "Outros Valores"
+    },
+    {
+        "name": "totalAmount",
+        "type": "number",
+        "label": "Valor Total",
+        "help": "Valor total após acréscimos"
+    },
+    {
+        "name": "dueDate",
+        "type": "text",
+        "label": "Data de Vencimento",
+        "help": "Formato YYYY-MM-DD"
+    },
+    {
+        "name": "accessKey",
+        "type": "text",
+        "label": "Chave de Acesso DFe",
+        "help": "Chave de Acesso do Documento Fiscal Eletrônico"
+    },
+    {
+        "name": "status",
+        "type": "text",
+        "label": "Status"
+    },
+    {
+        "name": "authenticationNum",
+        "type": "text",
+        "label": "Código de Autenticação Bancária"
+    },
+    {
+        "name": "additionalInfo",
+        "type": "text",
+        "label": "Informações Complementares do Documento"
+    },
+    {
+        "name": "metaField",
+        "type": "collection",
+        "label": "Meta Field",
+        "spec": [],
+        "help": "Objeto JSON com customizações das regras de pagamento associadas à guia."
+    },
+    {
+        "name": "pdfBytes",
+        "type": "text",
+        "label": "Arquivo PDF",
+        "help": "Formato base64"
+    }
+]

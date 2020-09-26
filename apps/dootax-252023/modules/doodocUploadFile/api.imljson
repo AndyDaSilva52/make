@@ -1,0 +1,11 @@
+{
+    "url": "/api/v2/doodoc/pagtrib/upload/import",
+    "method": "POST",
+    "body": {
+        "filename": "{{parameters.filename}}",
+        "content": "{{ base64(parameters.content) }}"
+    },
+    "response": {
+        "output": "{{body}}"
+    }
+}

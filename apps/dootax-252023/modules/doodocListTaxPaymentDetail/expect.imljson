@@ -1,0 +1,42 @@
+[
+    {
+        "help": "Número máximo de resultados a serem retornados.",
+        "name": "limit",
+        "type": "uinteger",
+        "label": "Limit",
+        "default": 50,
+        "required": true
+    },
+    {
+        "name": "startDebitDate",
+        "type": "date",
+        "label": "Data de Início do Débito",
+        "help": "Data de inicio do débito",
+        "time": true
+    },
+    {
+        "name": "lastDebitDate",
+        "type": "date",
+        "label": "Data de Término do Débito",
+        "help": "Data de termino do débito",
+        "time": true
+    },
+    {
+        "name": "accountId",
+        "type": "text",
+        "label": "Identificador da Conta (Guia)",
+        "help": "ID da guia"
+    },
+    {
+        "name": "paymentId",
+        "type": "text",
+        "label": "Identificador do Pagamento",
+        "help": "ID do pagamento"
+    },
+    {
+        "name": "accessKey",
+        "type": "text",
+        "label": "Chave de Acesso do DFe",
+        "help": "Chave de acesso do Documento Fiscal Eletrônico (DFe)"
+    }
+]

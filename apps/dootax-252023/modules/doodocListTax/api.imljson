@@ -1,0 +1,27 @@
+{
+    "url": "/api/v2/doodoc/pagtrib/list",
+    "method": "POST",
+    "body": {
+        "initialDate": "{{parameters.initialDate}}",
+        "finalDate": "{{parameters.finalDate}}",
+        "status": "{{parameters.status}}",
+        "state": "{{parameters.state}}",
+        "docType": "{{parameters.docType}}",
+        "revenueCode": "{{parameters.revenueCode}}",
+        "docNum": "{{parameters.docNum}}",
+        "series": "{{parameters.series}}",
+        "taxpayerCnpj": "{{parameters.taxpayerCnpj}}",
+        "favoredCnpj": "{{parameters.favoredCnpj}}",
+        "accessKey": "{{parameters.accessKey}}",
+        "pdfBytes": "{{parameters.pdfBytes}}"
+    },
+    "response": {
+        "output": "{{item}}",
+        "iterate": "{{body.content}}",
+        "limit": 50
+    },
+    "pagination": {
+        "mergeWithParent": true,
+        "condition": "{{!body.last}}"
+    }
+}
