@@ -1,0 +1,122 @@
+[
+    {
+        "name": "fileId",
+        "type": "text"
+    },
+    {
+        "name": "paymentId",
+        "type": "number"
+    },
+    {
+        "name": "accountId",
+        "type": "number"
+    },
+    {
+        "name": "companyCnpj",
+        "type": "text"
+    },
+    {
+        "name": "companyCode",
+        "type": "text"
+    },
+    {
+        "name": "branchCode",
+        "type": "text"
+    },
+    {
+        "name": "period",
+        "type": "text"
+    },
+    {
+        "name": "docNum",
+        "type": "text"
+    },
+    {
+        "name": "series",
+        "type": "text"
+    },
+    {
+        "name": "status",
+        "type": "text"
+    },
+    {
+        "name": "state",
+        "type": "text"
+    },
+    {
+        "name": "docType",
+        "type": "text"
+    },
+    {
+        "name": "revenueCode",
+        "type": "number"
+    },
+    {
+        "name": "revenueDetailCode",
+        "type": "text"
+    },
+    {
+        "name": "taxName",
+        "type": "text"
+    },
+    {
+        "name": "favoredCnpj",
+        "type": "text"
+    },
+    {
+        "name": "dueDate",
+        "type": "text"
+    },
+    {
+        "name": "debitDate",
+        "type": "text"
+    },
+    {
+        "name": "principalAmount",
+        "type": "number"
+    },
+    {
+        "name": "interestAmount",
+        "type": "number"
+    },
+    {
+        "name": "fineAmount",
+        "type": "number"
+    },
+    {
+        "name": "restatementAmount",
+        "type": "number"
+    },
+    {
+        "name": "otherAmount",
+        "type": "number"
+    },
+    {
+        "name": "totalAmount",
+        "type": "number"
+    },
+    {
+        "name": "barcode",
+        "type": "text"
+    },
+    {
+        "name": "controlNum",
+        "type": "text"
+    },
+    {
+        "name": "authenticationNum",
+        "type": "text"
+    },
+    {
+        "name": "accessKey",
+        "type": "text"
+    },
+    {
+        "name": "additionalFields",
+        "type": "text"
+    },
+    {
+        "name": "additionalInfo",
+        "type": "text"
+    }
+]

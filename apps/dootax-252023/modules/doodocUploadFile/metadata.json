@@ -1,0 +1,8 @@
+{
+    "name": "doodocUploadFile",
+    "label": "Upload de Arquivo",
+    "description": "Upload de arquivo para importação",
+    "connection": "dootax-252023",
+    "webhook": null,
+    "type": "action"
+}

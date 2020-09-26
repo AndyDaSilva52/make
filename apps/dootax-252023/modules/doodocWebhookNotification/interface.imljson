@@ -1,0 +1,112 @@
+[
+    {
+        "name": "contaId",
+        "type": "number",
+        "label": "Identificador da Conta (Guia)",
+        "help": "ID da conta"
+    },
+    {
+        "name": "companyCnpj",
+        "type": "text",
+        "label": "CNPJ da Empresa"
+    },
+    {
+        "name": "period",
+        "type": "text",
+        "label": "Data de Competência da Conta",
+        "help": "Formato YYYY-MM-DD"
+    },
+    {
+        "name": "docType",
+        "type": "text",
+        "label": "Tipo de Conta (Guia)"
+    },
+    {
+        "name": "revenueCode",
+        "type": "number",
+        "label": "Código da Receita"
+    },
+    {
+        "name": "revenueDetailCode",
+        "type": "text",
+        "label": "Código do Detalhe da Receita"
+    },
+    {
+        "name": "state",
+        "type": "text",
+        "label": "UF Favorecida"
+    },
+    {
+        "name": "cityCode",
+        "type": "text",
+        "label": "Código da Cidade"
+    },
+    {
+        "name": "docNum",
+        "type": "text",
+        "label": "Número do Documento"
+    },
+    {
+        "name": "series",
+        "type": "text",
+        "label": "Série do Documento"
+    },
+    {
+        "name": "principalAmount",
+        "type": "number",
+        "label": "Valor Principal do Título"
+    },
+    {
+        "name": "interestAmount",
+        "type": "number",
+        "label": "Valor dos Juros"
+    },
+    {
+        "name": "fineAmount",
+        "type": "number",
+        "label": "Valor da Multa"
+    },
+    {
+        "name": "restatementAmount",
+        "type": "number",
+        "label": "Valor da Correção Monetária"
+    },
+    {
+        "name": "otherAmount",
+        "type": "number",
+        "label": "Outros Valores"
+    },
+    {
+        "name": "totalAmount",
+        "type": "number",
+        "label": "Valor Total",
+        "help": "Valor total após acréscimos"
+    },
+    {
+        "name": "dueDate",
+        "type": "text",
+        "label": "Data de Vencimento",
+        "help": "Formato YYYY-MM-DD"
+    },
+    {
+        "name": "accessKey",
+        "type": "text",
+        "label": "Chave de Acesso DFe",
+        "help": "Chave de Acesso do Documento Fiscal Eletrônico"
+    },
+    {
+        "name": "status",
+        "type": "text",
+        "label": "Status"
+    },
+    {
+        "name": "error",
+        "type": "boolean",
+        "label": "Erro"
+    },
+    {
+        "name": "additionalInfo",
+        "type": "text",
+        "label": "Informações Complementares do Documento"
+    }
+]

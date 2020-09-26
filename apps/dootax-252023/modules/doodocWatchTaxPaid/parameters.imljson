@@ -1,0 +1,10 @@
+[
+    {
+        "help": "Número máximo de resultados para processar durante um ciclo de execução.",
+        "name": "limit",
+        "type": "uinteger",
+        "label": "Limite",
+        "default": 50,
+        "required": true
+    }
+]

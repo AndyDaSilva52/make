@@ -1,0 +1,4 @@
+{
+    "iterate": "{{body.content}}",
+    "output": "{{item}}"
+}

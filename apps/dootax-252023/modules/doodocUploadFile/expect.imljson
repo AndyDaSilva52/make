@@ -1,0 +1,14 @@
+[
+    {
+        "name": "filename",
+        "type": "text",
+        "label": "Nome do Arquivo",
+        "required": true
+    },
+    {
+        "name": "content",
+        "type": "any",
+        "label": "Conteúdo do Arquivo",
+        "required": true
+    }
+]

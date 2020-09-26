@@ -1,0 +1,8 @@
+{
+    "name": "doodocListTaxPaymentDetail",
+    "label": "Listagem de Guias Detalhada",
+    "description": "Listar as guias detalhadamente.",
+    "connection": "dootax-252023",
+    "webhook": null,
+    "type": "search"
+}

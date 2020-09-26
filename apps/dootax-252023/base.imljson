@@ -1,0 +1,26 @@
+{
+    "baseUrl": "https://app.dootax.com.br",
+    "headers": {
+        "tenant-alias": "{{connection.tenant}}",
+        "oauth-token": "{{connection.token}}"
+    },
+    "log": {
+        "sanitize": [
+            "request.headers.oauth-token",
+            "request.headers.tenant-alias"
+        ]
+    },
+    "response": {
+        "error": {
+            "400": {
+                "type": "InvalidConfigurationError",
+                "message": "{{getErrors(statusCode, body, environment.timezone)}}"
+            },
+            "500": {
+                "type": "DataError",
+                "message": "{{getErrors(statusCode, body, environment.timezone)}}"
+            },
+            "message": "{{getErrors(statusCode, body, environment.timezone)}}"
+        }
+    }
+}

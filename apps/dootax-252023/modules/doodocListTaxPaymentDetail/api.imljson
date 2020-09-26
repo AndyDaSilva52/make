@@ -1,0 +1,21 @@
+{
+    "url": "/api/v2/doodoc/pagtrib/payment/detail",
+    "method": "POST",
+    "qs": {
+        "page": "{{ ifempty(pagination.page, 1) }}"
+        //,"size": 10
+    },
+    "body": "{{parameters}}",
+    "response": {
+        "output": "{{item}}",
+        "iterate": "{{body.content}}",
+        "limit": "{{ parameters.limit }}"
+    },
+    "pagination": {
+        "mergeWithParent": true,
+        "qs": {
+            "page": "{{ iterate.container.last.psn }}"
+        },
+        "body": "{{parameters}}"
+    }
+}

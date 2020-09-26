@@ -1,0 +1,8 @@
+{
+    "name": "doodocListTaxPaid",
+    "label": "Listagem de Guias Pagas",
+    "description": "Listagem de guias pagas em ordem crescente a partir do último PSN (Payment Sequential Number) conhecido com um limite máximo de 50 itens.",
+    "connection": "dootax-252023",
+    "webhook": null,
+    "type": "search"
+}

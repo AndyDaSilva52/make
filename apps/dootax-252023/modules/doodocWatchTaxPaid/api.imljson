@@ -1,0 +1,24 @@
+{
+    "url": "/api/v2/doodoc/pagtrib/paid",
+    "method": "GET",
+    "qs": {
+        "psn": "{{ ifempty(data.lastId,0) }}"
+    },
+    "response": {
+        "iterate": "{{body.content}}",
+        "trigger": {
+            "id": "{{item.psn}}",
+            "date": "{{ item.paymentProcessed }}",
+            "type": "id",
+            "order": "asc"
+        },
+        "output": "{{item}}",
+        "limit": "{{parameters.limit}}"
+    },
+    "pagination": {
+        "mergeWithParent": true,
+        "qs": {
+            "psn": "{{ iterate.container.last.psn }}"
+        }
+    }
+}

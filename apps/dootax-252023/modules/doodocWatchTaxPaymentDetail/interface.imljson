@@ -1,0 +1,22 @@
+[
+    {
+        "name": "id",
+        "type": "uinteger",
+        "label": "User ID"
+    },
+    {
+        "name": "email",
+        "type": "email",
+        "label": "Email address"
+    },
+    {
+        "name": "name",
+        "type": "text",
+        "label": "Name"
+    },
+    {
+        "name": "created",
+        "type": "date",
+        "label": "Date created"
+    }
+]

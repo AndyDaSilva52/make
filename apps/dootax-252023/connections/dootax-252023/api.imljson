@@ -1,0 +1,13 @@
+{
+    "url": "https://app.dootax.com.br/api/v2/teste",
+    "headers": {
+        "tenant-alias": "{{parameters.tenant}}",
+        "oauth-token": "{{parameters.token}}"
+    },
+    "log": {
+        "sanitize": [
+            "request.headers.oauth-token",
+            "request.headers.tenant-alias"
+        ]
+    }
+}

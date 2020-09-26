@@ -1,0 +1,8 @@
+{
+    "name": "doodocListTax",
+    "label": "Listagem de Guias",
+    "description": "Listagem de Guias",
+    "connection": null,
+    "webhook": null,
+    "type": "search"
+}
