@@ -3,7 +3,7 @@
         "url": "/customers",
         "method": "GET",
         "qs": {
-            "count": 500,
+            "count": "{{ if(parameters.count > 100, 100, parameters.count) }}",
             "page": "{{ ifempty(pagination.page, 1) }}"
         },
         "response": {

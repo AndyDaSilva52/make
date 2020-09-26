@@ -7,7 +7,7 @@
         "bank_account_id": "{{parameters.bank_account_id}}",
         "transfer_enabled": "{{parameters.transfer_enabled}}",
         "transfer_day": "{{parameters.transfer_day}}",
-        "last_transfer": "{{}}",
+        "last_transfer": "{{ if(ifempty(parameters.last_transfer, false), formatDate(parameters.last_transfer, 'x'), null) }}",
         "count": "{{ if(parameters.limit > 250, 250, parameters.limit) }}",
         "page": "{{ ifempty(pagination.page, 1) }}"
     },

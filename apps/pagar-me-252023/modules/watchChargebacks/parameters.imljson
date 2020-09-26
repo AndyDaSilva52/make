@@ -4,7 +4,7 @@
         "name": "count",
         "type": "uinteger",
         "label": "Limit",
-        "default": 2,
+        "default": 50,
         "required": true
     },
     {

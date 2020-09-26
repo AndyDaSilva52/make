@@ -22,7 +22,7 @@
         "url": "/balance/operations",
         "method": "GET",
         "qs": {
-            "count": 500,
+            "count": "{{ if(parameters.count > 250, 250, parameters.count) }}",
             "status": "{{   parameters.status }}",
             "page": "{{     ifempty(pagination.page;1) }}"
         },

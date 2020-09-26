@@ -31,7 +31,7 @@
             },
             //500 - Pagar.me internal error, try to send your request again. If the error continues, please contact suporte@pagar.me.
             "500": {
-                "type": "ConnectionError",
+                "type": "DataError",
                 "message": "{{getErrors(statusCode, body, environment.timezone)}}"
             },
             "message": "{{getErrors(statusCode, body, environment.timezone)}}"

@@ -43,7 +43,7 @@
         ],
         "required": false,
         "validate": false
-    }/**,
+    } /**,
     {
         "name": "amount",
         "label": "Amount",

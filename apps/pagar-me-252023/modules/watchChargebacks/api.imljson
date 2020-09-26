@@ -14,7 +14,7 @@
         "url": "/chargebacks",
         "method": "GET",
         "qs": {
-            "count": 10,
+            "count": "{{ if(parameters.count > 100, 100, 25) }}",
             "status": "{{   parameters.status }}",
             "page": "{{     ifempty(pagination.page;1) }}",
             "updated_at": "{{ if(ifempty(data.lastDate, false), '>=' + formatDate(data.lastDate, 'x') , null) }}"
