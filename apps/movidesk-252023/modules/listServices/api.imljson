@@ -1,0 +1,9 @@
+{
+    "url": "/services",
+    "method": "GET",
+    "qs": {},
+    "response": {
+        "output": "{{item}}",
+        "iterate": "{{body}}"
+    }
+}

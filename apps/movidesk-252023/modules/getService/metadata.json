@@ -1,0 +1,8 @@
+{
+    "name": "getService",
+    "label": "Get a Service",
+    "description": "Retrieve all properties of a specific service from Service Catalog.",
+    "connection": "movidesk-2520232",
+    "webhook": null,
+    "type": "action"
+}

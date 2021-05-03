@@ -1,0 +1,9 @@
+[
+    {
+        "name": "id",
+        "type": "integer",
+        "label": "Service ID",
+        "help": "Code of the service that will be retrieved.",
+        "required": true
+    }
+]

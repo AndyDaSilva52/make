@@ -1,0 +1,11 @@
+{
+    "url": "/services",
+    "method": "PATCH",
+    "qs": {
+        "id": "{{ parameters.id }}"
+    },
+    "body": "{{parameters.properties}}",
+    "response": {
+        "output": "{{body}}"
+    }
+}

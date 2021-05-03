@@ -1,0 +1,135 @@
+[
+    {
+        "name": "name",
+        "type": "text",
+        "label": "Name",
+        "help": "Service name",
+        "required": true,
+        "validate": {
+            "min": 0,
+            "max": 128
+        }
+    },
+    {
+        "name": "description",
+        "type": "text",
+        "label": "Description",
+        "help": "Service description"
+    },
+    {
+        "name": "parentServiceId",
+        "type": "text",
+        "label": "Parent Service ID",
+        "help": "Unique identifier of the parent service within the service catalog"
+    },
+    {
+        "name": "serviceForTicketType",
+        "type": "select",
+        "label": "Service for Ticket Type",
+        "help": "Types of tickets that can use the service:\nPublic tickets=0;\nInternal tickets=1;\nPublic and internal tickets=2",
+        //"required": true,
+        "default": 2,
+        "options": [
+            {
+                "label": "Public and Internal Tickets",
+                "value": 2
+            },
+            {
+                "label": "Public Tickets",
+                "value": 0
+            },
+            {
+                "label": "Internal Tickets",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "isVisible",
+        "type": "select",
+        "label": "Visible to Who",
+        "help": "Profile types the service is visible to: Agents=1;\nCustomers=2;\nAgents and customers=3",
+        //"required": true,
+        "default": 3,
+        "options": [
+            {
+                "label": "Agents and Customers",
+                "value": 3
+            },
+            {
+                "label": "Agents",
+                "value": 1
+            },
+            {
+                "label": "Customers",
+                "value": 2
+            }
+        ]
+    },
+    {
+        "name": "allowSelection",
+        "type": "select",
+        "label": "Who Can Select",
+        "help": "Profile types that can select the service: Agents=1;\nCustomers=2;\nAgents and customers=3",
+        //"required": true,
+        "default": 3,
+        "options": [
+            {
+                "label": "Agents",
+                "value": 1
+            },
+            {
+                "label": "Customers",
+                "value": 2
+            },
+            {
+                "label": "Agentes and Customers",
+                "value": 3
+            }
+        ]
+    },
+    {
+        "name": "allowFinishTicket",
+        "type": "boolean",
+        "label": "Allow Finish Ticket",
+        "help": "Tickets cannot be closed with this service if set to `false`. An agent or a trigger must change the ticket’s service before closing the ticket",
+        "required": true
+    },
+    {
+        "name": "isActive",
+        "type": "boolean",
+        "label": "Active",
+        "help": "The service will not be visible and cannot be selected if set to `false`. Services can be reenabled in `Configurations > Ticket classification > Services` or through this API",
+        "required": true
+    },
+    {
+        "name": "automationMacro",
+        "type": "text",
+        "label": "Automation Macro",
+        "help": "Name of a macro that will be automatically executed whenever the service is selected by a user"
+    },
+    {
+        "name": "defaultCategory",
+        "type": "text",
+        "label": "Default Category",
+        "help": "Name of the default category that will be set on the ticket whenever the service is selected by a user"
+    },
+    {
+        "name": "defaultUrgency",
+        "type": "text",
+        "label": "Default Urgency",
+        "help": "Name of the default priority that will be set on the ticket whenever the service is selected by a user"
+    },
+    {
+        "name": "allowAllCategories",
+        "type": "boolean",
+        "label": "Allow All Categories",
+        "help": "Allows all ticket categories if `true`. Valid categories for the ticket must be listed in the categories property if set to `false`"
+    },
+    {
+        "name": "categories",
+        "type": "array",
+        "label": "Categories",
+        "help": "List of all categories that can be selected on tickets with this service.\nOnly required when `Allow All Categories` is `false`"
+    }
+]

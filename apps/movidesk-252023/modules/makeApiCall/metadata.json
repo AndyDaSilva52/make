@@ -1,0 +1,8 @@
+{
+    "name": "makeApiCall",
+    "label": "Make an API Call",
+    "description": "Performs an arbitrary authorized API call.",
+    "connection": "movidesk-2520232",
+    "webhook": null,
+    "type": "universal"
+}

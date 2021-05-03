@@ -1,0 +1,92 @@
+{
+    "id": 504287,
+    "name": "3rd party integrations",
+    "description": null,
+    "parentServiceId": 504212,
+    "serviceForTicketType": 2,
+    "isVisible": 3,
+    "allowSelection": 3,
+    "allowFinishTicket": true,
+    "isActive": true,
+    "automationMacro": null,
+    "defaultCategory": "Problem",
+    "defaultUrgency": "Medium",
+    "allowAllCategories": false,
+    "categories": [
+        "Problem",
+        "Question"
+    ]
+}
+/**
+
+[
+    {
+        "id": 533398,
+        "name": "Service 1",
+        "description": null,
+        "parentServiceId": null,
+        "serviceForTicketType": 2,
+        "isVisible": 3,
+        "allowSelection": 3,
+        "allowFinishTicket": true,
+        "isActive": true,
+        "automationMacro": null,
+        "defaultCategory": null,
+        "defaultUrgency": null,
+        "allowAllCategories": true,
+        "categories": []
+    },
+    {
+       "id": 504212,
+       "name": "Product support",
+       "description": null,
+       "parentServiceId": null,
+       "serviceForTicketType": 2,
+       "isVisible": 3,
+       "allowSelection": 3,
+       "allowFinishTicket": false,
+       "isActive": true,
+       "automationMacro": null,
+       "defaultCategory": "Problem",
+       "defaultUrgency": "Medium",
+       "allowAllCategories": true,
+       "categories": []
+    },
+    {
+       "id": 504288,
+       "name": "Online portal",
+       "description": null,
+       "parentServiceId": 504212,
+       "serviceForTicketType": 2,
+       "isVisible": 3,
+       "allowSelection": 3,
+       "allowFinishTicket": true,
+       "isActive": true,
+       "automationMacro": null,
+       "defaultCategory": "Problem",
+       "defaultUrgency": "Medium",
+       "allowAllCategories": true,
+       "categories": []
+    },
+    {
+       "id": 504287,
+       "name": "3rd party integrations",
+       "description": null,
+       "parentServiceId": 504212,
+       "serviceForTicketType": 2,
+       "isVisible": 3,
+       "allowSelection": 3,
+       "allowFinishTicket": true,
+       "isActive": true,
+       "automationMacro": null,
+       "defaultCategory": "Problem",
+       "defaultUrgency": "Medium",
+       "allowAllCategories": false,
+       "categories": [
+          "Problem",
+          "Question"
+       ]
+    }
+]
+
+ */
