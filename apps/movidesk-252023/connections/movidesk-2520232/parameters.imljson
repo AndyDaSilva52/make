@@ -1,0 +1,8 @@
+[
+    {
+        "name": "token",
+        "type": "text",
+        "label": "Token",
+        "required": true
+    }
+]

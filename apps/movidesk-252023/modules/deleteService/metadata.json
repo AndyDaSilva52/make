@@ -1,0 +1,8 @@
+{
+    "name": "deleteService",
+    "label": "Delete a Service",
+    "description": "Delete a service in the `Service catalog`.",
+    "connection": "movidesk-2520232",
+    "webhook": null,
+    "type": "action"
+}

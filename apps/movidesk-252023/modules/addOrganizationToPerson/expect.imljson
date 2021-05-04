@@ -1,0 +1,110 @@
+[
+    {
+        "name": "id",
+        "type": "integer",
+        "label": "Person ID",
+        "help": "`ID` of the person that will be updated.",
+        "required": true
+    },
+    {
+        "name": "properties",
+        "label": "Properties",
+        "type": "collection",
+        //"spec": "rpc://interfacePersonRelationship"
+        "spec": [
+            {
+                "name": "relationships",
+                "type": "array",
+                "label": "Relationships",
+                "help": "",
+                "spec": {
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "id",
+                            "type": "text",
+                            "label": "ID",
+                            "help": ""
+                        },
+                        {
+                            "name": "name",
+                            "type": "text",
+                            "label": "Name",
+                            "help": ""
+                        },
+                        {
+                            "name": "slaAgreement",
+                            "type": "text",
+                            "label": "SLA Agreement",
+                            "help": "Name of the SLA  policy applied to this person. There can only be one SLA policy applied to the person for each associated organization."
+                        },
+                        {
+                            "name": "forceChildrenToHaveSomeAgreement",
+                            "type": "boolean",
+                            "label": "Force Children to Have Some Agreement",
+                            "help": "Set to `true` in order to force this SLA policy to be inherited by all People associated with the Person. For example, if you are associating a department with a company, this will force all users associated with the department to inherit the SLA policy. Only applicable when personType is 2 (company) or 4 (department)."
+                        },
+                        {
+                            "name": "allowAllServices",
+                            "type": "boolean",
+                            "label": "Allow All Services",
+                            "help": "Set to `true` if the person should be allowed to select any service from the Service catalog. If left blank, the value will be set to true"
+                        },
+                        {
+                            "name": "includeInParents",
+                            "type": "boolean",
+                            "label": "Include ",
+                            "help": "Set to `true` in order to copy this association to all People currently associated with the Person. For example, you may have users associated to a department. If you then associate the department to a company and set this property to true, all the users will also be associated to the company. Only applicable when personType is 2 (company) or 4 (department)."
+                        },
+                        {
+                            "name": "loadChildOrganizations",
+                            "type": "text",
+                            "label": "Load Child Organizations",
+                            "help": "Set to `true` in order to associate the person to all child organizations of this organization—new organization objects will automatically be added to the relationships property of the person. For example, you may have a department associated to a parent company. If you then associate a user to the company and set this property to `true`, the user will also be associated to the department."
+                        },
+                        {
+                            "name": "services",
+                            "type": "array",
+                            "label": "Services",
+                            "help": "List of services the person is allowed to select. Only required when `Allow All Services` is set to `false`",
+                            "spec": {
+                                "type": "collection",
+                                "spec": [
+                                    {
+                                        "name": "id",
+                                        "label": "ID",
+                                        "type": "integer",
+                                        "help": "Code of the service. Read-only."
+                                    },
+                                    {
+                                        "name": "name",
+                                        "label": "Name",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "copyToChildren",
+                                        "label": "Copy to Children",
+                                        "type": "boolean",
+                                        "help": "Set to `true` in order to add this as an allowed service to all People currently associated with the Person. For example, you may have users associated to a company. If you set this property to `true`, the service will also be added to all those users. If left blank, the value will be set to `true`. Only applicable when `Person Type` is `2` (company) or `4` (department)."
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "idToDelete",
+                            "type": "text",
+                            "label": "",
+                            "help": ""
+                        },
+                        {
+                            "name": "isGetMethod",
+                            "type": "boolean",
+                            "label": "",
+                            "help": ""
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+]

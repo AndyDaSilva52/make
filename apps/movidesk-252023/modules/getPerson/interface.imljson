@@ -1,0 +1,546 @@
+[
+    {
+        "name": "id",
+        "type": "text",
+        "label": "Person ID",
+        "help": "Reference code of the person."
+    },
+    {
+        "name": "codeReferenceAdditional",
+        "type": "text",
+        "label": "Code Reference",
+        "help": "Customer ID of the person to be used with other systems."
+    },
+    {
+        "name": "isActive",
+        "type": "boolean",
+        "label": "Is Active?",
+        "help": "The person will not be visible and cannot be selected if set to `false`."
+    },
+    {
+        "name": "personType",
+        "type": "select",
+        "label": "Person Type",
+        "help": "Person type: `1`=User; `2`=Company; `4`=Department.",
+        "options": [
+            {
+                "label": "User",
+                "value": 1
+            },
+            {
+                "label": "Company",
+                "value": 2
+            },
+            {
+                "label": "Department",
+                "value": 4
+            }
+        ]
+    },
+    {
+        "name": "profileType",
+        "type": "select",
+        "label": "Profile Type",
+        "help": "Profile type: 1=Agent; 2=Customer; 3=Agent and Customer.",
+        "options": [
+            {
+                "label": "Customer",
+                "value": 2
+            },
+            {
+                "label": "Agent",
+                "value": 1
+            },
+            {
+                "label": "Agent and Customer",
+                "value": 3
+            }
+        ],
+        "default": 2
+    },
+    {
+        "name": "accessProfile",
+        "type": "text",
+        "label": "Access Profile",
+        "help": "Name of the access profile applied to the person. Must be an existing access profile configured in `Configurations > Access profiles`. The access profile's type must match the person's profile Type. If left blank and `Profile Type` is 2 (company), the default customer access profile will be used."
+    },
+    {
+        "name": "businessName",
+        "type": "text",
+        "label": "Business Name",
+        "help": "Trade name of the company, or Name of the user or department. Only required when `Person Type` is `1` (user) or `4` (department)."
+    },
+    {
+        "name": "businessBranch",
+        "type": "text",
+        "label": "Business Branch",
+        "help": ""
+    },
+    {
+        "name": "corporateName",
+        "type": "text",
+        "label": "Corporate Name",
+        "help": "Corporate name of the company. Only applicable when `personType` is `2` (company)."
+    },
+    {
+        "name": "cpfCnpj",
+        "type": "text",
+        "label": "CPF or CNPJ",
+        "help": "Do not use. Only applicable for localized use of the system in Latin America"
+    },
+    {
+        "name": "userName",
+        "type": "text",
+        "label": "Username",
+        "help": "Username of the user, stored in User."
+    } /**,
+    {
+        "name": "password",
+        "type": "text",
+        "label": "Password",
+        "help": "Password of the user. Must be at least 8 characters long. Write-only. Cannot be retrieved by the API."
+    } */,
+    {
+        "name": "role",
+        "type": "text",
+        "label": "Role",
+        "help": "Role of the person. If set to a nonexistent role, a new record will be created in the Roles master file."
+    },
+    {
+        "name": "bossId",
+        "type": "text",
+        "label": "Boss ID (Person)",
+        "help": "Reference code of the person’s Supervisor."
+    },
+    {
+        "name": "bossName",
+        "type": "text",
+        "label": "Boss Name",
+        "help": "Name of the person’s Supervisor. Read-only."
+    },
+    {
+        "name": "classification",
+        "type": "text",
+        "label": "Classification",
+        "help": "Classification of the person. If set to a nonexistent classification, a new record will be created in the Classifications master file."
+    },
+    {
+        "name": "cultureId",
+        "type": "text",
+        "label": "Culture Code",
+        "help": "Culture code indicating the primary language of the person:\nEnglish = en-US\nSpanish = es\nPortuguese = pt-BR \nIf left blank, the default system language will be used."
+    },
+    {
+        "name": "timeZoneId",
+        "type": "text",
+        "label": "Timezone",
+        "help": "[TZ database name](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) of the person’s primary time zone. If left blank, the default system time zone will be used."
+    },
+    {
+        "name": "createdDate",
+        "type": "timestamp",
+        "label": "Created Date",
+        "help": "Date and time when the person was created. Must be lesser than the current date and time. If left blank, the current date and time will be used. Read-only after the person is created."
+    },
+    {
+        "name": "createdBy",
+        "type": "text",
+        "label": "Created By",
+        "help": "Reference code (Person) of the user that created the person. Read-only."
+    },
+    {
+        "name": "changedDate",
+        "type": "timestamp",
+        "label": "Change Date",
+        "help": "Date and time when the person was last updated. Read-only."
+    },
+    {
+        "name": "changedBy",
+        "type": "text",
+        "label": "Changed By",
+        "help": "Reference code (Person) of the user that last updated the person. Read-only."
+    },
+    {
+        "name": "observations",
+        "type": "text",
+        "label": "Observations",
+        "help": "Remarks about the person."
+    },
+    {
+        "name": "authenticateOn",
+        "type": "text",
+        "label": "",
+        "help": ""
+    },
+    {
+        "name": "addresses",
+        "type": "array",
+        "label": "Addresses",
+        "help": "Array of addresses for the person.",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "addressType",
+                    "label": "Address Type",
+                    "type": "text",
+                    "help": "Type of the address, for example `Mailing`. If set to a nonexistent type, a new address type will be created."
+                },
+                {
+                    "name": "street",
+                    "label": "Street",
+                    "type": "text",
+                    "help": "Address line 1 of the address."
+                },
+                {
+                    "name": "complement",
+                    "label": "Complement",
+                    "type": "text",
+                    "help": "Address line 2 of the address."
+                },
+                {
+                    "name": "reference",
+                    "label": "Reference",
+                    "type": "text",
+                    "help": "Address line 3 of the address."
+                },
+                {
+                    "name": "isDefault",
+                    "label": "Default",
+                    "type": "boolean",
+                    "help": "Set to true if this is the Main address of the person."
+                }
+            ]
+        }
+    },
+    {
+        "name": "contacts",
+        "type": "array",
+        "label": "Contacts",
+        "help": "Array of contact methods for the person. Corresponds to the Other contacts section of the record.",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "contactType",
+                    "type": "text",
+                    "label": "Contact Type",
+                    "help": "Type of the contact method, for example `Mobile phone`. If set to a nonexistent type, a new contact type will be created."
+                },
+                {
+                    "name": "contact",
+                    "type": "text",
+                    "label": "Contact",
+                    "help": "Contact information, such as the phone number or website URL."
+                },
+                {
+                    "name": "isDefault",
+                    "type": "boolean",
+                    "label": "Default",
+                    "help": "Set to `true` if this is the Main contact method for the person. For example their primary phone number."
+                }
+            ]
+        }
+    },
+    {
+        "name": "emails",
+        "type": "array",
+        "label": "Emails",
+        "help": "Object containing information about one of the person’s email addresses. Each object corresponds to one email address in the Emails section of the People registration form.",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "emailType",
+                    "type": "text",
+                    "label": "Email Type",
+                    "help": "Type of the email address, for example `Business`. If set to a nonexistent type, a new email type will be created."
+                },
+                {
+                    "name": "email",
+                    "type": "text",
+                    "label": "Email",
+                    "help": "Email address."
+                },
+                {
+                    "name": "isDefault",
+                    "type": "boolean",
+                    "label": "Default",
+                    "help": "Set to `true` if this is the Main email address for the person."
+                }
+            ]
+        }
+    },
+    {
+        "name": "teams",
+        "type": "array",
+        "label": "Teams",
+        "spec": {
+            "type": "text",
+            "label": "Team"
+        }
+    },
+    {
+        "name": "relationships",
+        "type": "array",
+        "label": "Relationships",
+        "help": "",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "id",
+                    "type": "text",
+                    "label": "ID",
+                    "help": ""
+                },
+                {
+                    "name": "name",
+                    "type": "text",
+                    "label": "Name",
+                    "help": ""
+                },
+                {
+                    "name": "slaAgreement",
+                    "type": "text",
+                    "label": "SLA Agreement",
+                    "help": "Name of the SLA  policy applied to this person. There can only be one SLA policy applied to the person for each associated organization."
+                },
+                {
+                    "name": "forceChildrenToHaveSomeAgreement",
+                    "type": "boolean",
+                    "label": "Force Children to Have Some Agreement",
+                    "help": "Set to `true` in order to force this SLA policy to be inherited by all People associated with the Person. For example, if you are associating a department with a company, this will force all users associated with the department to inherit the SLA policy. Only applicable when personType is 2 (company) or 4 (department)."
+                },
+                {
+                    "name": "allowAllServices",
+                    "type": "boolean",
+                    "label": "Allow All Services",
+                    "help": "Set to `true` if the person should be allowed to select any service from the Service catalog. If left blank, the value will be set to true"
+                },
+                {
+                    "name": "includeInParents",
+                    "type": "boolean",
+                    "label": "Include ",
+                    "help": "Set to `true` in order to copy this association to all People currently associated with the Person. For example, you may have users associated to a department. If you then associate the department to a company and set this property to true, all the users will also be associated to the company. Only applicable when personType is 2 (company) or 4 (department)."
+                },
+                {
+                    "name": "loadChildOrganizations",
+                    "type": "text",
+                    "label": "Load Child Organizations",
+                    "help": "Set to `true` in order to associate the person to all child organizations of this organization—new organization objects will automatically be added to the relationships property of the person. For example, you may have a department associated to a parent company. If you then associate a user to the company and set this property to `true`, the user will also be associated to the department."
+                },
+                {
+                    "name": "services",
+                    "type": "array",
+                    "label": "Services",
+                    "help": "List of services the person is allowed to select. Only required when `Allow All Services` is set to `false`",
+                    "spec": {
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "id",
+                                "label": "ID",
+                                "type": "integer",
+                                "help": "Code of the service. Read-only."
+                            },
+                            {
+                                "name": "name",
+                                "label": "Name",
+                                "type": "text"
+                            },
+                            {
+                                "name": "copyToChildren",
+                                "label": "Copy to Children",
+                                "type": "boolean",
+                                "help": "Set to `true` in order to add this as an allowed service to all People currently associated with the Person. For example, you may have users associated to a company. If you set this property to `true`, the service will also be added to all those users. If left blank, the value will be set to `true`. Only applicable when `Person Type` is `2` (company) or `4` (department)."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "idToDelete",
+                    "type": "text",
+                    "label": "",
+                    "help": ""
+                },
+                {
+                    "name": "isGetMethod",
+                    "type": "boolean",
+                    "label": "",
+                    "help": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "customFieldValues",
+        "type": "array",
+        "label": "Custom Field Values",
+        "help": "Object containing custom field data on a People record. The object also includes identifying information on which custom field—and which display rule—are storing the data.",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "customFieldId",
+                    "label": "Custom Field ID",
+                    "type": "integer",
+                    "help": "ID of the custom field where the data is stored."
+                },
+                {
+                    "name": "customFieldRuleId",
+                    "label": "Custom Field Rule ID",
+                    "type": "integer",
+                    "help": "ID of the display rule that contains the custom field."
+                },
+                {
+                    "name": "line",
+                    "label": "Line",
+                    "type": "integer",
+                    "default": 1,
+                    "help": "Line number where the data is stored. Only applicable for display rules that allow multiple entries. If the display rule does not allow for multiple entries, this value should always be 1."
+                },
+                {
+                    "name": "value",
+                    "label": "Value",
+                    "type": "select",
+                    "help": "Value in the custom field.",
+                    "validate": false,
+                    "options": [
+                        {
+                            "label": "Single-line text",
+                            "value": "Single-line text"
+                        },
+                        {
+                            "label": "Multiline text",
+                            "value": "Multiline text"
+                        },
+                        {
+                            "label": "Rich text",
+                            "value": "Rich text"
+                        },
+                        {
+                            "label": "Regular expression",
+                            "value": "Regular expression"
+                        },
+                        {
+                            "label": "Numeric",
+                            "value": "Numeric"
+                        },
+                        {
+                            "label": "Date",
+                            "value": "Date"
+                        },
+                        {
+                            "label": "Time",
+                            "value": "Time"
+                        },
+                        {
+                            "label": "Date and time",
+                            "value": "Date and time"
+                        },
+                        {
+                            "label": "Email",
+                            "value": "Email"
+                        },
+                        {
+                            "label": "Phone number",
+                            "value": "Phone number"
+                        },
+                        {
+                            "label": "URL",
+                            "value": "URL"
+                        },
+                        {
+                            "label": "Custom dropdown",
+                            "value": "Custom dropdown"
+                        },
+                        {
+                            "label": "People search",
+                            "value": "People search"
+                        },
+                        {
+                            "label": "Customer search",
+                            "value": "Customer search"
+                        },
+                        {
+                            "label": "Agent search",
+                            "value": "Agent search"
+                        },
+                        {
+                            "label": "Multiple selection",
+                            "value": "Multiple selection"
+                        },
+                        {
+                            "label": "Single selection",
+                            "value": "Single selection"
+                        }
+                    ]
+                },
+                {
+                    "name": "items",
+                    "label": "Items",
+                    "type": "array",
+                    "spec": {
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "personID",
+                                "label": "Person ID",
+                                "type": "integer",
+                                "help": "Reference code of a person. Only required for custom fields of the type `People search`."
+                            },
+                            {
+                                "name": "clientId",
+                                "label": "Client ID",
+                                "type": "integer",
+                                "help": "Reference code of a customer. Only required for custom fields of the type `Customer search`."
+                            },
+                            {
+                                "name": "team",
+                                "label": "Team",
+                                "type": "text",
+                                "help": "Name of the agent's team. Must be an existing team configured in `Configurations > Teams`. Only required for custom fields of the type `Agent search`. The specific agent should be identified in the personId property."
+                            },
+                            {
+                                "name": "customFieldItem",
+                                "label": "Custom Field Item",
+                                "type": "text",
+                                "help": "Name of the item selected on the custom field. Must be one of the options or items configured on the custom field in `Configuration > Custom fields`. Only required for custom fields of the type `Custom dropdown`, `Multiple selection`, or `Single selection`."
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "name": "atAssets",
+        "type": "array",
+        "label": "Asset",
+        "help": "Object containing information about an asset linked to the person. All properties on this object are read-only.",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "id",
+                    "label": "ID",
+                    "type": "text",
+                    "help": "Reference code of the asset. Read-only."
+                },
+                {
+                    "name": "name",
+                    "label": "Name",
+                    "type": "text",
+                    "help": "Name of the asset. Read-only."
+                },
+                {
+                    "name": "label",
+                    "label": "Label",
+                    "type": "text",
+                    "help": "Label of the asset. Read-only."
+                }
+            ]
+        }
+    }
+]

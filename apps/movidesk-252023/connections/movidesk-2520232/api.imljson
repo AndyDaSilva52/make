@@ -1,0 +1,11 @@
+{
+    "url": "https://api.movidesk.com/public/v1/services",
+    "qs": {
+        "token": "{{parameters.token}}"
+    },
+    "log": {
+        "sanitize": [
+            "request.qs.token"
+        ]
+    }
+}

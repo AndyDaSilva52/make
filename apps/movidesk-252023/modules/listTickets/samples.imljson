@@ -1,0 +1,192 @@
+{
+    "id": "25",
+    "type": 2,
+    "subject": "New data extractor",
+    "category": "Service request",
+    "urgency": "High",
+    "status": "New",
+    "baseStatus": "New",
+    "justification": null,
+    "origin": 2,
+    "createdDate": "2019-11-12T03:05:23.7055716",
+    "isDeleted": false,
+    "originEmailAccount": null,
+    "owner": {
+        "id": "429079974",
+        "personType": 1,
+        "profileType": 1,
+        "businessName": "Brad Johnson",
+        "email": "brad.johnson@movidesk.com",
+        "phone": "5553219999"
+    },
+    "ownerTeam": "Level 1 Agents",
+    "createdBy": {
+        "id": "429079974",
+        "personType": 1,
+        "profileType": 1,
+        "businessName": "Brad Johnson",
+        "email": "brad.johnson@movidesk.com",
+        "phone": "5553219999"
+    },
+    "serviceFull": [
+        "ETL",
+        "Extractor development"
+    ],
+    "serviceFirstLevelId": 450254,
+    "serviceFirstLevel": "Extractor development",
+    "serviceSecondLevel": "ETL",
+    "serviceThirdLevel": null,
+    "contactForm": null,
+    "tags": [],
+    "cc": null,
+    "resolvedIn": null,
+    "closedIn": null,
+    "canceledIn": null,
+    "actionCount": 1,
+    "lifeTimeWorkingTime": null,
+    "stoppedTime": null,
+    "stoppedTimeWorkingTime": null,
+    "resolvedInFirstCall": false,
+    "chatWidget": null,
+    "chatGroup": null,
+    "chatTalkTime": null,
+    "chatWaitingTime": null,
+    "sequence": null,
+    "slaAgreement": null,
+    "slaAgreementRule": null,
+    "slaSolutionTime": 0,
+    "slaResponseTime": 0,
+    "slaSolutionChangedByUser": false,
+    "slaSolutionChangedBy": {
+        "id": "429079974",
+        "personType": 1,
+        "profileType": 1,
+        "businessName": "Brad Johnson",
+        "email": "brad.johnson@movidesk.com",
+        "phone": "5553219999"
+    },
+    "slaSolutionDate": null,
+    "slaSolutionDateIsPaused": false,
+    "jiraIssueKey": null,
+    "redmineIssueId": null,
+    "movideskTicketNumber": null,
+    "linkedToIntegratedTicketNumber": null,
+    "reopenedIn": null,
+    "lastActionDate": "2019-11-12T03:06:55.1954731",
+    "lastUpdate": "2019-11-12T03:06:54.3038665",
+    "slaResponseDate": null,
+    "slaRealResponseDate": null,
+    "clients": [
+        {
+            "id": "350002",
+            "personType": 2,
+            "profileType": 2,
+            "businessName": "Western Manufacturing",
+            "email": null,
+            "phone": "5553819431",
+            "isDeleted": false,
+            "organization": null,
+            "address": "1250 Commerce Ave",
+            "complement": "Unit 15",
+            "cep": null,
+            "city": null,
+            "bairro": null,
+            "number": null,
+            "reference": "Concord – NH"
+        }
+    ],
+    "actions": [
+        {
+            "id": 1,
+            "type": 2,
+            "origin": 0,
+            "description": "We need a new data extractor for our new ERP module: Payroll.\n",
+            "htmlDescription": "<p>We need a new data extractor for our new ERP module: Payroll.</p>",
+            "status": "New",
+            "justification": null,
+            "createdDate": "2019-11-12T03:06:55.1954731",
+            "createdBy": {
+                "id": "429079974",
+                "personType": 1,
+                "profileType": 1,
+                "businessName": "Brad Johnson",
+                "email": "brad.johnson@movidesk.com",
+                "phone": "5553219999"
+            },
+            "isDeleted": false,
+            "timeAppointments": [
+                {
+                    "id": 24254852,
+                    "activity": "Online services",
+                    "date": "2019-11-11T00:00:00",
+                    "periodStart": "22:05:00",
+                    "periodEnd": "22:06:00",
+                    "workTime": "00:01:00",
+                    "workTypeName": "Regular",
+                    "createdBy": {
+                        "id": "429079974",
+                        "personType": 1,
+                        "profileType": 1,
+                        "businessName": "Brad Johnson",
+                        "email": "brad.johnson@movidesk.com",
+                        "phone": "5553219999"
+                    },
+                    "createdByTeam": {
+                        "id": 55623,
+                        "name": "Level 1 Agents"
+                    }
+                }
+            ],
+            "attachments": [],
+            "expenses": [],
+            "tags": []
+        }
+    ],
+    "parentTickets": [],
+    "childrenTickets": [],
+    "ownerHistories": [
+        {
+            "ownerTeam": "Level 1 Agents",
+            "owner": {
+                "id": "429079974",
+                "personType": 1,
+                "profileType": 1,
+                "businessName": "Brad Johnson",
+                "email": "brad.johnson@movidesk.com",
+                "phone": "5553219999"
+            },
+            "changedBy": {
+                "id": "429079974",
+                "personType": 1,
+                "profileType": 1,
+                "businessName": "Brad Johnson",
+                "email": "brad.johnson@movidesk.com",
+                "phone": "5553219999"
+            },
+            "changedDate": "2019-11-12T03:05:23.7055716",
+            "permanencyTimeFullTime": null,
+            "permanencyTimeWorkingTime": null
+        }
+    ],
+    "statusHistories": [
+        {
+            "status": "New",
+            "justification": null,
+            "changedBy": {
+                "id": "429079974",
+                "personType": 1,
+                "profileType": 1,
+                "businessName": "Brad Johnson",
+                "email": "brad.johnson@movidesk.com",
+                "phone": "5553219999"
+            },
+            "changedDate": "2019-11-12T03:05:23.7055716",
+            "permanencyTimeFullTime": null,
+            "permanencyTimeWorkingTime": null
+        }
+    ],
+    "satisfactionSurveyResponses": [],
+    "customFieldValues": [],
+    "assets": [],
+    "webhookEvents": null
+}

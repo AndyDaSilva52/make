@@ -1,0 +1,9 @@
+{
+    "response": {
+        "limit": 500,
+        "output": {
+            "date": "",
+            "label": "{{item.id}} - {{item.name}}"
+        }
+    }
+}

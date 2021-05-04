@@ -1,0 +1,21 @@
+{
+    "url": "/persons",
+    "method": "GET",
+    "qs": {
+        "$select": "{{parameters.select}}",
+        "$expand": "{{parameters.expand}}",
+        "$filter": "{{parameters.filter}}",
+        "$orderby": "{{parameters.orderby}}",
+        "$top": "{{parameters.limit}}"
+    },
+    "response": {
+        "output": "{{item}}",
+        "iterate": "{{body}}"
+    },
+    "pagination": {
+        "mergeWithParent": true,
+        "qs": {
+            "$skip": "{{(pagination.page-1) * parameters.limit}}"
+        }
+    }
+}

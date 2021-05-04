@@ -1,0 +1,21 @@
+{
+    "url": "/tickets",
+    "method": "GET",
+    "qs": {
+        "$select": "{{join(parameters.select; ',') }}",
+        "$expand": "{{join(parameters.expand; ',')}}",
+        "$filter": "{{parameters.filter}}",
+        "$orderby": "{{parameters.orderby}}",
+        "$top": "{{parameters.limit}}"
+    },
+    "response": {
+        "output": "{{item}}",
+        "iterate": "{{body}}"
+    },
+    "pagination": {
+        "mergeWithParent": true,
+        "qs": {
+            "$skip": "{{(pagination.page-1) * parameters.limit}}"
+        }
+    }
+}

@@ -1,0 +1,29 @@
+[
+    {
+        "name": "select",
+        "label": "Select",
+        "type": "text",
+        "help": "Comma delimited list of which object properties should be retrieved.\nEx: `id,businessName,corporateName,relationships`\nLearn more at [OData Querying Data - $select](https://www.odata.org/getting-started/basic-tutorial/#select)",
+        "multiline": true
+    },
+    {
+        "name": "expand",
+        "label": "Expand",
+        "type": "text",
+        "help": "Comma delimited list of which properties should be expanded. For example, expand the `relationships` property to retrieve the nested Organization objects and their properties `id` and `name` inform `relationships($select=id,name)`\nLearn more at [OData Querying Data - $expand](https://www.odata.org/getting-started/basic-tutorial/#expand)",
+        "multiline": true
+    },
+    {
+        "name": "filter",
+        "label": "Filter",
+        "type": "text",
+        "help": "Expressions to specify which People records should be retrieved. Ex: `personType eq 1 and profileType eq 2 and role eq 'Manager'`\nLearn more at [OData Querying Data - $filter](https://www.odata.org/getting-started/basic-tutorial/#filter)",
+        "multiline": true
+    },
+    {
+        "name": "orderby",
+        "label": "Order By",
+        "type": "text",
+        "help": "Determines whether objects will be retrieved in ascending (asc) or descending (desc) order. Has `asc` as the default value. Ex: `id asc`\nLearn more at [OData Quering Data - $orderby](https://www.odata.org/getting-started/basic-tutorial/#orderby)"
+    }
+]

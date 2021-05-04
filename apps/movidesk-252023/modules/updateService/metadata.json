@@ -1,0 +1,8 @@
+{
+    "name": "updateService",
+    "label": "Update a Service",
+    "description": "Make changes to a service in the Service catalog by informing the properties you want to change.",
+    "connection": "movidesk-2520232",
+    "webhook": null,
+    "type": "action"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "listServices",
+    "label": "List Services",
+    "description": "Retrieves properties of the selected services. By default, all services will be returned.",
+    "connection": "movidesk-2520232",
+    "webhook": null,
+    "type": "search"
+}

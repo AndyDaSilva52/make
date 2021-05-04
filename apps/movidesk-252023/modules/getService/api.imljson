@@ -1,0 +1,10 @@
+{
+    "url": "/services",
+    "method": "GET",
+    "qs": {
+        "id": "{{ parameters.id }}"
+    },
+    "response": {
+        "output": "{{body}}"
+    }
+}

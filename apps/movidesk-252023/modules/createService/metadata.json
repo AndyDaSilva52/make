@@ -1,0 +1,8 @@
+{
+    "name": "createService",
+    "label": "Create a Service",
+    "description": "Add a new service to the Service catalog.",
+    "connection": "movidesk-2520232",
+    "webhook": null,
+    "type": "action"
+}

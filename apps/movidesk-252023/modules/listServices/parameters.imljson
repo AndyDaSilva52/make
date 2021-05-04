@@ -1,0 +1,9 @@
+[
+    {
+        "name": "limit",
+        "type": "integer",
+        "label": "Limit",
+        "default": 2,
+        "required": true
+    }
+]

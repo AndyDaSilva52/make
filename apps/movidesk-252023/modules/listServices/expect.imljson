@@ -1,0 +1,15 @@
+[
+    {
+        "name": "filter",
+        "label": "Filter",
+        "type": "text",
+        "help": "You can filter like the examples from the article at [Movidesk Help Center](https://support.movidesk.com/kb/article/161481/services-api?ticketId=&ticketId=&q=&q=&menuId=18144-0-161481#_Toc42189117).\nEx: `isActive eq true`\nLearn more at [OData Querying Data - $filter](https://www.odata.org/getting-started/basic-tutorial/#filter)",
+        "multiline": true
+    },
+    {
+        "name": "orderby",
+        "label": "Order By",
+        "type": "text",
+        "help": "Ex: `id asc`\nLearn more at [OData Quering Data - $orderby](https://www.odata.org/getting-started/basic-tutorial/#orderby)"
+    }
+]

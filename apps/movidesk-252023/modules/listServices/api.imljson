@@ -1,0 +1,20 @@
+{
+    "url": "/services",
+    "method": "GET",
+    "qs": {
+        "$top": "{{parameters.limit}}",
+        "$filter": "{{parameters.filter}}",
+        "$orderby": "{{parameters.orderby}}"
+    },
+    "response": {
+        "output": "{{item}}",
+        "iterate": "{{body}}"
+        //,"limit": 3500
+    },
+    "pagination": {
+        "mergeWithParent": true,
+        "qs": {
+            "$skip": "{{(pagination.page-1) * parameters.limit}}"
+        }
+    }
+}

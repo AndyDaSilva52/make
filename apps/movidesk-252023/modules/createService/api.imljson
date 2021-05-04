@@ -1,0 +1,8 @@
+{
+    "url": "/services",
+    "method": "POST",
+    "body": "{{parameters}}",
+    "response": {
+        "output": "{{body}}"
+    }
+}

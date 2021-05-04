@@ -1,0 +1,19 @@
+{
+    "id": 504287,
+    "name": "3rd party integrations",
+    "description": null,
+    "parentServiceId": 504212,
+    "serviceForTicketType": 2,
+    "isVisible": 3,
+    "allowSelection": 3,
+    "allowFinishTicket": true,
+    "isActive": true,
+    "automationMacro": null,
+    "defaultCategory": "Problem",
+    "defaultUrgency": "Medium",
+    "allowAllCategories": false,
+    "categories": [
+        "Problem",
+        "Question"
+    ]
+}
