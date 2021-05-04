@@ -1,0 +1,8 @@
+{
+    "name": "addOrganizationToPerson",
+    "label": "Add Organization to Person",
+    "description": "Add an Organization object to the relationships property of a Person.",
+    "connection": "movidesk-2520232",
+    "webhook": null,
+    "type": "action"
+}

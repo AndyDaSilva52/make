@@ -1,0 +1,9 @@
+[
+    {
+        "name": "id",
+        "type": "uinteger",
+        "label": "Ticket ID",
+        "help": "`id` of the ticket.",
+        "required": true
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "help": "The maximum number of results to be worked with during one execution cycle.",
+        "name": "limit",
+        "type": "uinteger",
+        "label": "Limit",
+        "default": 2,
+        "required": true
+    },
+    {
+        "name": "filter",
+        "label": "Filter",
+        "type": "text",
+        "help": "You can filter like the examples from the article at [Movidesk Help Center](https://support.movidesk.com/kb/article/161481/services-api?ticketId=&ticketId=&q=&q=&menuId=18144-0-161481#_Toc42189117).\nEx: `isActive eq false`\nLearn more at [OData Querying Data - $filter](https://www.odata.org/getting-started/basic-tutorial/#filter)",
+        "multiline": true
+    }
+]

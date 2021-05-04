@@ -1,0 +1,10 @@
+{
+    "url": "/tickets",
+    "method": "GET",
+    "qs": {
+        "id": "{{parameters.id}}"
+    },
+    "response": {
+        "output": "{{body}}"
+    }
+}

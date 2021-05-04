@@ -1,0 +1,9 @@
+[
+    {
+        "name": "id",
+        "type": "integer",
+        "label": "Person ID",
+        "help": "`ID` of the person that will be deleted.",
+        "required": true
+    }
+]

@@ -1,15 +1,16 @@
 {
-    "url": "/services",
+    "url": "/persons",
     "method": "GET",
     "qs": {
-        "$top": "{{parameters.limit}}",
+        "$select": "{{parameters.select}}",
+        "$expand": "{{parameters.expand}}",
         "$filter": "{{parameters.filter}}",
-        "$orderby": "{{parameters.orderby}}"
+        "$orderby": "{{parameters.orderby}}",
+        "$top": "{{parameters.limit}}"
     },
     "response": {
         "output": "{{item}}",
         "iterate": "{{body}}"
-        //,"limit": 3500
     },
     "pagination": {
         "mergeWithParent": true,

@@ -1,0 +1,8 @@
+{
+    "name": "listTickets",
+    "label": "List Tickets",
+    "description": "Retrieve specific properties from multiple tickets.",
+    "connection": "movidesk-2520232",
+    "webhook": null,
+    "type": "search"
+}

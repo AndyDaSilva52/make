@@ -1,0 +1,71 @@
+[
+    {
+        "name": "select",
+        "label": "Select",
+        "type": "array",
+        "help": "Comma delimited list of which object properties should be retrieved.\nEx: `id,businessName,corporateName,relationships`\nLearn more at [OData Querying Data - $select](https://www.odata.org/getting-started/basic-tutorial/#select)",
+        "spec": {
+            "type": "text",
+            "multiline": true
+        },
+        "default": [
+            "id",
+            "type",
+            "subject",
+            "urgency",
+            "status",
+            "origin",
+            "createdDate",
+            "isDeleted",
+            "owner",
+            "ownerTeam",
+            "tags",
+            "cc",
+            "reopenedIn",
+            "resolvedIn",
+            "closedIn",
+            "canceledIn",
+            "actionCount",
+            "sequence",
+            "movideskTicketNumber",
+            "lastActionDate",
+            "lastUpdate",
+            "clients",
+            "createdBy",
+            "actions",
+            "parentTickets",
+            "childrenTickets",
+            "statusHistories",
+            "satisfactionSurveyResponses",
+            "assets",
+            "webhookEvents"
+        ]
+    },
+    {
+        "name": "expand",
+        "label": "Expand",
+        "type": "array",
+        "help": "Comma delimited list of which properties should be expanded. For example, expand the `relationships` property to retrieve the nested Organization objects and their properties `id` and `name` inform `relationships($select=id,name)`\nLearn more at [OData Querying Data - $expand](https://www.odata.org/getting-started/basic-tutorial/#expand)",
+        "spec": {
+            "type": "text",
+            "multiline": true
+        },
+        "default": [
+            "createdBy($select=id,personType,profileType,businessName,email,phone)",
+            "clients($select=id,personType,profileType,businessName,email,phone,isDeleted,organization,address,complement,cep,city,bairro,number,reference)"
+        ]
+    },
+    {
+        "name": "filter",
+        "label": "Filter",
+        "type": "text",
+        "help": "Expressions to specify which People records should be retrieved. Ex: `personType eq 1 and profileType eq 2 and role eq 'Manager'`\nLearn more at [OData Querying Data - $filter](https://www.odata.org/getting-started/basic-tutorial/#filter)",
+        "multiline": true
+    },
+    {
+        "name": "orderby",
+        "label": "Order By",
+        "type": "text",
+        "help": "Determines whether objects will be retrieved in ascending (asc) or descending (desc) order. Has `asc` as the default value. Ex: `id asc`\nLearn more at [OData Quering Data - $orderby](https://www.odata.org/getting-started/basic-tutorial/#orderby)"
+    }
+]

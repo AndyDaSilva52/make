@@ -4,17 +4,22 @@
     "qs": {
         "$top": "{{parameters.limit}}",
         "$filter": "{{parameters.filter}}",
-        "$orderby": "{{parameters.orderby}}"
+        "$orderby": "id desc"
     },
     "response": {
+        "iterate": "{{body}}",
+        "trigger": {
+            "id": "{{item.id}}",
+            "type": "id",
+            "order": "desc"
+        },
         "output": "{{item}}",
-        "iterate": "{{body}}"
-        //,"limit": 3500
+        "limit": "{{parameters.limit}}"
     },
     "pagination": {
         "mergeWithParent": true,
         "qs": {
-            "$skip": "{{(pagination.page-1) * parameters.limit}}"
+            "$skip": "{{ pagination.page * parameters.limit }}"
         }
     }
 }

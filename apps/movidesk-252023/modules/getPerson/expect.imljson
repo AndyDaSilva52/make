@@ -1,0 +1,9 @@
+[
+    {
+        "name": "id",
+        "type": "uinteger",
+        "label": "Person ID",
+        "help": "`id` of the person that will be retrieved.",
+        "required": true
+    }
+]

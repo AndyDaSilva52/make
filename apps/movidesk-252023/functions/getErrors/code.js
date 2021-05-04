@@ -6,7 +6,7 @@ function getErrors(statusCode, body, timezone) {
     let message = '[' + statusCode + ']'
 
     function hasPropertyObj(obj, property_name) {
-        return ((obj.hasOwnProperty(property_name) && obj[property_name] != "" && obj[property_name] != null) ? true : false)
+        return ((obj.hasOwnProperty(property_name) && obj[property_name] !== "" && obj[property_name] !== null) ? true : false)
     }
 
     if (Array.isArray(errors) && errors.length) {
@@ -17,8 +17,11 @@ function getErrors(statusCode, body, timezone) {
             
             message += (hasPropertyObj(item, 'errorMessage') ? '\nMessage[' + item[`errorMessage`] + ']' : '')
         })
-    } else {
-        message += ('\n\n')
+    } else if (typeof errors == "object" && hasPropertyObj(errors, 'message')) {
+		message += ('\n\n')
+		message += (hasPropertyObj(errors, 'message') ? '\nMessage[' + errors[`message`] + ']' : '')
+	} else {
+        message += ('\n')
         message += errors
     }
 

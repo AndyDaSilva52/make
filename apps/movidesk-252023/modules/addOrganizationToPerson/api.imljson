@@ -1,0 +1,11 @@
+{
+    "url": "/persons/relationships",
+    "method": "POST",
+    "qs": {
+        "id": "{{parameters.id}}"
+    },
+    "body": "{{parameters.properties}}",
+    "response": {
+        "output": "{{body}}"
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "url": "/persons",
+    "method": "DELETE",
+    "qs": {
+        "id": "{{parameters.id}}"
+    },
+    "response": {
+        "output": "{{body}}"
+    }
+}

@@ -3,7 +3,7 @@
         "name": "limit",
         "type": "integer",
         "label": "Limit",
-        "default": 2,
+        "default": 500,
         "required": true
     }
 ]

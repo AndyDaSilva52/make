@@ -1,0 +1,8 @@
+{
+    "name": "deletePerson",
+    "label": "Delete a Person",
+    "description": "Delete a record in the People master file.",
+    "connection": "movidesk-2520232",
+    "webhook": null,
+    "type": "action"
+}

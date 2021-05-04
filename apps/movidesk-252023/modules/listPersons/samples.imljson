@@ -1,0 +1,51 @@
+{
+    "id": "1076070063",
+    "codeReferenceAdditional": null,
+    "isActive": true,
+    "personType": 1,
+    "profileType": 2,
+    "accessProfile": "Customers",
+    "businessName": "Sally Anderson",
+    "corporateName": null,
+    "cpfCnpj": null,
+    "userName": "sally",
+    "password": null,
+    "role": "Manager",
+    "bossId": null,
+    "bossName": null,
+    "classification": null,
+    "cultureId": "en-US",
+    "timeZoneId": "America/Aruba",
+    "createdDate": "2019-07-23T02:57:54.2357418",
+    "createdBy": "1489377958",
+    "changedDate": "2019-10-15T21:31:56.2866572",
+    "changedBy": "1031565475",
+    "observations": null,
+    "authenticateOn": null,
+    "addresses": [],
+    "contacts": [],
+    "emails": [
+        {
+            "emailType": "Business",
+            "email": "sally.anderson@westernmanufacturing.com",
+            "isDefault": true
+        }
+    ],
+    "teams": [],
+    "relationships": [
+        {
+            "id": "350002",
+            "name": "Western Manufacturing",
+            "slaAgreement": "Standard SLA ",
+            "forceChildrenToHaveSomeAgreement": false,
+            "allowAllServices": true,
+            "includeInParents": null,
+            "loadChildOrganizations": null,
+            "services": [],
+            "idToDelete": null,
+            "isGetMethod": true
+        }
+    ],
+    "customFieldValues": [],
+    "atAssets": []
+}

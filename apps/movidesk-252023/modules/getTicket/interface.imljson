@@ -1,0 +1,569 @@
+[
+    {
+        "name": "id",
+        "type": "text",
+        "label": "Ticket ID"
+    },
+    {
+        "name": "type",
+        "type": "number"
+    },
+    {
+        "name": "subject",
+        "type": "text"
+    },
+    {
+        "name": "category",
+        "type": "text"
+    },
+    {
+        "name": "urgency",
+        "type": "text"
+    },
+    {
+        "name": "status",
+        "type": "text"
+    },
+    {
+        "name": "baseStatus",
+        "type": "text"
+    },
+    {
+        "name": "justification",
+        "type": "text"
+    },
+    {
+        "name": "origin",
+        "type": "number"
+    },
+    {
+        "name": "createdDate",
+        "type": "text"
+    },
+    {
+        "name": "isDeleted",
+        "type": "boolean"
+    },
+    {
+        "name": "originEmailAccount",
+        "type": "text"
+    },
+    {
+        "name": "owner",
+        "type": "text"
+    },
+    {
+        "name": "ownerTeam",
+        "type": "text"
+    },
+    {
+        "name": "createdBy",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "id",
+                "type": "text"
+            },
+            {
+                "name": "personType",
+                "type": "number"
+            },
+            {
+                "name": "profileType",
+                "type": "number"
+            },
+            {
+                "name": "businessName",
+                "type": "text"
+            },
+            {
+                "name": "email",
+                "type": "text"
+            },
+            {
+                "name": "phone",
+                "type": "text"
+            }
+        ]
+    },
+    {
+        "name": "serviceFull",
+        "type": "array"
+    },
+    {
+        "name": "serviceFirstLevelId",
+        "type": "text"
+    },
+    {
+        "name": "serviceFirstLevel",
+        "type": "text"
+    },
+    {
+        "name": "serviceSecondLevel",
+        "type": "text"
+    },
+    {
+        "name": "serviceThirdLevel",
+        "type": "text"
+    },
+    {
+        "name": "contactForm",
+        "type": "text"
+    },
+    {
+        "name": "tags",
+        "type": "array"
+    },
+    {
+        "name": "cc",
+        "type": "text"
+    },
+    {
+        "name": "resolvedIn",
+        "type": "text"
+    },
+    {
+        "name": "closedIn",
+        "type": "text"
+    },
+    {
+        "name": "canceledIn",
+        "type": "text"
+    },
+    {
+        "name": "actionCount",
+        "type": "number"
+    },
+    {
+        "name": "lifeTimeWorkingTime",
+        "type": "text"
+    },
+    {
+        "name": "stoppedTime",
+        "type": "text"
+    },
+    {
+        "name": "stoppedTimeWorkingTime",
+        "type": "text"
+    },
+    {
+        "name": "resolvedInFirstCall",
+        "type": "boolean"
+    },
+    {
+        "name": "chatWidget",
+        "type": "text"
+    },
+    {
+        "name": "chatGroup",
+        "type": "text"
+    },
+    {
+        "name": "chatTalkTime",
+        "type": "text"
+    },
+    {
+        "name": "chatWaitingTime",
+        "type": "text"
+    },
+    {
+        "name": "sequence",
+        "type": "text"
+    },
+    {
+        "name": "slaAgreement",
+        "type": "text"
+    },
+    {
+        "name": "slaAgreementRule",
+        "type": "text"
+    },
+    {
+        "name": "slaSolutionTime",
+        "type": "number"
+    },
+    {
+        "name": "slaResponseTime",
+        "type": "number"
+    },
+    {
+        "name": "slaSolutionChangedByUser",
+        "type": "boolean"
+    },
+    {
+        "name": "slaSolutionChangedBy",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "id",
+                "type": "text"
+            },
+            {
+                "name": "personType",
+                "type": "number"
+            },
+            {
+                "name": "profileType",
+                "type": "number"
+            },
+            {
+                "name": "businessName",
+                "type": "text"
+            },
+            {
+                "name": "email",
+                "type": "text"
+            },
+            {
+                "name": "phone",
+                "type": "text"
+            }
+        ]
+    },
+    {
+        "name": "slaSolutionDate",
+        "type": "text"
+    },
+    {
+        "name": "slaSolutionDateIsPaused",
+        "type": "boolean"
+    },
+    {
+        "name": "jiraIssueKey",
+        "type": "text"
+    },
+    {
+        "name": "redmineIssueId",
+        "type": "text"
+    },
+    {
+        "name": "movideskTicketNumber",
+        "type": "text"
+    },
+    {
+        "name": "linkedToIntegratedTicketNumber",
+        "type": "text"
+    },
+    {
+        "name": "reopenedIn",
+        "type": "text"
+    },
+    {
+        "name": "lastActionDate",
+        "type": "text"
+    },
+    {
+        "name": "lastUpdate",
+        "type": "text"
+    },
+    {
+        "name": "slaResponseDate",
+        "type": "text"
+    },
+    {
+        "name": "slaRealResponseDate",
+        "type": "text"
+    },
+    {
+        "name": "clients",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "id",
+                    "type": "text"
+                },
+                {
+                    "name": "personType",
+                    "type": "number"
+                },
+                {
+                    "name": "profileType",
+                    "type": "number"
+                },
+                {
+                    "name": "businessName",
+                    "type": "text"
+                },
+                {
+                    "name": "email",
+                    "type": "text"
+                },
+                {
+                    "name": "phone",
+                    "type": "text"
+                },
+                {
+                    "name": "isDeleted",
+                    "type": "boolean"
+                },
+                {
+                    "name": "organization",
+                    "type": "text"
+                },
+                {
+                    "name": "address",
+                    "type": "text"
+                },
+                {
+                    "name": "complement",
+                    "type": "text"
+                },
+                {
+                    "name": "cep",
+                    "type": "text"
+                },
+                {
+                    "name": "city",
+                    "type": "text"
+                },
+                {
+                    "name": "bairro",
+                    "type": "text"
+                },
+                {
+                    "name": "number",
+                    "type": "text"
+                },
+                {
+                    "name": "reference",
+                    "type": "text"
+                }
+            ]
+        }
+    },
+    {
+        "name": "actions",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "id",
+                    "type": "number"
+                },
+                {
+                    "name": "type",
+                    "type": "number"
+                },
+                {
+                    "name": "origin",
+                    "type": "number"
+                },
+                {
+                    "name": "description",
+                    "type": "text"
+                },
+                {
+                    "name": "htmlDescription",
+                    "type": "text"
+                },
+                {
+                    "name": "status",
+                    "type": "text"
+                },
+                {
+                    "name": "justification",
+                    "type": "text"
+                },
+                {
+                    "name": "createdDate",
+                    "type": "text"
+                },
+                {
+                    "name": "createdBy",
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "id",
+                            "type": "text"
+                        },
+                        {
+                            "name": "personType",
+                            "type": "number"
+                        },
+                        {
+                            "name": "profileType",
+                            "type": "number"
+                        },
+                        {
+                            "name": "businessName",
+                            "type": "text"
+                        },
+                        {
+                            "name": "email",
+                            "type": "text"
+                        },
+                        {
+                            "name": "phone",
+                            "type": "text"
+                        }
+                    ]
+                },
+                {
+                    "name": "isDeleted",
+                    "type": "boolean"
+                },
+                {
+                    "name": "timeAppointments",
+                    "type": "array"
+                },
+                {
+                    "name": "attachments",
+                    "type": "array"
+                },
+                {
+                    "name": "expenses",
+                    "type": "array"
+                },
+                {
+                    "name": "tags",
+                    "type": "array"
+                }
+            ]
+        }
+    },
+    {
+        "name": "parentTickets",
+        "type": "array"
+    },
+    {
+        "name": "childrenTickets",
+        "type": "array"
+    },
+    {
+        "name": "ownerHistories",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "ownerTeam",
+                    "type": "text"
+                },
+                {
+                    "name": "owner",
+                    "type": "text"
+                },
+                {
+                    "name": "changedBy",
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "id",
+                            "type": "text"
+                        },
+                        {
+                            "name": "personType",
+                            "type": "number"
+                        },
+                        {
+                            "name": "profileType",
+                            "type": "number"
+                        },
+                        {
+                            "name": "businessName",
+                            "type": "text"
+                        },
+                        {
+                            "name": "email",
+                            "type": "text"
+                        },
+                        {
+                            "name": "phone",
+                            "type": "text"
+                        }
+                    ]
+                },
+                {
+                    "name": "changedDate",
+                    "type": "text"
+                },
+                {
+                    "name": "permanencyTimeFullTime",
+                    "type": "text"
+                },
+                {
+                    "name": "permanencyTimeWorkingTime",
+                    "type": "text"
+                }
+            ]
+        }
+    },
+    {
+        "name": "statusHistories",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "status",
+                    "type": "text"
+                },
+                {
+                    "name": "justification",
+                    "type": "text"
+                },
+                {
+                    "name": "changedBy",
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "id",
+                            "type": "text"
+                        },
+                        {
+                            "name": "personType",
+                            "type": "number"
+                        },
+                        {
+                            "name": "profileType",
+                            "type": "number"
+                        },
+                        {
+                            "name": "businessName",
+                            "type": "text"
+                        },
+                        {
+                            "name": "email",
+                            "type": "text"
+                        },
+                        {
+                            "name": "phone",
+                            "type": "text"
+                        }
+                    ]
+                },
+                {
+                    "name": "changedDate",
+                    "type": "text"
+                },
+                {
+                    "name": "permanencyTimeFullTime",
+                    "type": "text"
+                },
+                {
+                    "name": "permanencyTimeWorkingTime",
+                    "type": "text"
+                }
+            ]
+        }
+    },
+    {
+        "name": "satisfactionSurveyResponses",
+        "type": "array"
+    },
+    {
+        "name": "customFieldValues",
+        "type": "array"
+    },
+    {
+        "name": "assets",
+        "type": "array"
+    },
+    {
+        "name": "webhookEvents",
+        "type": "text"
+    }
+]
