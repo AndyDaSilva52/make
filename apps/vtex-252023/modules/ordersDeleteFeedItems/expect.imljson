@@ -1,0 +1,12 @@
+[
+    {
+        "name": "handles",
+        "type": "array",
+        "label": "Handles",
+        "help": "List of Item handles to commit.",
+        "required": true,
+        "spec": {
+            "type": "text"
+        }
+    }
+]

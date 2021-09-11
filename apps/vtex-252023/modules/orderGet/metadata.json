@@ -1,0 +1,8 @@
+{
+    "name": "orderGet",
+    "label": "Get Order",
+    "description": "Retrieve a specific order",
+    "connection": "vtex-252023",
+    "webhook": null,
+    "type": "action"
+}

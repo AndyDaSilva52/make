@@ -1,0 +1,8 @@
+{
+    "name": "ordersGetFeedItems",
+    "label": "List Feed Items of Order",
+    "description": "List events from a queue of order updates like for example status changes, addition or removal of items, or the order being delivered.",
+    "connection": "vtex-252023",
+    "webhook": null,
+    "type": "search"
+}

@@ -1,0 +1,13 @@
+{
+    "url": "/api/users/create",
+    "method": "POST",
+    "qs": {},
+    "body": {
+        "name": "{{parameters.name}}",
+        "email": "{{lower(parameters.email)}}"
+    },
+    "headers": {},
+    "response": {
+        "output": "{{body}}"
+    }
+}

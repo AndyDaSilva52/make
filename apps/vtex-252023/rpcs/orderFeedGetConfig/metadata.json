@@ -1,0 +1,5 @@
+{
+    "name": "orderFeedGetConfig",
+    "label": "orderFeedGetConfig",
+    "connection": "vtex-252023"
+}

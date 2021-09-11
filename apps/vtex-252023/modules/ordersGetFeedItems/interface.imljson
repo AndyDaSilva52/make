@@ -1,0 +1,34 @@
+[
+    {
+        "name": "eventId",
+        "type": "text"
+    },
+    {
+        "name": "handle",
+        "type": "text"
+    },
+    {
+        "name": "domain",
+        "type": "text"
+    },
+    {
+        "name": "state",
+        "type": "text"
+    },
+    {
+        "name": "lastState",
+        "type": "text"
+    },
+    {
+        "name": "orderId",
+        "type": "text"
+    },
+    {
+        "name": "lastChange",
+        "type": "text"
+    },
+    {
+        "name": "currentChange",
+        "type": "text"
+    }
+]

@@ -1,0 +1,82 @@
+{
+    "url": "/api/orders/feed/config",
+    "method": "GET",
+    "response": {
+        "valid": true,
+        "output": "{{getExpectOrderFeed(statusCode, body, 'expect' )}}"
+    }
+}
+/**
+    {
+    "url": "/api/orders/feed/config",
+    "method": "GET",
+    "response": {
+        "valid": "{{ !(statusCode <> 200 && statusCode <> 404) }}",
+        "output": {
+            "label": "{{ if( statusCode <> 400 , 'Quantity' + body.quantity , 'Order Feed Not Configured.' ) }}",
+            //"value": "{{ undefined }}",
+            "name": "body",
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "filter",
+                    "label": "Filter",
+                    "type": "collection",
+                    "spec": []
+                },
+                {
+                    "name": "queue",
+                    "label": "Queue",
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "visibilityTimeoutInSeconds",
+                            "label": "Visibility Timeout (Seconds)",
+                            "type": "integer",
+                            "default": 240,
+                            "help": "Period of time for which an item is not visible in the feed after it has been retrieved with the Get feed items request. Measured in seconds. [For more about](https://developers.vtex.com/vtex-rest-api/docs/feed-v3-1#queue)"
+                        },
+                        {
+                            "name": "messageRetentionPeriodInSeconds",
+                            "label": "Message Retention Period (Seconds)",
+                            "type": "integer",
+                            "default": 345600,
+                            "help": "Maximum life span of an order update after it gets to the feed. When a feed item is on the feed for this period of time, it is removed from the feed. Measured in seconds. [For more about](https://developers.vtex.com/vtex-rest-api/docs/feed-v3-1#queue)"
+                        }
+                    ]
+                },
+                {
+                    "name": "quantity",
+                    "label": "Quantity",
+                    "type": "integer",
+                    "value": "{{body.quantity}}"
+                },
+                {
+                    "name": "approximateAgeOfOldestMessageInSeconds",
+                    "label": "Approximate Age of Oldest Message (Seconds)",
+                    "type": "integer",
+                    "value": "{{body.approximateAgeOfOldestMessageInSeconds}}"
+                }
+            ]
+        }
+    }
+    } */
+/**
+
+{
+    "filter": {
+        "status": [
+            "order-creation-error",
+            "ready-for-handling"
+        ],
+        "type": "FromWorkflow"
+    },
+    "queue": {
+        "visibilityTimeoutInSeconds": 240,
+        "messageRetentionPeriodInSeconds": 345600
+    },
+    "quantity": 0,
+    "approximateAgeOfOldestMessageInSeconds": 0
+}
+
+ */

@@ -1,0 +1,11 @@
+{
+    "url": "/api/orders/feed",
+    "method": "GET",
+    "qs": {
+        "maxlot": "{{parameters.maxlot}}"
+    },
+    "response": {
+        "output": "{{item}}",
+        "iterate": "{{body}}"
+    }
+}

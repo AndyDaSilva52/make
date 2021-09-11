@@ -1,0 +1,10 @@
+{
+    "url": "/api/orders/feed",
+    "method": "POST",
+    "body": {
+        "handles": "{{parameters.handles}}"
+    },
+    "response": {
+        "output": "{{body}}"
+    }
+}

@@ -1,0 +1,103 @@
+{
+    // https://help.vtex.com/tutorial/from-to-for-order-status
+    "response": {
+        "output": [
+            {
+                "label": "Processing (Order Created)",
+                "value": "order-created"
+            },
+            {
+                "label": "Processing (On Order Completed)",
+                "value": "on-order-completed"
+            },
+            {
+                "label": "Payment Pending",
+                "value": "payment-pending"
+            },
+            {
+                "label": "Waiting for order authorization",
+                "value": "waiting-for-order-authorization"
+            },
+            {
+                "label": "Handling Shipping",
+                "value": "approve-payment"
+            },
+            {
+                "label": "Payment Approved",
+                "value": "payment-approved"
+            },
+            {
+                "label": "Payment Denied",
+                "value": "payment-denied"
+            },
+            {
+                "label": "Request cancellation",
+                "value": "request-cancel"
+            },
+            {
+                "label": "Waiting for Seller Decision",
+                "value": "waiting-for-seller-decision"
+            },
+            {
+                "label": "Authorize Fulfillment",
+                "value": "authorize-fulfillment"
+            },
+            {
+                "label": "Order create error",
+                "value": "order-create-error"
+            },
+            {
+                "label": "Order create error (Creation)",
+                "value": "order-creation-error"
+            },
+            {
+                "label": "Window to Cancellation",
+                "value": "window-to-cancel"
+            },
+            {
+                "label": "Ready for Handling",
+                "value": "ready-for-handling"
+            },
+            {
+                "label": "Start Handling",
+                "value": "start-handling"
+            },
+            {
+                "label": "Handling Shipping",
+                "value": "handling"
+            },
+            {
+                "label": "Invoice after cancellation deny",
+                "value": "invoice-after-cancellation-deny"
+            },
+            {
+                "label": "Verify Shipping",
+                "value": "order-accepted"
+            },
+            {
+                "label": "Shipping",
+                "value": "invoice"
+            },
+            {
+                "label": "Invoiced",
+                "value": "invoiced"
+            },
+            {
+                "label": "Replaced",
+                "value": "replaced"
+            },
+            {
+                "label": "Cancellation Requested",
+                "value": "cancellation-requested"
+            },
+            {
+                "label": "Cancel",
+                "value": "cancel"
+            },
+            {
+                "label": "Cancelled",
+                "value": "canceled"
+            }
+        ]
+    }
+}

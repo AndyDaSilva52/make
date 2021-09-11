@@ -1,0 +1,13 @@
+[
+    {
+        "url": "/api/orders/feed/config",
+        "method": "POST",
+        "body": {
+            "filter": "{{ parameters.filter }}",
+            "queue": "{{ parameters.queue }}"
+        },
+        "response": {
+            "output": "Done!"
+        }
+    }
+]

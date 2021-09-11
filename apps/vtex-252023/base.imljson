@@ -3,12 +3,27 @@
     "headers": {
         "X-VTEX-API-AppKey": "{{connection.appKey}}",
         "X-VTEX-API-AppToken": "{{connection.appToken}}",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Accept": "application/json"
     },
     "log": {
         "sanitize": [
             "request.headers.X-VTEX-API-AppKey",
             "request.headers.X-VTEX-API-AppToken"
         ]
+    },
+    "response": {
+        "error": {
+            "403": {
+                "type": "AccountValidationError"
+            },
+            "404": {
+                "type": "DataError"
+            },
+            "429": {
+                "type": "RateLimitError"
+            },
+            "message": "{{ getErrors(statusCode, body, environment.timezone) }}"
+        }
     }
 }

@@ -1,4 +1,5 @@
 {
+    // https://developers.vtex.com/vtex-rest-api/docs/getting-started-authentication
     "url": "https://{{parameters.accountName}}.{{parameters.environment}}.com.br/api/vlm/account",
     "headers": {
         "X-VTEX-API-AppKey": "{{parameters.appKey}}",

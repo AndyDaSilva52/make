@@ -1,0 +1,8 @@
+{
+    "name": "ordersDeleteFeedItems",
+    "label": "Delete Feed Items of Order",
+    "description": "Commits the events to remove them from the feed queue",
+    "connection": "vtex-252023",
+    "webhook": null,
+    "type": "action"
+}
