@@ -1,0 +1,124 @@
+{
+    "url": "/api/dataentities",
+    "method": "GET",
+    "response": {
+        "iterate": "{{body}}",
+        "output": {
+            "label": "{{ item.name + ' ' + '(' + item.acronym + ') - KeyType [' + item.primaryKeyType + ']'}}",
+            "value": "{{ item.acronym }}"
+        }
+    }
+}
+/**
+[
+    {
+        "acronym": "AD",
+        "name": "Endereço",
+        "primaryKeyType": "GUID",
+        "allowGetAll": false
+    },
+    {
+        "acronym": "BK",
+        "name": "bucket",
+        "primaryKeyType": "GUID",
+        "allowGetAll": false
+    },
+    {
+        "acronym": "OD",
+        "name": "Orders",
+        "primaryKeyType": "UKEY",
+        "allowGetAll": false
+    },
+    {
+        "acronym": "CL",
+        "name": "Cliente",
+        "primaryKeyType": "GUID",
+        "allowGetAll": false
+    },
+    {
+        "acronym": "AU",
+        "name": "Auditoria",
+        "primaryKeyType": "MANU",
+        "allowGetAll": false
+    },
+    {
+        "acronym": "BX",
+        "name": "buzz-extract",
+        "primaryKeyType": "MANU",
+        "allowGetAll": false
+    },
+    {
+        "acronym": "BB",
+        "name": "buzz-billing",
+        "primaryKeyType": "GUID",
+        "allowGetAll": false
+    },
+    {
+        "acronym": "GC",
+        "name": "giftcard",
+        "primaryKeyType": "UKEY",
+        "allowGetAll": false
+    },
+    {
+        "acronym": "GT",
+        "name": "giftcard-constraint",
+        "primaryKeyType": "MANU",
+        "allowGetAll": true
+    },
+    {
+        "acronym": "BO",
+        "name": "BridgeOrder",
+        "primaryKeyType": "MANU",
+        "allowGetAll": false
+    },
+    {
+        "acronym": "SB",
+        "name": "BridgeOrderSeller",
+        "primaryKeyType": "MANU",
+        "allowGetAll": false
+    },
+    {
+        "acronym": "MB",
+        "name": "BridgeOrderMarketplace",
+        "primaryKeyType": "MANU",
+        "allowGetAll": false
+    },
+    {
+        "acronym": "IL",
+        "name": "internal-logs",
+        "primaryKeyType": "GUID",
+        "allowGetAll": false
+    },
+    {
+        "acronym": "IW",
+        "name": "internal-warnings",
+        "primaryKeyType": "MANU",
+        "allowGetAll": false
+    },
+    {
+        "acronym": "RD",
+        "name": "order",
+        "primaryKeyType": "MANU",
+        "allowGetAll": false
+    },
+    {
+        "acronym": "SO",
+        "name": "Stores",
+        "primaryKeyType": "UKEY",
+        "allowGetAll": true
+    },
+    {
+        "acronym": "HL",
+        "name": "Holidays",
+        "primaryKeyType": "UKEY",
+        "allowGetAll": false
+    },
+    {
+        "acronym": "IY",
+        "name": "availability-item",
+        "primaryKeyType": "MANU",
+        "allowGetAll": false
+    }
+]
+
+ */

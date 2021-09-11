@@ -1,0 +1,84 @@
+{
+    "response": {
+        "output": [
+            {
+                "name": "type",
+                "label": "Type",
+                "type": "select",
+                "help": "The type of invoice. The Output type should be used when the invoice you are sending is a **selling invoice**. The Input type should be used when you send a **return invoice**.",
+                "options": [
+                    {
+                        "label": "Output",
+                        "value": "Output"
+                    },
+                    {
+                        "label": "Input",
+                        "value": "Input"
+                    }
+                ]
+            },
+            {
+                "name": "issuanceDate",
+                "label": "Issuance Date",
+                "type": "text",
+                "help": "Issuance date of the invoice. Ex: `2019-01-30`."
+            },
+            {
+                "name": "invoiceNumber",
+                "label": "Invoice Number",
+                "type": "text",
+                "help": "Number that identifies the invoice. It is not allowed to use the same `invoiceNumber` in more than one request."
+            },
+            {
+                "name": "invoiceValue",
+                "label": "Invoice Value",
+                "type": "text",
+                "help": "Total amount being invoiced in cents. Do not use any decimal separator. For instance, `$24.99` should be represented as `2499`."
+            },
+            {
+                "name": "invoiceKey",
+                "label": "Invoice Key",
+                "type": "text",
+                "help": "Access Key from the Invoice."
+            },
+            {
+                "name": "invoiceURL",
+                "label": "Invoice URL",
+                "type": "text",
+                "help": "URL of the invoice. Can be used to send the URL of an XML file, for example, which is useful for some integrations."
+            },
+            {
+                "name": "embeddedInvoice",
+                "label": "Embedded Invoice",
+                "type": "text",
+                "help": "XML text of the invoice, not the URL. This field is very important for external marketplace integrations such as Mercado Libre."
+            },
+            {
+                "name": "items",
+                "label": "Items",
+                "type": "array",
+                "help": "We strongly recommend that you always send the items. With this practice, rounding errors will be avoided.",
+                "spec": [
+                    {
+                        "name": "id",
+                        "label": "ID",
+                        "type": "text",
+                        "help": "ID of the SKU being invoiced."
+                    },
+                    {
+                        "name": "price",
+                        "label": "Price",
+                        "type": "text",
+                        "help": "Total price of the SKU being invoiced in cents. Do not use any decimal separator. For instance, `$24.99` should be represented as `2499`."
+                    },
+                    {
+                        "name": "quantity",
+                        "label": "Quantity",
+                        "type": "number",
+                        "help": "Quantity currently in inventory of the SKU being invoiced."
+                    }
+                ]
+            }
+        ]
+    }
+}

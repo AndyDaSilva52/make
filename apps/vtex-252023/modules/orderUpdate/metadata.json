@@ -1,0 +1,8 @@
+{
+    "name": "orderUpdate",
+    "label": "Update Order",
+    "description": "Change the order status (ex: Start Handling, Handling Shipping or Cancel) or add log in interractions.",
+    "connection": "vtex-252023",
+    "webhook": null,
+    "type": "action"
+}

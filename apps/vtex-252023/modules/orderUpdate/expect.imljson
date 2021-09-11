@@ -1,0 +1,66 @@
+[
+    {
+        "name": "orderId",
+        "label": "Order ID",
+        "type": "text",
+        "required": true
+    },
+    {
+        "name": "action",
+        "label": "Action",
+        "type": "select",
+        //"enabled": false,
+        "editable": false,
+        "mode": "choose",
+        "help": "Choose some action to change or add information at the order.",
+        "options": {
+            "store": [
+                {
+                    "label": "Start Handling Order",
+                    "value": "start-handling"
+                },
+                {
+                    "label": "Cancel Order",
+                    "value": "cancel"
+                },
+                {
+                    "label": "Add Log in Orders",
+                    "value": "interactions",
+                    "nested": [
+                        {
+                            "name": "source",
+                            "label": "Source",
+                            "type": "text"
+                        },
+                        {
+                            "name": "message",
+                            "label": "Message",
+                            "type": "text"
+                        }
+                    ]
+                },
+                {
+                    "label": "Invoice Notification",
+                    "value": "invoice",
+                    "nested": [
+                        "rpc://orderExpectUpdateInvoice",
+                        "rpc://orderExpectUpdateInvoiceTracking"
+                    ]
+                },
+                {
+                    "label": "Invoice Partial Update - Add Tracking Info",
+                    "value": "invoice-tracking",
+                    "nested": [
+                        {
+                            "name": "invoiceNumber",
+                            "label": "Invoice Number",
+                            "type": "text",
+                            "help": "Number that identifies the invoice. It is not allowed to use the same `invoiceNumber` in more than one request."
+                        },
+                        "rpc://orderExpectUpdateInvoiceTracking"
+                    ]
+                }
+            ]
+        }
+    }
+]

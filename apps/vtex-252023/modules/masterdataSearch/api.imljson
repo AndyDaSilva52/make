@@ -1,0 +1,16 @@
+{
+    "url": "/api/dataentities/{{ parameters.data_entity_name }}/search",
+    "method": "GET",
+    "qs": {
+        
+    },
+    "body": {},
+    "headers": {
+        // REST-Range - Example of value: `resources=0-10` - Defines the collection of documents to be returned. A range within the collection limited by 100 documents per query.
+        "REST-Range": "resources=0-10"
+    },
+    "response": {
+        "output": "{{item}}",
+        "iterate": "{{body.users}}"
+    }
+}

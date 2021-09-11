@@ -1,0 +1,224 @@
+{
+    "url": "/api/dataentities/{{ parameters.data_entity_name }}/schemas",
+    "method": "GET",
+    "response": {
+        "iterate": "{{body}}",
+        "output": {
+            "label": "{{item.name}}",
+            "value": "{{item.name}}"
+        }
+    }
+}
+/**
+[
+    {
+        "name": "mdv1",
+        "schema": {
+            "properties": {
+                "corporateName": {
+                    "type": "string",
+                    "maxLength": 750,
+                    "title": "Razão Social"
+                },
+                "rclastsessiondate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "title": "Data da Última Sessão"
+                },
+                "updatedIn": {
+                    "type": "string",
+                    "format": "date-time",
+                    "title": "Atualizado em"
+                },
+                "tags": {
+                    "type": "string",
+                    "title": "Tags"
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email",
+                    "title": "Email"
+                },
+                "corporateDocument": {
+                    "type": "string",
+                    "maxLength": 50,
+                    "title": "CNPJ"
+                },
+                "birthDateMonth": {
+                    "type": "integer",
+                    "title": "Mês de aniversário"
+                },
+                "document": {
+                    "type": "string",
+                    "maxLength": 50,
+                    "title": "Documento"
+                },
+                "homePhone": {
+                    "type": "string",
+                    "title": "Telefone Residencial"
+                },
+                "createdIn": {
+                    "type": "string",
+                    "format": "date-time",
+                    "title": "Criado em"
+                },
+                "followers": {
+                    "type": "string",
+                    "title": "Seguidores"
+                },
+                "firstName": {
+                    "type": "string",
+                    "maxLength": 750,
+                    "title": "Nome"
+                },
+                "accountId": {
+                    "type": "string",
+                    "maxLength": 50,
+                    "title": "ID da loja"
+                },
+                "phone": {
+                    "type": "string",
+                    "title": "Telefone"
+                },
+                "userId": {
+                    "type": "string",
+                    "maxLength": 50,
+                    "title": "Id do usuário"
+                },
+                "stateRegistration": {
+                    "type": "string",
+                    "maxLength": 750,
+                    "title": "Inscrição Estadual"
+                },
+                "customerClass": {
+                    "type": "string",
+                    "maxLength": 750,
+                    "title": "CustomerClass"
+                },
+                "lastInteractionIn": {
+                    "type": "string",
+                    "format": "date-time",
+                    "title": "Ultima interação em"
+                },
+                "gender": {
+                    "type": "string",
+                    "maxLength": 50,
+                    "title": "Sexo"
+                },
+                "rclastcartvalue": {
+                    "type": "number",
+                    "title": "Valor do Último Carrinho"
+                },
+                "rclastcart": {
+                    "type": "string",
+                    "title": "Último Carrinho"
+                },
+                "isNewsletterOptIn": {
+                    "type": "boolean",
+                    "title": "Recebe Newsletter?"
+                },
+                "localeDefault": {
+                    "type": "string",
+                    "maxLength": 10,
+                    "title": "Localização padrão"
+                },
+                "lastName": {
+                    "type": "string",
+                    "maxLength": 750,
+                    "title": "Sobrenome"
+                },
+                "accountName": {
+                    "type": "string",
+                    "maxLength": 100,
+                    "title": "Nome da loja"
+                },
+                "birthDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "title": "Data de nascimento"
+                },
+                "approved": {
+                    "type": "boolean",
+                    "title": "Aprovado"
+                },
+                "tradeName": {
+                    "type": "string",
+                    "maxLength": 750,
+                    "title": "Nome Fantasia"
+                },
+                "isCorporate": {
+                    "type": "boolean",
+                    "title": "É Empresa?"
+                },
+                "rclastsession": {
+                    "type": "string",
+                    "maxLength": 50,
+                    "title": "Última sessão"
+                },
+                "documentType": {
+                    "type": "string",
+                    "maxLength": 50,
+                    "title": "Tipo documento"
+                },
+                "dataEntityId": {
+                    "type": "string",
+                    "maxLength": 10,
+                    "title": "Entidade de dados"
+                },
+                "auto_filter": {
+                    "type": "string",
+                    "title": "Filtro autoático"
+                },
+                "businessPhone": {
+                    "type": "string",
+                    "maxLength": 100,
+                    "title": "Telefone Comercial"
+                },
+                "id": {
+                    "type": "string",
+                    "maxLength": 100,
+                    "title": "Id do documento"
+                },
+                "priceTables": {
+                    "type": "string",
+                    "maxLength": 750,
+                    "title": "priceTables"
+                }
+            },
+            "required": [
+                "email",
+                "id",
+                "accountId",
+                "accountName",
+                "dataEntityId"
+            ],
+            "v-indexed": [
+                "brandVisitedTag",
+                "categoryVisitedTag",
+                "departmentVisitedTag",
+                "productVisitedTag",
+                "email",
+                "userId",
+                "firstName",
+                "lastName",
+                "document",
+                "isNewsletterOptIn",
+                "localeDefault",
+                "approved",
+                "id",
+                "accountName",
+                "dataEntityId",
+                "createdBy",
+                "createdIn",
+                "updatedBy",
+                "updatedIn",
+                "lastInteractionBy",
+                "lastInteractionIn",
+                "followers",
+                "tags"
+            ]
+        }
+    }
+]
+
+ */

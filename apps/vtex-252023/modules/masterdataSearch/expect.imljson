@@ -1,0 +1,21 @@
+[
+    {
+        "name": "data_entity_name",
+        "label": "Data Entity",
+        "type": "select",
+        "required": true,
+        "options": {
+            "store": "rpc://masterdataEntityGet",
+            "nested": [
+                {
+                    "name": "_schema",
+                    "label": "Schema",
+                    "type": "select",
+                    "options": {
+                        "store": "rpc://masterdataSchemaGet"
+                    }
+                }
+            ]
+        }
+    }
+]

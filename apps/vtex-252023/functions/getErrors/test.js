@@ -35,3 +35,12 @@ Happens when no Body is sent at request and it's mandatory
 
 Happens when one field is not sent at the request like in this example the Queue
 */
+/** Status Code = 404
+{
+    "error": {
+        "code": "OMS007",
+        "message": "Order Not Found",
+        "exception": null
+    }
+}
+ */

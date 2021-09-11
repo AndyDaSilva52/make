@@ -1,14 +1,8 @@
 [
     {
-        "name": "email",
-        "type": "email",
-        "label": "Email address",
-        "required": true
-    },
-    {
-        "name": "name",
+        "name": "orderId",
         "type": "text",
-        "label": "Name",
+        "label": "Order ID",
         "required": true
     }
 ]

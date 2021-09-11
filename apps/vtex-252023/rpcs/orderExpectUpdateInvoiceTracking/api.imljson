@@ -1,0 +1,30 @@
+{
+    "response": {
+        "output": [
+            {
+                "name": "courier",
+                "label": "Courier",
+                "type": "text",
+                "help": "The name of the carrier responsible for delivering the order. This field should only be used when sending the tracking information. When the request is used for sending the invoice, this field should be left empty ('')."
+            },
+            {
+                "name": "trackingNumber",
+                "label": "Tracking Number",
+                "type": "text",
+                "help": "The number code that identifies the order tracking. This field should only be used when sending the tracking information. When the request is used for sending the invoice, this field should be left empty ('')."
+            },
+            {
+                "name": "trackingUrl",
+                "label": "Tracking URL",
+                "type": "text",
+                "help": "The URL used to track the order. This field should only be used when sending the tracking information. When the request is used for sending the invoice, this field should be left empty ('')."
+            },
+            {
+                "name": "dispatchedDate",
+                "label": "Dispatched Date",
+                "type": "date",
+                "help": "Order dispatch date. May be `null`."
+            }
+        ]
+    }
+}

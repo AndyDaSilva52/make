@@ -1,0 +1,8 @@
+{
+    "name": "masterdataSearch",
+    "label": "Search Master Data",
+    "description": "Query a collection of documents of entities. For example: Customers, Addresses, ...",
+    "connection": "vtex-252023",
+    "webhook": null,
+    "type": "search"
+}

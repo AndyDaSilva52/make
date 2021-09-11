@@ -1,0 +1,34 @@
+[
+    {
+        "response": {
+            "temp": {
+                "action": "{{ if( parameters.action == 'invoice-tracking', 'invoice', parameters.action ) }}"
+            }
+        }
+    },
+    {
+        "url": "/api/oms/pvt/orders/{{ parameters.orderId }}/{{ temp.action + if(parameters.action == 'invoice-tracking', '/' + parameters.invoiceNumber, '' ) }}",
+        "method": "{{ if( parameters.action == 'invoice-tracking', 'PATCH', 'POST' ) }}",
+        "body": {
+            // AddLogRequest
+            "source": "{{           if( temp.action == 'interactions' , parameters.source , undefined) }}",
+            "message": "{{          if( temp.action == 'interactions' , parameters.message, undefined) }}",
+            // InvoiceNotificationRequest
+            "type": "{{             if( temp.action == 'invoice', parameters.type, undefined ) }}",
+            "issuanceDate": "{{     if( contains( parameters.action, 'invoice') , parameters.issuanceDate   , undefined ) }}",
+            "invoiceNumber": "{{    if( contains( parameters.action, 'invoice') , parameters.invoiceNumber  , undefined ) }}",
+            "invoiceValue": "{{     if( contains( parameters.action, 'invoice') , parameters.invoiceValue   , undefined ) }}",
+            "invoiceKey": "{{       if( contains( parameters.action, 'invoice') , parameters.invoiceKey     , undefined ) }}",
+            "invoiceURL": "{{       if( contains( parameters.action, 'invoice') , parameters.invoiceURL     , undefined ) }}",
+            "embeddedInvoice": "{{  if( contains( parameters.action, 'invoice') , parameters.embeddedInvoice, undefined ) }}",
+            "items": "{{            if( contains( parameters.action, 'invoice') , parameters.items          , undefined ) }}",
+            "courier": "{{          if( contains( parameters.action, 'invoice') , parameters.courier        , undefined ) }}",
+            "trackingNumber": "{{   if( contains( parameters.action, 'invoice') , parameters.trackingNumber , undefined ) }}",
+            "trackingUrl": "{{      if( contains( parameters.action, 'invoice') , parameters.trackingUrl    , undefined ) }}",
+            "dispatchedDate": "{{   if( contains( parameters.action, 'invoice') , parameters.dispatchedDate , undefined ) }}"
+        },
+        "response": {
+            "output": "{{body}}"
+        }
+    }
+]
