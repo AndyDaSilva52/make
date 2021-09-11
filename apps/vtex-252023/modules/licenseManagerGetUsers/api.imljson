@@ -1,0 +1,22 @@
+{
+    "url": "/api/license-manager/site/pvt/logins/list/paged",
+    "method": "GET",
+    "qs": {
+        "numItems": "{{common.limit}}",
+        "pageNumber": "1",
+        "sort": "{{parameters.sort}}",
+        "sortType": "{{parameters.sortType}}"
+    },
+    "response": {
+        "output": "{{item}}",
+        "iterate": "{{body.items}}"
+    },
+    "pagination": {
+        "mergeWithParent": true,
+        "qs": {
+            "numItems": "{{common.limit}}",
+            "pageNumber": "{{pagination.page}}"
+        },
+        "condition": "{{(body.paging.pages) > (body.paging.page)}}"
+    }
+}

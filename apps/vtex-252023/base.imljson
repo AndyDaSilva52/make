@@ -1,0 +1,14 @@
+{
+    "baseUrl": "https://{{connection.accountName}}.{{connection.environment}}.com.br",
+    "headers": {
+        "X-VTEX-API-AppKey": "{{connection.appKey}}",
+        "X-VTEX-API-AppToken": "{{connection.appToken}}",
+        "Content-Type": "application/json"
+    },
+    "log": {
+        "sanitize": [
+            "request.headers.X-VTEX-API-AppKey",
+            "request.headers.X-VTEX-API-AppToken"
+        ]
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "name": "licenseManagerGetUsers",
+    "label": "List Users",
+    "description": "Returns a list of registered users.",
+    "connection": "vtex-252023",
+    "webhook": null,
+    "type": "search"
+}

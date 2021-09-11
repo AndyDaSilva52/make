@@ -1,0 +1,8 @@
+{
+    "name": "makeApiCall",
+    "label": "Make an API Call",
+    "description": "Performs an arbitrary authorized API call.",
+    "connection": "vtex-252023",
+    "webhook": null,
+    "type": "universal"
+}

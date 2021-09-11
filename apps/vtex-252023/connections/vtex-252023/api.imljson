@@ -1,0 +1,13 @@
+{
+    "url": "https://{{parameters.accountName}}.{{parameters.environment}}.com.br/api/vlm/account",
+    "headers": {
+        "X-VTEX-API-AppKey": "{{parameters.appKey}}",
+        "X-VTEX-API-AppToken": "{{parameters.appToken}}"
+    },
+    "log": {
+        "sanitize": [
+            "request.headers.X-VTEX-API-AppKey",
+            "request.headers.X-VTEX-API-AppToken"
+        ]
+    }
+}

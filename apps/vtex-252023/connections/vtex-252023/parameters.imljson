@@ -1,0 +1,39 @@
+[
+    {
+        "name": "accountName",
+        "label": "Account Name",
+        "type": "text",
+        "required": true,
+        "help": "You can set the `accountName` variable to test requests with your own account or use the `apiexamples` test account."
+    },
+    {
+        "name": "environment",
+        "label": "Environment",
+        "type": "select",
+        "options": [
+            {
+                "label": "VTEX Commerce Stable",
+                "value": "vtexcommercestable"
+            },
+            {
+                "label": "VTEX Commerce Beta",
+                "value": "vtexcommercebeta"
+            }
+        ],
+        "required": true,
+        "enabled": true,
+        "validate": false
+    },
+    {
+        "name": "appKey",
+        "type": "text",
+        "label": "APP Key",
+        "required": true
+    },
+    {
+        "name": "appToken",
+        "type": "text",
+        "label": "APP Token",
+        "required": true
+    }
+]
