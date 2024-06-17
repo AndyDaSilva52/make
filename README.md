@@ -1,4 +1,4 @@
-# Integromat Apps
+# Make (Formerly know as Integromat)
 
 This is a repository for all the Apps that will be posted publicly for collaborative development and support
 
